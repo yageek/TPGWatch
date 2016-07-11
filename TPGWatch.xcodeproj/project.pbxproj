@@ -417,7 +417,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.iosapplication;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -434,7 +434,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.iosapplication;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

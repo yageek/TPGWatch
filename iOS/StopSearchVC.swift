@@ -1,9 +1,9 @@
 //
 //  StopSearchVC.swift
-//  GenevaNextBus
+//  TPGWatch
 //
 //  Created by Yannick Heinrich on 05.07.16.
-//  Copyright © 2016 Yageek. All rights reserved.
+//  Copyright © 2016 yageek. All rights reserved.
 //
 
 import UIKit

@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  GenevaNextBus
+//  TPGWatch
 //
 //  Created by Yannick Heinrich on 04.07.16.
-//  Copyright © 2016 Yageek. All rights reserved.
+//  Copyright © 2016 yageek. All rights reserved.
 //
 
 import UIKit
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "net.yageek.GenevaNextBus" in the application's documents Application Support directory.
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "net.yageek.TPGWatch" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
     }()

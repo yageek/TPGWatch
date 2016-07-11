@@ -1,14 +1,14 @@
 //
 //  LineRenderer.swift
-//  GenevaNextBus
+//  TPGWatch
 //
 //  Created by Yannick Heinrich on 04.07.16.
-//  Copyright © 2016 Yageek. All rights reserved.
+//  Copyright © 2016 yageek. All rights reserved.
 //
 
 import UIKit.UIImage
 
-class LineRenderer {
+final class LineRenderer {
 
     struct LineRenderingOptions {
         let lineWidth: CGFloat = 5.0

@@ -1,6 +1,6 @@
 //
 //  Palette.swift
-//  GenevaNextBus
+//  TPGWatch
 //
 //  Created by Yannick Heinrich on 18.06.16.
 //  Copyright © 2016 yageek. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  Color.swift
-//  GenevaNextBus
+//  TPGWatch
 //
 //  Created by Yannick Heinrich on 08/10/15.
 //  Copyright © 2015 Vndly. All rights reserved.

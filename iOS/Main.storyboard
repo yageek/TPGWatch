@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="21g-Uk-nbd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="YJr-TT-ie0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="21g-Uk-nbd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Lz-xu-DXp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7cM-o2-BF7" kind="relationship" relationship="rootViewController" id="qWI-KR-kCs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5If-j3-sLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320" y="308"/>
+        </scene>
+        <!--Bookmarks-->
+        <scene sceneID="LM0-3n-khr">
+            <objects>
+                <tableViewController id="7cM-o2-BF7" customClass="StopBookmarkVC" customModule="GenevaNextBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="697-FN-gGj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="7cM-o2-BF7" id="2ho-Oo-ci4"/>
+                            <outlet property="delegate" destination="7cM-o2-BF7" id="fef-s7-xWD"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="About" id="RT7-UL-h0p"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="AXN-4d-ap3"/>
+                        <barButtonItem title="Watches" id="GzD-Yf-ndD"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Bookmarks" id="OdT-uO-qXP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Ugz-Ee-rWY">
+                            <connections>
+                                <segue destination="b7Y-zS-Yom" kind="show" id="1nT-rA-hXh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="xAi-Wa-2gn"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="view" destination="697-FN-gGj" id="VzP-0T-h1u"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXG-Wb-t5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="308"/>
+        </scene>
+        <!--Stop Controller-->
+        <scene sceneID="4M8-4R-okw">
+            <objects>
+                <tableViewController id="b7Y-zS-Yom" customClass="StopSearchVC" customModule="GenevaNextBus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQn-4U-6fm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="b7Y-zS-Yom" id="EGu-70-MMF"/>
+                            <outlet property="delegate" destination="b7Y-zS-Yom" id="LBe-EH-oqe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stop Controller" id="P9C-Tu-DS0"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pZL-F2-U6t">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshTriggered:" destination="b7Y-zS-Yom" eventType="valueChanged" id="tIv-yi-0ex"/>
+                        </connections>
+                    </refreshControl>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQy-Xu-Dww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="291"/>
+        </scene>
+    </scenes>
+</document>

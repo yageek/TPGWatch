@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BF0070C1D33FF6D008877F9 /* iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		0BF0070D1D33FF6D008877F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BF0070C1D33FF6D008877F9 /* TPGWatch.app */,
+				0BF0070C1D33FF6D008877F9 /* iOS App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0BF0070B1D33FF6D008877F9 /* TPGWatch */ = {
+		0BF0070B1D33FF6D008877F9 /* iOS App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BF0071E1D33FF6E008877F9 /* Build configuration list for PBXNativeTarget "TPGWatch" */;
+			buildConfigurationList = 0BF0071E1D33FF6E008877F9 /* Build configuration list for PBXNativeTarget "iOS App" */;
 			buildPhases = (
 				0BF007081D33FF6D008877F9 /* Sources */,
 				0BF007091D33FF6D008877F9 /* Frameworks */,
@@ -218,9 +218,9 @@
 			);
 			dependencies = (
 			);
-			name = TPGWatch;
+			name = "iOS App";
 			productName = TPGWatch;
-			productReference = 0BF0070C1D33FF6D008877F9 /* TPGWatch.app */;
+			productReference = 0BF0070C1D33FF6D008877F9 /* iOS App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -251,7 +251,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0BF0070B1D33FF6D008877F9 /* TPGWatch */,
+				0BF0070B1D33FF6D008877F9 /* iOS App */,
 			);
 		};
 /* End PBXProject section */
@@ -451,7 +451,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BF0071E1D33FF6E008877F9 /* Build configuration list for PBXNativeTarget "TPGWatch" */ = {
+		0BF0071E1D33FF6E008877F9 /* Build configuration list for PBXNativeTarget "iOS App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0BF0071F1D33FF6E008877F9 /* Debug */,

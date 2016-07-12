@@ -60,8 +60,6 @@ final class LinesRendererContext {
                     let options = LineRenderer.LineRenderingOptions(backgroundColor: backgroundColor, textColor: textColor, ribonColor: ribonColor)
                     let rend = LineRenderer(text: lineCode, options:  options)
 
-
-                    print("Renderer for line: \(lineCode)")
                     self.renderers[lineCode] = rend
 
                     let blockOp = NSBlockOperation {

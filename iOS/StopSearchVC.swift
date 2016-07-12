@@ -159,13 +159,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             }
 
             stop.bookmarked = !stop.bookmarked
-
-            do {
-                try UIMoc().save()
-            } catch let error {
-                print("Impossible to save as bookmark: \(error)")
-                stop.bookmarked = !stop.bookmarked
-            }
+            save()
         }
     }
 
@@ -226,12 +220,6 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         NSOperationQueue.mainQueue().addOperation(endRefreshingOp)
 
     }
-
-    internal func UIMoc() -> NSManagedObjectContext {
-        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        return context
-    }
-
     // MARK: Search
 
     func updateSearchResultsForSearchController(searchController: UISearchController) {

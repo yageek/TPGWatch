@@ -87,13 +87,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         super.setEditing(editing, animated: animated)
 
         if !editing {
-            let moc = UIMoc()
-            if moc.hasChanges {
-                do {
-                    try moc.save()
-                    updateUI()
-                } catch {}
-            }
+            save()
         }
     }
 

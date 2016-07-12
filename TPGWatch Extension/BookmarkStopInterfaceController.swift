@@ -99,7 +99,6 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     }
 
 
-
     func saveData() {
         guard let stopsS = lastStops else { return }
 

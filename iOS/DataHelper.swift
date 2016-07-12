@@ -28,5 +28,8 @@ internal func save() {
 }
 
 private func sendToWatch() {
+    if let proxy = (UIApplication.sharedApplication().delegate as! AppDelegate).proxy {
+        proxy.sendBookmarkedStops()
+    }
 
 }

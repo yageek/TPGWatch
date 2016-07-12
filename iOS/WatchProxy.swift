@@ -52,11 +52,16 @@ class WatchProxy: NSObject, WCSessionDelegate {
         
         let request = NSFetchRequest(entityName: Stop.EntityName)
         request.predicate = NSPredicate(format: "bookmarked == true")
-        request.resultType = .DictionaryResultType
-        request.propertiesToFetch = ["name", "code"]
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
         do {
-            let stops = try UIMoc().executeFetchRequest(request) as! [[String: AnyObject]]
+            let stopsObjects = try UIMoc().executeFetchRequest(request) as! [Stop]
+            let stops = stopsObjects.map({ (stop) -> [String:AnyObject] in
+                return [
+                    "name" : stop.name!,
+                    "code" : stop.code!
+                ]
+            })
 
             let dict: [String: AnyObject] = ["stops": stops]
             lastTransfer = session.transferUserInfo(dict)

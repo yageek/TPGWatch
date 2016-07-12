@@ -27,12 +27,6 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
         session.delegate = self
         session.activateSession()
 
-        let directory = NSFileManager.defaultManager().URLsForDirectory(.UserDirectory, inDomains: .UserDomainMask).first
-
-        if let valid = directory {
-            print("URL to store:\(valid)")
-        }
-
     }
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -62,6 +56,7 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
             lastStops = stopsData
             print("Received Last Data: \(lastStops)")
             reloadData()
+            saveData()
         } else {
             print("Invalid Data: \(userInfo)")
         }
@@ -80,6 +75,21 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
             let stopName = stops[i]["name"] as! String
             row.stopLabel.setText(stopName)
         }
+
+    }
+
+    func saveData() {
+        guard let stops = lastStops as? NSArray else {return }
+
+        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let savePath = directory.URLByAppendingPathComponent("stops.plist")
+
+        if !stops.writeToURL(savePath, atomically: true) {
+            print("Can not save :(")
+        } else {
+            print("Correctly saved :)")
+        }
+
 
     }
 }

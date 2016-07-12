@@ -11,10 +11,11 @@
 		0B32C3861D34DEA200D97205 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3841D34DEA200D97205 /* Interface.storyboard */; };
 		0B32C3881D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3871D34DEA200D97205 /* Assets.xcassets */; };
 		0B32C38F1D34DEA200D97205 /* TPGWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0B32C3941D34DEA200D97205 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3931D34DEA200D97205 /* InterfaceController.swift */; };
+		0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */; };
 		0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */; };
 		0B32C3981D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3971D34DEA200D97205 /* Assets.xcassets */; };
 		0B32C39C1D34DEA200D97205 /* TPGWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0B32C3821D34DEA200D97205 /* TPGWatch.app */; };
+		0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3A61D34DEF600D97205 /* WatchProxy.swift */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
@@ -95,10 +96,11 @@
 		0B32C3871D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B32C3891D34DEA200D97205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TPGWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B32C3931D34DEA200D97205 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStopInterfaceController.swift; sourceTree = "<group>"; };
 		0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		0B32C3971D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B32C3991D34DEA200D97205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B32C3A61D34DEF600D97205 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,12 +172,20 @@
 		0B32C3921D34DEA200D97205 /* TPGWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0B32C3931D34DEA200D97205 /* InterfaceController.swift */,
+				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
 				0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */,
 				0B32C3971D34DEA200D97205 /* Assets.xcassets */,
 				0B32C3991D34DEA200D97205 /* Info.plist */,
 			);
 			path = "TPGWatch Extension";
+			sourceTree = "<group>";
+		};
+		0B32C3A51D34DEDD00D97205 /* WatchProxy */ = {
+			isa = PBXGroup;
+			children = (
+				0B32C3A61D34DEF600D97205 /* WatchProxy.swift */,
+			);
+			name = WatchProxy;
 			sourceTree = "<group>";
 		};
 		0BF007031D33FF6D008877F9 = {
@@ -206,6 +216,7 @@
 		0BF0070E1D33FF6E008877F9 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0B32C3A51D34DEDD00D97205 /* WatchProxy */,
 				0BF0074B1D340086008877F9 /* Model */,
 				0BF007461D34007A008877F9 /* Color */,
 				0BF007371D340050008877F9 /* LineRendering */,
@@ -450,7 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
-				0B32C3941D34DEA200D97205 /* InterfaceController.swift in Sources */,
+				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +473,7 @@
 				0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */,
 				0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */,
 				0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */,
+				0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */,
 				0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,
 				0BF0073D1D340061008877F9 /* DownloadOperation.swift in Sources */,
@@ -697,6 +709,7 @@
 				0B32C3A01D34DEA200D97205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B32C3A31D34DEA200D97205 /* Build configuration list for PBXNativeTarget "TPGWatch" */ = {
 			isa = XCConfigurationList;
@@ -705,6 +718,7 @@
 				0B32C39E1D34DEA200D97205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BF007071D33FF6D008877F9 /* Build configuration list for PBXProject "TPGWatch" */ = {
 			isa = XCConfigurationList;

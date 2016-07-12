@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 import TPGSwift
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var proxy: WatchProxy?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         API.Key = "***REMOVED***"
         return true
+    }
+
+    func applicationDidBecomeActive(application: UIApplication) {
+        tryWatchConnection()
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -95,10 +100,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-
-
-
-
 // MARK: App Delegate UI Default
 
 internal extension AppDelegate {
@@ -123,6 +124,13 @@ internal extension AppDelegate {
 
         let cell = UITableView.appearance()
         cell.tintColor = UIColor.appOrange()
+    }
+
+    internal func tryWatchConnection() {
+        if proxy == nil {
+            guard WCSession.isSupported() else { return }
+            proxy = WatchProxy(session: WCSession.defaultSession())
+        }
     }
 }
 

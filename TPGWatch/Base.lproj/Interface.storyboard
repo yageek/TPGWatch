@@ -39,7 +39,7 @@
                     <items>
                         <table alignment="left" id="wxJ-bM-u3X">
                             <items>
-                                <tableRow id="9Pp-5e-xhR">
+                                <tableRow identifier="DepartureInfo" id="9Pp-5e-xhR" customClass="DepartureInfo" customModule="TPGWatch_Extension">
                                     <group key="rootItem" width="1" alignment="left" spacing="4" id="lT0-Rf-gc8">
                                         <items>
                                             <imageView width="30" height="30" alignment="left" verticalAlignment="center" id="zJe-C5-hh1"/>
@@ -47,10 +47,18 @@
                                             <label alignment="right" verticalAlignment="center" text="1`" id="kNu-ig-JFM"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="lineImageView" destination="zJe-C5-hh1" id="O7D-S4-Tpw"/>
+                                        <outlet property="stopNameLabel" destination="Be9-40-pf7" id="6G0-vC-4d3"/>
+                                        <outlet property="timeLabel" destination="kNu-ig-JFM" id="Wk4-a1-t5s"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="departuresTable" destination="wxJ-bM-u3X" id="Pn8-Ww-NEP"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="175" y="228"/>

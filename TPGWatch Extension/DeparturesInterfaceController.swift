@@ -11,8 +11,17 @@ import Foundation
 import TPGSwift
 import Operations
 
+
+class DepartureInfo: NSObject {
+
+    @IBOutlet var lineImageView: WKInterfaceImage!
+    @IBOutlet var stopNameLabel: WKInterfaceLabel!
+    @IBOutlet var timeLabel: WKInterfaceLabel!
+}
 class DeparturesInterfaceController: WKInterfaceController {
 
+
+    @IBOutlet var departuresTable: WKInterfaceTable!
     var queue = OperationQueue()
     var record: ParsedNextDeparturesRecord?
 
@@ -45,7 +54,10 @@ class DeparturesInterfaceController: WKInterfaceController {
             if let error = error {
                 print("Error: \(error)")
             } else if let result = resultJSON {
-
+                self.record = result
+                dispatch_async(dispatch_get_main_queue()){
+                    self.reloadData()
+                }
             }
         }
 
@@ -55,14 +67,14 @@ class DeparturesInterfaceController: WKInterfaceController {
     func reloadData() {
         guard let departures = record else { return }
 
-        bookmarkedStopsTable.setNumberOfRows(stops.count, withRowType: "BookmarkedStop")
-        let rowCount = bookmarkedStopsTable.numberOfRows
+        departuresTable.setNumberOfRows(departures.departures.count, withRowType: "DepartureInfo")
+        let rowCount = departuresTable.numberOfRows
 
         for i in 0 ..< rowCount {
 
-            let row = bookmarkedStopsTable.rowControllerAtIndex(i) as! BookmarkedStop
-            let stopName = stops[i]["name"] as! String
-            row.stopLabel.setText(stopName)
+            let row = departuresTable.rowControllerAtIndex(i) as! DepartureInfo
+            let departureTime = departures.departures[i].waitingTime
+            row.stopNameLabel.setText(departureTime)
         }
 
     }

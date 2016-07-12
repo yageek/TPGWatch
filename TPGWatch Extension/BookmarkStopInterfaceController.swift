@@ -18,8 +18,21 @@ class BookmarkedStop: NSObject {
 class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
+
+    let stopsFileURL: NSURL = {
+        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let savePath = directory.URLByAppendingPathComponent("stops.plist")
+        return savePath
+    }()
+
     let session = WCSession.defaultSession()
     var lastStops: [[String: AnyObject]]?
+
+    let queue: NSOperationQueue = {
+        let q = NSOperationQueue()
+        q.maxConcurrentOperationCount = 1
+        return q
+    }()
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -31,6 +44,8 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+
+        readData()
     }
 
     override func didDeactivate() {
@@ -53,10 +68,15 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
 
         if let stopsData = userInfo["stops"] as? [[String: AnyObject]] {
-            lastStops = stopsData
+
             print("Received Last Data: \(lastStops)")
-            reloadData()
             saveData()
+            lastStops = stopsData
+
+            dispatch_async(dispatch_get_main_queue()){
+                self.reloadData()
+            }
+
         } else {
             print("Invalid Data: \(userInfo)")
         }
@@ -78,18 +98,37 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
 
     }
 
+
+
     func saveData() {
-        guard let stops = lastStops as? NSArray else {return }
+        guard let stopsS = lastStops else { return }
 
-        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let savePath = directory.URLByAppendingPathComponent("stops.plist")
+        let op = NSBlockOperation {
+            let stops = stopsS as NSArray
 
-        if !stops.writeToURL(savePath, atomically: true) {
-            print("Can not save :(")
-        } else {
-            print("Correctly saved :)")
+            if !stops.writeToURL(self.stopsFileURL, atomically: true) {
+                print("Can not save :(")
+            } else {
+                print("Correctly saved :)")
+            }
+        }
+        queue.addOperation(op)
+    }
+
+    func readData() {
+
+        let op = NSBlockOperation {
+            if let stops = NSArray(contentsOfURL: self.stopsFileURL)  {
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    let s = stops as! [[String:AnyObject]]
+                    self.lastStops = s
+                    self.reloadData()
+                }
+            } else {
+                print("Can not read elements :(")
+            }
         }
 
-
+        queue.addOperation(op)
     }
 }

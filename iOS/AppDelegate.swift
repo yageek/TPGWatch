@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         applyAppearance()
 
-        API.Key = "***REMOVED***"
+        API.Key = TPGKey
         return true
     }
 

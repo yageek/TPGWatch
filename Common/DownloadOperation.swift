@@ -24,11 +24,15 @@ final class DownloadOperation: GroupOperation, ResultOperationType {
         }
 
         let downloadOperation = URLSessionTaskOperation(task: downloadTask)
+
+
+        #if os(iOS)
         let reachabilityCondition = ReachabilityCondition(url: call.URL)
         let observer = NetworkObserver()
 
         downloadOperation.addCondition(reachabilityCondition)
         downloadOperation.addObserver(observer)
+        #endif
 
         self.addOperation(downloadOperation)
     }

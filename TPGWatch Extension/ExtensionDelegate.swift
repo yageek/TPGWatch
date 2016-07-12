@@ -7,11 +7,12 @@
 //
 
 import WatchKit
+import TPGSwift
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+        API.Key = TPGKey
     }
 
     func applicationDidBecomeActive() {

@@ -40,7 +40,13 @@
                         <table alignment="left" id="wxJ-bM-u3X">
                             <items>
                                 <tableRow id="9Pp-5e-xhR">
-                                    <group key="rootItem" width="1" alignment="left" id="lT0-Rf-gc8"/>
+                                    <group key="rootItem" width="1" alignment="left" spacing="4" id="lT0-Rf-gc8">
+                                        <items>
+                                            <imageView width="30" height="30" alignment="left" verticalAlignment="center" id="zJe-C5-hh1"/>
+                                            <label alignment="left" verticalAlignment="center" text="Name" minimumScaleFactor="0.90000000000000002" id="Be9-40-pf7"/>
+                                            <label alignment="right" verticalAlignment="center" text="1`" id="kNu-ig-JFM"/>
+                                        </items>
+                                    </group>
                                 </tableRow>
                             </items>
                         </table>

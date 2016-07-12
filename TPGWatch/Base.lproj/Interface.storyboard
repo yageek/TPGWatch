@@ -5,19 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Bookmark Stop Interface Controller-->
+        <!--Stops-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="BookmarkStopInterfaceController" customModule="TPGWatch_Extension">
+                <controller title="Stops" id="AgC-eL-Hgc" customClass="BookmarkStopInterfaceController" customModule="TPGWatch_Extension">
                     <items>
-                        <group alignment="left" layout="vertical" id="1H2-7N-2Cj">
-                            <items>
-                                <label width="1" alignment="left" text="Favorite Stops" textAlignment="center" id="b4B-ci-9bI">
-                                    <color key="textColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="18"/>
-                                </label>
-                            </items>
-                        </group>
                         <table alignment="left" id="xVJ-vi-IED">
                             <items>
                                 <tableRow identifier="BookmarkedStop" id="fVh-U7-8Ki" customClass="BookmarkedStop" customModule="TPGWatch_Extension">
@@ -38,6 +30,24 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="-157" y="231"/>
+        </scene>
+        <!--Departures-->
+        <scene sceneID="4LQ-rM-8oM">
+            <objects>
+                <controller identifier="DeparturesInterfaceController" title="Departures" id="cCm-JV-dAr" customClass="DeparturesInterfaceController" customModule="TPGWatch_Extension">
+                    <items>
+                        <table alignment="left" id="wxJ-bM-u3X">
+                            <items>
+                                <tableRow id="9Pp-5e-xhR">
+                                    <group key="rootItem" width="1" alignment="left" id="lT0-Rf-gc8"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="175" y="228"/>
         </scene>
     </scenes>
 </document>

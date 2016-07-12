@@ -16,6 +16,8 @@
 		0B32C3981D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3971D34DEA200D97205 /* Assets.xcassets */; };
 		0B32C39C1D34DEA200D97205 /* TPGWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0B32C3821D34DEA200D97205 /* TPGWatch.app */; };
 		0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3A61D34DEF600D97205 /* WatchProxy.swift */; };
+		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
+		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
@@ -101,6 +103,8 @@
 		0B32C3971D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B32C3991D34DEA200D97205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B32C3A61D34DEF600D97205 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
+		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
+		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +177,7 @@
 		0B32C3921D34DEA200D97205 /* TPGWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
 				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
 				0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */,
 				0B32C3971D34DEA200D97205 /* Assets.xcassets */,
@@ -191,6 +197,7 @@
 		0BF007031D33FF6D008877F9 = {
 			isa = PBXGroup;
 			children = (
+				0B7BF67B1D352A430044E75F /* TPGSwift.framework */,
 				0BF007611D340185008877F9 /* CoreData.framework */,
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
 				0BF0075E1D340172008877F9 /* Operations.framework */,
@@ -333,6 +340,7 @@
 				0B32C38A1D34DEA200D97205 /* Sources */,
 				0B32C38B1D34DEA200D97205 /* Frameworks */,
 				0B32C38C1D34DEA200D97205 /* Resources */,
+				0B7BF67D1D352A600044E75F /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -437,6 +445,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B7BF67D1D352A600044E75F /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/TPGSwift.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		0BF0075C1D3400FD008877F9 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +485,7 @@
 			files = (
 				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
+				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +582,10 @@
 		0B32C39F1D34DEA200D97205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = "TPGWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp.watchkitextension;
@@ -572,6 +600,10 @@
 		0B32C3A01D34DEA200D97205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = "TPGWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp.watchkitextension;

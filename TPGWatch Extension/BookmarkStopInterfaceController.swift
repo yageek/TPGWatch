@@ -10,7 +10,6 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-
 class BookmarkedStop: NSObject {
     @IBOutlet var stopLabel: WKInterfaceLabel!
 }
@@ -129,5 +128,15 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
         }
 
         queue.addOperation(op)
+    }
+
+    // MARK: Table
+
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        guard let stop = self.lastStops?[rowIndex] else {
+            return
+        }
+
+        self.pushControllerWithName("DeparturesInterfaceController", context: stop)
     }
 }

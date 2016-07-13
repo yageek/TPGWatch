@@ -45,9 +45,11 @@ class GetNextDepartures: GroupOperation {
     }
 
     override func operationDidFinish(errors: [ErrorType]) {
-        print("Errors: \(errors)")
 
-        self.completion(nil, NSError(domain: "", code: 0, userInfo: nil))
+        if let _ = errors.first {
+            self.completion(nil, NSError(domain: "", code: 0, userInfo: nil))
+        }
+
 
     }
 

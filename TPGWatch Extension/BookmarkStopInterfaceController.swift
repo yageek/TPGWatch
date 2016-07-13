@@ -63,7 +63,7 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
         print("[watch] Session changed with state:\(activationState)")
     }
-
+    
     func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
 
         if let stopsData = userInfo["stops"] as? [[String: AnyObject]] {

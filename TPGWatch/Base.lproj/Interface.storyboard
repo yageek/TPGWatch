@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Stops-->
+        <!--Favorites-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Stops" id="AgC-eL-Hgc" customClass="BookmarkStopInterfaceController" customModule="TPGWatch_Extension">
+                <controller title="Favorites" id="AgC-eL-Hgc" customClass="BookmarkStopInterfaceController" customModule="TPGWatch_Extension">
                     <items>
                         <table alignment="left" id="xVJ-vi-IED">
                             <items>
@@ -37,6 +37,7 @@
             <objects>
                 <controller identifier="DeparturesInterfaceController" title="Departures" id="cCm-JV-dAr" customClass="DeparturesInterfaceController" customModule="TPGWatch_Extension">
                     <items>
+                        <imageView width="55" height="55" alignment="center" image="Activity" animationDuration="1" id="p9q-3b-IdR"/>
                         <table alignment="left" id="wxJ-bM-u3X">
                             <items>
                                 <tableRow identifier="DepartureInfo" id="9Pp-5e-xhR" customClass="DepartureInfo" customModule="TPGWatch_Extension">
@@ -58,10 +59,12 @@
                     </items>
                     <connections>
                         <outlet property="departuresTable" destination="wxJ-bM-u3X" id="Pn8-Ww-NEP"/>
+                        <outlet property="loadingImages" destination="p9q-3b-IdR" id="l4x-Ow-RiO"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="175" y="228"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="1" green="0.4702892642" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

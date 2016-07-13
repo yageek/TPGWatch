@@ -21,6 +21,7 @@ class DepartureInfo: NSObject {
 class DeparturesInterfaceController: WKInterfaceController {
 
 
+    @IBOutlet var loadingImages: WKInterfaceImage!
     @IBOutlet var departuresTable: WKInterfaceTable!
     var queue = OperationQueue()
     var record: ParsedNextDeparturesRecord?
@@ -44,6 +45,7 @@ class DeparturesInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        queue.cancelAllOperations()
     }
 
 
@@ -56,6 +58,8 @@ class DeparturesInterfaceController: WKInterfaceController {
             } else if let result = resultJSON {
                 self.record = result
                 dispatch_async(dispatch_get_main_queue()){
+                    self.loadingImages.stopAnimating()
+                    self.loadingImages.setHidden(true)
                     self.reloadData()
                 }
             }

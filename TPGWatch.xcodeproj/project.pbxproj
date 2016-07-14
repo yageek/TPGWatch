@@ -117,7 +117,7 @@
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
-		0BF0070C1D33FF6D008877F9 /* iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		0BF0070D1D33FF6D008877F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BF0070C1D33FF6D008877F9 /* iOS App.app */,
+				0BF0070C1D33FF6D008877F9 /* TPGWatch.app */,
 				0B32C3821D34DEA200D97205 /* TPGWatch.app */,
 				0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */,
 			);
@@ -388,7 +388,7 @@
 			);
 			name = "iOS App";
 			productName = TPGWatch;
-			productReference = 0BF0070C1D33FF6D008877F9 /* iOS App.app */;
+			productReference = 0BF0070C1D33FF6D008877F9 /* TPGWatch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -737,7 +737,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TPGWatch;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -754,7 +754,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TPGWatch;
 			};
 			name = Release;
 		};

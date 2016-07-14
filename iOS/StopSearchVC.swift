@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Operations
+import PKHUD
 
 final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, LinesRendererContextDelegate {
 
@@ -185,7 +186,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             tableView.reloadData()
 
             if let elements = fetchedResultsController?.fetchedObjects as? [Stop]  where elements.count == 0 && firstTime {
-                downloadStops()
+                downloadStops(showHud: true)
             }
         }
         catch {
@@ -193,8 +194,8 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         }
     }
 
-    internal func downloadStops() {
-        let getStopsOp = GetStopsOperation(context: UIMoc()) { (inner) in
+    internal func downloadStops(showHud showHud: Bool = false) {
+        let getStopsOp = GetStopsOperation(context: UIMoc(), proxy: Proxy()) { (inner) in
 
             do {
                 try inner()
@@ -206,18 +207,44 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
             } catch let error {
                 print("Error:\(error)")
+
+                let alert = AlertOperation(presentAlertFrom: self)
+                alert.title = NSLocalizedString("Error while downloading", comment: "")
+                alert.message = NSLocalizedString("An error occurs while downloading. Please retry later", comment: "")
+
+                self.queue.addOperation(alert)
             }
         }
 
-        let endRefreshingOp = NSBlockOperation {
-
-            self.refreshControl?.endRefreshing()
+        getStopsOp.completionBlock = {
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.refreshControl?.endRefreshing()
+            }
         }
 
-        endRefreshingOp.addDependency(getStopsOp)
+        if showHud {
 
+            let observer = BlockObserver(willExecute: { (operation) in
+
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    let view = PKHUDProgressView()
+                    view.subtitleLabel.text = NSLocalizedString("Loading stops...", comment: "")
+                    PKHUD.sharedHUD.contentView = view
+                    PKHUD.sharedHUD.show()
+
+                }
+
+                }, willCancel: nil, didCancel: nil, didProduce: nil, willFinish: nil, didFinish: { (operation, errors) in
+
+                    NSOperationQueue.mainQueue().addOperationWithBlock {
+                        PKHUD.sharedHUD.hide()
+                    }
+            })
+
+            getStopsOp.addObserver(observer)
+        }
         queue.addOperations(getStopsOp)
-        NSOperationQueue.mainQueue().addOperation(endRefreshingOp)
+
 
     }
     // MARK: Search

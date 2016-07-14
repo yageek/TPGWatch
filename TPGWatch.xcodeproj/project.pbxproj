@@ -7,7 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */; };
+		0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
+		0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
+		0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
+		0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
+		0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
+		0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B2DBE991D3402CC0052B0CE /* TPGWatch.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0074C1D340095008877F9 /* TPGWatch.xcdatamodel */; };
+		0B32C3861D34DEA200D97205 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3841D34DEA200D97205 /* Interface.storyboard */; };
+		0B32C3881D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3871D34DEA200D97205 /* Assets.xcassets */; };
+		0B32C38F1D34DEA200D97205 /* TPGWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */; };
+		0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */; };
+		0B32C3981D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3971D34DEA200D97205 /* Assets.xcassets */; };
+		0B32C39C1D34DEA200D97205 /* TPGWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0B32C3821D34DEA200D97205 /* TPGWatch.app */; };
+		0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3A61D34DEF600D97205 /* WatchProxy.swift */; };
+		0B58737E1D375CDA001B7416 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
+		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
+		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
+		0B8250091D3841390094946B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
@@ -19,8 +38,6 @@
 		0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */; };
 		0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007311D34002F008877F9 /* StopSearchVC.swift */; };
 		0BF007351D340040008877F9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
-		0BF0073D1D340061008877F9 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007381D340061008877F9 /* DownloadOperation.swift */; };
-		0BF0073E1D340061008877F9 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007391D340061008877F9 /* JSONUnmarshalOperation.swift */; };
 		0BF0073F1D340061008877F9 /* ImportStopOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073A1D340061008877F9 /* ImportStopOperation.swift */; };
 		0BF007401D340061008877F9 /* GetStopsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073B1D340061008877F9 /* GetStopsOperation.swift */; };
 		0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */; };
@@ -40,9 +57,69 @@
 		0BF007641D3401C4008877F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007631D3401C4008877F9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0B32C3901D34DEA200D97205 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BF007041D33FF6D008877F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B32C38D1D34DEA200D97205;
+			remoteInfo = "TPGWatch Extension";
+		};
+		0B32C39A1D34DEA200D97205 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BF007041D33FF6D008877F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B32C3811D34DEA200D97205;
+			remoteInfo = TPGWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B32C3A21D34DEA200D97205 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0B32C38F1D34DEA200D97205 /* TPGWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B32C3A41D34DEA200D97205 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0B32C39C1D34DEA200D97205 /* TPGWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDepartures.swift; sourceTree = "<group>"; };
+		0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONUnmarshalOperation.swift; path = Common/JSONUnmarshalOperation.swift; sourceTree = "<group>"; };
+		0B037F111D35741800EEF1D5 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadOperation.swift; path = Common/DownloadOperation.swift; sourceTree = "<group>"; };
+		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
+		0B32C3821D34DEA200D97205 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B32C3851D34DEA200D97205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		0B32C3871D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B32C3891D34DEA200D97205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TPGWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStopInterfaceController.swift; sourceTree = "<group>"; };
+		0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		0B32C3971D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0B32C3991D34DEA200D97205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B32C3A61D34DEF600D97205 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
+		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
+		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
+		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
+		0B8250081D3841390094946B /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
-		0BF0070C1D33FF6D008877F9 /* iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,8 +131,6 @@
 		0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopBookmarkVC.swift; sourceTree = "<group>"; };
 		0BF007311D34002F008877F9 /* StopSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopSearchVC.swift; sourceTree = "<group>"; };
 		0BF007341D340040008877F9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		0BF007381D340061008877F9 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
-		0BF007391D340061008877F9 /* JSONUnmarshalOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUnmarshalOperation.swift; sourceTree = "<group>"; };
 		0BF0073A1D340061008877F9 /* ImportStopOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportStopOperation.swift; sourceTree = "<group>"; };
 		0BF0073B1D340061008877F9 /* GetStopsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStopsOperation.swift; sourceTree = "<group>"; };
 		0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportLinesColorsOperation.swift; sourceTree = "<group>"; };
@@ -79,10 +154,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0B32C38B1D34DEA200D97205 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BF007091D33FF6D008877F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8250091D3841390094946B /* PKHUD.framework in Frameworks */,
 				0BF007621D340185008877F9 /* CoreData.framework in Frameworks */,
 				0BF0075F1D340172008877F9 /* TPGSwift.framework in Frameworks */,
 				0BF007601D340172008877F9 /* Operations.framework in Frameworks */,
@@ -92,15 +176,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B037F0D1D3573E700EEF1D5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0B037F111D35741800EEF1D5 /* DownloadOperation.swift */,
+				0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */,
+				0B037F141D3579AA00EEF1D5 /* Keys.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		0B32C3831D34DEA200D97205 /* TPGWatch */ = {
+			isa = PBXGroup;
+			children = (
+				0B32C3841D34DEA200D97205 /* Interface.storyboard */,
+				0B32C3871D34DEA200D97205 /* Assets.xcassets */,
+				0B32C3891D34DEA200D97205 /* Info.plist */,
+			);
+			path = TPGWatch;
+			sourceTree = "<group>";
+		};
+		0B32C3921D34DEA200D97205 /* TPGWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
+				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
+				0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */,
+				0B32C3971D34DEA200D97205 /* Assets.xcassets */,
+				0B32C3991D34DEA200D97205 /* Info.plist */,
+				0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */,
+			);
+			path = "TPGWatch Extension";
+			sourceTree = "<group>";
+		};
+		0B32C3A51D34DEDD00D97205 /* WatchProxy */ = {
+			isa = PBXGroup;
+			children = (
+				0B32C3A61D34DEF600D97205 /* WatchProxy.swift */,
+			);
+			name = WatchProxy;
+			sourceTree = "<group>";
+		};
 		0BF007031D33FF6D008877F9 = {
 			isa = PBXGroup;
 			children = (
+				0B8250081D3841390094946B /* PKHUD.framework */,
+				0B7BF67B1D352A430044E75F /* TPGSwift.framework */,
 				0BF007611D340185008877F9 /* CoreData.framework */,
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
 				0BF0075E1D340172008877F9 /* Operations.framework */,
 				0BF0075B1D3400DC008877F9 /* README.md */,
 				0BF0075A1D3400B4008877F9 /* Cartfile */,
+				0B037F0D1D3573E700EEF1D5 /* Common */,
 				0BF0070E1D33FF6E008877F9 /* iOS */,
+				0B32C3831D34DEA200D97205 /* TPGWatch */,
+				0B32C3921D34DEA200D97205 /* TPGWatch Extension */,
 				0BF0070D1D33FF6D008877F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,7 +238,9 @@
 		0BF0070D1D33FF6D008877F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BF0070C1D33FF6D008877F9 /* iOS App.app */,
+				0BF0070C1D33FF6D008877F9 /* TPGWatch.app */,
+				0B32C3821D34DEA200D97205 /* TPGWatch.app */,
+				0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +248,7 @@
 		0BF0070E1D33FF6E008877F9 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0B32C3A51D34DEDD00D97205 /* WatchProxy */,
 				0BF0074B1D340086008877F9 /* Model */,
 				0BF007461D34007A008877F9 /* Color */,
 				0BF007371D340050008877F9 /* LineRendering */,
@@ -163,11 +296,10 @@
 		0BF007361D340048008877F9 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				0BF007381D340061008877F9 /* DownloadOperation.swift */,
-				0BF007391D340061008877F9 /* JSONUnmarshalOperation.swift */,
 				0BF0073A1D340061008877F9 /* ImportStopOperation.swift */,
 				0BF0073B1D340061008877F9 /* GetStopsOperation.swift */,
 				0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */,
+				0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -208,6 +340,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0B32C3811D34DEA200D97205 /* TPGWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B32C3A31D34DEA200D97205 /* Build configuration list for PBXNativeTarget "TPGWatch" */;
+			buildPhases = (
+				0B32C3801D34DEA200D97205 /* Resources */,
+				0B32C3A21D34DEA200D97205 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B32C3911D34DEA200D97205 /* PBXTargetDependency */,
+			);
+			name = TPGWatch;
+			productName = TPGWatch;
+			productReference = 0B32C3821D34DEA200D97205 /* TPGWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		0B32C38D1D34DEA200D97205 /* TPGWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B32C3A11D34DEA200D97205 /* Build configuration list for PBXNativeTarget "TPGWatch Extension" */;
+			buildPhases = (
+				0B32C38A1D34DEA200D97205 /* Sources */,
+				0B32C38B1D34DEA200D97205 /* Frameworks */,
+				0B32C38C1D34DEA200D97205 /* Resources */,
+				0B7BF67D1D352A600044E75F /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TPGWatch Extension";
+			productName = "TPGWatch Extension";
+			productReference = 0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		0BF0070B1D33FF6D008877F9 /* iOS App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BF0071E1D33FF6E008877F9 /* Build configuration list for PBXNativeTarget "iOS App" */;
@@ -216,14 +383,16 @@
 				0BF007091D33FF6D008877F9 /* Frameworks */,
 				0BF0070A1D33FF6D008877F9 /* Resources */,
 				0BF0075C1D3400FD008877F9 /* Carthage */,
+				0B32C3A41D34DEA200D97205 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0B32C39B1D34DEA200D97205 /* PBXTargetDependency */,
 			);
 			name = "iOS App";
 			productName = TPGWatch;
-			productReference = 0BF0070C1D33FF6D008877F9 /* iOS App.app */;
+			productReference = 0BF0070C1D33FF6D008877F9 /* TPGWatch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -236,6 +405,12 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Yageek;
 				TargetAttributes = {
+					0B32C3811D34DEA200D97205 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					0B32C38D1D34DEA200D97205 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					0BF0070B1D33FF6D008877F9 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -255,11 +430,30 @@
 			projectRoot = "";
 			targets = (
 				0BF0070B1D33FF6D008877F9 /* iOS App */,
+				0B32C3811D34DEA200D97205 /* TPGWatch */,
+				0B32C38D1D34DEA200D97205 /* TPGWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0B32C3801D34DEA200D97205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B32C3881D34DEA200D97205 /* Assets.xcassets in Resources */,
+				0B32C3861D34DEA200D97205 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B32C38C1D34DEA200D97205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B32C3981D34DEA200D97205 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BF0070A1D33FF6D008877F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +469,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B7BF67D1D352A600044E75F /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/TPGSwift.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/Operations.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		0BF0075C1D3400FD008877F9 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +493,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Operations.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TPGSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -294,23 +505,39 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0B32C38A1D34DEA200D97205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
+				0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */,
+				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
+				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
+				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
+				0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
+				0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BF007081D33FF6D008877F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B58737E1D375CDA001B7416 /* SendRegisteryOperation.swift in Sources */,
 				0B2DBE991D3402CC0052B0CE /* TPGWatch.xcdatamodel in Sources */,
 				0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */,
 				0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */,
 				0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */,
+				0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */,
+				0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
 				0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,
-				0BF0073D1D340061008877F9 /* DownloadOperation.swift in Sources */,
 				0BF007451D34006F008877F9 /* LineRenderer.swift in Sources */,
 				0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */,
 				0BF007591D3400A7008877F9 /* Stop.swift in Sources */,
+				0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */,
 				0BF007571D3400A7008877F9 /* Connection.swift in Sources */,
 				0BF0072A1D34000A008877F9 /* StopCell.swift in Sources */,
-				0BF0073E1D340061008877F9 /* JSONUnmarshalOperation.swift in Sources */,
 				0BF007351D340040008877F9 /* Error.swift in Sources */,
 				0BF007561D3400A7008877F9 /* Line+CoreDataProperties.swift in Sources */,
 				0BF007581D3400A7008877F9 /* Line.swift in Sources */,
@@ -321,12 +548,105 @@
 				0BF0074A1D340082008877F9 /* Palette.swift in Sources */,
 				0BF007401D340061008877F9 /* GetStopsOperation.swift in Sources */,
 				0BF0073F1D340061008877F9 /* ImportStopOperation.swift in Sources */,
+				0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0B32C3911D34DEA200D97205 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B32C38D1D34DEA200D97205 /* TPGWatch Extension */;
+			targetProxy = 0B32C3901D34DEA200D97205 /* PBXContainerItemProxy */;
+		};
+		0B32C39B1D34DEA200D97205 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B32C3811D34DEA200D97205 /* TPGWatch */;
+			targetProxy = 0B32C39A1D34DEA200D97205 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0B32C3841D34DEA200D97205 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B32C3851D34DEA200D97205 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		0B32C39D1D34DEA200D97205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = TPGWatch_Extension;
+				INFOPLIST_FILE = TPGWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		0B32C39E1D34DEA200D97205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = TPGWatch_Extension;
+				INFOPLIST_FILE = TPGWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		0B32C39F1D34DEA200D97205 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "TPGWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		0B32C3A01D34DEA200D97205 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "TPGWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 		0BF0071C1D33FF6E008877F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -422,7 +742,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TPGWatch;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -439,13 +759,31 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TPGWatch;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0B32C3A11D34DEA200D97205 /* Build configuration list for PBXNativeTarget "TPGWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B32C39F1D34DEA200D97205 /* Debug */,
+				0B32C3A01D34DEA200D97205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0B32C3A31D34DEA200D97205 /* Build configuration list for PBXNativeTarget "TPGWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B32C39D1D34DEA200D97205 /* Debug */,
+				0B32C39E1D34DEA200D97205 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0BF007071D33FF6D008877F9 /* Build configuration list for PBXProject "TPGWatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

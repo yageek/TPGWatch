@@ -88,4 +88,5 @@ final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
         let lines = try? context.executeFetchRequest(request) as! [Line]
         return lines?.first
     }
+
 }

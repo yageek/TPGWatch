@@ -42,10 +42,10 @@ final class GetStopsOperation: GroupOperation {
         importStopsOp.addDependency(importLinesOp)
         importStopsOp.addCondition(NoFailedDependenciesCondition())
 
-//        //Registery to watch
-//        var watchSyncOp: SendToWatchOperation?
+        //Registery to watch
+//        var watchSyncOp: SendRegisteryOperation?
 //        if let watchProxy = proxy {
-//            let watchSync = SendToWatchOperation(context: context, proxy: watchProxy)
+//            let watchSync = SendRegisteryOperation(context: context, proxy: watchProxy)
 //            watchSync.addDependency(importStopsOp)
 //            watchSync.addCondition(NoFailedDependenciesCondition())
 //            watchSyncOp = watchSync

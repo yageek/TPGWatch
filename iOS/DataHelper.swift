@@ -24,13 +24,13 @@ internal func save() {
 
     do {
         try UIMoc().save()
-        sendToWatch()
+        sendBookmarkedToWatch()
     } catch let error {
         print("Can not save bookmarks change: \(error)")
     }
 }
 
-private func sendToWatch() {
+private func sendBookmarkedToWatch() {
     if let proxy = (UIApplication.sharedApplication().delegate as! AppDelegate).proxy {
         proxy.sendBookmarkedStops()
     }

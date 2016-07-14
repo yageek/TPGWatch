@@ -1,5 +1,5 @@
 //
-//  SendToWatchOperation.swift
+//  SendRegisteryOperation.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 14.07.16.
@@ -10,7 +10,7 @@ import Operations
 import CoreData
 import WatchConnectivity
 
-class SendToWatchOperation: Operation {
+class SendRegisteryOperation: Operation {
 
     let context: NSManagedObjectContext
     let watchProxy: WatchProxy
@@ -30,15 +30,14 @@ class SendToWatchOperation: Operation {
     override func execute() {
 
         // FetchStops
-        let request = NSFetchRequest(entityName: Stop.EntityName)
-        request.propertiesToFetch = ["code", "name"]
+        let request = NSFetchRequest(entityName: Line.EntityName)
         request.includesSubentities = false
 
         context.performBlock { 
 
             do {
-                let stops = try self.context.executeFetchRequest(request) as! [Stop]
-                self.sendStops(stops)
+                let lines = try self.context.executeFetchRequest(request) as! [Line]
+                self.sendLines(lines)
                 self.finish()
                 
             } catch let error {
@@ -48,14 +47,20 @@ class SendToWatchOperation: Operation {
         }
     }
 
-    private func sendStops(stops: [Stop]) {
+    private func sendLines(lines: [Line]) {
 
-        let stopsJSON = stops.map { (stop) -> [String: AnyObject] in
-            return [stop.code!: stop.name!]
+        let linesJSON = lines.map { (line) -> [String: AnyObject] in
+            return [line.code!:
+                [
+                    "backgroundColor" : line.backgroundColor!,
+                    "textColor" : line.textColor!,
+                    "ribonColor" : line.ribonColor!
+                ]
+            ]
 
         }
 
-        let registery = ["registery": stopsJSON]
-        watchProxy.sendStopsRegistery(registery)
+        let registery = ["registery": linesJSON]
+        watchProxy.sendLinesRegistery(registery)
     }
 }

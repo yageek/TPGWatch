@@ -9,12 +9,15 @@
 import UIKit
 import WatchConnectivity
 import CoreData
+import Operations
 
 class WatchProxy: NSObject, WCSessionDelegate {
 
     let session: WCSession
     var lastTransfer: WCSessionUserInfoTransfer?
     var lastState: WCSessionActivationState = .NotActivated
+
+    let queue = OperationQueue()
 
     init(session: WCSession) {
         self.session = session
@@ -33,6 +36,7 @@ class WatchProxy: NSObject, WCSessionDelegate {
         }
         guard activationState == .Activated && lastState != .Activated else { print("Do not need to send data"); return }
 
+        sendLinesRegistery()
         sendBookmarkedStops()
     }
 
@@ -72,7 +76,12 @@ class WatchProxy: NSObject, WCSessionDelegate {
         }
     }
 
-    func sendStopsRegistery(info: [String: AnyObject]) {
+    func sendLinesRegistery(info: [String: AnyObject]) {
         lastTransfer = session.transferUserInfo(info)
+    }
+
+    func sendLinesRegistery() {
+        let op = SendRegisteryOperation(context: UIMoc(), proxy: self)
+        queue.addOperation(op)
     }
 }

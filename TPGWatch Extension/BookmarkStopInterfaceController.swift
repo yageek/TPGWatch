@@ -32,7 +32,7 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
 
     let session = WCSession.defaultSession()
     var lastStops: [[String: AnyObject]]?
-    var registery: [[String: AnyObject]]?
+    var registery: [String: AnyObject]?
 
     let queue: NSOperationQueue = {
         let q = NSOperationQueue()
@@ -75,7 +75,7 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
 
         if let stopsData = userInfo["stops"] as? [[String: AnyObject]] {
 
-            print("Received Last Data: \(lastStops)")
+            print("Last bookmarked received :)")
             saveData(stopsData, URL: self.stopsFileURL)
             lastStops = stopsData
 
@@ -83,8 +83,8 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
                 self.reloadData()
             }
 
-        } else if let registery = userInfo["registery"] as? [[String: AnyObject]] {
-                print("Received Registery")
+        } else if let registery = userInfo["registery"] as? [String: AnyObject] {
+                print("Lines Registery received")
                 self.registery = registery
                 saveData(registery, URL: self.registeryURL)
         } else {
@@ -109,16 +109,26 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     }
 
 
-    func saveData(json: [[String :AnyObject]]?, URL: NSURL) {
+    func saveData(json: AnyObject?, URL: NSURL) {
         guard let data = json else { return }
 
         let op = NSBlockOperation {
-            let stops = data as NSArray
 
-            if !stops.writeToURL(URL, atomically: true) {
-                print("Can not save :(")
-            } else {
-                print("Correctly saved :)")
+            if let array = data as? [[String: AnyObject]] {
+                let stops = array as NSArray
+                if !stops.writeToURL(URL, atomically: true) {
+                    print("Can not save :(")
+                } else {
+                    print("Correctly saved :)")
+                }
+            } else if let dict = data as? [String: AnyObject] {
+                let registery = dict as NSDictionary
+
+                if !registery.writeToURL(URL, atomically: true) {
+                    print("Can not save :(")
+                } else {
+                    print("Correctly saved :)")
+                }
             }
         }
         queue.addOperation(op)
@@ -147,7 +157,10 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
         guard let stop = self.lastStops?[rowIndex] else {
             return
         }
-        let context = ["stop": stop]
+
+        let context = [
+            "stop": stop
+        ]
 
         self.pushControllerWithName("DeparturesInterfaceController", context: context)
     }

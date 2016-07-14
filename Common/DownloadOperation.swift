@@ -16,8 +16,6 @@ final class DownloadOperation: GroupOperation, ResultOperationType {
     init(call: API) {
         super.init(operations: [])
 
-        guard !cancelled else { return }
-
         let downloadTask = NSURLSession.sharedSession().downloadTaskWithURL(call.URL) { (tempURL, response, error) in
 
             self.didDownloadData(tempURL, response: response as? NSHTTPURLResponse, error: error)

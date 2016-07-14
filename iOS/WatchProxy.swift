@@ -52,6 +52,7 @@ class WatchProxy: NSObject, WCSessionDelegate {
         
         let request = NSFetchRequest(entityName: Stop.EntityName)
         request.predicate = NSPredicate(format: "bookmarked == true")
+        request.propertiesToFetch = ["code", "name"]
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
         do {
@@ -69,7 +70,9 @@ class WatchProxy: NSObject, WCSessionDelegate {
         } catch let error {
             print("Can not send error:\(error)")
         }
+    }
 
-
+    func sendStopsRegistery(info: [String: AnyObject]) {
+        lastTransfer = session.transferUserInfo(info)
     }
 }

@@ -194,7 +194,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
     internal func downloadStops() {
-        let getStopsOp = GetStopsOperation(context: UIMoc()) { (inner) in
+        let getStopsOp = GetStopsOperation(context: UIMoc(), proxy: Proxy()) { (inner) in
 
             do {
                 try inner()

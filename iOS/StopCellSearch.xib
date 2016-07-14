@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StopCellSearch" rowHeight="95" id="KB9-B7-Zht" customClass="StopCellSearch" customModule="GenevaNextBus" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StopCellSearch" rowHeight="95" id="KB9-B7-Zht" customClass="StopCellSearch" customModule="iOS_App" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="95"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KB9-B7-Zht" id="3Du-mR-lgW">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="94.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWs-Te-O1g">
@@ -24,11 +24,11 @@
                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="740" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8hn-fs-MDD">
                         <rect key="frame" x="437" y="10" width="150" height="75"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Rw-O1-MSD">
-                                <rect key="frame" x="150" y="0.0" width="0.0" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Rw-O1-MSD">
+                                <rect key="frame" x="100" y="0.0" width="50" height="36"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-ug-Wh8">
-                                <rect key="frame" x="150" y="39" width="0.0" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-ug-Wh8">
+                                <rect key="frame" x="100" y="39" width="50" height="36"/>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -47,16 +47,16 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="XGG-dU-Y6b"/>
-                                <exclude reference="yAp-bu-rz7"/>
                                 <exclude reference="SYA-JK-edy"/>
+                                <exclude reference="XGG-dU-Y6b"/>
                                 <exclude reference="mSb-P8-RQF"/>
-                                <exclude reference="hqU-M5-0qK"/>
-                                <exclude reference="CqZ-8i-FuZ"/>
-                                <exclude reference="rPt-yY-1H1"/>
-                                <exclude reference="Fol-PH-f9M"/>
+                                <exclude reference="yAp-bu-rz7"/>
                                 <exclude reference="8hM-lZ-mFd"/>
+                                <exclude reference="CqZ-8i-FuZ"/>
+                                <exclude reference="Fol-PH-f9M"/>
                                 <exclude reference="PDC-6T-vda"/>
+                                <exclude reference="hqU-M5-0qK"/>
+                                <exclude reference="rPt-yY-1H1"/>
                             </mask>
                         </variation>
                     </stackView>

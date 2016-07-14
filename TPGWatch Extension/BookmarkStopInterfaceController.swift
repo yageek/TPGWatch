@@ -20,12 +20,19 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
 
     let stopsFileURL: NSURL = {
         let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let savePath = directory.URLByAppendingPathComponent("stops.plist")
+        let savePath = directory.URLByAppendingPathComponent("boorkmarked.json")
+        return savePath
+    }()
+
+    let registeryURL: NSURL = {
+        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let savePath = directory.URLByAppendingPathComponent("registery.json")
         return savePath
     }()
 
     let session = WCSession.defaultSession()
     var lastStops: [[String: AnyObject]]?
+    var registery: [[String: AnyObject]]?
 
     let queue: NSOperationQueue = {
         let q = NSOperationQueue()
@@ -69,13 +76,17 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
         if let stopsData = userInfo["stops"] as? [[String: AnyObject]] {
 
             print("Received Last Data: \(lastStops)")
-            saveData()
+            saveData(stopsData, URL: self.stopsFileURL)
             lastStops = stopsData
 
             dispatch_async(dispatch_get_main_queue()){
                 self.reloadData()
             }
 
+        } else if let registery = userInfo["registery"] as? [[String: AnyObject]] {
+                print("Received Registery")
+                self.registery = registery
+                saveData(registery, URL: self.registeryURL)
         } else {
             print("Invalid Data: \(userInfo)")
         }
@@ -98,13 +109,13 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     }
 
 
-    func saveData() {
-        guard let stopsS = lastStops else { return }
+    func saveData(json: [[String :AnyObject]]?, URL: NSURL) {
+        guard let data = json else { return }
 
         let op = NSBlockOperation {
-            let stops = stopsS as NSArray
+            let stops = data as NSArray
 
-            if !stops.writeToURL(self.stopsFileURL, atomically: true) {
+            if !stops.writeToURL(URL, atomically: true) {
                 print("Can not save :(")
             } else {
                 print("Correctly saved :)")
@@ -136,7 +147,8 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
         guard let stop = self.lastStops?[rowIndex] else {
             return
         }
+        let context = ["stop": stop]
 
-        self.pushControllerWithName("DeparturesInterfaceController", context: stop)
+        self.pushControllerWithName("DeparturesInterfaceController", context: context)
     }
 }

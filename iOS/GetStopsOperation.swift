@@ -14,7 +14,7 @@ final class GetStopsOperation: GroupOperation {
 
     let completion: (inner: () throws -> Void) -> Void
 
-    init(context: NSManagedObjectContext, completion: (inner: () throws -> Void) -> Void) {
+    init(context: NSManagedObjectContext, proxy: WatchProxy?, completion: (inner: () throws -> Void) -> Void) {
 
         self.completion = completion
 
@@ -34,18 +34,36 @@ final class GetStopsOperation: GroupOperation {
         let parseStopsOp = JSONUnmarshalOperation()
         let importStopsOp = ImportStopOperation(context: context)
 
+
         parseStopsOp.injectResultFromDependency(downloadStopsOp)
         importStopsOp.injectResultFromDependency(parseStopsOp)
 
         // Synchronisation
         importStopsOp.addDependency(importLinesOp)
         importStopsOp.addCondition(NoFailedDependenciesCondition())
+
+//        //Registery to watch
+//        var watchSyncOp: SendToWatchOperation?
+//        if let watchProxy = proxy {
+//            let watchSync = SendToWatchOperation(context: context, proxy: watchProxy)
+//            watchSync.addDependency(importStopsOp)
+//            watchSync.addCondition(NoFailedDependenciesCondition())
+//            watchSyncOp = watchSync
+//        }
+
         super.init(operations: [])
 
         name = "Get Stops operations"
 
         addCondition(MutuallyExclusive<GetStopsOperation>())
-        addOperations(downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp)
+
+        var ops = [downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp]
+
+//        if let watchOp = watchSyncOp {
+//            ops.append(watchOp)
+//        }
+
+        addOperations(ops)
     }
 
     override func operationDidFinish(errors: [ErrorType]) {

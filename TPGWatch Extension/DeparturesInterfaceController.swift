@@ -23,16 +23,23 @@ class DeparturesInterfaceController: WKInterfaceController {
 
     @IBOutlet var loadingImages: WKInterfaceImage!
     @IBOutlet var departuresTable: WKInterfaceTable!
+    @IBOutlet var reloadButton: WKInterfaceButton!
+
     var queue = OperationQueue()
     var record: ParsedNextDeparturesRecord?
+    var stop: [String: AnyObject]  = [:]
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        guard let stop = context as? [String: AnyObject] else {
+
+        reloadButton.setHidden(true)
+
+        guard let ctx = context as? [String: AnyObject] else {
             print("Unexpected context :\(context)")
             return
         }
+
+        stop = ctx["stop"] as! [String: AnyObject]
 
         fetchDepartures(stop["code"] as! String)
     }
@@ -49,6 +56,15 @@ class DeparturesInterfaceController: WKInterfaceController {
     }
 
 
+    @IBAction func reloadTriggered() {
+
+        self.reloadButton.setHidden(true)
+        self.loadingImages.setHidden(false)
+        self.loadingImages.startAnimating()
+        self.departuresTable.setNumberOfRows(0, withRowType: "DepartureInfo")
+        fetchDepartures(stop["code"] as! String)
+    }
+
     func fetchDepartures(stopCode: String) {
 
         let op = GetNextDepartures(code: stopCode) { resultJSON, error in
@@ -60,6 +76,7 @@ class DeparturesInterfaceController: WKInterfaceController {
                 dispatch_async(dispatch_get_main_queue()){
                     self.loadingImages.stopAnimating()
                     self.loadingImages.setHidden(true)
+                    self.reloadButton.setHidden(false)
                     self.reloadData()
                 }
             }
@@ -77,8 +94,13 @@ class DeparturesInterfaceController: WKInterfaceController {
         for i in 0 ..< rowCount {
 
             let row = departuresTable.rowControllerAtIndex(i) as! DepartureInfo
-            let departureTime = departures.departures[i].waitingTime
-            row.stopNameLabel.setText(departureTime)
+
+            let departure = departures.departures[i]
+            let departureTime = "\(departure.waitingTime) min"
+            let departureName = departure.line.destinationName
+
+            row.stopNameLabel.setText(departureName)
+            row.timeLabel.setText(departureTime)
         }
 
     }

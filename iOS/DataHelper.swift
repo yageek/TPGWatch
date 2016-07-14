@@ -14,6 +14,9 @@ func UIMoc() -> NSManagedObjectContext {
     return context
 }
 
+func Proxy() -> WatchProxy? {
+    return (UIApplication.sharedApplication().delegate as! AppDelegate).proxy
+}
 //MARK: Save
 internal func save() {
 

@@ -261,7 +261,8 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
                 if userInput == "" {
                     filteredStops = fetchedStops
                 } else {
-                    filteredStops = filteredStops.filter{ return $0.name?.localizedCaseInsensitiveContainsString(userInput) ?? false}
+                    print("User input:\(userInput)")
+                    filteredStops = fetchedStops.filter{ return $0.name?.localizedCaseInsensitiveContainsString(userInput) ?? false}
                 }
 
                 print("Searching stops : \(userInput) in \(fetchedStops.count) elements - Found: \(filteredStops.count) elements")

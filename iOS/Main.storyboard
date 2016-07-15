@@ -27,7 +27,7 @@
         <!--Bookmarks-->
         <scene sceneID="LM0-3n-khr">
             <objects>
-                <tableViewController id="7cM-o2-BF7" customClass="StopBookmarkVC" customModule="iOS_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7cM-o2-BF7" customClass="StopBookmarkVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="697-FN-gGj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="513" y="308"/>
         </scene>
-        <!--Stop Controller-->
+        <!--Search Stops-->
         <scene sceneID="4M8-4R-okw">
             <objects>
-                <tableViewController id="b7Y-zS-Yom" customClass="StopSearchVC" customModule="iOS_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="b7Y-zS-Yom" customClass="StopSearchVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQn-4U-6fm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
                             <outlet property="delegate" destination="b7Y-zS-Yom" id="LBe-EH-oqe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Stop Controller" id="P9C-Tu-DS0"/>
+                    <navigationItem key="navigationItem" title="Search Stops" id="P9C-Tu-DS0"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pZL-F2-U6t">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>

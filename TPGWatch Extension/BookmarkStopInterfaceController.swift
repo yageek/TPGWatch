@@ -97,8 +97,6 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
 
         guard let stops = lastStops else { return }
 
-
-
         bookmarkedStopsTable.setNumberOfRows(stops.count, withRowType: "BookmarkedStop")
         let rowCount = bookmarkedStopsTable.numberOfRows
         self.noElementGroups.setHidden(rowCount != 0)

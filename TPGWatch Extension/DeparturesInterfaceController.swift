@@ -23,6 +23,7 @@ class DeparturesInterfaceController: WKInterfaceController {
 
     @IBOutlet var loadingGroup: WKInterfaceGroup!
 
+    @IBOutlet var errorLabel: WKInterfaceLabel!
     @IBOutlet var departuresTable: WKInterfaceTable!
     @IBOutlet var reloadButton: WKInterfaceButton!
 
@@ -67,15 +68,23 @@ class DeparturesInterfaceController: WKInterfaceController {
 
     func fetchDepartures(stopCode: String) {
 
+        self.errorLabel.setHidden(true)
         let op = GetNextDepartures(code: stopCode) { resultJSON, error in
 
             if let error = error {
                 print("Error: \(error)")
+                dispatch_async(dispatch_get_main_queue()){
+                    self.errorLabel.setHidden(false)
+                    self.loadingGroup.setHidden(true)
+                    self.reloadButton.setHidden(false)
+                }
+
             } else if let result = resultJSON {
                 self.record = result
                 dispatch_async(dispatch_get_main_queue()){
                     self.loadingGroup.setHidden(true)
                     self.reloadButton.setHidden(false)
+                    self.errorLabel.setHidden(true)
                     self.reloadData()
                 }
             }

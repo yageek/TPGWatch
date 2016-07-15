@@ -81,7 +81,10 @@
                                         <label alignment="center" verticalAlignment="bottom" text="Loading ..." id="b4t-iY-HRj"/>
                                     </items>
                                 </group>
-                                <button width="1" alignment="left" title="Reload" id="9qu-Wg-qa4">
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" textAlignment="center" id="qsh-Zs-b0b">
+                                    <color key="textColor" red="1" green="0.3462042447" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Reload" id="9qu-Wg-qa4">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
@@ -93,6 +96,7 @@
                     </items>
                     <connections>
                         <outlet property="departuresTable" destination="wxJ-bM-u3X" id="Pn8-Ww-NEP"/>
+                        <outlet property="errorLabel" destination="qsh-Zs-b0b" id="Ryi-ai-2El"/>
                         <outlet property="loadingGroup" destination="LBk-ni-qKJ" id="3ZL-Hs-uHl"/>
                         <outlet property="reloadButton" destination="9qu-Wg-qa4" id="Vh3-jC-ZiA"/>
                     </connections>

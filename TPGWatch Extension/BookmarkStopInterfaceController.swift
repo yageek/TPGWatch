@@ -17,6 +17,7 @@ class BookmarkedStop: NSObject {
 class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
+    @IBOutlet var noElementGroups: WKInterfaceGroup!
 
     let stopsFileURL: NSURL = {
         let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
@@ -96,8 +97,11 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
 
         guard let stops = lastStops else { return }
 
+
+
         bookmarkedStopsTable.setNumberOfRows(stops.count, withRowType: "BookmarkedStop")
         let rowCount = bookmarkedStopsTable.numberOfRows
+        self.noElementGroups.setHidden(rowCount != 0)
 
         for i in 0 ..< rowCount {
 
@@ -152,7 +156,6 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     }
 
     // MARK: Table
-
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
         guard let stop = self.lastStops?[rowIndex] else {
             return

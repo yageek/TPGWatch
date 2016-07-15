@@ -10,23 +10,36 @@
             <objects>
                 <controller title="Favorites" id="AgC-eL-Hgc" customClass="BookmarkStopInterfaceController" customModule="TPGWatch_Extension">
                     <items>
-                        <table alignment="left" id="xVJ-vi-IED">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="eOz-Vv-WvC">
                             <items>
-                                <tableRow identifier="BookmarkedStop" id="fVh-U7-8Ki" customClass="BookmarkedStop" customModule="TPGWatch_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="0tG-px-hcP">
-                                        <items>
-                                            <label width="1" height="100" alignment="left" text="Label" textAlignment="center" id="UBg-ur-Mkb"/>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="stopLabel" destination="UBg-ur-Mkb" id="c49-P0-oxw"/>
-                                    </connections>
-                                </tableRow>
+                                <table alignment="left" id="xVJ-vi-IED">
+                                    <items>
+                                        <tableRow identifier="BookmarkedStop" id="fVh-U7-8Ki" customClass="BookmarkedStop" customModule="TPGWatch_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="0tG-px-hcP">
+                                                <items>
+                                                    <label width="1" height="100" alignment="center" text="Label" textAlignment="center" id="UBg-ur-Mkb"/>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="stopLabel" destination="UBg-ur-Mkb" id="c49-P0-oxw"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                                <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="aFd-Om-SVU">
+                                    <items>
+                                        <imageView width="30" height="30" alignment="center" image="logo" id="Svr-LA-bij"/>
+                                        <label alignment="center" verticalAlignment="bottom" text="No bookmarks" minimumScaleFactor="0.90000000000000002" id="f82-1G-JAn">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                        </label>
+                                    </items>
+                                </group>
                             </items>
-                        </table>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="bookmarkedStopsTable" destination="xVJ-vi-IED" id="Se5-sg-Rwf"/>
+                        <outlet property="noElementGroups" destination="aFd-Om-SVU" id="Fh4-tC-3pr"/>
                     </connections>
                 </controller>
             </objects>
@@ -37,9 +50,8 @@
             <objects>
                 <controller identifier="DeparturesInterfaceController" title="Departures" id="cCm-JV-dAr" customClass="DeparturesInterfaceController" customModule="TPGWatch_Extension">
                     <items>
-                        <group width="1" alignment="left" layout="vertical" spacing="14" id="8Ti-lO-lcT">
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="14" id="8Ti-lO-lcT">
                             <items>
-                                <imageView width="55" height="55" alignment="center" verticalAlignment="center" image="Activity" animationDuration="1" id="p9q-3b-IdR"/>
                                 <table alignment="left" id="wxJ-bM-u3X">
                                     <items>
                                         <tableRow identifier="DepartureInfo" selectable="NO" id="9Pp-5e-xhR" customClass="DepartureInfo" customModule="TPGWatch_Extension">
@@ -63,19 +75,25 @@
                                         </tableRow>
                                     </items>
                                 </table>
+                                <group width="1" height="1" alignment="center" layout="vertical" id="LBk-ni-qKJ">
+                                    <items>
+                                        <imageView width="40" height="40" alignment="center" verticalAlignment="center" image="logo" id="mgY-j3-Y0U"/>
+                                        <label alignment="center" verticalAlignment="bottom" text="Loading ..." id="b4t-iY-HRj"/>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="left" title="Reload" id="9qu-Wg-qa4">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="reloadTriggered" destination="cCm-JV-dAr" id="Unk-C8-hqc"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
-                        <button width="1" alignment="left" title="Reload" id="9qu-Wg-qa4">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="reloadTriggered" destination="cCm-JV-dAr" id="Unk-C8-hqc"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="departuresTable" destination="wxJ-bM-u3X" id="Pn8-Ww-NEP"/>
-                        <outlet property="loadingImages" destination="p9q-3b-IdR" id="l4x-Ow-RiO"/>
+                        <outlet property="loadingGroup" destination="LBk-ni-qKJ" id="3ZL-Hs-uHl"/>
                         <outlet property="reloadButton" destination="9qu-Wg-qa4" id="Vh3-jC-ZiA"/>
                     </connections>
                 </controller>

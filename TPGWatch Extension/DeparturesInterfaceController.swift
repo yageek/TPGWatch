@@ -21,7 +21,8 @@ class DepartureInfo: NSObject {
 class DeparturesInterfaceController: WKInterfaceController {
 
 
-    @IBOutlet var loadingImages: WKInterfaceImage!
+    @IBOutlet var loadingGroup: WKInterfaceGroup!
+
     @IBOutlet var departuresTable: WKInterfaceTable!
     @IBOutlet var reloadButton: WKInterfaceButton!
 
@@ -59,8 +60,7 @@ class DeparturesInterfaceController: WKInterfaceController {
     @IBAction func reloadTriggered() {
 
         self.reloadButton.setHidden(true)
-        self.loadingImages.setHidden(false)
-        self.loadingImages.startAnimating()
+        self.loadingGroup.setHidden(false)
         self.departuresTable.setNumberOfRows(0, withRowType: "DepartureInfo")
         fetchDepartures(stop["code"] as! String)
     }
@@ -74,8 +74,7 @@ class DeparturesInterfaceController: WKInterfaceController {
             } else if let result = resultJSON {
                 self.record = result
                 dispatch_async(dispatch_get_main_queue()){
-                    self.loadingImages.stopAnimating()
-                    self.loadingImages.setHidden(true)
+                    self.loadingGroup.setHidden(true)
                     self.reloadButton.setHidden(false)
                     self.reloadData()
                 }
@@ -96,11 +95,20 @@ class DeparturesInterfaceController: WKInterfaceController {
             let row = departuresTable.rowControllerAtIndex(i) as! DepartureInfo
 
             let departure = departures.departures[i]
-            let departureTime = "\(departure.waitingTime) min"
+
+            var departureTimeText = "\(departure.waitingTime)"
+            let motif = "&gt;"
+
+            if departureTimeText.containsString(motif) {
+                departureTimeText = departureTimeText.stringByReplacingOccurrencesOfString(motif, withString: ">")
+            } else {
+                departureTimeText += " min"
+            }
+
             let departureName = departure.line.destinationName
 
             row.stopNameLabel.setText(departureName)
-            row.timeLabel.setText(departureTime)
+            row.timeLabel.setText(departureTimeText)
         }
 
     }

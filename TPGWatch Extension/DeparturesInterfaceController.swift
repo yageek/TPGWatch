@@ -23,6 +23,7 @@ class DeparturesInterfaceController: WKInterfaceController {
 
     @IBOutlet var loadingGroup: WKInterfaceGroup!
 
+    @IBOutlet var noDeparturesFoundLabel: WKInterfaceLabel!
     @IBOutlet var errorLabel: WKInterfaceLabel!
     @IBOutlet var departuresTable: WKInterfaceTable!
     @IBOutlet var reloadButton: WKInterfaceButton!
@@ -62,6 +63,8 @@ class DeparturesInterfaceController: WKInterfaceController {
 
         self.reloadButton.setHidden(true)
         self.loadingGroup.setHidden(false)
+        self.noDeparturesFoundLabel.setHidden(true)
+        self.errorLabel.setHidden(true)
         self.departuresTable.setNumberOfRows(0, withRowType: "DepartureInfo")
         fetchDepartures(stop["code"] as! String)
     }
@@ -99,10 +102,16 @@ class DeparturesInterfaceController: WKInterfaceController {
         departuresTable.setNumberOfRows(departures.departures.count, withRowType: "DepartureInfo")
         let rowCount = departuresTable.numberOfRows
 
+        guard rowCount != 0 else {
+
+            self.noDeparturesFoundLabel.setHidden(false)
+            return
+        }
+
+        self.noDeparturesFoundLabel.setHidden(true)
         for i in 0 ..< rowCount {
 
             let row = departuresTable.rowControllerAtIndex(i) as! DepartureInfo
-
             let departure = departures.departures[i]
 
             var departureTimeText = "\(departure.waitingTime)"

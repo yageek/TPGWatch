@@ -37,11 +37,7 @@
                             <outlet property="delegate" destination="7cM-o2-BF7" id="fef-s7-xWD"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="About" id="RT7-UL-h0p"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="AXN-4d-ap3"/>
-                        <barButtonItem title="Watches" id="GzD-Yf-ndD"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Bookmarks" id="OdT-uO-qXP">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="Ugz-Ee-rWY">
                             <connections>

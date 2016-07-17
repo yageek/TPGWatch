@@ -1,0 +1,27 @@
+/* Class = "WKInterfaceButton"; title = "Reload"; ObjectID = "9qu-Wg-qa4"; */
+"9qu-Wg-qa4.title" = "Neu Laden";
+
+/* Class = "WKInterfaceController"; title = "Favorites"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "Favoriten";
+
+/* Class = "WKInterfaceLabel"; text = "Name"; ObjectID = "Be9-40-pf7"; */
+"Be9-40-pf7.text" = "Name";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "UBg-ur-Mkb"; */
+"UBg-ur-Mkb.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Loading ..."; ObjectID = "b4t-iY-HRj"; */
+"b4t-iY-HRj.text" = "Daten werden geladen ...";
+
+/* Class = "WKInterfaceController"; title = "Departures"; ObjectID = "cCm-JV-dAr"; */
+"cCm-JV-dAr.title" = "Abfachten";
+
+/* Class = "WKInterfaceLabel"; text = "No bookmarks"; ObjectID = "f82-1G-JAn"; */
+"f82-1G-JAn.text" = "Kein Favorit";
+
+/* Class = "WKInterfaceLabel"; text = "1`"; ObjectID = "kNu-ig-JFM"; */
+"kNu-ig-JFM.text" = "1`";
+
+/* Class = "WKInterfaceLabel"; text = "Error :("; ObjectID = "qsh-Zs-b0b"; */
+"qsh-Zs-b0b.text" = "Fehler :(";
+

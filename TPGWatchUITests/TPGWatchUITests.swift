@@ -23,15 +23,25 @@ class TPGWatchUITests: XCTestCase {
 
     }
 
-    func testExample() {
+    func testTakeScreenShots() {
         let app = XCUIApplication()
         app.navigationBars["Bookmarks"].buttons["Add"].tap()
         snapshot("01Bookmarks")
-        app.tables.searchFields["Search"].tap()
-        snapshot("02Searchs")
-        app.searchFields["Search"]
-        app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).elementBoundByIndex(1).tap()
-        snapshot("02SearchsFilled")
+
+        let exp = self.expectationWithDescription("Screenshots")
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+
+            snapshot("02Searchs")
+            exp.fulfill()
+
+        }
+
+        self.waitForExpectationsWithTimeout(30) { (error) in
+            if let error = error {
+                print("Impossible to take screenshots: \(error)")
+            }
+        }
 
     }
     

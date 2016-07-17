@@ -28,6 +28,11 @@
 		0B3F20021D3C232D0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20041D3C232D0093AC66 /* InfoPlist.strings */; };
 		0B3F20071D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20091D3C232E0093AC66 /* InfoPlist.strings */; };
 		0B3F200C1D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F200E1D3C232E0093AC66 /* InfoPlist.strings */; };
+		0B3F20161D3C273C0093AC66 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20131D3C273C0093AC66 /* Fastfile */; };
+		0B3F20171D3C273C0093AC66 /* Deliverfile in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20141D3C273C0093AC66 /* Deliverfile */; };
+		0B3F20181D3C273C0093AC66 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20151D3C273C0093AC66 /* Appfile */; };
+		0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */; };
+		0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */; };
 		0B58737E1D375CDA001B7416 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
 		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
@@ -75,6 +80,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0B32C3811D34DEA200D97205;
 			remoteInfo = TPGWatch;
+		};
+		0B3F20221D3C27B00093AC66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BF007041D33FF6D008877F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BF0070B1D33FF6D008877F9;
+			remoteInfo = "iOS App";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -131,6 +143,14 @@
 		0B3F20101D3C23390093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20111D3C23390093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20121D3C233A0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B3F20131D3C273C0093AC66 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
+		0B3F20141D3C273C0093AC66 /* Deliverfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Deliverfile; path = fastlane/Deliverfile; sourceTree = "<group>"; };
+		0B3F20151D3C273C0093AC66 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
+		0B3F201D1D3C27B00093AC66 /* TPGWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPGWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGWatchUITests.swift; sourceTree = "<group>"; };
+		0B3F20211D3C27B00093AC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		0B3F202C1D3C2C1D0093AC66 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
 		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
@@ -175,6 +195,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B3F201A1D3C27B00093AC66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +262,16 @@
 			name = WatchProxy;
 			sourceTree = "<group>";
 		};
+		0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */,
+				0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */,
+				0B3F20211D3C27B00093AC66 /* Info.plist */,
+			);
+			path = TPGWatchUITests;
+			sourceTree = "<group>";
+		};
 		0BF007031D33FF6D008877F9 = {
 			isa = PBXGroup;
 			children = (
@@ -244,11 +281,16 @@
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
 				0BF0075E1D340172008877F9 /* Operations.framework */,
 				0BF0075B1D3400DC008877F9 /* README.md */,
+				0B3F202C1D3C2C1D0093AC66 /* Snapfile */,
 				0BF0075A1D3400B4008877F9 /* Cartfile */,
+				0B3F20131D3C273C0093AC66 /* Fastfile */,
+				0B3F20141D3C273C0093AC66 /* Deliverfile */,
+				0B3F20151D3C273C0093AC66 /* Appfile */,
 				0B037F0D1D3573E700EEF1D5 /* Common */,
 				0BF0070E1D33FF6E008877F9 /* iOS */,
 				0B32C3831D34DEA200D97205 /* TPGWatch */,
 				0B32C3921D34DEA200D97205 /* TPGWatch Extension */,
+				0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */,
 				0BF0070D1D33FF6D008877F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -259,6 +301,7 @@
 				0BF0070C1D33FF6D008877F9 /* TPGWatch.app */,
 				0B32C3821D34DEA200D97205 /* TPGWatch.app */,
 				0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */,
+				0B3F201D1D3C27B00093AC66 /* TPGWatchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,6 +438,24 @@
 			productReference = 0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		0B3F201C1D3C27B00093AC66 /* TPGWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B3F20241D3C27B00093AC66 /* Build configuration list for PBXNativeTarget "TPGWatchUITests" */;
+			buildPhases = (
+				0B3F20191D3C27B00093AC66 /* Sources */,
+				0B3F201A1D3C27B00093AC66 /* Frameworks */,
+				0B3F201B1D3C27B00093AC66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B3F20231D3C27B00093AC66 /* PBXTargetDependency */,
+			);
+			name = TPGWatchUITests;
+			productName = TPGWatchUITests;
+			productReference = 0B3F201D1D3C27B00093AC66 /* TPGWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		0BF0070B1D33FF6D008877F9 /* iOS App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BF0071E1D33FF6E008877F9 /* Build configuration list for PBXNativeTarget "iOS App" */;
@@ -431,6 +492,10 @@
 					0B32C38D1D34DEA200D97205 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					0B3F201C1D3C27B00093AC66 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 0BF0070B1D33FF6D008877F9;
+					};
 					0BF0070B1D33FF6D008877F9 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -452,6 +517,7 @@
 				0BF0070B1D33FF6D008877F9 /* iOS App */,
 				0B32C3811D34DEA200D97205 /* TPGWatch */,
 				0B32C38D1D34DEA200D97205 /* TPGWatch Extension */,
+				0B3F201C1D3C27B00093AC66 /* TPGWatchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -476,6 +542,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B3F201B1D3C27B00093AC66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BF0070A1D33FF6D008877F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,7 +559,10 @@
 				0B3F1FF41D3C1F7A0093AC66 /* Main.storyboard in Resources */,
 				0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */,
 				0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */,
+				0B3F20181D3C273C0093AC66 /* Appfile in Resources */,
+				0B3F20161D3C273C0093AC66 /* Fastfile in Resources */,
 				0BF0072D1D34000A008877F9 /* StopCellSearch.xib in Resources */,
+				0B3F20171D3C273C0093AC66 /* Deliverfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +619,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0B3F20191D3C27B00093AC66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */,
+				0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0BF007081D33FF6D008877F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -588,6 +673,11 @@
 			isa = PBXTargetDependency;
 			target = 0B32C3811D34DEA200D97205 /* TPGWatch */;
 			targetProxy = 0B32C39A1D34DEA200D97205 /* PBXContainerItemProxy */;
+		};
+		0B3F20231D3C27B00093AC66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BF0070B1D33FF6D008877F9 /* iOS App */;
+			targetProxy = 0B3F20221D3C27B00093AC66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -716,6 +806,28 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		0B3F20251D3C27B00093AC66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TPGWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "iOS App";
+			};
+			name = Debug;
+		};
+		0B3F20261D3C27B00093AC66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TPGWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "iOS App";
 			};
 			name = Release;
 		};
@@ -855,6 +967,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0B3F20241D3C27B00093AC66 /* Build configuration list for PBXNativeTarget "TPGWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B3F20251D3C27B00093AC66 /* Debug */,
+				0B3F20261D3C27B00093AC66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		0BF007071D33FF6D008877F9 /* Build configuration list for PBXProject "TPGWatch" */ = {
 			isa = XCConfigurationList;

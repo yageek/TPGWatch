@@ -31,7 +31,7 @@ class TPGWatchUITests: XCTestCase {
 
         let exp = self.expectationWithDescription("Screenshots")
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
 
             snapshot("02Searchs")
             exp.fulfill()

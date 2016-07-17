@@ -10,6 +10,9 @@
 /* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "UBg-ur-Mkb"; */
 "UBg-ur-Mkb.text" = "Label";
 
+/* Class = "WKInterfaceLabel"; text = "No departure found"; ObjectID = "ao8-kT-Z0B"; */
+"ao8-kT-Z0B.text" = "Aucun départ trouvé";
+
 /* Class = "WKInterfaceLabel"; text = "Loading ..."; ObjectID = "b4t-iY-HRj"; */
 "b4t-iY-HRj.text" = "Chargement ...";
 

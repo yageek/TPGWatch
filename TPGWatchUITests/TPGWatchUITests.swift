@@ -25,7 +25,8 @@ class TPGWatchUITests: XCTestCase {
 
     func testTakeScreenShots() {
         let app = XCUIApplication()
-        app.navigationBars["Bookmarks"].buttons["Add"].tap()
+
+        app.navigationBars.elementBoundByIndex(0).buttons.elementBoundByIndex(0).tap()
         snapshot("01Bookmarks")
 
         let exp = self.expectationWithDescription("Screenshots")

@@ -30,6 +30,7 @@
 		0B3F200C1D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F200E1D3C232E0093AC66 /* InfoPlist.strings */; };
 		0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */; };
 		0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */; };
+		0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */; };
 		0B58737E1D375CDA001B7416 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
 		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
@@ -144,6 +145,8 @@
 		0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGWatchUITests.swift; sourceTree = "<group>"; };
 		0B3F20211D3C27B00093AC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		0B3F20311D3C43CA0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B3F20331D3C43DA0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 		0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */,
 				0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */,
 				0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */,
 				0B3F20211D3C27B00093AC66 /* Info.plist */,
@@ -535,6 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +725,15 @@
 			children = (
 				0B3F200D1D3C232E0093AC66 /* fr */,
 				0B3F20121D3C233A0093AC66 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B3F20311D3C43CA0093AC66 /* fr */,
+				0B3F20331D3C43DA0093AC66 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

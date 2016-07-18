@@ -28,11 +28,9 @@
 		0B3F20021D3C232D0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20041D3C232D0093AC66 /* InfoPlist.strings */; };
 		0B3F20071D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20091D3C232E0093AC66 /* InfoPlist.strings */; };
 		0B3F200C1D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F200E1D3C232E0093AC66 /* InfoPlist.strings */; };
-		0B3F20161D3C273C0093AC66 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20131D3C273C0093AC66 /* Fastfile */; };
-		0B3F20171D3C273C0093AC66 /* Deliverfile in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20141D3C273C0093AC66 /* Deliverfile */; };
-		0B3F20181D3C273C0093AC66 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20151D3C273C0093AC66 /* Appfile */; };
 		0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */; };
 		0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */; };
+		0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */; };
 		0B58737E1D375CDA001B7416 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
 		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
@@ -143,14 +141,12 @@
 		0B3F20101D3C23390093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20111D3C23390093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20121D3C233A0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3F20131D3C273C0093AC66 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
-		0B3F20141D3C273C0093AC66 /* Deliverfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Deliverfile; path = fastlane/Deliverfile; sourceTree = "<group>"; };
-		0B3F20151D3C273C0093AC66 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
 		0B3F201D1D3C27B00093AC66 /* TPGWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPGWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGWatchUITests.swift; sourceTree = "<group>"; };
 		0B3F20211D3C27B00093AC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		0B3F202C1D3C2C1D0093AC66 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
+		0B3F20311D3C43CA0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B3F20331D3C43DA0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
@@ -265,6 +261,7 @@
 		0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */,
 				0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */,
 				0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */,
 				0B3F20211D3C27B00093AC66 /* Info.plist */,
@@ -281,11 +278,7 @@
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
 				0BF0075E1D340172008877F9 /* Operations.framework */,
 				0BF0075B1D3400DC008877F9 /* README.md */,
-				0B3F202C1D3C2C1D0093AC66 /* Snapfile */,
 				0BF0075A1D3400B4008877F9 /* Cartfile */,
-				0B3F20131D3C273C0093AC66 /* Fastfile */,
-				0B3F20141D3C273C0093AC66 /* Deliverfile */,
-				0B3F20151D3C273C0093AC66 /* Appfile */,
 				0B037F0D1D3573E700EEF1D5 /* Common */,
 				0BF0070E1D33FF6E008877F9 /* iOS */,
 				0B32C3831D34DEA200D97205 /* TPGWatch */,
@@ -546,6 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,10 +553,7 @@
 				0B3F1FF41D3C1F7A0093AC66 /* Main.storyboard in Resources */,
 				0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */,
 				0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */,
-				0B3F20181D3C273C0093AC66 /* Appfile in Resources */,
-				0B3F20161D3C273C0093AC66 /* Fastfile in Resources */,
 				0BF0072D1D34000A008877F9 /* StopCellSearch.xib in Resources */,
-				0B3F20171D3C273C0093AC66 /* Deliverfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +725,15 @@
 			children = (
 				0B3F200D1D3C232E0093AC66 /* fr */,
 				0B3F20121D3C233A0093AC66 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B3F20311D3C43CA0093AC66 /* fr */,
+				0B3F20331D3C43DA0093AC66 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -975,6 +975,7 @@
 				0B3F20261D3C27B00093AC66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BF007071D33FF6D008877F9 /* Build configuration list for PBXProject "TPGWatch" */ = {
 			isa = XCConfigurationList;

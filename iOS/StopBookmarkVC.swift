@@ -142,7 +142,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         do {
             try fetchedResultsController?.performFetch()
             if let count = fetchedResultsController?.fetchedObjects?.count where count == 0 {
-                setBackgroundText("Empty list")
+                setBackgroundText(NSLocalizedString("Empty list", comment: ""))
             } else {
                 hideBackgroundText()
             }

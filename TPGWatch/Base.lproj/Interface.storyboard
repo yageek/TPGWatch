@@ -29,7 +29,7 @@
                                 <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="aFd-Om-SVU">
                                     <items>
                                         <imageView width="30" height="30" alignment="center" image="logo" id="Svr-LA-bij"/>
-                                        <label alignment="center" verticalAlignment="bottom" text="No bookmarks" minimumScaleFactor="0.90000000000000002" id="f82-1G-JAn">
+                                        <label alignment="center" verticalAlignment="bottom" text="No favorite" minimumScaleFactor="0.90000000000000002" id="f82-1G-JAn">
                                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                         </label>
                                     </items>

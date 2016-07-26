@@ -40,6 +40,10 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         super.viewWillAppear(animated)
         updateUI()
         fetchedResultsController?.delegate = self
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
 
         presentTutorialScreenIfFirstTime()
     }
@@ -187,7 +191,8 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
                 let tutorialController = storyBoard.instantiateViewControllerWithIdentifier("TutorialScreen") as! TutorialViewController
 
                 tutorialController.addButtonCoordinate = addButtonCoord()
-                mainController.presentViewController(tutorialController, animated: true, completion: {
+                
+                mainController.presentViewController(tutorialController, animated: false, completion: {
                     //NSUserDefaults.standardUserDefaults().setBool(false, forKey: AppDelegate.FirsTimeShowKey)
                 })
             }

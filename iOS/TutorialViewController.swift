@@ -7,17 +7,20 @@
 //
 
 import UIKit
-import Gecco
 
+class TutorialViewController: UIViewController {
 
-class TutorialViewController: SpotlightViewController {
-
+    @IBOutlet weak var descriptionLabel: UILabel!
     var addButtonCoordinate: CGRect = CGRectZero
+    var tapGesture: UITapGestureRecognizer!
 
-    override func viewDidLoad() {
+      override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapTriggered))
+        tapGesture.enabled = false
+
+        self.view.addGestureRecognizer(tapGesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +32,42 @@ class TutorialViewController: SpotlightViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        let center = CGPoint(x: CGRectGetMidX(addButtonCoordinate), y: CGRectGetMidY(addButtonCoordinate))
-         spotlightView.appear(Spotlight.Oval(center: center, diameter: CGRectGetWidth(addButtonCoordinate)))
+        startSpotlight()
+
+    }
+
+    func startSpotlight() {
+
+        UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseOut, animations: {
+            let maskLayer = CAShapeLayer()
+            let path = CGPathCreateMutable()
+
+            CGPathAddRect(path, nil, self.view.bounds)
+            CGPathAddRoundedRect(path, nil, self.addButtonRect(), 5, 5)
+
+            maskLayer.path = path
+            maskLayer.fillRule = kCAFillRuleEvenOdd
+            maskLayer.opacity = 0.6
+            // Set the mask of the view.
+            self.view.layer.mask = maskLayer;
+
+
+
+            }, completion: {(finished) in
+                guard finished else { return }
+                self.tapGesture.enabled = true
+                self.descriptionLabel.hidden = false
+        } )
+    }
+
+    internal func addButtonRect() -> CGRect {
+        let maskOrigin = CGPoint(x: self.addButtonCoordinate.origin.x - 5.0, y: self.addButtonCoordinate.origin.y - 5.0)
+        let maskRect = CGRect(origin: maskOrigin, size: CGSize(width: 30, height: 30))
+        return maskRect
+    }
+
+    internal func tapTriggered(sender: UITapGestureRecognizer) {
+
     }
 
 }

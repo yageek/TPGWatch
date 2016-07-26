@@ -57,7 +57,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="Rtl-Pc-lTf">
             <objects>
-                <viewController storyboardIdentifier="TutorialScreen" id="QBX-YA-FpN" customClass="TutorialViewController" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialScreen" modalPresentationStyle="overFullScreen" id="QBX-YA-FpN" customClass="TutorialViewController" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwa-ay-Udz"/>
                         <viewControllerLayoutGuide type="bottom" id="jsF-39-S83"/>
@@ -65,8 +65,23 @@
                     <view key="view" contentMode="scaleToFill" id="cdX-lI-fZ1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the button to add bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnl-14-d4X">
+                                <rect key="frame" x="147" y="120" width="306" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lnl-14-d4X" firstAttribute="top" secondItem="nwa-ay-Udz" secondAttribute="bottom" constant="100" id="UAf-yN-aoN"/>
+                            <constraint firstItem="Lnl-14-d4X" firstAttribute="centerX" secondItem="cdX-lI-fZ1" secondAttribute="centerX" id="Xa7-DZ-Qf9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Lnl-14-d4X" id="jUH-1t-noT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3x-QH-tWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

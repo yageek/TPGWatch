@@ -132,6 +132,12 @@ internal extension AppDelegate {
             proxy = WatchProxy(session: WCSession.defaultSession())
         }
     }
+
+    static class var firstTimeShowKey = "net.yageek.tpgwatch.firstTimeShow"
+
+    internal func setupDefaultPreferences() {
+
+    }
 }
 
 

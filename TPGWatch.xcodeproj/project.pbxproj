@@ -31,6 +31,8 @@
 		0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */; };
 		0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */; };
 		0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */; };
+		0B45254E1D473BB70026907E /* Gecco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B45254D1D473BB70026907E /* Gecco.framework */; };
+		0B4525501D473C600026907E /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45254F1D473C600026907E /* TutorialViewController.swift */; };
 		0B58737E1D375CDA001B7416 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
 		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
@@ -147,6 +149,8 @@
 		0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		0B3F20311D3C43CA0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20331D3C43DA0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B45254D1D473BB70026907E /* Gecco.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gecco.framework; path = Carthage/Build/iOS/Gecco.framework; sourceTree = "<group>"; };
+		0B45254F1D473C600026907E /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B45254E1D473BB70026907E /* Gecco.framework in Frameworks */,
 				0B8250091D3841390094946B /* PKHUD.framework in Frameworks */,
 				0BF007621D340185008877F9 /* CoreData.framework in Frameworks */,
 				0BF0075F1D340172008877F9 /* TPGSwift.framework in Frameworks */,
@@ -272,6 +277,7 @@
 		0BF007031D33FF6D008877F9 = {
 			isa = PBXGroup;
 			children = (
+				0B45254D1D473BB70026907E /* Gecco.framework */,
 				0B8250081D3841390094946B /* PKHUD.framework */,
 				0B7BF67B1D352A430044E75F /* TPGSwift.framework */,
 				0BF007611D340185008877F9 /* CoreData.framework */,
@@ -337,6 +343,7 @@
 			children = (
 				0BF007311D34002F008877F9 /* StopSearchVC.swift */,
 				0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */,
+				0B45254F1D473C600026907E /* TutorialViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -585,6 +592,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Operations.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TPGSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Gecco.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -633,6 +641,7 @@
 				0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,
 				0BF007451D34006F008877F9 /* LineRenderer.swift in Sources */,
+				0B4525501D473C600026907E /* TutorialViewController.swift in Sources */,
 				0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */,
 				0BF007591D3400A7008877F9 /* Stop.swift in Sources */,
 				0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */,

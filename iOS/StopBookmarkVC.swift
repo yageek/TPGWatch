@@ -100,6 +100,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
 
         if !editing {
             save()
+            updateCentralLabel()
         }
     }
 
@@ -153,17 +154,22 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     private func updateUI(){
         do {
             try fetchedResultsController?.performFetch()
-            if let count = fetchedResultsController?.fetchedObjects?.count where count == 0 {
-                setBackgroundText(NSLocalizedString("Empty list", comment: "On the first screen, when no bookmarks are in the list"))
-            } else {
-                hideBackgroundText()
-            }
+            updateCentralLabel()
         }
         catch {
             print("Error in the fetched results controller: \(error).")
         }
 
         tableView.reloadData()
+    }
+
+    private func updateCentralLabel() {
+        if let count = fetchedResultsController?.fetchedObjects?.count where count == 0 {
+            setBackgroundText(NSLocalizedString("Empty list", comment: "On the first screen, when no bookmarks are in the list"))
+        } else {
+            hideBackgroundText()
+        }
+
     }
 
     func setBackgroundText(text:String){

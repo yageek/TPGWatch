@@ -154,7 +154,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         do {
             try fetchedResultsController?.performFetch()
             if let count = fetchedResultsController?.fetchedObjects?.count where count == 0 {
-                setBackgroundText(NSLocalizedString("Empty list", comment: ""))
+                setBackgroundText(NSLocalizedString("Empty list", comment: "On the first screen, when no bookmarks are in the list"))
             } else {
                 hideBackgroundText()
             }
@@ -198,7 +198,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
 
                 tutorialController.addButtonCoordinate = addButtonCoord()
                 mainController.presentViewController(tutorialController, animated: true, completion: {
-                    //NSUserDefaults.standardUserDefaults().setBool(false, forKey: AppDelegate.FirsTimeShowKey)
+                    NSUserDefaults.standardUserDefaults().setBool(false, forKey: AppDelegate.FirsTimeShowKey)
                 })
             }
         }

@@ -14,6 +14,7 @@
 		0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
 		0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
+		0B134F801D48122200D1489A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B134F821D48122200D1489A /* Localizable.strings */; };
 		0B2DBE991D3402CC0052B0CE /* TPGWatch.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0074C1D340095008877F9 /* TPGWatch.xcdatamodel */; };
 		0B32C3861D34DEA200D97205 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3841D34DEA200D97205 /* Interface.storyboard */; };
 		0B32C3881D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3871D34DEA200D97205 /* Assets.xcassets */; };
@@ -119,6 +120,8 @@
 		0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONUnmarshalOperation.swift; path = Common/JSONUnmarshalOperation.swift; sourceTree = "<group>"; };
 		0B037F111D35741800EEF1D5 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadOperation.swift; path = Common/DownloadOperation.swift; sourceTree = "<group>"; };
 		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
+		0B134F811D48122200D1489A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0B134F831D48122C00D1489A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B32C3821D34DEA200D97205 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B32C3851D34DEA200D97205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		0B32C3871D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -241,6 +244,7 @@
 		0B32C3921D34DEA200D97205 /* TPGWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0B134F821D48122200D1489A /* Localizable.strings */,
 				0B3F20091D3C232E0093AC66 /* InfoPlist.strings */,
 				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
 				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
@@ -534,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B32C3981D34DEA200D97205 /* Assets.xcassets in Resources */,
+				0B134F801D48122200D1489A /* Localizable.strings in Resources */,
 				0B3F20071D3C232E0093AC66 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +682,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0B134F821D48122200D1489A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B134F811D48122200D1489A /* fr */,
+				0B134F831D48122C00D1489A /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0B32C3841D34DEA200D97205 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

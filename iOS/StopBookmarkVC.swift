@@ -40,6 +40,8 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         super.viewWillAppear(animated)
         updateUI()
         fetchedResultsController?.delegate = self
+
+        presentTutorialScreenIfFirstTime()
     }
 
 
@@ -168,9 +170,41 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
             cell.addImageLine(image)
         }
     }
+    
     // MARK:  LinesRendererContextDelegate
     func context(context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: NSIndexPath) {
         addImageToStopCell(image, indexPath: indexPath)
     }
+
+    // MARK:  TutorialScreen
+    internal func presentTutorialScreenIfFirstTime() {
+
+        if(NSUserDefaults.standardUserDefaults().boolForKey(AppDelegate.FirsTimeShowKey)) {
+
+            if let mainController = UIApplication.sharedApplication().windows.first?.rootViewController {
+
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let tutorialController = storyBoard.instantiateViewControllerWithIdentifier("TutorialScreen") as! TutorialViewController
+
+                tutorialController.addButtonCoordinate = addButtonCoord()
+                mainController.presentViewController(tutorialController, animated: true, completion: {
+                    //NSUserDefaults.standardUserDefaults().setBool(false, forKey: AppDelegate.FirsTimeShowKey)
+                })
+            }
+        }
+    }
+
+    internal func addButtonCoord() -> CGRect {
+
+        guard let navigationController = UIApplication.sharedApplication().windows.first?.rootViewController as? UINavigationController else { return CGRectZero }
+
+        let buttonItems = navigationController.navigationBar.subviews.filter { (view) -> Bool in
+            return view.isKindOfClass(UIControl.self)
+        }
+
+        guard let addButton = buttonItems.first as? UIControl else { return CGRectZero }
+        return addButton.convertRect(addButton.frame, toView: nil)
+    }
+
 
    }

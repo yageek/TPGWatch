@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="513" y="308"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="Rtl-Pc-lTf">
             <objects>
-                <viewController id="QBX-YA-FpN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialScreen" id="QBX-YA-FpN" customClass="TutorialViewController" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwa-ay-Udz"/>
                         <viewControllerLayoutGuide type="bottom" id="jsF-39-S83"/>

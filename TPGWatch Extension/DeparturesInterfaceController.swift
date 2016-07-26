@@ -115,12 +115,12 @@ class DeparturesInterfaceController: WKInterfaceController {
             let departure = departures.departures[i]
 
             var departureTimeText = "\(departure.waitingTime)"
-            let motif = "&gt;"
+            let motif = "&gt;1h"
 
             if departureTimeText.containsString(motif) {
-                departureTimeText = departureTimeText.stringByReplacingOccurrencesOfString(motif, withString: ">")
+                departureTimeText = departureTimeText.stringByReplacingOccurrencesOfString(motif, withString: ">") + NSLocalizedString("h", comment: "Shortcut for hour")
             } else {
-                departureTimeText += " min"
+                departureTimeText += " " + NSLocalizedString("min", comment: "Minutes")
             }
 
             let departureName = departure.line.destinationName

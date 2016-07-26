@@ -19,7 +19,7 @@
 /* Class = "WKInterfaceController"; title = "Departures"; ObjectID = "cCm-JV-dAr"; */
 "cCm-JV-dAr.title" = "Abfachten";
 
-/* Class = "WKInterfaceLabel"; text = "No bookmarks"; ObjectID = "f82-1G-JAn"; */
+/* Class = "WKInterfaceLabel"; text = "No favorite"; ObjectID = "f82-1G-JAn"; */
 "f82-1G-JAn.text" = "Kein Favorit";
 
 /* Class = "WKInterfaceLabel"; text = "1`"; ObjectID = "kNu-ig-JFM"; */

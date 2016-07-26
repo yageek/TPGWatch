@@ -14,12 +14,16 @@ import WatchConnectivity
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var FirsTimeShowKey = "net.yageek.tpgwatch.firstTimeShow"
+
     var window: UIWindow?
     var proxy: WatchProxy?
+
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         applyAppearance()
+        setupDefaultPreferences()
 
         API.Key = TPGKey
         return true
@@ -57,13 +61,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
-        } catch {
+        } catch let error as NSError {
             // Report any error we got.
             var dict = [String: AnyObject]()
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
 
-            dict[NSUnderlyingErrorKey] = error as! NSError
+            dict[NSUnderlyingErrorKey] = error
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -132,6 +136,12 @@ internal extension AppDelegate {
             proxy = WatchProxy(session: WCSession.defaultSession())
         }
     }
+
+    internal func setupDefaultPreferences() {
+
+        NSUserDefaults.standardUserDefaults().registerDefaults([AppDelegate.FirsTimeShowKey: true])
+    }
+
 }
 
 

@@ -17,6 +17,7 @@ class TutorialViewController: UIViewController {
       override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor.clearColor()
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapTriggered))
         tapGesture.enabled = false
 
@@ -38,7 +39,7 @@ class TutorialViewController: UIViewController {
 
     func startSpotlight() {
 
-        UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseOut, animations: {
+        UIView.animateWithDuration(1.0, delay: 0, options: .CurveEaseOut, animations: {
             let maskLayer = CAShapeLayer()
             let path = CGPathCreateMutable()
 
@@ -50,7 +51,7 @@ class TutorialViewController: UIViewController {
             maskLayer.opacity = 0.6
             // Set the mask of the view.
             self.view.layer.mask = maskLayer;
-
+            self.view.backgroundColor = UIColor.blackColor()
 
 
             }, completion: {(finished) in
@@ -61,13 +62,14 @@ class TutorialViewController: UIViewController {
     }
 
     internal func addButtonRect() -> CGRect {
-        let maskOrigin = CGPoint(x: self.addButtonCoordinate.origin.x - 5.0, y: self.addButtonCoordinate.origin.y - 5.0)
+        let maskOrigin = CGPoint(x: self.addButtonCoordinate.origin.x, y: self.addButtonCoordinate.origin.y - 5.0)
         let maskRect = CGRect(origin: maskOrigin, size: CGSize(width: 30, height: 30))
         return maskRect
     }
 
     internal func tapTriggered(sender: UITapGestureRecognizer) {
 
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

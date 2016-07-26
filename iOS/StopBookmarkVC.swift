@@ -45,13 +45,19 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        presentTutorialScreenIfFirstTime()
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()){
+
+            self.presentTutorialScreenIfFirstTime()
+        }
+
     }
 
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         fetchedResultsController?.delegate = nil
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -191,8 +197,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
                 let tutorialController = storyBoard.instantiateViewControllerWithIdentifier("TutorialScreen") as! TutorialViewController
 
                 tutorialController.addButtonCoordinate = addButtonCoord()
-                
-                mainController.presentViewController(tutorialController, animated: false, completion: {
+                mainController.presentViewController(tutorialController, animated: true, completion: {
                     //NSUserDefaults.standardUserDefaults().setBool(false, forKey: AppDelegate.FirsTimeShowKey)
                 })
             }

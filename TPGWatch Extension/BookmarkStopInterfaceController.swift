@@ -25,15 +25,8 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
         return savePath
     }()
 
-    let registeryURL: NSURL = {
-        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let savePath = directory.URLByAppendingPathComponent("registery.json")
-        return savePath
-    }()
-
     let session = WCSession.defaultSession()
     var lastStops: [[String: AnyObject]]?
-    var registery: [String: AnyObject]?
 
     let queue: NSOperationQueue = {
         let q = NSOperationQueue()
@@ -71,10 +64,9 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
     func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
         print("[watch] Session changed with state:\(activationState)")
     }
-    
-    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
 
-        if let stopsData = userInfo["stops"] as? [[String: AnyObject]] {
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        if let stopsData = applicationContext["stops"] as? [[String: AnyObject]] {
 
             print("Last bookmarked received :)")
             saveData(stopsData, URL: self.stopsFileURL)
@@ -84,15 +76,12 @@ class BookmarkStopInterfaceController: WKInterfaceController, WCSessionDelegate 
                 self.reloadData()
             }
 
-        } else if let registery = userInfo["registery"] as? [String: AnyObject] {
-                print("Lines Registery received")
-                self.registery = registery
-                saveData(registery, URL: self.registeryURL)
         } else {
-            print("Invalid Data: \(userInfo)")
+            print("Invalid Data: \(applicationContext)")
         }
-     }
 
+    }
+    
     func reloadData() {
 
         guard let stops = lastStops else { return }

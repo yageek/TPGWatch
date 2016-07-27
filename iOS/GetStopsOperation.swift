@@ -42,28 +42,12 @@ final class GetStopsOperation: GroupOperation {
         importStopsOp.addDependency(importLinesOp)
         importStopsOp.addCondition(NoFailedDependenciesCondition())
 
-        //Registery to watch
-//        var watchSyncOp: SendRegisteryOperation?
-//        if let watchProxy = proxy {
-//            let watchSync = SendRegisteryOperation(context: context, proxy: watchProxy)
-//            watchSync.addDependency(importStopsOp)
-//            watchSync.addCondition(NoFailedDependenciesCondition())
-//            watchSyncOp = watchSync
-//        }
-
         super.init(operations: [])
 
         name = "Get Stops operations"
 
         addCondition(MutuallyExclusive<GetStopsOperation>())
-
-        var ops = [downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp]
-
-//        if let watchOp = watchSyncOp {
-//            ops.append(watchOp)
-//        }
-
-        addOperations(ops)
+        addOperations([downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp])
     }
 
     override func operationDidFinish(errors: [ErrorType]) {

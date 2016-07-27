@@ -61,6 +61,6 @@ class SendRegisteryOperation: Operation {
         }
 
         let registery = ["registery": linesJSON]
-        watchProxy.sendLinesRegistery(registery)
+        //watchProxy.sendLinesRegistery(registery)
     }
 }

@@ -195,7 +195,8 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     // MARK:  TutorialScreen
     internal func presentTutorialScreenIfFirstTime() {
 
-        if(NSUserDefaults.standardUserDefaults().boolForKey(AppDelegate.FirsTimeShowKey)) {
+        let numberOfBookmarks = self.tableView.numberOfRowsInSection(0)
+        if(NSUserDefaults.standardUserDefaults().boolForKey(AppDelegate.FirsTimeShowKey) && numberOfBookmarks == 0) {
 
             if let mainController = UIApplication.sharedApplication().windows.first?.rootViewController {
 

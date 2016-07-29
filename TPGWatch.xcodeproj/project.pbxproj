@@ -488,9 +488,11 @@
 				TargetAttributes = {
 					0B32C3811D34DEA200D97205 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5QGK56P5P5;
 					};
 					0B32C38D1D34DEA200D97205 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5QGK56P5P5;
 					};
 					0B3F201C1D3C27B00093AC66 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -498,6 +500,7 @@
 					};
 					0BF0070B1D33FF6D008877F9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5QGK56P5P5;
 					};
 				};
 			};

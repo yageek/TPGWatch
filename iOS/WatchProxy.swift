@@ -14,7 +14,6 @@ import Operations
 class WatchProxy: NSObject, WCSessionDelegate {
 
     let session: WCSession
-    var lastTransfer: WCSessionUserInfoTransfer?
     var lastState: WCSessionActivationState = .NotActivated
 
     let queue = OperationQueue()
@@ -69,19 +68,12 @@ class WatchProxy: NSObject, WCSessionDelegate {
             })
 
             let dict: [String: AnyObject] = ["stops": stops]
-            lastTransfer = session.transferUserInfo(dict)
+            try session.updateApplicationContext(dict)
 
         } catch let error {
             print("Can not send error:\(error)")
         }
     }
 
-    func sendLinesRegistery(info: [String: AnyObject]) {
-        lastTransfer = session.transferUserInfo(info)
-    }
-//
-//    func sendLinesRegistery() {
-//        let op = SendRegisteryOperation(context: UIMoc(), proxy: self)
-//        queue.addOperation(op)
-//    }
+
 }

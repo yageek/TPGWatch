@@ -1,3 +1,6 @@
+/* Class = "UILabel"; text = "Click on the button to add bookmarks to the watch"; ObjectID = "Lnl-14-d4X"; */
+"Lnl-14-d4X.text" = "Klicken Sie auf die Schaltfläche um neuen Favoriten hinzufügen";
+
 /* Class = "UINavigationItem"; title = "Bookmarks"; ObjectID = "OdT-uO-qXP"; */
 "OdT-uO-qXP.title" = "Favoriten";
 

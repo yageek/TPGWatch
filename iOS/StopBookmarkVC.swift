@@ -42,10 +42,22 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         fetchedResultsController?.delegate = self
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()){
+
+            self.presentTutorialScreenIfFirstTime()
+        }
+
+    }
+
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         fetchedResultsController?.delegate = nil
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +100,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
 
         if !editing {
             save()
+            updateCentralLabel()
         }
     }
 
@@ -141,17 +154,22 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     private func updateUI(){
         do {
             try fetchedResultsController?.performFetch()
-            if let count = fetchedResultsController?.fetchedObjects?.count where count == 0 {
-                setBackgroundText(NSLocalizedString("Empty list", comment: ""))
-            } else {
-                hideBackgroundText()
-            }
+            updateCentralLabel()
         }
         catch {
             print("Error in the fetched results controller: \(error).")
         }
 
         tableView.reloadData()
+    }
+
+    private func updateCentralLabel() {
+        if let count = fetchedResultsController?.fetchedObjects?.count where count == 0 {
+            setBackgroundText(NSLocalizedString("Empty list", comment: "On the first screen, when no bookmarks are in the list"))
+        } else {
+            hideBackgroundText()
+        }
+
     }
 
     func setBackgroundText(text:String){
@@ -168,9 +186,42 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
             cell.addImageLine(image)
         }
     }
+    
     // MARK:  LinesRendererContextDelegate
     func context(context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: NSIndexPath) {
         addImageToStopCell(image, indexPath: indexPath)
     }
+
+    // MARK:  TutorialScreen
+    internal func presentTutorialScreenIfFirstTime() {
+
+        let numberOfBookmarks = self.tableView.numberOfRowsInSection(0)
+        if(NSUserDefaults.standardUserDefaults().boolForKey(AppDelegate.FirsTimeShowKey) && numberOfBookmarks == 0) {
+
+            if let mainController = UIApplication.sharedApplication().windows.first?.rootViewController {
+
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let tutorialController = storyBoard.instantiateViewControllerWithIdentifier("TutorialScreen") as! TutorialViewController
+
+                tutorialController.addButtonCoordinate = addButtonCoord()
+                mainController.presentViewController(tutorialController, animated: true, completion: {
+                    NSUserDefaults.standardUserDefaults().setBool(false, forKey: AppDelegate.FirsTimeShowKey)
+                })
+            }
+        }
+    }
+
+    internal func addButtonCoord() -> CGRect {
+
+        guard let navigationController = UIApplication.sharedApplication().windows.first?.rootViewController as? UINavigationController else { return CGRectZero }
+
+        let buttonItems = navigationController.navigationBar.subviews.filter { (view) -> Bool in
+            return view.isKindOfClass(UIControl.self)
+        }
+
+        guard let addButton = buttonItems.first as? UIControl else { return CGRectZero }
+        return addButton.convertRect(addButton.frame, toView: nil)
+    }
+
 
    }

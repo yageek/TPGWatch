@@ -27,7 +27,7 @@
         <!--Bookmarks-->
         <scene sceneID="LM0-3n-khr">
             <objects>
-                <tableViewController id="7cM-o2-BF7" customClass="StopBookmarkVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController definesPresentationContext="YES" id="7cM-o2-BF7" customClass="StopBookmarkVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="697-FN-gGj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXG-Wb-t5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="513" y="308"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="Rtl-Pc-lTf">
+            <objects>
+                <viewController storyboardIdentifier="TutorialScreen" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="QBX-YA-FpN" customClass="TutorialViewController" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nwa-ay-Udz"/>
+                        <viewControllerLayoutGuide type="bottom" id="jsF-39-S83"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cdX-lI-fZ1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the button to add bookmarks to the watch" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnl-14-d4X">
+                                <rect key="frame" x="175" y="120" width="250" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="EcW-Mf-xmz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lnl-14-d4X" firstAttribute="top" secondItem="nwa-ay-Udz" secondAttribute="bottom" constant="100" id="UAf-yN-aoN"/>
+                            <constraint firstItem="Lnl-14-d4X" firstAttribute="centerX" secondItem="cdX-lI-fZ1" secondAttribute="centerX" id="Xa7-DZ-Qf9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Lnl-14-d4X" id="jUH-1t-noT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3x-QH-tWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="1048"/>
         </scene>
         <!--Search Stops-->
         <scene sceneID="4M8-4R-okw">

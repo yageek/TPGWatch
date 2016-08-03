@@ -118,7 +118,7 @@ class DeparturesInterfaceController: WKInterfaceController {
             let motif = "&gt;1h"
 
             if departureTimeText.containsString(motif) {
-                departureTimeText = departureTimeText.stringByReplacingOccurrencesOfString(motif, withString: ">") + NSLocalizedString("h", comment: "Shortcut for hour")
+                departureTimeText = departureTimeText.stringByReplacingOccurrencesOfString(motif, withString: ">1") + NSLocalizedString("h", comment: "Shortcut for hour")
             } else {
                 departureTimeText += " " + NSLocalizedString("min", comment: "Minutes")
             }

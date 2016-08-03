@@ -27,6 +27,12 @@ class WatchProxy: NSObject, WCSessionDelegate {
         return savePath
     }()
 
+    let registeryFileURL: NSURL = {
+        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let savePath = directory.URLByAppendingPathComponent("registery.json")
+        return savePath
+    }()
+
     private override init() {
          super.init()
     }
@@ -45,46 +51,34 @@ class WatchProxy: NSObject, WCSessionDelegate {
         if let stopsData = applicationContext["stops"] as? [[String: AnyObject]] {
 
             print("Last bookmarked received :)")
-            saveData(stopsData, URL: self.stopsFileURL)
+            saveData(stopsData, URL: self.stopsFileURL, notificationName: WatchProxy.BookmarkUpdateNotification)
 
+        } else if let registery = applicationContext["registery"] as? [[String: AnyObject]] {
+
+            print("Last registery received :)")
+            saveData(registery, URL: self.registeryFileURL, notificationName: WatchProxy.BookmarkUpdateNotification)
+            
         } else {
             print("Invalid Data: \(applicationContext)")
         }
         
     }
 
-    func saveData(json: AnyObject?, URL: NSURL) {
+    func saveData(json: AnyObject?, URL: NSURL, notificationName: String) {
         guard let data = json else { return }
 
-        let op = NSBlockOperation {
+        let saveOp = SaveOperation(data: data, saveURL: self.stopsFileURL)
 
-            if let array = data as? [[String: AnyObject]] {
-                let stops = array as NSArray
-                if !stops.writeToURL(URL, atomically: true) {
-                    print("Can not save :(")
-                } else {
-                    print("Correctly saved :)")
-                }
-            } else if let dict = data as? [String: AnyObject] {
-                let registery = dict as NSDictionary
+        let notificationOp = NSBlockOperation {
 
-                if !registery.writeToURL(URL, atomically: true) {
-                    print("Can not save :(")
-                } else {
-                    print("Correctly saved :)")
-                }
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: json)
             }
+
         }
 
-        let notification = NSBlockOperation {
-            NSNotificationCenter.defaultCenter().postNotificationName(WatchProxy.BookmarkUpdateNotification, object: json)
-        }
-        
-        notification.addDependency(op)
-
-        queue.addOperations(op)
-        NSOperationQueue.mainQueue().addOperation(notification)
-
+        saveOp.addDependency(notificationOp)
+        queue.addOperations(saveOp, notificationOp)
     }
 
 

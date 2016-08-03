@@ -20,7 +20,12 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
     @IBOutlet var noElementGroups: WKInterfaceGroup!
 
-    let queue = OperationQueue()
+    let queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        queue.qualityOfService = .Background
+        return queue
+    }()
 
     var lastStops: [[String: AnyObject]]?
 
@@ -60,7 +65,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
 
     func readData() {
-
+        
         let op = NSBlockOperation {
             if let stops = NSArray(contentsOfURL: WatchProxy.sharedInstance.stopsFileURL)  {
                 NSOperationQueue.mainQueue().addOperationWithBlock {
@@ -93,6 +98,5 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     func bookmarkNotification(notif: NSNotification) {
         lastStops = notif.object as? [[String:AnyObject]]
         self.reloadData()
-
     }
 }

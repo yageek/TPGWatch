@@ -38,6 +38,7 @@
 		0B8250091D3841390094946B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
 		0B84C1441D529EA700594499 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
 		0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1451D529FE100594499 /* WatchProxy.swift */; };
+		0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveOperation.swift */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
@@ -159,6 +160,7 @@
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
 		0B8250081D3841390094946B /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		0B84C1451D529FE100594499 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
+		0B84C1491D52A6AD00594499 /* SaveOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOperation.swift; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				0B32C3971D34DEA200D97205 /* Assets.xcassets */,
 				0B32C3991D34DEA200D97205 /* Info.plist */,
 				0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */,
+				0B84C1491D52A6AD00594499 /* SaveOperation.swift */,
 			);
 			path = "TPGWatch Extension";
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */,
 				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
 				0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,

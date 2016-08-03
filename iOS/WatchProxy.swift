@@ -49,6 +49,14 @@ class WatchProxy: NSObject, WCSessionDelegate {
     }
 
 
+    func sendData(data: [String: AnyObject]) {
+
+        do {
+            try session.updateApplicationContext(data)
+        } catch let error {
+            print("Can not send data to watch: \(error)")
+        }
+    }
     func sendBookmarkedStops() {
 
         print("Sending stop to the watch....")

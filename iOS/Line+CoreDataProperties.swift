@@ -14,10 +14,10 @@ import CoreData
 
 extension Line {
 
-    @NSManaged var backgroundColor: NSObject?
-    @NSManaged var code: String?
-    @NSManaged var ribonColor: NSObject?
-    @NSManaged var textColor: NSObject?
-    @NSManaged var connections: NSSet?
+    @NSManaged var backgroundColor: String
+    @NSManaged var code: String
+    @NSManaged var ribonColor: String
+    @NSManaged var textColor: String
+    @NSManaged var connections: NSSet
 
 }

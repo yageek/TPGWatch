@@ -32,11 +32,11 @@ final class LineRenderer {
     }
 
     convenience init?(line: Line) {
-        guard
-            let backgroundColor = line.backgroundColor as? UIColor,
-            let textColor = line.textColor as? UIColor,
-            let code = line.code,
-            let ribonColor = line.textColor as? UIColor else { return nil }
+
+        let backgroundColor = UIColor(rgba: line.backgroundColor)
+        let textColor = UIColor(rgba: line.textColor)
+        let code = line.code
+        let ribonColor = UIColor(rgba: line.textColor)
 
         let options = LineRenderingOptions(backgroundColor: backgroundColor, textColor: textColor, ribonColor: ribonColor)
         self.init(text: code, options: options)

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="2.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="Connection" representedClassName=".Connection" syncable="YES">
+        <attribute name="destinationCode" attributeType="String" syncable="YES"/>
+        <attribute name="destinationName" attributeType="String" syncable="YES"/>
+        <relationship name="line" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Line" inverseName="connections" inverseEntity="Line" syncable="YES"/>
+        <relationship name="stops" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Stop" inverseName="connections" inverseEntity="Stop" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="destinationCode"/>
+                <index value="destinationName"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="Line" representedClassName=".Line" syncable="YES">
+        <attribute name="backgroundColor" attributeType="String" syncable="YES"/>
+        <attribute name="code" attributeType="String" syncable="YES"/>
+        <attribute name="ribonColor" attributeType="String" syncable="YES"/>
+        <attribute name="textColor" attributeType="String" syncable="YES"/>
+        <relationship name="connections" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Connection" inverseName="line" inverseEntity="Connection" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="code"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="code"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Stop" representedClassName=".Stop" syncable="YES">
+        <attribute name="bookmarked" attributeType="Boolean" syncable="YES"/>
+        <attribute name="code" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="connections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Connection" inverseName="stops" inverseEntity="Connection" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="code"/>
+                <index value="name"/>
+            </compoundIndex>
+        </compoundIndexes>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="code"/>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="Connection" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="Line" positionX="-36" positionY="54" width="128" height="120"/>
+        <element name="Stop" positionX="-63" positionY="-18" width="128" height="105"/>
+    </elements>
+</model>

@@ -45,9 +45,9 @@ final class LinesRendererContext {
             for lineDict in linesDicts {
                 guard
                     let lineCode = lineDict["code"] as? String,
-                    let textColor = lineDict["textColor"] as? UIColor,
-                    let backgroundColor = lineDict["backgroundColor"] as? UIColor,
-                    let ribonColor = lineDict["ribonColor"] as? UIColor else { continue }
+                    let textColor = lineDict["textColor"] as? String,
+                    let backgroundColor = lineDict["backgroundColor"] as? String,
+                    let ribonColor = lineDict["ribonColor"] as? String else { continue }
 
                 let renderer = self.renderers[lineCode]
 
@@ -57,7 +57,7 @@ final class LinesRendererContext {
 
                 if renderer == nil {
 
-                    let options = LineRenderer.LineRenderingOptions(backgroundColor: backgroundColor, textColor: textColor, ribonColor: ribonColor)
+                    let options = LineRenderer.LineRenderingOptions(backgroundColor: UIColor(rgba: backgroundColor), textColor: UIColor(rgba: textColor), ribonColor: UIColor(rgba: ribonColor))
                     let rend = LineRenderer(text: lineCode, options:  options)
 
                     self.renderers[lineCode] = rend

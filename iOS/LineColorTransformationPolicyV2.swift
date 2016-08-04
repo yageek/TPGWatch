@@ -29,8 +29,23 @@ class LineColorTransformationPolicyV2: NSEntityMigrationPolicy {
 
 
         let connections = object.valueForKey("connections") as! NSSet
-        let connectionsCode = connections.valueForKey("destinationCode")
-        print("Destinations Code: \(connectionsCode)")
+        let connectionsCode = connections.valueForKey("destinationCode") as! Set<String>
+
+        var tmpConnections: [AnyObject] = []
+        for connectionCode in connectionsCode {
+
+            let request = NSFetchRequest(entityName: Connection.EntityName)
+            request.predicate = NSPredicate(format: "destinationCode == %@", connectionCode)
+
+            let connection = try manager.sourceContext.executeFetchRequest(request)
+
+            if let connection = connection.first {
+                tmpConnections.append(connection)
+            }
+        }
+
+        let c = NSSet(array: tmpConnections)
+        object.setValue(c, forKey: "connections")
 
         manager.associateSourceInstance(sInstance, withDestinationInstance: object, forEntityMapping: mapping)
     }

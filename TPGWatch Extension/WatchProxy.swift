@@ -12,6 +12,9 @@ import WatchConnectivity
 class WatchProxy: NSObject, WCSessionDelegate {
 
     static let BookmarkUpdateNotification = "net.yageek.TPGWatch.watchkitapp.watchkitextension.bookmarkupdate"
+
+    static let RegisteryUpdateNotification = "net.yageek.TPGWatch.watchkitapp.watchkitextension.registeryupdate"
+
     static let sharedInstance = WatchProxy()
     
     let session = WCSession.defaultSession()
@@ -50,13 +53,13 @@ class WatchProxy: NSObject, WCSessionDelegate {
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         if let stopsData = applicationContext["stops"] as? [[String: AnyObject]] {
 
-            print("Last bookmarked received :)")
+
             saveData(stopsData, URL: self.stopsFileURL, notificationName: WatchProxy.BookmarkUpdateNotification)
 
         } else if let registery = applicationContext["registery"] as? [[String: AnyObject]] {
 
-            print("Last registery received :)")
-            saveData(registery, URL: self.registeryFileURL, notificationName: WatchProxy.BookmarkUpdateNotification)
+
+            saveData(registery, URL: self.registeryFileURL, notificationName: WatchProxy.RegisteryUpdateNotification)
             
         } else {
             print("Invalid Data: \(applicationContext)")

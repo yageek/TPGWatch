@@ -33,7 +33,7 @@
 		0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */; };
 		0B4525501D473C600026907E /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45254F1D473C600026907E /* TutorialViewController.swift */; };
 		0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */; };
-		0B4697FC1D53E3E6006C73BF /* LineColorTransformationPolicyV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697FB1D53E3E6006C73BF /* LineColorTransformationPolicyV2.swift */; };
+		0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */; };
 		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
 		0B8250091D3841390094946B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
@@ -158,7 +158,7 @@
 		0B3F20331D3C43DA0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B45254F1D473C600026907E /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 1_to_2_model.xcmappingmodel; sourceTree = "<group>"; };
-		0B4697FB1D53E3E6006C73BF /* LineColorTransformationPolicyV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColorTransformationPolicyV2.swift; sourceTree = "<group>"; };
+		0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColorToLineStringTransformationPolicy.swift; sourceTree = "<group>"; };
 		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */,
-				0B4697FB1D53E3E6006C73BF /* LineColorTransformationPolicyV2.swift */,
+				0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */,
 			);
 			name = 1_2;
 			sourceTree = "<group>";
@@ -670,7 +670,6 @@
 				0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */,
 				0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */,
 				0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */,
-				0B4697FC1D53E3E6006C73BF /* LineColorTransformationPolicyV2.swift in Sources */,
 				0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
 				0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */,
 				0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */,
@@ -691,6 +690,7 @@
 				0BF007541D3400A7008877F9 /* Connection+CoreDataProperties.swift in Sources */,
 				0BF007441D34006F008877F9 /* LinesRendererContext.swift in Sources */,
 				0BF0072C1D34000A008877F9 /* StopCellSearch.swift in Sources */,
+				0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */,
 				0BF0074A1D340082008877F9 /* Palette.swift in Sources */,
 				0BF007401D340061008877F9 /* GetStopsOperation.swift in Sources */,
 				0BF0073F1D340061008877F9 /* ImportStopOperation.swift in Sources */,

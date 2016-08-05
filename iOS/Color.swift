@@ -54,14 +54,14 @@ extension UIColor {
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
 
-    var hexString:NSString {
+    var hexString: String {
         let colorRef = CGColorGetComponents(self.CGColor)
 
         let r:CGFloat = colorRef[0]
         let g:CGFloat = colorRef[1]
         let b:CGFloat = colorRef[2]
 
-        return NSString(format: "#%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255)))
+        return String(format: "#%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255)))
     }
 }
 

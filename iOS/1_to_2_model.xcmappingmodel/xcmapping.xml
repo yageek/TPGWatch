@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>B9AEA56B-43E0-4CDF-BD49-3F575C060816</UUID>
-        <nextObjectID>118</nextObjectID>
+        <nextObjectID>120</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -50,6 +50,9 @@
         <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING" idrefs="z114"></relationship>
     </object>
     <object type="XDDEVATTRIBUTEMAPPING" id="z103">
+        <attribute name="valueexpressiondata" type="binary">YnBsaXN0MDDUAQIDBAUGSktYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8Q
+EwcIExQZGiInLC0wMTU6Oz5CRkhVJG51bGzVCQoLDA0ODxAREllOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzViRjbGFzc4ADgAIQBIAGgBJfEBBjb2xvclRvQ29sb3JIZXg60xULDRYXGFpOU1ZhcmlhYmxlgAQQAoAFXGVudGl0eVBvbGljedIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNfEBROU1ZhcmlhYmxlRXhwcmVzc2lvbqMfICFfEBROU1ZhcmlhYmxlRXhwcmVzc2lvblxOU0V4cHJlc3Npb25YTlNPYmplY3TSIw0kJlpOUy5vYmplY3RzoSWAB4AR1QkKCwwNKCkQKiuACYAIgAuAEF8QEHZhbHVlRm9yS2V5UGF0aDrTFQsNLhcYgAqABVZzb3VyY2XSIw0yNKEzgAyAD9MNCzY3ODlZTlNLZXlQYXRogA4QCoANWnJpYm9uQ29sb3LSGxw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPCAh0hscP0BeTlNNdXRhYmxlQXJyYXmjP0EhV05TQXJyYXnSGxxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UgIV8QFE5TRnVuY3Rpb25FeHByZXNzaW9u0hscQUeiQSHSGxxFSaNFICFfEA9OU0tleWVkQXJjaGl2ZXLRTE1Ucm9vdIABAAgAEQAaACMALQAyADcATQBTAF4AaAB3AIoAlgCdAJ8AoQCjAKUApwC6AMEAzADOANAA0gDfAOQA7wD4AQ8BEwEqATcBQAFFAVABUgFUAVYBYQFjAWUBZwFpAXwBgwGFAYcBjgGTAZUBlwGZAaABqgGsAa4BsAG7AcAB3wHjAegB9wH7AgMCCAIeAiMCOgI/AkICRwJLAl0CYAJlAAAAAAAAAgEAAAAAAAAATgAAAAAAAAAAAAAAAAAAAmc=
+</attribute>
         <attribute name="name" type="string">backgroundColor</attribute>
         <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING" idrefs="z106"></relationship>
     </object>
@@ -62,14 +65,14 @@
         <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING" idrefs="z114"></relationship>
     </object>
     <object type="XDDEVENTITYMAPPING" id="z106">
-        <attribute name="migrationpolicyclassname" type="string">TPGWatch.LineColorTransformationPolicyV2</attribute>
+        <attribute name="migrationpolicyclassname" type="string">TPGWatch.LineColorToLineStringTransformationPolicy</attribute>
         <attribute name="sourcename" type="string">Line</attribute>
         <attribute name="mappingtypename" type="string">Undefined</attribute>
         <attribute name="mappingnumber" type="int16">2</attribute>
         <attribute name="destinationname" type="string">Line</attribute>
         <attribute name="autogenerateexpression" type="bool">1</attribute>
         <relationship name="mappingmodel" type="1/1" destination="XDDEVMAPPINGMODEL" idrefs="z108"></relationship>
-        <relationship name="attributemappings" type="0/0" destination="XDDEVATTRIBUTEMAPPING" idrefs="z103 z117 z109 z112"></relationship>
+        <relationship name="attributemappings" type="0/0" destination="XDDEVATTRIBUTEMAPPING" idrefs="z117 z109 z112 z103"></relationship>
         <relationship name="relationshipmappings" type="0/0" destination="XDDEVRELATIONSHIPMAPPING" idrefs="z118"></relationship>
     </object>
     <object type="XDDEVATTRIBUTEMAPPING" id="z107">
@@ -88,6 +91,9 @@ cBIAAYagrxEBwgAHAAgAFwAzADQANQBBAEIAQwBEAF8AYABhAGcAaAB0AIoAiwCMAI0AjgCPAJAAkQCS
         <relationship name="entitymappings" type="0/0" destination="XDDEVENTITYMAPPING" idrefs="z111 z106 z114"></relationship>
     </object>
     <object type="XDDEVATTRIBUTEMAPPING" id="z109">
+        <attribute name="valueexpressiondata" type="binary">YnBsaXN0MDDUAQIDBAUGSktYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8Q
+EwcIExQZGiInLC0wMTU6Oz5CRkhVJG51bGzVCQoLDA0ODxAREllOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzViRjbGFzc4ADgAIQBIAGgBJfEBBjb2xvclRvQ29sb3JIZXg60xULDRYXGFpOU1ZhcmlhYmxlgAQQAoAFXGVudGl0eVBvbGljedIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNfEBROU1ZhcmlhYmxlRXhwcmVzc2lvbqMfICFfEBROU1ZhcmlhYmxlRXhwcmVzc2lvblxOU0V4cHJlc3Npb25YTlNPYmplY3TSIw0kJlpOUy5vYmplY3RzoSWAB4AR1QkKCwwNKCkQKiuACYAIgAuAEF8QEHZhbHVlRm9yS2V5UGF0aDrTFQsNLhcYgAqABVZzb3VyY2XSIw0yNKEzgAyAD9MNCzY3ODlZTlNLZXlQYXRogA4QCoANWnJpYm9uQ29sb3LSGxw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPCAh0hscP0BeTlNNdXRhYmxlQXJyYXmjP0EhV05TQXJyYXnSGxxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UgIV8QFE5TRnVuY3Rpb25FeHByZXNzaW9u0hscQUeiQSHSGxxFSaNFICFfEA9OU0tleWVkQXJjaGl2ZXLRTE1Ucm9vdIABAAgAEQAaACMALQAyADcATQBTAF4AaAB3AIoAlgCdAJ8AoQCjAKUApwC6AMEAzADOANAA0gDfAOQA7wD4AQ8BEwEqATcBQAFFAVABUgFUAVYBYQFjAWUBZwFpAXwBgwGFAYcBjgGTAZUBlwGZAaABqgGsAa4BsAG7AcAB3wHjAegB9wH7AgMCCAIeAiMCOgI/AkICRwJLAl0CYAJlAAAAAAAAAgEAAAAAAAAATgAAAAAAAAAAAAAAAAAAAmc=
+</attribute>
         <attribute name="name" type="string">ribonColor</attribute>
         <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING" idrefs="z106"></relationship>
     </object>
@@ -107,6 +113,9 @@ cBIAAYagrxEBwgAHAAgAFwAzADQANQBBAEIAQwBEAF8AYABhAGcAaAB0AIoAiwCMAI0AjgCPAJAAkQCS
         <relationship name="relationshipmappings" type="0/0" destination="XDDEVRELATIONSHIPMAPPING" idrefs="z115"></relationship>
     </object>
     <object type="XDDEVATTRIBUTEMAPPING" id="z112">
+        <attribute name="valueexpressiondata" type="binary">YnBsaXN0MDDUAQIDBAUGSktYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8Q
+EwcIExQZGiInLC0wMTU6Oz5CRkhVJG51bGzVCQoLDA0ODxAREllOU09wZXJhbmReTlNTZWxlY3Rvck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05TQXJndW1lbnRzViRjbGFzc4ADgAIQBIAGgBJfEBBjb2xvclRvQ29sb3JIZXg60xULDRYXGFpOU1ZhcmlhYmxlgAQQAoAFXGVudGl0eVBvbGljedIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNfEBROU1ZhcmlhYmxlRXhwcmVzc2lvbqMfICFfEBROU1ZhcmlhYmxlRXhwcmVzc2lvblxOU0V4cHJlc3Npb25YTlNPYmplY3TSIw0kJlpOUy5vYmplY3RzoSWAB4AR1QkKCwwNKCkQKiuACYAIgAuAEF8QEHZhbHVlRm9yS2V5UGF0aDrTFQsNLhcYgAqABVZzb3VyY2XSIw0yNKEzgAyAD9MNCzY3ODlZTlNLZXlQYXRogA4QCoANWnJpYm9uQ29sb3LSGxw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPCAh0hscP0BeTlNNdXRhYmxlQXJyYXmjP0EhV05TQXJyYXnSGxxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UgIV8QFE5TRnVuY3Rpb25FeHByZXNzaW9u0hscQUeiQSHSGxxFSaNFICFfEA9OU0tleWVkQXJjaGl2ZXLRTE1Ucm9vdIABAAgAEQAaACMALQAyADcATQBTAF4AaAB3AIoAlgCdAJ8AoQCjAKUApwC6AMEAzADOANAA0gDfAOQA7wD4AQ8BEwEqATcBQAFFAVABUgFUAVYBYQFjAWUBZwFpAXwBgwGFAYcBjgGTAZUBlwGZAaABqgGsAa4BsAG7AcAB3wHjAegB9wH7AgMCCAIeAiMCOgI/AkICRwJLAl0CYAJlAAAAAAAAAgEAAAAAAAAATgAAAAAAAAAAAAAAAAAAAmc=
+</attribute>
         <attribute name="name" type="string">textColor</attribute>
         <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING" idrefs="z106"></relationship>
     </object>
@@ -142,5 +151,13 @@ cBIAAYagrxEBwgAHAAgAFwAzADQANQBBAEIAQwBEAF8AYABhAGcAaAB0AIoAiwCMAI0AjgCPAJAAkQCS
         <attribute name="autogenerateexpression" type="bool">1</attribute>
         <attribute name="name" type="string">connections</attribute>
         <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING" idrefs="z106"></relationship>
+    </object>
+    <object type="XDDEVRELATIONSHIPMAPPING" id="z119">
+        <attribute name="autogenerateexpression" type="bool">1</attribute>
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
+    </object>
+    <object type="XDDEVRELATIONSHIPMAPPING" id="z120">
+        <attribute name="autogenerateexpression" type="bool">1</attribute>
+        <relationship name="entitymapping" type="1/1" destination="XDDEVENTITYMAPPING"></relationship>
     </object>
 </database>

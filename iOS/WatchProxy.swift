@@ -51,12 +51,19 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
     func sendData(data: [String: AnyObject]) {
 
+        guard session.activationState != .NotActivated else {
+            print("There is no active session")
+            return
+        }
+        
         do {
             try session.updateApplicationContext(data)
         } catch let error {
             print("Can not send data to watch: \(error)")
         }
     }
+
+
     func sendBookmarkedStops() {
 
         print("Sending stop to the watch....")
@@ -76,7 +83,7 @@ class WatchProxy: NSObject, WCSessionDelegate {
             })
 
             let dict: [String: AnyObject] = ["stops": stops]
-            try session.updateApplicationContext(dict)
+            sendData(dict)
 
         } catch let error {
             print("Can not send error:\(error)")

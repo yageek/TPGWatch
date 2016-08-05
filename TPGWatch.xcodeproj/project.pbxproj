@@ -34,6 +34,7 @@
 		0B4525501D473C600026907E /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45254F1D473C600026907E /* TutorialViewController.swift */; };
 		0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */; };
 		0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */; };
+		0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0EA1D547E930005F6E3 /* Store.swift */; };
 		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
 		0B8250091D3841390094946B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
@@ -159,6 +160,7 @@
 		0B45254F1D473C600026907E /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 1_to_2_model.xcmappingmodel; sourceTree = "<group>"; };
 		0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColorToLineStringTransformationPolicy.swift; sourceTree = "<group>"; };
+		0B4DB0EA1D547E930005F6E3 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				0B32C3991D34DEA200D97205 /* Info.plist */,
 				0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */,
 				0B84C1491D52A6AD00594499 /* SaveOperation.swift */,
+				0B4DB0EA1D547E930005F6E3 /* Store.swift */,
 			);
 			path = "TPGWatch Extension";
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
 				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
+				0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */,
 				0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */,
 				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
 				0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,

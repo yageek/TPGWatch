@@ -20,18 +20,12 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
     @IBOutlet var noElementGroups: WKInterfaceGroup!
 
-    let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
-        queue.qualityOfService = .Background
-        return queue
-    }()
-
     var lastStops: [[String: AnyObject]]?
 
 
     override func willActivate() {
         super.willActivate()
+
         readData()
     }
 
@@ -65,20 +59,16 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
 
     func readData() {
-        
-        let op = NSBlockOperation {
-            if let stops = NSArray(contentsOfURL: WatchProxy.sharedInstance.stopsFileURL)  {
-                NSOperationQueue.mainQueue().addOperationWithBlock {
-                    let s = stops as! [[String:AnyObject]]
-                    self.lastStops = s
-                    self.reloadData()
-                }
+
+        Store.sharedInstance.readBookmarks { (result, error) in
+
+            if let result = result {
+                self.lastStops = result
+                self.reloadData()
             } else {
                 print("Can not read elements :(")
             }
         }
-
-        queue.addOperation(op)
     }
 
     // MARK: Table

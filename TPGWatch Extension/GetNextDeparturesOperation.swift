@@ -1,5 +1,5 @@
 //
-//  DownloadNextDepartures.swift
+//  GetNextDeparturesOperation.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 12.07.16.
@@ -10,7 +10,7 @@ import WatchKit
 import Operations
 import TPGSwift
 
-class GetNextDepartures: GroupOperation {
+class GetNextDeparturesOperation: GroupOperation {
 
     let completion: (ParsedNextDeparturesRecord?, NSError?) -> Void
 

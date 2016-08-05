@@ -10,12 +10,19 @@
             <objects>
                 <controller title="Favorites" id="AgC-eL-Hgc" customClass="BookmarkStopInterfaceController" customModule="TPGWatch_Extension">
                     <items>
-                        <table alignment="left" id="xVJ-vi-IED">
+                        <table alignment="center" id="xVJ-vi-IED">
                             <items>
                                 <tableRow identifier="BookmarkedStop" id="fVh-U7-8Ki" customClass="BookmarkedStop" customModule="TPGWatch_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="0tG-px-hcP">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="0tG-px-hcP">
                                         <items>
-                                            <label width="1" height="100" alignment="center" text="Label" textAlignment="center" id="UBg-ur-Mkb"/>
+                                            <label width="1" alignment="center" text="Label" textAlignment="left" id="UBg-ur-Mkb">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                            <group width="1" height="39" alignment="left" id="Dgu-sV-Bbe">
+                                                <items>
+                                                    <imageView alignment="left" id="S9Q-xK-gp5"/>
+                                                </items>
+                                            </group>
                                         </items>
                                     </group>
                                     <connections>
@@ -24,7 +31,7 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="aFd-Om-SVU">
+                        <group alignment="center" verticalAlignment="center" hidden="YES" layout="vertical" id="aFd-Om-SVU">
                             <items>
                                 <imageView width="30" height="30" alignment="center" image="logo" id="Svr-LA-bij"/>
                                 <label alignment="center" verticalAlignment="bottom" text="No favorite" minimumScaleFactor="0.90000000000000002" id="f82-1G-JAn">

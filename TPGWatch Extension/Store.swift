@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Operations
 
 class Store {
 
@@ -44,18 +45,21 @@ class Store {
     private func saveData(json: AnyObject?, URL: NSURL, notificationName: String) {
         guard let data = json else { return }
 
-        let saveOp = SaveOperation(data: data, saveURL: Store.StopsFileURL)
+        let saveOp = SaveOperation(data: data, saveURL: URL)
+        let produceOb = DidFinishObserver { (op, errors) in
 
-        let notificationOp = NSBlockOperation {
-
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-                NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: json)
+            if let error = errors.first {
+                print("Impossible to save data at \(URL): \(error)")
+            } else {
+                print("Sucessfully save data at \(URL)")
+                NSOperationQueue.mainQueue().addOperationWithBlock {
+                    NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: json)
+                }
             }
-
         }
 
-        saveOp.addDependency(notificationOp)
-        queue.addOperations(saveOp, notificationOp)
+        saveOp.addObserver(produceOb)
+        queue.addOperations(saveOp)
     }
 
     func readBookmarks(completion: (result: [[String: AnyObject]]?, error: NSError?) -> Void) {
@@ -66,22 +70,43 @@ class Store {
         readArrayData(Store.RegisteryFileURL, completion: completion)
     }
 
-    private func readArrayData(URL: NSURL, completion:(result: [[String: AnyObject]]?, error: NSError?) -> Void) {
+    func readBookmarksAndRegistery(completion: (bookmarks: [[String: AnyObject]]?, registery: [[String: AnyObject]]?, error: NSError?) -> Void) {
 
-        let op = NSBlockOperation {
-            if let stops = NSArray(contentsOfURL: URL) as? [[String: AnyObject]] {
-                NSOperationQueue.mainQueue().addOperationWithBlock {
-                    completion(result: stops, error: nil)
-                }
+        let readBookOp = ReadOperation(url: Store.StopsFileURL)
+        let readRegisteryOp = ReadOperation(url: Store.RegisteryFileURL)
 
-            } else {
-                NSOperationQueue.mainQueue().addOperationWithBlock {
-                    completion(result: nil, error: NSError(domain: "", code: 0, userInfo: nil))
-                }
+        let groupOp = GroupOperation(operations: readBookOp, readRegisteryOp)
+
+        let produceOb = DidFinishObserver { (op, errors) in
+
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+
+                let error = errors.first
+                completion(bookmarks: readBookOp.result, registery: readRegisteryOp.result, error: nil)
             }
         }
 
-        queue.addOperation(op)
+        groupOp.addObserver(produceOb)
+
+        queue.addOperation(groupOp)
+    }
+
+    private func readArrayData(URL: NSURL, completion:(result: [[String: AnyObject]]?, error: NSError?) -> Void) {
+
+        let readOp = ReadOperation(url: URL)
+        let producedObserver = DidFinishObserver { (op, errors) in
+
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+
+                let error = errors.first
+                completion(result: (op as! ReadOperation).result, error: nil)
+
+            }
+        }
+
+        readOp.addObserver(producedObserver)
+        queue.addOperation(readOp)
+
     }
 
 }

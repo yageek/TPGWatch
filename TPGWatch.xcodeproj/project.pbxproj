@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */; };
+		0B037F0A1D35728600EEF1D5 /* GetNextDeparturesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */; };
 		0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
 		0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
 		0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
@@ -43,6 +43,7 @@
 		0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveOperation.swift */; };
 		0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C14B1D52AD5400594499 /* TPGWatch.xcdatamodeld */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
+		0BBDC1891D54D447005C8297 /* ReadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadOperation.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
 		0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007231D33FFF4008877F9 /* AppDelegate.swift */; };
@@ -121,7 +122,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDepartures.swift; sourceTree = "<group>"; };
+		0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDeparturesOperation.swift; sourceTree = "<group>"; };
 		0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONUnmarshalOperation.swift; path = Common/JSONUnmarshalOperation.swift; sourceTree = "<group>"; };
 		0B037F111D35741800EEF1D5 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadOperation.swift; path = Common/DownloadOperation.swift; sourceTree = "<group>"; };
 		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
@@ -170,6 +171,7 @@
 		0B84C14C1D52AD5400594499 /* TPGWatch 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TPGWatch 2.xcdatamodel"; sourceTree = "<group>"; };
 		0B84C14D1D52AD5400594499 /* TPGWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TPGWatch.xcdatamodel; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		0BBDC1881D54D447005C8297 /* ReadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadOperation.swift; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		0B32C3921D34DEA200D97205 /* TPGWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0BBDC1871D54D208005C8297 /* Operations */,
 				0B134F821D48122200D1489A /* Localizable.strings */,
 				0B3F20091D3C232E0093AC66 /* InfoPlist.strings */,
 				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
@@ -264,8 +267,6 @@
 				0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */,
 				0B32C3971D34DEA200D97205 /* Assets.xcassets */,
 				0B32C3991D34DEA200D97205 /* Info.plist */,
-				0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */,
-				0B84C1491D52A6AD00594499 /* SaveOperation.swift */,
 				0B4DB0EA1D547E930005F6E3 /* Store.swift */,
 			);
 			path = "TPGWatch Extension";
@@ -305,6 +306,16 @@
 				0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */,
 			);
 			name = 1_2;
+			sourceTree = "<group>";
+		};
+		0BBDC1871D54D208005C8297 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */,
+				0B84C1491D52A6AD00594499 /* SaveOperation.swift */,
+				0BBDC1881D54D447005C8297 /* ReadOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		0BF007031D33FF6D008877F9 = {
@@ -646,13 +657,14 @@
 			files = (
 				0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */,
 				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
-				0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */,
+				0B037F0A1D35728600EEF1D5 /* GetNextDeparturesOperation.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
 				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
 				0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */,
 				0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */,
 				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
 				0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
+				0BBDC1891D54D447005C8297 /* ReadOperation.swift in Sources */,
 				0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

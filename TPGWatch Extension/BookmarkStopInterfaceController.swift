@@ -21,7 +21,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     @IBOutlet var noElementGroups: WKInterfaceGroup!
 
     var lastStops: [[String: AnyObject]]?
-
+    var registery: [[String: AnyObject]]?
 
     override func willActivate() {
         super.willActivate()
@@ -52,18 +52,18 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
             let row = bookmarkedStopsTable.rowControllerAtIndex(i) as! BookmarkedStop
             let stopName = stops[i]["name"] as! String
+            
             row.stopLabel.setText(stopName)
         }
 
     }
 
-
     func readData() {
 
-        Store.sharedInstance.readBookmarks { (result, error) in
-
-            if let result = result {
-                self.lastStops = result
+        Store.sharedInstance.readBookmarksAndRegistery { (bookmarks, registery, error) in
+            if let bookmarks = bookmarks, registery = registery {
+                self.lastStops = bookmarks
+                self.registery = registery
                 self.reloadData()
             } else {
                 print("Can not read elements :(")

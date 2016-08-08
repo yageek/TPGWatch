@@ -13,45 +13,48 @@
                         <table alignment="center" id="xVJ-vi-IED">
                             <items>
                                 <tableRow identifier="BookmarkedStop" id="fVh-U7-8Ki" customClass="BookmarkedStop" customModule="TPGWatch_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="0tG-px-hcP" userLabel="ItemGroup">
+                                    <group key="rootItem" width="1" height="50" alignment="left" layout="vertical" spacing="5" id="0tG-px-hcP" userLabel="ItemGroup">
                                         <items>
                                             <label width="1" alignment="center" text="Label" textAlignment="left" id="UBg-ur-Mkb">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
-                                            <group width="1" height="39" alignment="left" id="Dgu-sV-Bbe" userLabel="LineGroup">
+                                            <group width="1" alignment="left" id="Dgu-sV-Bbe" userLabel="LineGroup">
                                                 <items>
-                                                    <group width="25" height="20" alignment="left" radius="10" id="fKQ-LT-it7" userLabel="LineGroupOne">
+                                                    <group width="20" height="15" alignment="left" radius="8" id="fKQ-LT-it7" userLabel="LineGroupOne">
                                                         <items>
                                                             <label alignment="center" verticalAlignment="center" text="64" id="Za8-WZ-UH1">
-                                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
                                                         <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </group>
-                                                    <group width="25" height="20" alignment="left" radius="10" id="uFH-Lp-bkB" userLabel="LineGroupTwo">
+                                                    <group width="20" height="15" alignment="left" radius="8" id="uFH-Lp-bkB" userLabel="LineGroupTwo">
                                                         <items>
                                                             <label alignment="center" verticalAlignment="center" text="64" id="s5b-XM-qRh">
-                                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
                                                         <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </group>
-                                                    <group width="25" height="20" alignment="left" radius="10" id="NL5-Fy-ild" userLabel="LineGroupThree">
+                                                    <group width="20" height="15" alignment="left" radius="8" id="NL5-Fy-ild" userLabel="LineGroupThree">
                                                         <items>
                                                             <label alignment="center" verticalAlignment="center" text="64" id="8p6-xn-A72">
-                                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
                                                         <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </group>
-                                                    <group width="25" height="20" alignment="left" radius="10" id="7t7-K4-W7h" userLabel="LineGroupFour">
+                                                    <group width="20" height="15" alignment="left" radius="8" id="7t7-K4-W7h" userLabel="LineGroupFour">
                                                         <items>
                                                             <label alignment="center" verticalAlignment="center" text="64" id="XXR-9X-VZd">
-                                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
                                                         <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </group>
+                                                    <label width="20" height="15" alignment="left" text="..." textAlignment="center" id="hcZ-zN-G1X">
+                                                        <fontDescription key="font" type="system" pointSize="16"/>
+                                                    </label>
                                                 </items>
                                             </group>
                                         </items>
@@ -65,6 +68,7 @@
                                         <outlet property="lineLabelOne" destination="Za8-WZ-UH1" id="ppY-uD-4Mj"/>
                                         <outlet property="lineLabelThree" destination="8p6-xn-A72" id="jse-Sa-PEz"/>
                                         <outlet property="lineLabelTwo" destination="s5b-XM-qRh" id="C9C-Tw-HCo"/>
+                                        <outlet property="moreLabel" destination="hcZ-zN-G1X" id="r4F-VJ-6Lp"/>
                                         <outlet property="stopLabel" destination="UBg-ur-Mkb" id="c49-P0-oxw"/>
                                     </connections>
                                 </tableRow>

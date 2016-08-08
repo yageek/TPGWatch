@@ -30,6 +30,8 @@ class BookmarkedStop: NSObject {
     @IBOutlet var lineGroupFour: WKInterfaceGroup!
     @IBOutlet var lineLabelFour: WKInterfaceLabel!
 
+    @IBOutlet var moreLabel: WKInterfaceLabel!
+    
     func labels() -> [WKInterfaceLabel!] {
         return [lineLabelOne, lineLabelTwo, lineLabelThree, lineLabelFour]
     }
@@ -61,6 +63,8 @@ class BookmarkedStop: NSObject {
         for i in 0..<groups().count {
             setHideLineAtIndex(i, hidden: true)
         }
+
+        self.moreLabel.setHidden(true)
     }
 }
 
@@ -125,6 +129,10 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
                 row.setLine(i, text: linesStops[i], textColor: UIColor(rgba: textColor), backgroundColor: UIColor(rgba: backgroundColor))
             }
+
+            // Hide ellipsis point if needed.
+            let hideMore = linesStops.count <= 4
+            row.moreLabel.setHidden(hideMore)
 
         }
 

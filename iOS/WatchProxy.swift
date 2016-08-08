@@ -36,7 +36,7 @@ class WatchProxy: NSObject, WCSessionDelegate {
         }
         guard activationState == .Activated && lastState != .Activated else { print("Do not need to send data"); return }
 
-        //sendLinesRegistery()
+        sendRegistery()
         sendBookmarkedStops()
     }
 
@@ -93,6 +93,11 @@ class WatchProxy: NSObject, WCSessionDelegate {
         } catch let error {
             print("Can not send error:\(error)")
         }
+    }
+
+    func sendRegistery() {
+        let sendRegistery = SendRegisteryOperation(context: UIMoc(), proxy: self)
+        queue.addOperation(sendRegistery)
     }
 
 

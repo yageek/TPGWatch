@@ -11,63 +11,6 @@ import Foundation
 import WatchConnectivity
 import Operations
 
-class BookmarkedStop: NSObject {
-    @IBOutlet var stopLabel: WKInterfaceLabel!
-
-    //First
-    @IBOutlet var lineGroupOne: WKInterfaceGroup!
-    @IBOutlet var lineLabelOne: WKInterfaceLabel!
-
-    //Two
-    @IBOutlet var lineGroupTwo: WKInterfaceGroup!
-    @IBOutlet var lineLabelTwo: WKInterfaceLabel!
-
-    //Three
-    @IBOutlet var lineGroupThree: WKInterfaceGroup!
-    @IBOutlet var lineLabelThree: WKInterfaceLabel!
-
-    //Second
-    @IBOutlet var lineGroupFour: WKInterfaceGroup!
-    @IBOutlet var lineLabelFour: WKInterfaceLabel!
-
-    @IBOutlet var moreLabel: WKInterfaceLabel!
-    
-    func labels() -> [WKInterfaceLabel!] {
-        return [lineLabelOne, lineLabelTwo, lineLabelThree, lineLabelFour]
-    }
-
-    func groups() -> [WKInterfaceGroup!] {
-        return [lineGroupOne, lineGroupTwo, lineGroupThree, lineGroupFour]
-    }
-
-    func setHideLineAtIndex(index: Int, hidden: Bool) {
-        groups()[index].setHidden(hidden)
-    }
-
-
-    func setLine(index: Int, text: String, textColor: UIColor, backgroundColor: UIColor) {
-
-
-        let group = groups()[index]
-        group.setBackgroundColor(backgroundColor)
-
-        let label = labels()[index]
-
-        label.setText(text)
-        label.setTextColor(textColor)
-
-        setHideLineAtIndex(index, hidden: false)
-    }
-
-    func hideAllLines() {
-        for i in 0..<groups().count {
-            setHideLineAtIndex(i, hidden: true)
-        }
-
-        self.moreLabel.setHidden(true)
-    }
-}
-
 class BookmarkStopInterfaceController: WKInterfaceController {
 
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
@@ -86,6 +29,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
         super.didAppear()
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(bookmarkNotification), name: WatchProxy.BookmarkUpdateNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(registeryNotification), name: WatchProxy.RegisteryUpdateNotification, object: nil)
     }
 
     override func willDisappear() {
@@ -167,6 +111,11 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     // MARK: Notification
     func bookmarkNotification(notif: NSNotification) {
         lastStops = notif.object as? [[String:AnyObject]]
+        self.reloadData()
+    }
+
+    func registeryNotification(notif: NSNotification) {
+        registery = notif.object as? [String:AnyObject]
         self.reloadData()
     }
 }

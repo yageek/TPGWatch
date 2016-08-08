@@ -47,8 +47,4 @@ class WatchProxy: NSObject, WCSessionDelegate {
         }
         
     }
-
-    
-   
-
 }

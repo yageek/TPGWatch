@@ -11,27 +11,6 @@ import Foundation
 import TPGSwift
 import Operations
 
-
-class DepartureInfo: NSObject {
-
-    @IBOutlet var stopNameLabel: WKInterfaceLabel!
-    @IBOutlet var timeLabel: WKInterfaceLabel!
-    @IBOutlet var lineGroup: WKInterfaceGroup!
-    @IBOutlet var lineLabel: WKInterfaceLabel!
-
-    func setLine(text: String, textColor: UIColor, backgroundColor: UIColor) {
-
-        let group = lineGroup
-        group.setBackgroundColor(backgroundColor)
-
-        let label = lineLabel
-
-        label.setText(text)
-        label.setTextColor(textColor)
-    }
-
-}
-
 class DeparturesInterfaceController: WKInterfaceController {
 
 

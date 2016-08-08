@@ -35,13 +35,13 @@ class Store {
 
     static let StopsFileURL: NSURL = {
         let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let savePath = directory.URLByAppendingPathComponent("boorkmarked.json")
+        let savePath = directory.URLByAppendingPathComponent("boorkmarked.plist")
         return savePath
     }()
 
     static let RegisteryFileURL: NSURL = {
         let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let savePath = directory.URLByAppendingPathComponent("registery.json")
+        let savePath = directory.URLByAppendingPathComponent("registery.plist")
         return savePath
     }()
 

@@ -14,10 +14,24 @@ import Operations
 
 class DepartureInfo: NSObject {
 
-    @IBOutlet var lineImageView: WKInterfaceImage!
     @IBOutlet var stopNameLabel: WKInterfaceLabel!
     @IBOutlet var timeLabel: WKInterfaceLabel!
+    @IBOutlet var lineGroup: WKInterfaceGroup!
+    @IBOutlet var lineLabel: WKInterfaceLabel!
+
+    func setLine(text: String, textColor: UIColor, backgroundColor: UIColor) {
+
+        let group = lineGroup
+        group.setBackgroundColor(backgroundColor)
+
+        let label = lineLabel
+
+        label.setText(text)
+        label.setTextColor(textColor)
+    }
+
 }
+
 class DeparturesInterfaceController: WKInterfaceController {
 
 
@@ -30,8 +44,10 @@ class DeparturesInterfaceController: WKInterfaceController {
 
     var queue = OperationQueue()
     var record: ParsedNextDeparturesRecord?
-    var stop: [String: AnyObject]  = [:]
 
+    var stop: [String: AnyObject]  = [:]
+    var registery: [String: AnyObject] = [:]
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
 
@@ -109,6 +125,26 @@ class DeparturesInterfaceController: WKInterfaceController {
             let row = departuresTable.rowControllerAtIndex(i) as! DepartureInfo
             let departure = departures.departures[i]
 
+            // Name
+            let departureName = departure.line.destinationName
+            row.stopNameLabel.setText(departureName)
+
+            //Line color
+            if let registeryCache = Store.sharedInstance.registeryCache {
+                let code = departure.line.lineCode
+                let lineInfo = registeryCache[code] as! [String: String]
+
+                row.setLine(code, textColor: UIColor(rgba: lineInfo["textColor"]!), backgroundColor: UIColor(rgba: lineInfo["backgroundColor"]!))
+
+                row.lineGroup.setHidden(false)
+
+            } else {
+                row.lineGroup.setHidden(true)
+            }
+
+
+
+            // Next departure time
             var departureTimeText = "\(departure.waitingTime)"
             let motif = "&gt;1h"
 
@@ -118,10 +154,8 @@ class DeparturesInterfaceController: WKInterfaceController {
                 departureTimeText += " " + NSLocalizedString("min", comment: "Minutes")
             }
 
-            let departureName = departure.line.destinationName
-
-            row.stopNameLabel.setText(departureName)
             row.timeLabel.setText(departureTimeText)
+
         }
 
     }

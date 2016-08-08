@@ -23,7 +23,10 @@ class Store {
     }
 
     private init() {}
-    
+
+    private(set) var registeryCache: [String: AnyObject]?
+    private(set) var bookmarkCache: [[String: AnyObject]]?
+
     let queue: OperationQueue = {
         let queue = OperationQueue()
         queue.qualityOfService = .Background
@@ -73,38 +76,48 @@ class Store {
 
     func readBookmarks(completion: (result: [[String: AnyObject]]?, error: ErrorType?) -> Void) {
 
-        let readOp = ReadArrayOperation(url: Store.StopsFileURL)
-        let producedObserver = DidFinishObserver { (op, errors) in
+        if let bookmarkCache = bookmarkCache {
+            completion(result: bookmarkCache, error: nil)
+        } else {
+            let readOp = ReadArrayOperation(url: Store.StopsFileURL)
+            let producedObserver = DidFinishObserver { (op, errors) in
 
-            NSOperationQueue.mainQueue().addOperationWithBlock {
+                NSOperationQueue.mainQueue().addOperationWithBlock {
 
-                let error = errors.first
-                completion(result: (op as! ReadArrayOperation).result, error: error)
+                    let error = errors.first
+                    let result = (op as! ReadArrayOperation).result
+                    self.bookmarkCache = result
+                    completion(result: result, error: error)
 
+                }
             }
+
+            readOp.addObserver(producedObserver)
+            queue.addOperation(readOp)
         }
-
-        readOp.addObserver(producedObserver)
-        queue.addOperation(readOp)
-
     }
 
     func readRegistery(completion: (result: [String: AnyObject]?, error: ErrorType?) -> Void) {
 
-        let readOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
-        let producedObserver = DidFinishObserver { (op, errors) in
+        if let registeryCache = registeryCache {
+            completion(result: registeryCache, error: nil)
+        } else {
+            let readOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
+            let producedObserver = DidFinishObserver { (op, errors) in
 
-            NSOperationQueue.mainQueue().addOperationWithBlock {
+                NSOperationQueue.mainQueue().addOperationWithBlock {
 
-                let error = errors.first
-                completion(result: (op as! ReadDictionaryOperation).result, error: error)
-
+                    let error = errors.first
+                    let result = (op as! ReadDictionaryOperation).result
+                    self.registeryCache = result
+                    completion(result: result, error: error)
+                }
             }
+
+            readOp.addObserver(producedObserver)
+            queue.addOperation(readOp)
+
         }
-
-        readOp.addObserver(producedObserver)
-        queue.addOperation(readOp)
-
     }
 
     func readBookmarksAndRegistery(completion: (bookmarks: [[String: AnyObject]]?, registery: [String: AnyObject]?, error: ErrorType?) -> Void) {
@@ -120,6 +133,10 @@ class Store {
             NSOperationQueue.mainQueue().addOperationWithBlock {
 
                 let error = errors.first
+
+                self.registeryCache = readRegisteryOp.result
+                self.bookmarkCache = readBookOp.result
+                
                 completion(bookmarks: readBookOp.result , registery: readRegisteryOp.result, error: error)
             }
         }

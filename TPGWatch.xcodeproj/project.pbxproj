@@ -263,13 +263,12 @@
 				0BBDC1871D54D208005C8297 /* Operations */,
 				0B134F821D48122200D1489A /* Localizable.strings */,
 				0B3F20091D3C232E0093AC66 /* InfoPlist.strings */,
-				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
+				0BA401EC1D590DC500FEF28C /* Screens */,
 				0B84C1451D529FE100594499 /* WatchProxy.swift */,
-				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
+				0B4DB0EA1D547E930005F6E3 /* Store.swift */,
 				0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */,
 				0B32C3971D34DEA200D97205 /* Assets.xcassets */,
 				0B32C3991D34DEA200D97205 /* Info.plist */,
-				0B4DB0EA1D547E930005F6E3 /* Store.swift */,
 			);
 			path = "TPGWatch Extension";
 			sourceTree = "<group>";
@@ -308,6 +307,15 @@
 				0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */,
 			);
 			name = 1_2;
+			sourceTree = "<group>";
+		};
+		0BA401EC1D590DC500FEF28C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
+				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 		0BBDC1871D54D208005C8297 /* Operations */ = {

@@ -11,12 +11,21 @@ import Operations
 
 class Store {
 
-    static let sharedInstance = Store()
+    class var sharedInstance: Store {
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: Store? = nil
+        }
+        dispatch_once(&Static.onceToken) {
+            Static.instance = Store()
+        }
+        return Static.instance!
+    }
+
     private init() {}
     
-    let queue: NSOperationQueue = {
-        let queue = NSOperationQueue()
-        queue.maxConcurrentOperationCount = 1
+    let queue: OperationQueue = {
+        let queue = OperationQueue()
         queue.qualityOfService = .Background
         return queue
     }()
@@ -62,44 +71,15 @@ class Store {
         queue.addOperations(saveOp)
     }
 
-    func readBookmarks(completion: (result: [[String: AnyObject]]?, error: NSError?) -> Void) {
-        readArrayData(Store.StopsFileURL, completion: completion)
-    }
+    func readBookmarks(completion: (result: [[String: AnyObject]]?, error: ErrorType?) -> Void) {
 
-    func readRegistery(completion: (result: [[String: AnyObject]]?, error: NSError?) -> Void) {
-        readArrayData(Store.RegisteryFileURL, completion: completion)
-    }
-
-    func readBookmarksAndRegistery(completion: (bookmarks: [[String: AnyObject]]?, registery: [[String: AnyObject]]?, error: NSError?) -> Void) {
-
-        let readBookOp = ReadOperation(url: Store.StopsFileURL)
-        let readRegisteryOp = ReadOperation(url: Store.RegisteryFileURL)
-
-        let groupOp = GroupOperation(operations: readBookOp, readRegisteryOp)
-
-        let produceOb = DidFinishObserver { (op, errors) in
-
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-
-                let error = errors.first
-                completion(bookmarks: readBookOp.result, registery: readRegisteryOp.result, error: nil)
-            }
-        }
-
-        groupOp.addObserver(produceOb)
-
-        queue.addOperation(groupOp)
-    }
-
-    private func readArrayData(URL: NSURL, completion:(result: [[String: AnyObject]]?, error: NSError?) -> Void) {
-
-        let readOp = ReadOperation(url: URL)
+        let readOp = ReadArrayOperation(url: Store.StopsFileURL)
         let producedObserver = DidFinishObserver { (op, errors) in
 
             NSOperationQueue.mainQueue().addOperationWithBlock {
 
                 let error = errors.first
-                completion(result: (op as! ReadOperation).result, error: nil)
+                completion(result: (op as! ReadArrayOperation).result, error: error)
 
             }
         }
@@ -108,5 +88,46 @@ class Store {
         queue.addOperation(readOp)
 
     }
+
+    func readRegistery(completion: (result: [String: AnyObject]?, error: ErrorType?) -> Void) {
+
+        let readOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
+        let producedObserver = DidFinishObserver { (op, errors) in
+
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+
+                let error = errors.first
+                completion(result: (op as! ReadDictionaryOperation).result, error: error)
+
+            }
+        }
+
+        readOp.addObserver(producedObserver)
+        queue.addOperation(readOp)
+
+    }
+
+    func readBookmarksAndRegistery(completion: (bookmarks: [[String: AnyObject]]?, registery: [String: AnyObject]?, error: ErrorType?) -> Void) {
+
+        let readBookOp = ReadArrayOperation(url: Store.StopsFileURL)
+        let readRegisteryOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
+
+        readBookOp.addDependency(readRegisteryOp)
+        let groupOp = GroupOperation(operations: readBookOp, readRegisteryOp)
+
+        let produceOb = DidFinishObserver { (op, errors) in
+
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+
+                let error = errors.first
+                completion(bookmarks: readBookOp.result , registery: readRegisteryOp.result, error: error)
+            }
+        }
+
+        groupOp.addObserver(produceOb)
+
+        queue.addOperation(groupOp)
+    }
+
 
 }

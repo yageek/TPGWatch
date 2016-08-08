@@ -10,6 +10,7 @@ import UIKit
 import WatchConnectivity
 import CoreData
 import Operations
+import TPGSwift
 
 class WatchProxy: NSObject, WCSessionDelegate {
 
@@ -76,9 +77,13 @@ class WatchProxy: NSObject, WCSessionDelegate {
         do {
             let stopsObjects = try UIMoc().executeFetchRequest(request) as! [Stop]
             let stops = stopsObjects.map({ (stop) -> [String:AnyObject] in
+
+                let connections = stop.valueForKeyPath("connections.line.code")?.allObjects ?? []
+
                 return [
                     "name" : stop.name!,
-                    "code" : stop.code!
+                    "code" : stop.code!,
+                    "lines": connections,
                 ]
             })
 

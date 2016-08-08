@@ -8,7 +8,7 @@
 
 import Operations
 
-class ReadOperation: Operation, ResultOperationType {
+class ReadArrayOperation: Operation, ResultOperationType {
 
     var result: [[String: AnyObject]]?
     let url: NSURL
@@ -17,17 +17,39 @@ class ReadOperation: Operation, ResultOperationType {
         self.url = url
         super.init()
 
-        name = "Read operation"
+        name = "Read operation for \(url.lastPathComponent)"
     }
 
     override func execute() {
-        if let stops = NSArray(contentsOfURL: url) as? [[String: AnyObject]] {
-            result = stops
-            finish()
 
+        if let data = NSArray(contentsOfURL: url) as? [[String: AnyObject]]{
+            result = data
+            self.finish()
         } else {
-            finish(NSError(domain: "", code: 0, userInfo: nil))
+            self.finish(NSError(domain: "", code: 0, userInfo: nil))
         }
+    }
+}
 
+class ReadDictionaryOperation: Operation, ResultOperationType {
+
+    var result: [String: AnyObject]?
+    let url: NSURL
+
+    init(url: NSURL) {
+        self.url = url
+        super.init()
+
+        name = "Read operation for \(url.lastPathComponent)"
+    }
+
+    override func execute() {
+
+        if let data = NSDictionary(contentsOfURL: url) as? [String: AnyObject]{
+            result = data
+            self.finish()
+        } else {
+            self.finish(NSError(domain: "", code: 0, userInfo: nil))
+        }
     }
 }

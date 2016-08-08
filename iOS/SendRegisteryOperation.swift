@@ -49,15 +49,14 @@ class SendRegisteryOperation: Operation {
 
     private func sendLines(lines: [Line]) {
 
-        let linesJSON = lines.map { (line) -> [String: AnyObject] in
-            return [line.code:
-                [
-                    "backgroundColor" : line.backgroundColor,
-                    "textColor" : line.textColor,
-                    "ribonColor" : line.ribonColor
-                ]
-            ]
+        var linesJSON: [String: AnyObject] = [:]
 
+        for line in lines {
+            linesJSON[line.code] =   [
+                "backgroundColor" : line.backgroundColor,
+                "textColor" : line.textColor,
+                "ribonColor" : line.ribonColor
+            ]
         }
 
         let registery = ["registery": linesJSON]

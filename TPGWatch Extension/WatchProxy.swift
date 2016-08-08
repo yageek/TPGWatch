@@ -38,7 +38,7 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
             Store.sharedInstance.saveBookmarks(stopsData, notificationName: WatchProxy.BookmarkUpdateNotification)
 
-        } else if let registery = applicationContext["registery"] as? [[String: AnyObject]] {
+        } else if let registery = applicationContext["registery"] as? [String: AnyObject] {
 
             Store.sharedInstance.saveRegistery(registery, notificationName: WatchProxy.RegisteryUpdateNotification)
 

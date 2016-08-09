@@ -1,3 +1,6 @@
+/* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "8p6-xn-A72"; */
+"8p6-xn-A72.text" = "64";
+
 /* Class = "WKInterfaceButton"; title = "Reload"; ObjectID = "9qu-Wg-qa4"; */
 "9qu-Wg-qa4.title" = "Recharger";
 
@@ -9,6 +12,12 @@
 
 /* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "UBg-ur-Mkb"; */
 "UBg-ur-Mkb.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "XXR-9X-VZd"; */
+"XXR-9X-VZd.text" = "64";
+
+/* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "Za8-WZ-UH1"; */
+"Za8-WZ-UH1.text" = "64";
 
 /* Class = "WKInterfaceLabel"; text = "No departure found"; ObjectID = "ao8-kT-Z0B"; */
 "ao8-kT-Z0B.text" = "Aucun départ trouvé";
@@ -22,9 +31,21 @@
 /* Class = "WKInterfaceLabel"; text = "No favorite"; ObjectID = "f82-1G-JAn"; */
 "f82-1G-JAn.text" = "Aucun favori";
 
+/* Class = "WKInterfaceLabel"; text = "..."; ObjectID = "hcZ-zN-G1X"; */
+"hcZ-zN-G1X.text" = "...";
+
 /* Class = "WKInterfaceLabel"; text = "1`"; ObjectID = "kNu-ig-JFM"; */
 "kNu-ig-JFM.text" = "1`";
 
+/* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "o0d-o4-B2H"; */
+"o0d-o4-B2H.text" = "64";
+
 /* Class = "WKInterfaceLabel"; text = "Error :("; ObjectID = "qsh-Zs-b0b"; */
 "qsh-Zs-b0b.text" = "Error :(";
+
+/* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "s5b-XM-qRh"; */
+"s5b-XM-qRh.text" = "64";
+
+/* Class = "WKInterfaceLabel"; text = "Open the phone app to sync data"; ObjectID = "vnP-uV-yNR"; */
+"vnP-uV-yNR.text" = "Ouvrez le téléphone pour la synchronisation";
 

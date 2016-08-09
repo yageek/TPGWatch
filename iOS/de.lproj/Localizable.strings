@@ -10,3 +10,15 @@
 /* No comment provided by engineer. */
 "Loading stops..." = "Daten werden geladen...";
 
+/* No comment provided by engineer. */
+"No internet connection is available" = "Keine Internetverbindung verfügbar";
+
+/* No comment provided by engineer. */
+"Retry later" = "Öffnen Sie TPGWatch zu synchronisieren Daten";
+
+/* No comment provided by engineer. */
+"The TPG server is unavailable." = "Die Operation später wiederholen";
+
+/* No comment provided by engineer. */
+"The server returned an unexpected answer" = "Der Server lieferte eine unerwartete Antwort";
+

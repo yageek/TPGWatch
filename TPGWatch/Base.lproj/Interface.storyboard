@@ -158,7 +158,7 @@
                                 <group width="1" height="1" alignment="center" layout="vertical" id="LBk-ni-qKJ">
                                     <items>
                                         <imageView width="40" height="40" alignment="center" verticalAlignment="center" image="logo" id="mgY-j3-Y0U"/>
-                                        <label alignment="center" verticalAlignment="bottom" text="Loading ..." id="b4t-iY-HRj"/>
+                                        <label alignment="center" verticalAlignment="bottom" text="Loading ..." textAlignment="center" numberOfLines="0" id="b4t-iY-HRj"/>
                                     </items>
                                 </group>
                                 <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" textAlignment="center" id="qsh-Zs-b0b">

@@ -1,5 +1,5 @@
 //
-//  StartupController.swift
+//  SyncController.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 import Operations
 
-class StartupController: WKInterfaceController {
+class SyncController: WKInterfaceController {
 
     let queue = OperationQueue()
 
@@ -43,7 +43,6 @@ class StartupController: WKInterfaceController {
 
 
     func registeryHasBeenUpdate(notification: NSNotification) {
-
-        self.pushControllerWithName("BookmarkStopInterfaceController", context: nil)
+        WKInterfaceController.reloadRootControllersWithNames(["BookmarkStopInterfaceController"], contexts: [])
     }
 }

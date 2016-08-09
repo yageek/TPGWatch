@@ -44,7 +44,7 @@
 		0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1451D529FE100594499 /* WatchProxy.swift */; };
 		0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveOperation.swift */; };
 		0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C14B1D52AD5400594499 /* TPGWatch.xcdatamodeld */; };
-		0BA401EE1D5917A500FEF28C /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401ED1D5917A500FEF28C /* StartupController.swift */; };
+		0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401ED1D5917A500FEF28C /* SyncController.swift */; };
 		0BA401F11D59183A00FEF28C /* CleanUpV2Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
 		0BB280121D591C310065C403 /* InitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280111D591C310065C403 /* InitOperation.swift */; };
@@ -180,7 +180,7 @@
 		0B84C1491D52A6AD00594499 /* SaveOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOperation.swift; sourceTree = "<group>"; };
 		0B84C14C1D52AD5400594499 /* TPGWatch 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TPGWatch 2.xcdatamodel"; sourceTree = "<group>"; };
 		0B84C14D1D52AD5400594499 /* TPGWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TPGWatch.xcdatamodel; sourceTree = "<group>"; };
-		0BA401ED1D5917A500FEF28C /* StartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
+		0BA401ED1D5917A500FEF28C /* SyncController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncController.swift; sourceTree = "<group>"; };
 		0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanUpV2Operation.swift; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		0BB280111D591C310065C403 /* InitOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitOperation.swift; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 			children = (
 				0BB280191D5927530065C403 /* Bookmark */,
 				0BB2801C1D5927AE0065C403 /* Departures */,
-				0BA401ED1D5917A500FEF28C /* StartupController.swift */,
+				0BA401ED1D5917A500FEF28C /* SyncController.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -722,7 +722,7 @@
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
 				0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */,
 				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
-				0BA401EE1D5917A500FEF28C /* StartupController.swift in Sources */,
+				0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */,
 				0B28DDE41D58CE99003ACC0F /* Color.swift in Sources */,
 				0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */,
 				0BB280161D591FA90065C403 /* CheckFilesOperation.swift in Sources */,

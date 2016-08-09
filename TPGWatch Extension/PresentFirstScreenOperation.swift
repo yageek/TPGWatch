@@ -40,7 +40,7 @@ class PresentFirstScreenOperation: Operation, AutomaticInjectionOperationType {
             label.setText(text)
 
         } else {
-            rootController.pushControllerWithName("BookmarkStopInterfaceController", context: nil)
+            WKInterfaceController.reloadRootControllersWithNames(["BookmarkStopInterfaceController"], contexts: [])
         }
 
     }

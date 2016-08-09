@@ -11,6 +11,7 @@ import Foundation
 import WatchConnectivity
 import Operations
 
+
 class BookmarkStopInterfaceController: WKInterfaceController {
 
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!

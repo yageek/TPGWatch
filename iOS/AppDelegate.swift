@@ -141,7 +141,6 @@ internal extension AppDelegate {
 
         NSUserDefaults.standardUserDefaults().registerDefaults([AppDelegate.FirsTimeShowKey: true])
     }
-
 }
 
 

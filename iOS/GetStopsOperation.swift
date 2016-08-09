@@ -48,6 +48,13 @@ final class GetStopsOperation: GroupOperation {
 
         addCondition(MutuallyExclusive<GetStopsOperation>())
         addOperations([downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp])
+
+        if let proxy = proxy {
+            let sendRegisteryOp = SendRegisteryOperation(context: context, proxy: proxy)
+            sendRegisteryOp.addDependency(importStopsOp)
+            sendRegisteryOp.addCondition(NoFailedDependenciesCondition())
+            self.addOperation(sendRegisteryOp)
+        }
     }
 
     override func operationDidFinish(errors: [ErrorType]) {

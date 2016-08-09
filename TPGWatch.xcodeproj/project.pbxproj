@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */; };
+		0B037F0A1D35728600EEF1D5 /* GetNextDeparturesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */; };
 		0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
 		0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
 		0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
@@ -15,7 +15,8 @@
 		0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B134F801D48122200D1489A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B134F821D48122200D1489A /* Localizable.strings */; };
-		0B2DBE991D3402CC0052B0CE /* TPGWatch.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0074C1D340095008877F9 /* TPGWatch.xcdatamodel */; };
+		0B28DDE41D58CE99003ACC0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007471D340082008877F9 /* Color.swift */; };
+		0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007481D340082008877F9 /* Palette.swift */; };
 		0B32C3861D34DEA200D97205 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3841D34DEA200D97205 /* Interface.storyboard */; };
 		0B32C3881D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3871D34DEA200D97205 /* Assets.xcassets */; };
 		0B32C38F1D34DEA200D97205 /* TPGWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -33,10 +34,27 @@
 		0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */; };
 		0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */; };
 		0B4525501D473C600026907E /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B45254F1D473C600026907E /* TutorialViewController.swift */; };
+		0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */; };
+		0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */; };
+		0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0EA1D547E930005F6E3 /* Store.swift */; };
 		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
 		0B8250091D3841390094946B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
+		0B84C1441D529EA700594499 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
+		0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1451D529FE100594499 /* WatchProxy.swift */; };
+		0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveOperation.swift */; };
+		0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C14B1D52AD5400594499 /* TPGWatch.xcdatamodeld */; };
+		0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401ED1D5917A500FEF28C /* SyncController.swift */; };
+		0BA401F11D59183A00FEF28C /* CleanUpV2Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
+		0BB280121D591C310065C403 /* InitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280111D591C310065C403 /* InitOperation.swift */; };
+		0BB280141D591F730065C403 /* UpdateDisplayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280131D591F730065C403 /* UpdateDisplayOperation.swift */; };
+		0BB280161D591FA90065C403 /* CheckFilesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280151D591FA90065C403 /* CheckFilesOperation.swift */; };
+		0BB280181D5922590065C403 /* PresentFirstScreenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280171D5922590065C403 /* PresentFirstScreenOperation.swift */; };
+		0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801A1D5927680065C403 /* BookmarkedStop.swift */; };
+		0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801D1D5927C20065C403 /* DepartureInfo.swift */; };
+		0BB2801F1D59D4160065C403 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
+		0BBDC1891D54D447005C8297 /* ReadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadOperation.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
 		0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007231D33FFF4008877F9 /* AppDelegate.swift */; };
@@ -115,7 +133,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDepartures.swift; sourceTree = "<group>"; };
+		0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDeparturesOperation.swift; sourceTree = "<group>"; };
 		0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONUnmarshalOperation.swift; path = Common/JSONUnmarshalOperation.swift; sourceTree = "<group>"; };
 		0B037F111D35741800EEF1D5 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadOperation.swift; path = Common/DownloadOperation.swift; sourceTree = "<group>"; };
 		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
@@ -152,11 +170,27 @@
 		0B3F20311D3C43CA0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20331D3C43DA0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B45254F1D473C600026907E /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 1_to_2_model.xcmappingmodel; sourceTree = "<group>"; };
+		0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColorToLineStringTransformationPolicy.swift; sourceTree = "<group>"; };
+		0B4DB0EA1D547E930005F6E3 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
 		0B8250081D3841390094946B /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		0B84C1451D529FE100594499 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
+		0B84C1491D52A6AD00594499 /* SaveOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOperation.swift; sourceTree = "<group>"; };
+		0B84C14C1D52AD5400594499 /* TPGWatch 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TPGWatch 2.xcdatamodel"; sourceTree = "<group>"; };
+		0B84C14D1D52AD5400594499 /* TPGWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TPGWatch.xcdatamodel; sourceTree = "<group>"; };
+		0BA401ED1D5917A500FEF28C /* SyncController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncController.swift; sourceTree = "<group>"; };
+		0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanUpV2Operation.swift; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		0BB280111D591C310065C403 /* InitOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitOperation.swift; sourceTree = "<group>"; };
+		0BB280131D591F730065C403 /* UpdateDisplayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDisplayOperation.swift; sourceTree = "<group>"; };
+		0BB280151D591FA90065C403 /* CheckFilesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckFilesOperation.swift; sourceTree = "<group>"; };
+		0BB280171D5922590065C403 /* PresentFirstScreenOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFirstScreenOperation.swift; sourceTree = "<group>"; };
+		0BB2801A1D5927680065C403 /* BookmarkedStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkedStop.swift; sourceTree = "<group>"; };
+		0BB2801D1D5927C20065C403 /* DepartureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureInfo.swift; sourceTree = "<group>"; };
+		0BBDC1881D54D447005C8297 /* ReadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadOperation.swift; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -168,7 +202,7 @@
 		0BF007291D34000A008877F9 /* StopCellSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopCellSearch.xib; sourceTree = "<group>"; };
 		0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopBookmarkVC.swift; sourceTree = "<group>"; };
 		0BF007311D34002F008877F9 /* StopSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopSearchVC.swift; sourceTree = "<group>"; };
-		0BF007341D340040008877F9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		0BF007341D340040008877F9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = iOS/Error.swift; sourceTree = "<group>"; };
 		0BF0073A1D340061008877F9 /* ImportStopOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportStopOperation.swift; sourceTree = "<group>"; };
 		0BF0073B1D340061008877F9 /* GetStopsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStopsOperation.swift; sourceTree = "<group>"; };
 		0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportLinesColorsOperation.swift; sourceTree = "<group>"; };
@@ -176,7 +210,6 @@
 		0BF007431D34006F008877F9 /* LineRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineRenderer.swift; sourceTree = "<group>"; };
 		0BF007471D340082008877F9 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0BF007481D340082008877F9 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
-		0BF0074C1D340095008877F9 /* TPGWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TPGWatch.xcdatamodel; sourceTree = "<group>"; };
 		0BF0074E1D3400A7008877F9 /* Connection+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Connection+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0BF0074F1D3400A7008877F9 /* Stop+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stop+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0BF007501D3400A7008877F9 /* Line+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Line+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -223,6 +256,7 @@
 		0B037F0D1D3573E700EEF1D5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0BF007341D340040008877F9 /* Error.swift */,
 				0B037F111D35741800EEF1D5 /* DownloadOperation.swift */,
 				0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */,
 				0B037F141D3579AA00EEF1D5 /* Keys.swift */,
@@ -246,12 +280,13 @@
 			children = (
 				0B134F821D48122200D1489A /* Localizable.strings */,
 				0B3F20091D3C232E0093AC66 /* InfoPlist.strings */,
-				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
-				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
+				0BBDC1871D54D208005C8297 /* Operations */,
+				0BA401EC1D590DC500FEF28C /* Screens */,
+				0B84C1451D529FE100594499 /* WatchProxy.swift */,
+				0B4DB0EA1D547E930005F6E3 /* Store.swift */,
 				0B32C3951D34DEA200D97205 /* ExtensionDelegate.swift */,
 				0B32C3971D34DEA200D97205 /* Assets.xcassets */,
 				0B32C3991D34DEA200D97205 /* Info.plist */,
-				0B037F091D35728600EEF1D5 /* GetNextDepartures.swift */,
 			);
 			path = "TPGWatch Extension";
 			sourceTree = "<group>";
@@ -273,6 +308,74 @@
 				0B3F20211D3C27B00093AC66 /* Info.plist */,
 			);
 			path = TPGWatchUITests;
+			sourceTree = "<group>";
+		};
+		0B4697F91D53E336006C73BF /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				0B4697FA1D53E33F006C73BF /* 1_2 */,
+			);
+			name = Migrations;
+			sourceTree = "<group>";
+		};
+		0B4697FA1D53E33F006C73BF /* 1_2 */ = {
+			isa = PBXGroup;
+			children = (
+				0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */,
+				0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */,
+			);
+			name = 1_2;
+			sourceTree = "<group>";
+		};
+		0BA401EC1D590DC500FEF28C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0BB280191D5927530065C403 /* Bookmark */,
+				0BB2801C1D5927AE0065C403 /* Departures */,
+				0BA401ED1D5917A500FEF28C /* SyncController.swift */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		0BA401EF1D59181900FEF28C /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				0BB280111D591C310065C403 /* InitOperation.swift */,
+				0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */,
+				0BB280131D591F730065C403 /* UpdateDisplayOperation.swift */,
+				0BB280151D591FA90065C403 /* CheckFilesOperation.swift */,
+				0BB280171D5922590065C403 /* PresentFirstScreenOperation.swift */,
+			);
+			name = Startup;
+			sourceTree = "<group>";
+		};
+		0BB280191D5927530065C403 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				0B32C3931D34DEA200D97205 /* BookmarkStopInterfaceController.swift */,
+				0BB2801A1D5927680065C403 /* BookmarkedStop.swift */,
+			);
+			name = Bookmark;
+			sourceTree = "<group>";
+		};
+		0BB2801C1D5927AE0065C403 /* Departures */ = {
+			isa = PBXGroup;
+			children = (
+				0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */,
+				0BB2801D1D5927C20065C403 /* DepartureInfo.swift */,
+			);
+			name = Departures;
+			sourceTree = "<group>";
+		};
+		0BBDC1871D54D208005C8297 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				0BA401EF1D59181900FEF28C /* Startup */,
+				0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */,
+				0B84C1491D52A6AD00594499 /* SaveOperation.swift */,
+				0BBDC1881D54D447005C8297 /* ReadOperation.swift */,
+			);
+			name = Operations;
 			sourceTree = "<group>";
 		};
 		0BF007031D33FF6D008877F9 = {
@@ -315,7 +418,6 @@
 				0BF007461D34007A008877F9 /* Color */,
 				0BF007371D340050008877F9 /* LineRendering */,
 				0BF007361D340048008877F9 /* Operations */,
-				0BF007331D340038008877F9 /* Error */,
 				0BF007251D33FFFE008877F9 /* Cells */,
 				0BF0072E1D340017008877F9 /* ViewControllers */,
 				0BF007231D33FFF4008877F9 /* AppDelegate.swift */,
@@ -346,14 +448,6 @@
 				0B45254F1D473C600026907E /* TutorialViewController.swift */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		0BF007331D340038008877F9 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				0BF007341D340040008877F9 /* Error.swift */,
-			);
-			name = Error;
 			sourceTree = "<group>";
 		};
 		0BF007361D340048008877F9 /* Operations */ = {
@@ -388,14 +482,15 @@
 		0BF0074B1D340086008877F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B84C14B1D52AD5400594499 /* TPGWatch.xcdatamodeld */,
 				0BF0074E1D3400A7008877F9 /* Connection+CoreDataProperties.swift */,
 				0BF0074F1D3400A7008877F9 /* Stop+CoreDataProperties.swift */,
 				0BF007501D3400A7008877F9 /* Line+CoreDataProperties.swift */,
 				0BF007511D3400A7008877F9 /* Connection.swift */,
 				0BF007521D3400A7008877F9 /* Line.swift */,
 				0BF007531D3400A7008877F9 /* Stop.swift */,
-				0BF0074C1D340095008877F9 /* TPGWatch.xcdatamodel */,
 				0BA66D021D34DC2B00FDB554 /* DataHelper.swift */,
+				0B4697F91D53E336006C73BF /* Migrations */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -611,13 +706,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */,
 				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
-				0B037F0A1D35728600EEF1D5 /* GetNextDepartures.swift in Sources */,
+				0B037F0A1D35728600EEF1D5 /* GetNextDeparturesOperation.swift in Sources */,
+				0BB280141D591F730065C403 /* UpdateDisplayOperation.swift in Sources */,
+				0BB280181D5922590065C403 /* PresentFirstScreenOperation.swift in Sources */,
+				0BB280121D591C310065C403 /* InitOperation.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
+				0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */,
 				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
+				0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */,
+				0B28DDE41D58CE99003ACC0F /* Color.swift in Sources */,
+				0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */,
+				0BB280161D591FA90065C403 /* CheckFilesOperation.swift in Sources */,
+				0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */,
+				0BB2801F1D59D4160065C403 /* Error.swift in Sources */,
+				0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */,
 				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
 				0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
+				0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */,
+				0BBDC1891D54D447005C8297 /* ReadOperation.swift in Sources */,
 				0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */,
+				0BA401F11D59183A00FEF28C /* CleanUpV2Operation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,15 +744,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B2DBE991D3402CC0052B0CE /* TPGWatch.xcdatamodel in Sources */,
 				0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */,
 				0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */,
 				0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */,
 				0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */,
 				0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
 				0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */,
+				0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,
 				0BF007451D34006F008877F9 /* LineRenderer.swift in Sources */,
+				0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */,
+				0B84C1441D529EA700594499 /* SendRegisteryOperation.swift in Sources */,
 				0B4525501D473C600026907E /* TutorialViewController.swift in Sources */,
 				0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */,
 				0BF007591D3400A7008877F9 /* Stop.swift in Sources */,
@@ -656,6 +768,7 @@
 				0BF007541D3400A7008877F9 /* Connection+CoreDataProperties.swift in Sources */,
 				0BF007441D34006F008877F9 /* LinesRendererContext.swift in Sources */,
 				0BF0072C1D34000A008877F9 /* StopCellSearch.swift in Sources */,
+				0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */,
 				0BF0074A1D340082008877F9 /* Palette.swift in Sources */,
 				0BF007401D340061008877F9 /* GetStopsOperation.swift in Sources */,
 				0BF0073F1D340061008877F9 /* ImportStopOperation.swift in Sources */,
@@ -1023,6 +1136,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0B84C14B1D52AD5400594499 /* TPGWatch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0B84C14C1D52AD5400594499 /* TPGWatch 2.xcdatamodel */,
+				0B84C14D1D52AD5400594499 /* TPGWatch.xcdatamodel */,
+			);
+			currentVersion = 0B84C14C1D52AD5400594499 /* TPGWatch 2.xcdatamodel */;
+			path = TPGWatch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0BF007041D33FF6D008877F9 /* Project object */;
 }

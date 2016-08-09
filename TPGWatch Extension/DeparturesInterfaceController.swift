@@ -11,13 +11,6 @@ import Foundation
 import TPGSwift
 import Operations
 
-
-class DepartureInfo: NSObject {
-
-    @IBOutlet var lineImageView: WKInterfaceImage!
-    @IBOutlet var stopNameLabel: WKInterfaceLabel!
-    @IBOutlet var timeLabel: WKInterfaceLabel!
-}
 class DeparturesInterfaceController: WKInterfaceController {
 
 
@@ -30,8 +23,10 @@ class DeparturesInterfaceController: WKInterfaceController {
 
     var queue = OperationQueue()
     var record: ParsedNextDeparturesRecord?
-    var stop: [String: AnyObject]  = [:]
 
+    var stop: [String: AnyObject]  = [:]
+    var registery: [String: AnyObject] = [:]
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
 
@@ -47,13 +42,8 @@ class DeparturesInterfaceController: WKInterfaceController {
         fetchDepartures(stop["code"] as! String)
     }
 
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         queue.cancelAllOperations()
     }
@@ -72,7 +62,7 @@ class DeparturesInterfaceController: WKInterfaceController {
     func fetchDepartures(stopCode: String) {
 
         self.errorLabel.setHidden(true)
-        let op = GetNextDepartures(code: stopCode) { resultJSON, error in
+        let op = GetNextDeparturesOperation(code: stopCode) { resultJSON, error in
 
             if let error = error {
                 print("Error: \(error)")
@@ -114,6 +104,26 @@ class DeparturesInterfaceController: WKInterfaceController {
             let row = departuresTable.rowControllerAtIndex(i) as! DepartureInfo
             let departure = departures.departures[i]
 
+            // Name
+            let departureName = departure.line.destinationName
+            row.stopNameLabel.setText(departureName)
+
+            //Line color
+            if let registeryCache = Store.sharedInstance.registeryCache {
+                let code = departure.line.lineCode
+                let lineInfo = registeryCache[code] as! [String: String]
+
+                row.setLine(code, textColor: UIColor(rgba: lineInfo["textColor"]!), backgroundColor: UIColor(rgba: lineInfo["backgroundColor"]!))
+
+                row.lineGroup.setHidden(false)
+
+            } else {
+                row.lineGroup.setHidden(true)
+            }
+
+
+
+            // Next departure time
             var departureTimeText = "\(departure.waitingTime)"
             let motif = "&gt;1h"
 
@@ -123,10 +133,8 @@ class DeparturesInterfaceController: WKInterfaceController {
                 departureTimeText += " " + NSLocalizedString("min", comment: "Minutes")
             }
 
-            let departureName = departure.line.destinationName
-
-            row.stopNameLabel.setText(departureName)
             row.timeLabel.setText(departureTimeText)
+
         }
 
     }

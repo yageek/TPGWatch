@@ -10,12 +10,11 @@ import UIKit
 import WatchConnectivity
 import CoreData
 import Operations
+import TPGSwift
 
 class WatchProxy: NSObject, WCSessionDelegate {
 
     let session: WCSession
-    var lastState: WCSessionActivationState = .NotActivated
-
     let queue = OperationQueue()
 
     init(session: WCSession) {
@@ -33,18 +32,30 @@ class WatchProxy: NSObject, WCSessionDelegate {
             print("Impossible to acvitate session: \(error)")
             return
         }
-        guard activationState == .Activated && lastState != .Activated else { print("Do not need to send data"); return }
 
-        //sendLinesRegistery()
+        sendRegistery()
         sendBookmarkedStops()
     }
 
+    func sessionWatchStateDidChange(session: WCSession) {
+        print("Change: \(session.activationState)")
+    }
     func session(session: WCSession, didFinishFileTransfer fileTransfer: WCSessionFileTransfer, error: NSError?) {
 
         if let error = error {
             print("Impossible to transfer element to the watch: \(error)")
         } else {
             print("Data transmitted correctly to the watch")
+        }
+    }
+
+
+    func sendData(data: [String: AnyObject]) {
+
+        do {
+            try session.updateApplicationContext(data)
+        } catch let error {
+            print("Can not send data to watch: \(error)")
         }
     }
 
@@ -61,18 +72,27 @@ class WatchProxy: NSObject, WCSessionDelegate {
         do {
             let stopsObjects = try UIMoc().executeFetchRequest(request) as! [Stop]
             let stops = stopsObjects.map({ (stop) -> [String:AnyObject] in
+
+                let connections = stop.valueForKeyPath("connections.line.code")?.allObjects ?? []
+
                 return [
                     "name" : stop.name!,
-                    "code" : stop.code!
+                    "code" : stop.code!,
+                    "lines": connections,
                 ]
             })
 
             let dict: [String: AnyObject] = ["stops": stops]
-            try session.updateApplicationContext(dict)
+            sendData(dict)
 
         } catch let error {
             print("Can not send error:\(error)")
         }
+    }
+
+    func sendRegistery() {
+        let sendRegistery = SendRegisteryOperation(context: UIMoc(), proxy: self)
+        queue.addOperation(sendRegistery)
     }
 
 

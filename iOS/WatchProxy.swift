@@ -15,8 +15,6 @@ import TPGSwift
 class WatchProxy: NSObject, WCSessionDelegate {
 
     let session: WCSession
-    var lastState: WCSessionActivationState = .NotActivated
-
     let queue = OperationQueue()
 
     init(session: WCSession) {
@@ -34,12 +32,14 @@ class WatchProxy: NSObject, WCSessionDelegate {
             print("Impossible to acvitate session: \(error)")
             return
         }
-        guard activationState == .Activated && lastState != .Activated else { print("Do not need to send data"); return }
 
         sendRegistery()
         sendBookmarkedStops()
     }
 
+    func sessionWatchStateDidChange(session: WCSession) {
+        print("Change: \(session.activationState)")
+    }
     func session(session: WCSession, didFinishFileTransfer fileTransfer: WCSessionFileTransfer, error: NSError?) {
 
         if let error = error {
@@ -52,11 +52,6 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
     func sendData(data: [String: AnyObject]) {
 
-        guard session.activationState != .NotActivated else {
-            print("There is no active session")
-            return
-        }
-        
         do {
             try session.updateApplicationContext(data)
         } catch let error {

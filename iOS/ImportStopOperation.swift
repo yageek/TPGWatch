@@ -33,12 +33,12 @@ final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
         guard !cancelled else { return }
 
         guard let stopRecordJSON = self.requirement as? [String:AnyObject] else {
-            self.finish(Error.InvalidData)
+            self.finish(GeneralError.UnexpectedData)
             return
         }
 
         guard let  stopRecord = ParsedStopsRecord(json: stopRecordJSON) else {
-            self.finish(Error.InvalidData)
+            self.finish(GeneralError.UnexpectedData)
             return
         }
 

@@ -40,11 +40,19 @@ final class DownloadOperation: GroupOperation, ResultOperationType {
         if let error = error {
             self.finish(error)
             return
-        } else {
-            result = file
+        } else if let response = response {
+
+            switch response.statusCode {
+            case 200:
+                result = file
+                self.finish()
+            case 503:
+                self.finish(GeneralError.ServiceUnavailable)
+            default:
+                self.finish(GeneralError.UnexpectedError)
+            }
+
         }
-
-
     }
 
 }

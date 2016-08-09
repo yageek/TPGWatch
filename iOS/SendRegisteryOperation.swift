@@ -59,6 +59,11 @@ class SendRegisteryOperation: Operation {
             ]
         }
 
+        guard linesJSON.count > 0 else {
+            print("Registery is empty")
+            return
+        }
+        
         let registery = ["registery": linesJSON]
         watchProxy.sendData(registery)
     }

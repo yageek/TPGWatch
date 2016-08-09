@@ -33,12 +33,12 @@ final class ImportLinesColorsOperation: Operation, AutomaticInjectionOperationTy
         guard !cancelled else { return }
         
         guard let lineColorRecordJSON = self.requirement as? [String:AnyObject] else {
-            self.finish(Error.InvalidData)
+            self.finish(GeneralError.UnexpectedData)
             return
         }
 
         guard let lineColorRecord = ParsedLineColorRecord(json: lineColorRecordJSON) else {
-            self.finish(Error.InvalidData)
+            self.finish(GeneralError.UnexpectedData)
             return
         }
 

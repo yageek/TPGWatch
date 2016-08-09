@@ -53,6 +53,7 @@
 		0BB280181D5922590065C403 /* PresentFirstScreenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280171D5922590065C403 /* PresentFirstScreenOperation.swift */; };
 		0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801A1D5927680065C403 /* BookmarkedStop.swift */; };
 		0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801D1D5927C20065C403 /* DepartureInfo.swift */; };
+		0BB2801F1D59D4160065C403 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
 		0BBDC1891D54D447005C8297 /* ReadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadOperation.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
@@ -201,7 +202,7 @@
 		0BF007291D34000A008877F9 /* StopCellSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopCellSearch.xib; sourceTree = "<group>"; };
 		0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopBookmarkVC.swift; sourceTree = "<group>"; };
 		0BF007311D34002F008877F9 /* StopSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopSearchVC.swift; sourceTree = "<group>"; };
-		0BF007341D340040008877F9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		0BF007341D340040008877F9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = iOS/Error.swift; sourceTree = "<group>"; };
 		0BF0073A1D340061008877F9 /* ImportStopOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportStopOperation.swift; sourceTree = "<group>"; };
 		0BF0073B1D340061008877F9 /* GetStopsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStopsOperation.swift; sourceTree = "<group>"; };
 		0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportLinesColorsOperation.swift; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 		0B037F0D1D3573E700EEF1D5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0BF007341D340040008877F9 /* Error.swift */,
 				0B037F111D35741800EEF1D5 /* DownloadOperation.swift */,
 				0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */,
 				0B037F141D3579AA00EEF1D5 /* Keys.swift */,
@@ -416,7 +418,6 @@
 				0BF007461D34007A008877F9 /* Color */,
 				0BF007371D340050008877F9 /* LineRendering */,
 				0BF007361D340048008877F9 /* Operations */,
-				0BF007331D340038008877F9 /* Error */,
 				0BF007251D33FFFE008877F9 /* Cells */,
 				0BF0072E1D340017008877F9 /* ViewControllers */,
 				0BF007231D33FFF4008877F9 /* AppDelegate.swift */,
@@ -447,14 +448,6 @@
 				0B45254F1D473C600026907E /* TutorialViewController.swift */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		0BF007331D340038008877F9 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				0BF007341D340040008877F9 /* Error.swift */,
-			);
-			name = Error;
 			sourceTree = "<group>";
 		};
 		0BF007361D340048008877F9 /* Operations */ = {
@@ -727,6 +720,7 @@
 				0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */,
 				0BB280161D591FA90065C403 /* CheckFilesOperation.swift in Sources */,
 				0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */,
+				0BB2801F1D59D4160065C403 /* Error.swift in Sources */,
 				0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */,
 				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
 				0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,

@@ -36,7 +36,7 @@ class PresentFirstScreenOperation: Operation, AutomaticInjectionOperationType {
 
         if !req.hasregistery {
 
-            let text = NSLocalizedString("Open phone app to sync.", comment: "")
+            let text = NSLocalizedString("Open the phone app to sync data", comment: "")
             label.setText(text)
 
         } else {

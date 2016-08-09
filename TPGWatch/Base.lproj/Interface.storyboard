@@ -99,7 +99,7 @@
                         <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="EUe-ax-3ll">
                             <items>
                                 <imageView width="40" height="40" alignment="center" verticalAlignment="center" image="sync" id="CsX-bV-lhW"/>
-                                <label width="100" alignment="center" verticalAlignment="bottom" text="Loading ..." textAlignment="center" numberOfLines="0" id="vnP-uV-yNR">
+                                <label width="100" alignment="center" verticalAlignment="bottom" text="Open the phone app to sync data" textAlignment="center" numberOfLines="0" id="vnP-uV-yNR">
                                     <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                 </label>
                             </items>

@@ -33,12 +33,12 @@ final class ImportLinesColorsOperation: Operation, AutomaticInjectionOperationTy
         guard !cancelled else { return }
         
         guard let lineColorRecordJSON = self.requirement as? [String:AnyObject] else {
-            self.finish(Error.InvalidData)
+            self.finish(GeneralError.UnexpectedData)
             return
         }
 
         guard let lineColorRecord = ParsedLineColorRecord(json: lineColorRecordJSON) else {
-            self.finish(Error.InvalidData)
+            self.finish(GeneralError.UnexpectedData)
             return
         }
 
@@ -48,9 +48,9 @@ final class ImportLinesColorsOperation: Operation, AutomaticInjectionOperationTy
                 let line = NSEntityDescription.insertNewObjectForEntityForName(Line.EntityName, inManagedObjectContext: self.context) as! Line
 
                 line.code = lineColor.lineCode
-                line.backgroundColor = UIColor(rgba: "#\(lineColor.background)")
-                line.textColor = UIColor(rgba: "#\(lineColor.text)")
-                line.ribonColor = UIColor(rgba: "#\(lineColor.hexa)")
+                line.backgroundColor = "#\(lineColor.background)"
+                line.textColor = "#\(lineColor.text)"
+                line.ribonColor = "#\(lineColor.hexa)"
             }
 
             do {

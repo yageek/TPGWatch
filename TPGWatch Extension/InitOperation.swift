@@ -22,7 +22,7 @@ class InitOperation: GroupOperation {
 
 
         // Check presence of files on watch
-        let checkString = NSLocalizedString("Check files...", comment: "Check files")
+        let checkString = NSLocalizedString("Checking files...", comment: "Check files")
 
         let checkFilesDisplayOp = UpdateDisplayOperation(label: label, text: checkString)
         let checkFilesOp = CheckFilesOperation()

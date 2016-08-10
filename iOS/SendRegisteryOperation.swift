@@ -37,7 +37,7 @@ class SendRegisteryOperation: Operation {
 
             do {
                 let lines = try self.context.executeFetchRequest(request) as! [Line]
-                self.sendLines(lines)
+                try self.sendLines(lines)
                 self.finish()
                 
             } catch let error {
@@ -47,7 +47,7 @@ class SendRegisteryOperation: Operation {
         }
     }
 
-    private func sendLines(lines: [Line]) {
+    private func sendLines(lines: [Line]) throws {
 
         var linesJSON: [String: AnyObject] = [:]
 
@@ -65,6 +65,6 @@ class SendRegisteryOperation: Operation {
         }
         
         let registery = ["registery": linesJSON]
-        watchProxy.sendData(registery)
+        try watchProxy.sendData(registery)
     }
 }

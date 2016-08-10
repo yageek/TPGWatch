@@ -48,6 +48,7 @@ class DeleteFileOperation: Operation {
         }
 
         do {
+            print("Deleting file at: \(url)")
             try fileManager.removeItemAtURL(url)
         } catch let error {
             print("Can not delete file at path: \(error)")

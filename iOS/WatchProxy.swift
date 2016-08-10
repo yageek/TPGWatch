@@ -15,7 +15,12 @@ import TPGSwift
 class WatchProxy: NSObject, WCSessionDelegate {
 
     let session: WCSession
-    let queue = OperationQueue()
+    let queue: OperationQueue =  {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        queue.name = "net.yageek.tpgwatch.syncqueue"
+        return queue
+    }()
 
     init(session: WCSession) {
         self.session = session
@@ -33,66 +38,25 @@ class WatchProxy: NSObject, WCSessionDelegate {
             return
         }
 
-        sendRegistery()
-        sendBookmarkedStops()
+        syncData()
     }
 
-    func sessionWatchStateDidChange(session: WCSession) {
-        print("Change: \(session.activationState)")
-    }
-    func session(session: WCSession, didFinishFileTransfer fileTransfer: WCSessionFileTransfer, error: NSError?) {
+    func syncData() {
+        let sendRegisteryOp = SendRegisteryOperation(context: UIMoc(), proxy: self)
+        let sendBookmarkOp = SendBookmarkOperation(context: UIMoc(), proxy: self)
 
-        if let error = error {
-            print("Impossible to transfer element to the watch: \(error)")
-        } else {
-            print("Data transmitted correctly to the watch")
-        }
+        queue.addOperations(sendRegisteryOp, sendBookmarkOp)
+
     }
 
+    func sendData(data: [String: AnyObject]) throws {
 
-    func sendData(data: [String: AnyObject]) {
-
-        do {
-            try session.updateApplicationContext(data)
-        } catch let error {
-            print("Can not send data to watch: \(error)")
-        }
+        try session.updateApplicationContext(data)
     }
 
-
-    func sendBookmarkedStops() {
-
-        print("Sending stop to the watch....")
-        
-        let request = NSFetchRequest(entityName: Stop.EntityName)
-        request.predicate = NSPredicate(format: "bookmarked == true")
-        request.propertiesToFetch = ["code", "name"]
-        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-
-        do {
-            let stopsObjects = try UIMoc().executeFetchRequest(request) as! [Stop]
-            let stops = stopsObjects.map({ (stop) -> [String:AnyObject] in
-
-                let connections = stop.valueForKeyPath("connections.line.code")?.allObjects ?? []
-
-                return [
-                    "name" : stop.name!,
-                    "code" : stop.code!,
-                    "lines": connections,
-                ]
-            })
-
-            let dict: [String: AnyObject] = ["stops": stops]
-            sendData(dict)
-
-        } catch let error {
-            print("Can not send error:\(error)")
-        }
-    }
-
-    func sendRegistery() {
-        let sendRegistery = SendRegisteryOperation(context: UIMoc(), proxy: self)
-        queue.addOperation(sendRegistery)
+    func sendBookmarkedStops () {
+        let sendBookmarkOp = SendBookmarkOperation(context: UIMoc(), proxy: self)
+        queue.addOperation(sendBookmarkOp)
     }
 
 

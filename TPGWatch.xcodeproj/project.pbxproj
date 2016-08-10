@@ -81,7 +81,7 @@
 		0BF0075F1D340172008877F9 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075D1D340172008877F9 /* TPGSwift.framework */; };
 		0BF007601D340172008877F9 /* Operations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075E1D340172008877F9 /* Operations.framework */; };
 		0BF007621D340185008877F9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF007611D340185008877F9 /* CoreData.framework */; };
-		0BFAD9341D5BE34E00182161 /* SendBookmarkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAD9331D5BE34E00182161 /* SendBookmarkOperation.swift */; };
+		0BFAD9321D5BDF9D00182161 /* SendBookmarkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,7 +222,7 @@
 		0BF0075D1D340172008877F9 /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/iOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0BF0075E1D340172008877F9 /* Operations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Operations.framework; path = Carthage/Build/iOS/Operations.framework; sourceTree = "<group>"; };
 		0BF007611D340185008877F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0BFAD9331D5BE34E00182161 /* SendBookmarkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendBookmarkOperation.swift; sourceTree = "<group>"; };
+		0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendBookmarkOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +460,7 @@
 				0BF0073B1D340061008877F9 /* GetStopsOperation.swift */,
 				0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */,
 				0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */,
+				0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -760,7 +761,7 @@
 				0B84C1441D529EA700594499 /* SendRegisteryOperation.swift in Sources */,
 				0B4525501D473C600026907E /* TutorialViewController.swift in Sources */,
 				0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */,
-				0BFAD9341D5BE34E00182161 /* SendBookmarkOperation.swift in Sources */,
+				0BFAD9321D5BDF9D00182161 /* SendBookmarkOperation.swift in Sources */,
 				0BF007591D3400A7008877F9 /* Stop.swift in Sources */,
 				0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */,
 				0BF007571D3400A7008877F9 /* Connection.swift in Sources */,

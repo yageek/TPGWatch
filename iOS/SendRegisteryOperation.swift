@@ -35,14 +35,23 @@ class SendRegisteryOperation: Operation {
 
         context.performBlock { 
 
+            var lines: [Line] = []
             do {
-                let lines = try self.context.executeFetchRequest(request) as! [Line]
-                try self.sendLines(lines)
-                self.finish()
-                
+                lines = try self.context.executeFetchRequest(request) as! [Line]
             } catch let error {
                 print("Impossible to fetch stops: \(error)")
                 self.finish(error)
+            }
+
+            defer {
+                self.finish()
+            }
+            
+            do {
+                try self.sendLines(lines)
+                self.finish()
+            } catch let error {
+                print("WARN - App watch is not connected: \(error)")
             }
         }
     }

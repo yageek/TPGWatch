@@ -34,16 +34,11 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         if let stopsData = applicationContext["stops"] as? [[String: AnyObject]] {
-
-
             Store.sharedInstance.saveBookmarks(stopsData, notificationName: WatchProxy.BookmarkUpdateNotification)
+        }
 
-        } else if let registery = applicationContext["registery"] as? [String: AnyObject] {
-
+        if let registery = applicationContext["registery"] as? [String: AnyObject] {
             Store.sharedInstance.saveRegistery(registery, notificationName: WatchProxy.RegisteryUpdateNotification)
-
-        } else {
-            print("Invalid Data: \(applicationContext)")
         }
         
     }

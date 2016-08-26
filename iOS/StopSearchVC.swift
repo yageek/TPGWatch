@@ -210,7 +210,14 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
                 let alert = AlertOperation(presentAlertFrom: self)
                 alert.title = NSLocalizedString("Error while downloading", comment: "")
-                alert.message = NSLocalizedString("An error occurs while downloading. Please retry later", comment: "")
+
+                if let error = error as? GeneralError {
+                    alert.message = error.error.localizedDescription
+                } else if let _ = error as? ReachabilityCondition.Error {
+                    alert.message = GeneralError.NoNetworkConnection.error.localizedDescription
+                } else {
+                    alert.message = NSLocalizedString("An error occurs while downloading. Please retry later", comment: "")
+                }
 
                 self.queue.addOperation(alert)
             }

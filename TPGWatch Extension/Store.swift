@@ -46,10 +46,12 @@ class Store {
     }()
 
     func saveBookmarks(json: AnyObject, notificationName: String) {
+        self.bookmarkCache = json as? [[String: AnyObject]]
         self.saveData(json, URL: Store.StopsFileURL, notificationName: notificationName)
     }
 
     func saveRegistery(json: AnyObject, notificationName: String) {
+        self.registeryCache = json as? [String: AnyObject]
         self.saveData(json, URL: Store.RegisteryFileURL, notificationName: notificationName)
     }
 

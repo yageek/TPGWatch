@@ -34,7 +34,7 @@ class PresentFirstScreenOperation: Operation, AutomaticInjectionOperationType {
             self.finish()
         }
 
-        if !req.hasregistery {
+        if !req.hasregistery || !req.hasBookmark {
 
             let text = NSLocalizedString("Open the phone app to sync data", comment: "")
             label.setText(text)

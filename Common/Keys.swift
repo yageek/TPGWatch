@@ -9,4 +9,4 @@
 import Foundation
 
 
-let TPGKey = "***REMOVED***"
+let TPGKey = "API_KEY"

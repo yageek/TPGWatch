@@ -14,6 +14,8 @@
 		0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
 		0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
+		0B13489A1DC9CFE000E2B23F /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */; };
+		0B13489C1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */; };
 		0B134F801D48122200D1489A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B134F821D48122200D1489A /* Localizable.strings */; };
 		0B28DDE41D58CE99003ACC0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007471D340082008877F9 /* Color.swift */; };
 		0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007481D340082008877F9 /* Palette.swift */; };
@@ -25,6 +27,9 @@
 		0B32C3981D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3971D34DEA200D97205 /* Assets.xcassets */; };
 		0B32C39C1D34DEA200D97205 /* TPGWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0B32C3821D34DEA200D97205 /* TPGWatch.app */; };
 		0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3A61D34DEF600D97205 /* WatchProxy.swift */; };
+		0B353BF51DC90B8200A306B9 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */; };
+		0B353BF61DC90BDF00A306B9 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
+		0B353BF81DC90BE000A306B9 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */; };
 		0B3F1FF41D3C1F7A0093AC66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F1FF61D3C1F7A0093AC66 /* Main.storyboard */; };
 		0B3F1FFD1D3C232D0093AC66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F1FFF1D3C232D0093AC66 /* Localizable.strings */; };
 		0B3F20021D3C232D0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20041D3C232D0093AC66 /* InfoPlist.strings */; };
@@ -37,7 +42,6 @@
 		0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */; };
 		0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */; };
 		0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0EA1D547E930005F6E3 /* Store.swift */; };
-		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
 		0B8250091D3841390094946B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
 		0B84C1441D529EA700594499 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
@@ -79,7 +83,6 @@
 		0BF007581D3400A7008877F9 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007521D3400A7008877F9 /* Line.swift */; };
 		0BF007591D3400A7008877F9 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007531D3400A7008877F9 /* Stop.swift */; };
 		0BF0075F1D340172008877F9 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075D1D340172008877F9 /* TPGSwift.framework */; };
-		0BF007601D340172008877F9 /* Operations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075E1D340172008877F9 /* Operations.framework */; };
 		0BF007621D340185008877F9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF007611D340185008877F9 /* CoreData.framework */; };
 		0BFAD9321D5BDF9D00182161 /* SendBookmarkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */; };
 /* End PBXBuildFile section */
@@ -138,6 +141,8 @@
 		0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONUnmarshalOperation.swift; path = Common/JSONUnmarshalOperation.swift; sourceTree = "<group>"; };
 		0B037F111D35741800EEF1D5 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadOperation.swift; path = Common/DownloadOperation.swift; sourceTree = "<group>"; };
 		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
+		0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitNetwork.framework; path = Carthage/Build/watchOS/ProcedureKitNetwork.framework; sourceTree = "<group>"; };
+		0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitNetwork.framework; path = Carthage/Build/iOS/ProcedureKitNetwork.framework; sourceTree = "<group>"; };
 		0B134F811D48122200D1489A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B134F831D48122C00D1489A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B134F851D4817A600D1489A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -151,6 +156,8 @@
 		0B32C3971D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B32C3991D34DEA200D97205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B32C3A61D34DEF600D97205 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
+		0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKit.framework; path = Carthage/Build/iOS/ProcedureKit.framework; sourceTree = "<group>"; };
+		0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKit.framework; path = Carthage/Build/watchOS/ProcedureKit.framework; sourceTree = "<group>"; };
 		0B3F1FF51D3C1F7A0093AC66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B3F1FF71D3C1F9A0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		0B3F1FF81D3C1F9A0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Interface.strings; sourceTree = "<group>"; };
@@ -220,7 +227,6 @@
 		0BF0075A1D3400B4008877F9 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0BF0075B1D3400DC008877F9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0BF0075D1D340172008877F9 /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/iOS/TPGSwift.framework; sourceTree = "<group>"; };
-		0BF0075E1D340172008877F9 /* Operations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Operations.framework; path = Carthage/Build/iOS/Operations.framework; sourceTree = "<group>"; };
 		0BF007611D340185008877F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendBookmarkOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,7 +236,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */,
+				0B13489A1DC9CFE000E2B23F /* ProcedureKitNetwork.framework in Frameworks */,
+				0B353BF81DC90BE000A306B9 /* ProcedureKit.framework in Frameworks */,
+				0B353BF61DC90BDF00A306B9 /* TPGSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +253,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B13489C1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework in Frameworks */,
+				0B353BF51DC90B8200A306B9 /* ProcedureKit.framework in Frameworks */,
 				0B8250091D3841390094946B /* PKHUD.framework in Frameworks */,
 				0BF007621D340185008877F9 /* CoreData.framework in Frameworks */,
 				0BF0075F1D340172008877F9 /* TPGSwift.framework in Frameworks */,
-				0BF007601D340172008877F9 /* Operations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +308,17 @@
 				0B32C3A61D34DEF600D97205 /* WatchProxy.swift */,
 			);
 			name = WatchProxy;
+			sourceTree = "<group>";
+		};
+		0B353BF31DC90B8200A306B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */,
+				0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */,
+				0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */,
+				0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */ = {
@@ -387,7 +407,6 @@
 				0B7BF67B1D352A430044E75F /* TPGSwift.framework */,
 				0BF007611D340185008877F9 /* CoreData.framework */,
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
-				0BF0075E1D340172008877F9 /* Operations.framework */,
 				0BF0075B1D3400DC008877F9 /* README.md */,
 				0BF0075A1D3400B4008877F9 /* Cartfile */,
 				0B037F0D1D3573E700EEF1D5 /* Common */,
@@ -396,6 +415,7 @@
 				0B32C3921D34DEA200D97205 /* TPGWatch Extension */,
 				0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */,
 				0BF0070D1D33FF6D008877F9 /* Products */,
+				0B353BF31DC90B8200A306B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,7 +475,6 @@
 		0BF007361D340048008877F9 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				0BFAD9331D5BE34E00182161 /* SendBookmarkOperation.swift */,
 				0BF0073A1D340061008877F9 /* ImportStopOperation.swift */,
 				0BF0073B1D340061008877F9 /* GetStopsOperation.swift */,
 				0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */,
@@ -588,18 +607,22 @@
 					0B32C3811D34DEA200D97205 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5QGK56P5P5;
+						LastSwiftMigration = 0810;
 					};
 					0B32C38D1D34DEA200D97205 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5QGK56P5P5;
+						LastSwiftMigration = 0810;
 					};
 					0B3F201C1D3C27B00093AC66 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 0BF0070B1D33FF6D008877F9;
 					};
 					0BF0070B1D33FF6D008877F9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5QGK56P5P5;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -677,7 +700,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/watchOS/TPGSwift.framework",
-				"$(SRCROOT)/Carthage/Build/watchOS/Operations.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/ProcedureKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitNetwork.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -692,9 +716,10 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Operations.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TPGSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitNetwork.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -892,6 +917,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -909,6 +935,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -928,6 +955,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -947,6 +975,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -959,6 +988,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "iOS App";
 			};
 			name = Debug;
@@ -970,6 +1000,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "iOS App";
 			};
 			name = Release;
@@ -1066,6 +1097,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1073,6 +1105,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = TPGWatch;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1085,12 +1118,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = TPGWatch;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -8,26 +8,26 @@
 
 import UIKit
 import CoreData
-import Operations
+import ProcedureKit
 import PKHUD
 
 final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, LinesRendererContextDelegate {
 
     // Concurrency
-    private let queue = OperationQueue()
+    fileprivate let queue = OperationQueue()
     
     var renderingContext: LinesRendererContext = {
-        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         let rendering = LinesRendererContext(context: context)
         return rendering
     }()
     // Core Data
-    private var fetchedResultsController:NSFetchedResultsController?
+    fileprivate var fetchedResultsController:NSFetchedResultsController<NSFetchRequestResult>?
 
     //Search
-    private var searchController:UISearchController?
-    private var filteredStops:[Stop] = []
-    private var searchModeEnabled = false
+    fileprivate var searchController:UISearchController?
+    fileprivate var filteredStops:[Stop] = []
+    fileprivate var searchModeEnabled = false
 
     // MARK: View lifecycle
 
@@ -45,12 +45,12 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         updateUI(firstTime: true)
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchedResultsController?.delegate = self
     }
 
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         fetchedResultsController?.delegate = nil
     }
@@ -61,7 +61,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         if searchModeEnabled {
             return 1
         } else {
@@ -69,7 +69,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         }
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchModeEnabled {
             return filteredStops.count
         } else {
@@ -79,8 +79,8 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("StopCellSearch", forIndexPath: indexPath) as! StopCellSearch
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StopCellSearch", for: indexPath) as! StopCellSearch
 
         if let stop = stopAtIndexPath(indexPath) {
             setCell(cell, bookmarked: stop.bookmarked)
@@ -94,7 +94,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
     // MARK: Tableview delegate
 
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
         if searchModeEnabled {
             return nil
@@ -106,29 +106,29 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         return nil
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         toggleStopAtIndexPath(indexPath)
     }
     
     // MARK: Refresh
 
-    @IBAction func refreshTriggered(sender: UIRefreshControl) {
+    @IBAction func refreshTriggered(_ sender: UIRefreshControl) {
         downloadStops()
     }
 
     // MARK: Helpers
     internal func setupTableView() {
         let nib = UINib(nibName: "StopCellSearch", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "StopCellSearch")
+        tableView.register(nib, forCellReuseIdentifier: "StopCellSearch")
 
     }
     internal func setupFetchController() {
         //Fetch Manager
-        let request = NSFetchRequest(entityName: Stop.EntityName)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Stop.EntityName)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-        let entityDescription = NSEntityDescription.entityForName(Stop.EntityName, inManagedObjectContext: UIMoc())!
+        let entityDescription = NSEntityDescription.entity(forEntityName: Stop.EntityName, in: UIMoc())!
         let props = entityDescription.propertiesByName
 
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -147,12 +147,12 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         searchController?.dimsBackgroundDuringPresentation = false
 
         self.tableView.tableHeaderView = searchController?.searchBar
-        self.tableView.tableFooterView = UIView(frame:CGRectZero)
+        self.tableView.tableFooterView = UIView(frame:CGRect.zero)
     }
 
-    private func toggleStopAtIndexPath(indexPath:NSIndexPath) {
+    fileprivate func toggleStopAtIndexPath(_ indexPath:IndexPath) {
 
-        if let stop = stopAtIndexPath(indexPath), let cell = tableView.cellForRowAtIndexPath(indexPath) {
+        if let stop = stopAtIndexPath(indexPath), let cell = tableView.cellForRow(at: indexPath) {
 
 
             defer {
@@ -164,28 +164,28 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         }
     }
 
-    private func stopAtIndexPath(indexPath:NSIndexPath) -> Stop?{
+    fileprivate func stopAtIndexPath(_ indexPath:IndexPath) -> Stop?{
         if searchModeEnabled {
             return filteredStops[indexPath.row]
         } else {
-            return fetchedResultsController?.objectAtIndexPath(indexPath) as? Stop
+            return fetchedResultsController?.object(at: indexPath) as? Stop
         }
     }
 
     // MARK: Data update
 
-    func setCell(cell: StopCellSearch, bookmarked: Bool) {
+    func setCell(_ cell: StopCellSearch, bookmarked: Bool) {
 
         let image = bookmarked ? UIImage(imageLiteral: "bookmark-on") : UIImage(imageLiteral: "bookmark-off")
         cell.bookmarkImageView.image = image
     }
-    internal func updateUI(firstTime firstTime: Bool = false){
+    internal func updateUI(firstTime: Bool = false){
 
         do {
             try fetchedResultsController?.performFetch()
             tableView.reloadData()
 
-            if let elements = fetchedResultsController?.fetchedObjects as? [Stop]  where elements.count == 0 && firstTime {
+            if let elements = fetchedResultsController?.fetchedObjects as? [Stop], elements.count == 0 && firstTime {
                 downloadStops(showHud: true)
             }
         }
@@ -194,13 +194,13 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         }
     }
 
-    internal func downloadStops(showHud showHud: Bool = false) {
+    internal func downloadStops(showHud: Bool = false) {
         let getStopsOp = GetStopsOperation(context: UIMoc(), proxy: Proxy()) { (inner) in
 
             do {
                 try inner()
 
-                NSOperationQueue.mainQueue().addOperationWithBlock {
+                OperationQueue.main.addOperation {
 
                     self.updateUI()
                 }
@@ -224,7 +224,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         }
 
         getStopsOp.completionBlock = {
-            NSOperationQueue.mainQueue().addOperationWithBlock {
+            OperationQueue.mainQueue().addOperationWithBlock {
                 self.refreshControl?.endRefreshing()
             }
         }
@@ -233,7 +233,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
             let observer = BlockObserver(willExecute: { (operation) in
 
-                NSOperationQueue.mainQueue().addOperationWithBlock {
+                OperationQueue.mainQueue().addOperationWithBlock {
                     let view = PKHUDProgressView()
                     view.subtitleLabel.text = NSLocalizedString("Loading stops...", comment: "")
                     PKHUD.sharedHUD.contentView = view
@@ -243,7 +243,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
                 }, willCancel: nil, didCancel: nil, didProduce: nil, willFinish: nil, didFinish: { (operation, errors) in
 
-                    NSOperationQueue.mainQueue().addOperationWithBlock {
+                    OperationQueue.mainQueue().addOperationWithBlock {
                         PKHUD.sharedHUD.hide()
                     }
             })
@@ -256,11 +256,11 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
     // MARK: Search
 
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        searchModeEnabled = searchController.active
+    func updateSearchResults(for searchController: UISearchController) {
+        searchModeEnabled = searchController.isActive
 
         if searchModeEnabled {
-            refreshControl?.enabled = false
+            refreshControl?.isEnabled = false
 
             if let fetchedStops = fetchedResultsController?.fetchedObjects as? [Stop],
                 let userInput = searchController.searchBar.text {
@@ -276,18 +276,18 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             }
         } else {
 
-            refreshControl?.enabled = true
+            refreshControl?.isEnabled = true
         }
         tableView.reloadData()
     }
-    private func addImageToStopCell(image: UIImage, indexPath: NSIndexPath) {
-        if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? StopCellSearch {
+    fileprivate func addImageToStopCell(_ image: UIImage, indexPath: IndexPath) {
+        if let cell = self.tableView.cellForRow(at: indexPath) as? StopCellSearch {
             cell.addImageLine(image)
         }
     }
 
     // MARK:  LinesRendererContextDelegate
-    func context(context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: NSIndexPath) {
+    func context(_ context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: IndexPath) {
         addImageToStopCell(image, indexPath: indexPath)
     }
 

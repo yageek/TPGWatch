@@ -6,10 +6,10 @@
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import WatchKit
 
-class UpdateDisplayOperation: Operation {
+class UpdateDisplayOperation: Procedure{
 
     let label: WKInterfaceLabel
     let text: String
@@ -21,7 +21,7 @@ class UpdateDisplayOperation: Operation {
     }
 
     override func execute() {
-        NSOperationQueue.mainQueue().addOperationWithBlock {
+        Foundation.OperationQueue.main.addOperation {
             self.label.setText(self.text)
             self.finish()
         }

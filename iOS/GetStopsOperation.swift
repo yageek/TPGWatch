@@ -6,20 +6,20 @@
 //  Copyright © 2016 yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import CoreData
 import TPGSwift
 
 final class GetStopsOperation: GroupOperation {
 
-    let completion: (inner: () throws -> Void) -> Void
+    let completion: (_ inner: () throws -> Void) -> Void
 
-    init(context: NSManagedObjectContext, proxy: WatchProxy?, completion: (inner: () throws -> Void) -> Void) {
+    init(context: NSManagedObjectContext, proxy: WatchProxy?, completion: @escaping (_ inner: () throws -> Void) -> Void) {
 
         self.completion = completion
 
         // Line Operations
-        let getLinesCall = API.GetLinesColors
+        let getLinesCall = API.getLinesColors
         let downloadLinesOp = DownloadOperation(call: getLinesCall)
         let parseLinesOp = JSONUnmarshalOperation()
         let importLinesOp = ImportLinesColorsOperation(context: context)
@@ -29,7 +29,7 @@ final class GetStopsOperation: GroupOperation {
 
 
         // Stops Operations
-        let getStopsCall = API.GetStops(stopCode: nil, stopName: nil, line: nil, latitude: nil, longitude: nil)
+        let getStopsCall = API.getStops(stopCode: nil, stopName: nil, line: nil, latitude: nil, longitude: nil)
         let downloadStopsOp = DownloadOperation(call: getStopsCall)
         let parseStopsOp = JSONUnmarshalOperation()
         let importStopsOp = ImportStopOperation(context: context)
@@ -57,7 +57,7 @@ final class GetStopsOperation: GroupOperation {
         }
     }
 
-    override func operationDidFinish(errors: [ErrorType]) {
+    override func operationDidFinish(_ errors: [Error]) {
         print("Errors: \(errors)")
 
         self.completion { 

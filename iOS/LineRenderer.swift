@@ -12,7 +12,7 @@ final class LineRenderer {
 
     struct LineRenderingOptions {
         let lineWidth: CGFloat = 5.0
-        let textFont: UIFont = UIFont.systemFontOfSize(11.0)
+        let textFont: UIFont = UIFont.systemFont(ofSize: 11.0)
         let backgroundColor: UIColor
         let textColor: UIColor
         let ribonColor: UIColor
@@ -22,7 +22,7 @@ final class LineRenderer {
     let text: String
     let options: LineRenderingOptions
 
-    private(set) var image: UIImage?
+    fileprivate(set) var image: UIImage?
 
     var hasRendered: Bool { return image != nil}
 
@@ -42,7 +42,7 @@ final class LineRenderer {
         self.init(text: code, options: options)
     }
 
-    func render(size: CGSize) -> UIImage {
+    func render(_ size: CGSize) -> UIImage {
 
         if let image = self.image { return image }
 
@@ -50,10 +50,10 @@ final class LineRenderer {
 
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
 
-        let bounds = CGRect(origin: CGPointZero, size: size)
+        let bounds = CGRect(origin: CGPoint.zero, size: size)
 
         let insetDelta = lineWidth / 2.0
-        let insetRect =  CGRectInset(bounds, insetDelta, insetDelta)
+        let insetRect =  bounds.insetBy(dx: insetDelta, dy: insetDelta)
 
         //Ruban
         let bezierPath = UIBezierPath(roundedRect: insetRect, cornerRadius: bounds.height/2)
@@ -69,14 +69,14 @@ final class LineRenderer {
             NSForegroundColorAttributeName : options.textColor
         ]
 
-        let measureRect = text.boundingRectWithSize(bounds.size, options: [], attributes: properties, context: nil)
+        let measureRect = text.boundingRect(with: bounds.size, options: [], attributes: properties, context: nil)
         let textRect = CGRect(x: (bounds.size.width - ceil(measureRect.size.width))/2.0, y: (bounds.size.height - ceil(measureRect.size.height))/2.0, width: ceil(measureRect.width), height: ceil(measureRect.height))
 
-        (text as NSString).drawInRect(textRect, withAttributes: properties)
+        (text as NSString).draw(in: textRect, withAttributes: properties)
 
         let renderedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         image = renderedImage
-        return renderedImage
+        return renderedImage!
     }
 }

@@ -15,15 +15,15 @@ class DepartureInfo: NSObject {
     @IBOutlet var lineGroup: WKInterfaceGroup!
     @IBOutlet var lineLabel: WKInterfaceLabel!
 
-    func setLine(text: String, textColor: UIColor, backgroundColor: UIColor) {
+    func setLine(_ text: String, textColor: UIColor, backgroundColor: UIColor) {
 
         let group = lineGroup
-        group.setBackgroundColor(backgroundColor)
+        group?.setBackgroundColor(backgroundColor)
 
         let label = lineLabel
 
-        label.setText(text)
-        label.setTextColor(textColor)
+        label?.setText(text)
+        label?.setTextColor(textColor)
     }
     
 }

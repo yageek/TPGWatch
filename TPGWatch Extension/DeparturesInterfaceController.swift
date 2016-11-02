@@ -9,7 +9,7 @@
 import WatchKit
 import Foundation
 import TPGSwift
-import Operations
+import ProcedureKit
 
 class DeparturesInterfaceController: WKInterfaceController {
 
@@ -21,14 +21,14 @@ class DeparturesInterfaceController: WKInterfaceController {
     @IBOutlet var departuresTable: WKInterfaceTable!
     @IBOutlet var reloadButton: WKInterfaceButton!
 
-    var queue = OperationQueue()
+    var queue = ProcedureKit.OperationQueue()
     var record: ParsedNextDeparturesRecord?
 
     var stop: [String: AnyObject]  = [:]
     var registery: [String: AnyObject] = [:]
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
 
         reloadButton.setHidden(true)
 
@@ -59,14 +59,14 @@ class DeparturesInterfaceController: WKInterfaceController {
         fetchDepartures(stop["code"] as! String)
     }
 
-    func fetchDepartures(stopCode: String) {
+    func fetchDepartures(_ stopCode: String) {
 
         self.errorLabel.setHidden(true)
         let op = GetNextDeparturesOperation(code: stopCode) { resultJSON, error in
 
             if let error = error {
                 print("Error: \(error)")
-                dispatch_async(dispatch_get_main_queue()){
+                DispatchQueue.main.async{
                     self.errorLabel.setHidden(false)
                     self.loadingGroup.setHidden(true)
                     self.reloadButton.setHidden(false)
@@ -74,7 +74,7 @@ class DeparturesInterfaceController: WKInterfaceController {
 
             } else if let result = resultJSON {
                 self.record = result
-                dispatch_async(dispatch_get_main_queue()){
+                DispatchQueue.main.async{
                     self.loadingGroup.setHidden(true)
                     self.reloadButton.setHidden(false)
                     self.errorLabel.setHidden(true)
@@ -101,7 +101,7 @@ class DeparturesInterfaceController: WKInterfaceController {
         self.noDeparturesFoundLabel.setHidden(true)
         for i in 0 ..< rowCount {
 
-            let row = departuresTable.rowControllerAtIndex(i) as! DepartureInfo
+            let row = departuresTable.rowController(at: i) as! DepartureInfo
             let departure = departures.departures[i]
 
             // Name
@@ -127,8 +127,8 @@ class DeparturesInterfaceController: WKInterfaceController {
             var departureTimeText = "\(departure.waitingTime)"
             let motif = "&gt;1h"
 
-            if departureTimeText.containsString(motif) {
-                departureTimeText = departureTimeText.stringByReplacingOccurrencesOfString(motif, withString: ">1") + NSLocalizedString("h", comment: "Shortcut for hour")
+            if departureTimeText.contains(motif) {
+                departureTimeText = departureTimeText.replacingOccurrences(of: motif, with: ">1") + NSLocalizedString("h", comment: "Shortcut for hour")
             } else {
                 departureTimeText += " " + NSLocalizedString("min", comment: "Minutes")
             }

@@ -29,29 +29,29 @@ class BookmarkedStop: NSObject {
 
     @IBOutlet var moreLabel: WKInterfaceLabel!
 
-    func labels() -> [WKInterfaceLabel!] {
+    func labels() -> [WKInterfaceLabel?] {
         return [lineLabelOne, lineLabelTwo, lineLabelThree, lineLabelFour]
     }
 
-    func groups() -> [WKInterfaceGroup!] {
+    func groups() -> [WKInterfaceGroup?] {
         return [lineGroupOne, lineGroupTwo, lineGroupThree, lineGroupFour]
     }
 
-    func setHideLineAtIndex(index: Int, hidden: Bool) {
-        groups()[index].setHidden(hidden)
+    func setHideLineAtIndex(_ index: Int, hidden: Bool) {
+        groups()[index]?.setHidden(hidden)
     }
 
 
-    func setLine(index: Int, text: String, textColor: UIColor, backgroundColor: UIColor) {
+    func setLine(_ index: Int, text: String, textColor: UIColor, backgroundColor: UIColor) {
 
 
         let group = groups()[index]
-        group.setBackgroundColor(backgroundColor)
+        group?.setBackgroundColor(backgroundColor)
 
         let label = labels()[index]
 
-        label.setText(text)
-        label.setTextColor(textColor)
+        label?.setText(text)
+        label?.setTextColor(textColor)
 
         setHideLineAtIndex(index, hidden: false)
     }

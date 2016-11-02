@@ -6,12 +6,13 @@
 //  Copyright © 2016 yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 
-final class JSONUnmarshalOperation: Operation, ResultOperationType, AutomaticInjectionOperationType {
+final class JSONUnmarshalOperation: Procedure {
 
-    var requirement: NSURL?
-    private(set) var result: AnyObject?
+
+    var requirement: URL?
+    var result: Any?
 
     override init() {
         super.init()
@@ -19,11 +20,11 @@ final class JSONUnmarshalOperation: Operation, ResultOperationType, AutomaticInj
     }
 
     override func execute() {
-        guard !cancelled else { return }
+        guard !isCancelled else { return }
         
         guard let requirement = requirement else { return }
         
-        guard let stream = NSInputStream(URL: requirement) else {
+        guard let stream = InputStream(url: requirement) else {
             finish()
             return;
         }
@@ -35,10 +36,10 @@ final class JSONUnmarshalOperation: Operation, ResultOperationType, AutomaticInj
         }
 
         do {
-            result = try NSJSONSerialization.JSONObjectWithStream(stream, options: [])
+            result = try JSONSerialization.jsonObject(with: stream, options: [])
             self.finish()
         } catch let error {
-            self.finish(error)
+            self.finish(withError: error)
             return
         }
     }

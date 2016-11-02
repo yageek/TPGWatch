@@ -6,14 +6,15 @@
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 
-class SaveOperation: Operation {
+
+class SaveOperation: Procedure {
 
     let data: AnyObject?
-    let saveURL: NSURL
+    let saveURL: URL
 
-    init(data: AnyObject, saveURL: NSURL) {
+    init(data: AnyObject, saveURL: URL) {
         self.data = data
         self.saveURL = saveURL
 
@@ -23,18 +24,18 @@ class SaveOperation: Operation {
     }
 
     override func execute() {
-        guard !cancelled else { return }
+        guard !isCancelled else { return }
 
         var result: Bool = false
 
         if let array = data as? [[String: AnyObject]] {
-            result = (array as NSArray).writeToURL(self.saveURL, atomically: true)
+            result = (array as NSArray).write(to: self.saveURL, atomically: true)
         } else if let dict = data as? [String: AnyObject] {
-            result = (dict as NSDictionary).writeToURL(self.saveURL, atomically: true)
+            result = (dict as NSDictionary).write(to: self.saveURL, atomically: true)
         }
 
         if !result {
-            self.finish(NSError(domain: "", code: 0, userInfo: nil))
+            self.finish(withErrors: [GeneralError.unexpectedError])
         } else {
             self.finish()
         }

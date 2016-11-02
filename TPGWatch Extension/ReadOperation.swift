@@ -6,14 +6,14 @@
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 
-class ReadArrayOperation: Operation, ResultOperationType {
+class ReadArrayOperation: Procedure {
 
     var result: [[String: AnyObject]]?
-    let url: NSURL
+    let url: URL
 
-    init(url: NSURL) {
+    init(url: URL) {
         self.url = url
         super.init()
 
@@ -22,21 +22,21 @@ class ReadArrayOperation: Operation, ResultOperationType {
 
     override func execute() {
 
-        if let data = NSArray(contentsOfURL: url) as? [[String: AnyObject]]{
+        if let data = NSArray(contentsOf: url) as? [[String: AnyObject]]{
             result = data
             self.finish()
         } else {
-            self.finish(NSError(domain: "", code: 0, userInfo: nil))
+            self.finish(withError: NSError(domain: "", code: 0, userInfo: nil))
         }
     }
 }
 
-class ReadDictionaryOperation: Operation, ResultOperationType {
+class ReadDictionaryOperation: Procedure {
 
     var result: [String: AnyObject]?
-    let url: NSURL
+    let url: URL
 
-    init(url: NSURL) {
+    init(url: URL) {
         self.url = url
         super.init()
 
@@ -45,11 +45,11 @@ class ReadDictionaryOperation: Operation, ResultOperationType {
 
     override func execute() {
 
-        if let data = NSDictionary(contentsOfURL: url) as? [String: AnyObject]{
+        if let data = NSDictionary(contentsOf: url) as? [String: AnyObject]{
             result = data
             self.finish()
         } else {
-            self.finish(NSError(domain: "", code: 0, userInfo: nil))
+            self.finish(withError: NSError(domain: "", code: 0, userInfo: nil))
         }
     }
 }

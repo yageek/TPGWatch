@@ -6,22 +6,23 @@
 //  Copyright © 2016 yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
+import ProcedureKitNetwork
 import TPGSwift
 
-final class DownloadOperation: GroupOperation, ResultOperationType {
+final class DownloadOperation: GroupProcedure {
 
-    private(set) var result: NSURL?
+    var result: URL?
 
     init(call: API) {
         super.init(operations: [])
 
-        let downloadTask = NSURLSession.sharedSession().downloadTaskWithURL(call.URL) { (tempURL, response, error) in
+        let downloadTask = URLSession.shared.downloadTask(with: call.URL) { (tempURL, response, error) in
 
-            self.didDownloadData(tempURL, response: response as? NSHTTPURLResponse, error: error)
+           // self.didDownloadData(tempURL, response: response, error: error)
         }
 
-        let downloadOperation = URLSessionTaskOperation(task: downloadTask)
+        let downloadOperation = NetworkDataProcedure(session: URLSession.shared)
 
 
         #if os(iOS)
@@ -32,24 +33,26 @@ final class DownloadOperation: GroupOperation, ResultOperationType {
         downloadOperation.addObserver(observer)
         #endif
 
-        self.addOperation(downloadOperation)
+        self.add(child: downloadOperation)
     }
 
-    internal func didDownloadData(file: NSURL?, response: NSHTTPURLResponse?, error: NSError?) {
+    internal func didDownloadData(_ file: URL?, response: URLResponse?, error: NSError?) {
+
+        guard let response = response as? HTTPURLResponse else { self.finish(withError: GeneralError.unexpectedError); return }
 
         if let error = error {
-            self.finish(error)
+            self.finish(withError: error)
             return
-        } else if let response = response {
+        } else {
 
             switch response.statusCode {
             case 200:
                 result = file
                 self.finish()
             case 503:
-                self.finish(GeneralError.ServiceUnavailable)
+                self.finish(withError: GeneralError.serviceUnavailable)
             default:
-                self.finish(GeneralError.UnexpectedError)
+                self.finish(withError: GeneralError.unexpectedError)
             }
 
         }

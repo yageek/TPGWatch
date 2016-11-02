@@ -7,14 +7,14 @@
 //
 
 import WatchKit
-import Operations
+import ProcedureKit
 import TPGSwift
 
-class GetNextDeparturesOperation: GroupOperation {
+class GetNextDeparturesOperation: GroupProcedure {
 
     let completion: (ParsedNextDeparturesRecord?, NSError?) -> Void
 
-    init(code: String, completion: (ParsedNextDeparturesRecord?, NSError?) -> Void) {
+    init(code: String, completion: @escaping (ParsedNextDeparturesRecord?, NSError?) -> Void) {
         self.completion = completion
 
         super.init(operations: [])
@@ -23,7 +23,7 @@ class GetNextDeparturesOperation: GroupOperation {
         let downloadDepartures = DownloadOperation(call: getDeparturesCall)
         let parseDepartures = JSONUnmarshalOperation()
 
-        let blockOp = BlockOperation {
+        let blockOp = BlockProcedure {
 
             if let elements = parseDepartures.result as? [String: AnyObject] {
                 if let record =  ParsedNextDeparturesRecord(json: elements) {
@@ -35,22 +35,26 @@ class GetNextDeparturesOperation: GroupOperation {
             self.completion(nil, NSError(domain: "", code: 0, userInfo: nil))
         }
 
-        parseDepartures.injectResultFromDependency(downloadDepartures)
+        parseDepartures.inject(dependency: downloadDepartures) { (parseProcedure, downloadProcedure, errors) in
+
+            parseProcedure.requirement = downloadProcedure.result
+        }
+
         blockOp.addDependency(parseDepartures)
-        blockOp.addCondition(NoFailedDependenciesCondition())
+        //blockOp.addCondition(condition: NoFailedDependenciesCondition())
 
 
-        addOperations(downloadDepartures, parseDepartures, blockOp)
+        add(children: downloadDepartures, parseDepartures, blockOp)
         name = "Watch download stops"
     }
 
-    override func operationDidFinish(errors: [ErrorType]) {
-
-        if let _ = errors.first {
-            self.completion(nil, NSError(domain: "", code: 0, userInfo: nil))
-        }
-
-
-    }
+//    override func operationDidFinish(_ errors: [Error]) {
+//
+//        if let _ = errors.first {
+//            self.completion(nil, NSError(domain: "", code: 0, userInfo: nil))
+//        }
+//
+//
+//    }
 
 }

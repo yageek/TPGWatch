@@ -7,20 +7,20 @@
 //
 
 import WatchKit
-import Operations
+import ProcedureKit
 
-public class CheckFilesOperation: Operation, ResultOperationType {
+open class CheckFilesOperation: Procedure {
 
     public typealias Result = (hasBookmark: Bool, hasregistery: Bool)?
 
-    public var result: (hasBookmark: Bool, hasregistery: Bool)?
+    open var result: (hasBookmark: Bool, hasregistery: Bool)?
 
-    override public func execute() {
+    override open func execute() {
 
-        let fileManager = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
 
-        let bookmark = fileManager.fileExistsAtPath(Store.StopsFileURL.path!)
-        let registery = fileManager.fileExistsAtPath(Store.RegisteryFileURL.path!)
+        let bookmark = fileManager.fileExists(atPath: Store.StopsFileURL.path)
+        let registery = fileManager.fileExists(atPath: Store.RegisteryFileURL.path)
 
         result = (hasBookmark: bookmark, hasregistery: registery)
 

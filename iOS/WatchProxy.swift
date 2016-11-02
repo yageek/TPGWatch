@@ -9,7 +9,7 @@
 import UIKit
 import WatchConnectivity
 import CoreData
-import Operations
+import ProcedureKit
 import TPGSwift
 
 class WatchProxy: NSObject, WCSessionDelegate {
@@ -27,11 +27,11 @@ class WatchProxy: NSObject, WCSessionDelegate {
         super.init()
 
         session.delegate = self
-        session.activateSession()
+        session.activate()
 
     }
 
-    func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
 
         if let error = error {
             print("Impossible to acvitate session: \(error)")
@@ -49,7 +49,7 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
     }
 
-    func sendData(data: [String: AnyObject]) throws {
+    func sendData(_ data: [String: AnyObject]) throws {
 
         try session.updateApplicationContext(data)
     }

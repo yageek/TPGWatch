@@ -6,10 +6,10 @@
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import WatchKit
 
-class InitOperation: GroupOperation {
+class InitOperation: GroupProcedure {
 
     init(label: WKInterfaceLabel, root: WKInterfaceController) {
 
@@ -33,7 +33,10 @@ class InitOperation: GroupOperation {
 
         let presentScreenOp = PresentFirstScreenOperation(label: label, rootController: root)
 
-        presentScreenOp.injectResultFromDependency(checkFilesOp)
+        presentScreenOp.inject(dependency: checkFilesOp) { (presentProcedure, checkFileProcedure, errors) in
+            presentProcedure.requirement = checkFilesOp.result
+        }
+
         super.init(operations: [cleanupDisplayOp, cleanUpOp, checkFilesDisplayOp, checkFilesOp, presentScreenOp])
     }
 }

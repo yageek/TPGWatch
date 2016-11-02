@@ -6,7 +6,7 @@
 //  Copyright © 2016 yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import CoreData
 import TPGSwift
 import UIKit
@@ -18,7 +18,7 @@ final class ImportLinesColorsOperation: Operation, AutomaticInjectionOperationTy
 
     init(context: NSManagedObjectContext) {
 
-        let importContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         importContext.persistentStoreCoordinator = context.persistentStoreCoordinator
         importContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
 
@@ -30,7 +30,7 @@ final class ImportLinesColorsOperation: Operation, AutomaticInjectionOperationTy
 
     override func execute() {
 
-        guard !cancelled else { return }
+        guard !isCancelled else { return }
         
         guard let lineColorRecordJSON = self.requirement as? [String:AnyObject] else {
             self.finish(GeneralError.UnexpectedData)
@@ -42,10 +42,10 @@ final class ImportLinesColorsOperation: Operation, AutomaticInjectionOperationTy
             return
         }
 
-        context.performBlock {
+        context.perform {
             for lineColor in lineColorRecord.lineColors {
 
-                let line = NSEntityDescription.insertNewObjectForEntityForName(Line.EntityName, inManagedObjectContext: self.context) as! Line
+                let line = NSEntityDescription.insertNewObject(forEntityName: Line.EntityName, into: self.context) as! Line
 
                 line.code = lineColor.lineCode
                 line.backgroundColor = "#\(lineColor.background)"

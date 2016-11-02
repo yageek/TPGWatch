@@ -10,12 +10,12 @@ import UIKit
 import CoreData
 
 func UIMoc() -> NSManagedObjectContext {
-    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     return context
 }
 
 func Proxy() -> WatchProxy? {
-    return (UIApplication.sharedApplication().delegate as! AppDelegate).proxy
+    return (UIApplication.shared.delegate as! AppDelegate).proxy
 }
 //MARK: Save
 internal func save() {
@@ -31,7 +31,7 @@ internal func save() {
 }
 
 private func sendBookmarkedToWatch() {
-    if let proxy = (UIApplication.sharedApplication().delegate as! AppDelegate).proxy {
+    if let proxy = (UIApplication.shared.delegate as! AppDelegate).proxy {
         proxy.sendBookmarkedStops()
     }
 

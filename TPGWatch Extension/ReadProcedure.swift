@@ -8,7 +8,7 @@
 
 import ProcedureKit
 
-class ReadArrayOperation: Procedure {
+class ReadArrayProcedure: Procedure {
 
     var result: [[String: AnyObject]]?
     let url: URL

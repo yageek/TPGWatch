@@ -1,5 +1,5 @@
 //
-//  ImportLinesColorsOperation.swift
+//  ImportLinesColorsProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 05.07.16.
@@ -11,9 +11,10 @@ import CoreData
 import TPGSwift
 import UIKit
 
-final class ImportLinesColorsOperation: Operation, AutomaticInjectionOperationType {
+final class ImportLinesColorsProcedure: Procedure, InputProcedure {
 
-    var requirement: AnyObject?
+    var requirement: Pending<AnyObject> = .pending
+
     let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {

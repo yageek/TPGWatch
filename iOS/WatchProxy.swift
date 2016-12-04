@@ -42,7 +42,7 @@ class WatchProxy: NSObject, WCSessionDelegate {
     }
 
     func syncData() {
-        let sendRegisteryOp = SendRegisteryOperation(context: UIMoc(), proxy: self)
+        let sendRegisteryOp = SendRegisteryProcedure(context: UIMoc(), proxy: self)
         let sendBookmarkOp = SendBookmarkOperation(context: UIMoc(), proxy: self)
 
         queue.addOperations(sendRegisteryOp, sendBookmarkOp)

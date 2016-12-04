@@ -1,5 +1,5 @@
 //
-//  GetNextDeparturesOperation.swift
+//  GetNextDeparturesProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 12.07.16.
@@ -10,7 +10,7 @@ import WatchKit
 import ProcedureKit
 import TPGSwift
 
-class GetNextDeparturesOperation: GroupProcedure {
+class GetNextDeparturesProcedure: GroupProcedure {
 
     let completion: (ParsedNextDeparturesRecord?, NSError?) -> Void
 
@@ -20,8 +20,8 @@ class GetNextDeparturesOperation: GroupProcedure {
         super.init(operations: [])
 
         let getDeparturesCall = API.GetNextDepartures(stopCode: code, departureCode: nil , linesCode: nil, destinationsCode: nil)
-        let downloadDepartures = DownloadOperation(call: getDeparturesCall)
-        let parseDepartures = JSONUnmarshalOperation()
+        let downloadDepartures = DownloadProcedure(call: getDeparturesCall)
+        let parseDepartures = JSONUnmarshalProcedure()
 
         let blockOp = BlockProcedure {
 

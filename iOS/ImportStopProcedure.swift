@@ -1,5 +1,5 @@
 //
-//  ImportStopOperation.swift
+//  ImportStopProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 04.07.16.
@@ -10,9 +10,9 @@ import ProcedureKit
 import CoreData
 import TPGSwift
 
-final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
+final class ImportStopProcedure: Operation, InputProcedure {
 
-    var requirement: AnyObject?
+    var input: Pending<AnyObject> = .pending
     let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
@@ -33,12 +33,12 @@ final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
         guard !isCancelled else { return }
 
         guard let stopRecordJSON = self.requirement as? [String:AnyObject] else {
-            self.finish(GeneralError.UnexpectedData)
+            self.finish(withError: GeneralError.UnexpectedData)
             return
         }
 
         guard let  stopRecord = ParsedStopsRecord(json: stopRecordJSON) else {
-            self.finish(GeneralError.UnexpectedData)
+            self.finish(withError: GeneralError.UnexpectedData)
             return
         }
 

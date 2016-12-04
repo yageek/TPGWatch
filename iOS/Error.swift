@@ -20,8 +20,6 @@ extension GeneralError {
     static var Domain = "net.yageek.TPGWatch"
 
     var error: NSError {
-
-
         switch self {
 
         case .noNetworkConnection:

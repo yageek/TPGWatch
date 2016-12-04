@@ -1,5 +1,5 @@
 //
-//  PresentFirstScreenOperation.swift
+//  PresentFirstScreenProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
@@ -9,9 +9,9 @@
 import WatchKit
 import ProcedureKit
 
-class PresentFirstScreenOperation: Procedure {
+class PresentFirstScreenProcedure: Procedure {
     let label: WKInterfaceLabel
-    var requirement: CheckFilesOperation.Result
+    var requirement: CheckFilesProcedure.Result
     let rootController: WKInterfaceController
 
     init(label: WKInterfaceLabel, rootController: WKInterfaceController) {

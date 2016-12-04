@@ -1,5 +1,5 @@
 //
-//  CleanUpV2Operation.swift
+//  CleanUpV2Procedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
@@ -12,13 +12,13 @@ import ProcedureKit
 /**
  Cleanup Old V2 storage file.
  */
-class CleanUpV2Operation: GroupProcedure {
+class CleanUpV2Procedure: GroupProcedure {
 
     init() {
 
 
-        let bookOp = DeleteFileOperation(url: Store.StopsFileURL.deletingPathExtension().appendingPathExtension("json"))
-        let registeryOp = DeleteFileOperation(url:  Store.RegisteryFileURL.deletingPathExtension().appendingPathExtension("json"))
+        let bookOp = DeleteFileProcedure(url: Store.StopsFileURL.deletingPathExtension().appendingPathExtension("json"))
+        let registeryOp = DeleteFileProcedure(url:  Store.RegisteryFileURL.deletingPathExtension().appendingPathExtension("json"))
 
         super.init(operations: [bookOp, registeryOp])
 
@@ -26,7 +26,7 @@ class CleanUpV2Operation: GroupProcedure {
     }
 }
 
-class DeleteFileOperation: Procedure{
+class DeleteFileProcedure: Procedure{
 
     let url: URL
 

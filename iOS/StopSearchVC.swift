@@ -176,7 +176,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
     func setCell(_ cell: StopCellSearch, bookmarked: Bool) {
 
-        let image = bookmarked ? UIImage(imageLiteral: "bookmark-on") : UIImage(imageLiteral: "bookmark-off")
+        let image = bookmarked ? UIImage(imageLiteralResourceName: "bookmark-on") : UIImage(imageLiteralResourceName: "bookmark-off")
         cell.bookmarkImageView.image = image
     }
     internal func updateUI(firstTime: Bool = false){
@@ -195,7 +195,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
     internal func downloadStops(showHud: Bool = false) {
-        let getStopsOp = GetStopsOperation(context: UIMoc(), proxy: Proxy()) { (inner) in
+        let getStopsOp = GetStopsProcedure(context: UIMoc(), proxy: Proxy()) { (inner) in
 
             do {
                 try inner()

@@ -1,5 +1,5 @@
 //
-//  UpdateDisplayOperation.swift
+//  UpdateDisplayProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
@@ -9,7 +9,7 @@
 import ProcedureKit
 import WatchKit
 
-class UpdateDisplayOperation: Procedure{
+class UpdateDisplayProcedure: Procedure{
 
     let label: WKInterfaceLabel
     let text: String

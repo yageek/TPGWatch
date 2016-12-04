@@ -1,5 +1,5 @@
 //
-//  SaveOperation.swift
+//  SaveProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 04.08.16.
@@ -8,8 +8,7 @@
 
 import ProcedureKit
 
-
-class SaveOperation: Procedure {
+class SaveProcedure: Procedure {
 
     let data: AnyObject?
     let saveURL: URL

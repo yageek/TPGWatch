@@ -1,5 +1,5 @@
 //
-//  CheckFilesOperation.swift
+//  CheckFilesProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
@@ -9,7 +9,7 @@
 import WatchKit
 import ProcedureKit
 
-open class CheckFilesOperation: Procedure {
+open class CheckFilesProcedure: Procedure {
 
     public typealias Result = (hasBookmark: Bool, hasregistery: Bool)?
 

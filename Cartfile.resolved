@@ -1,2 +1,3 @@
-github "ProcedureKit/ProcedureKit" "4.0.0.beta.4"
-git "file:///Users/yheinrich/dev/github/TPGSwift" "bb3d59a4de2f8551fecd376f3302aadd88bdeb78"
+github "pkluz/PKHUD" "4.0.0"
+github "ProcedureKit/ProcedureKit" "ed71c3ea53ddaf554d879fefe92240187cc1bda2"
+git "file:///Users/yheinrich/dev/github/TPGSwift" "317f2413416010f1d387a2b97a5918e5342ddc97"

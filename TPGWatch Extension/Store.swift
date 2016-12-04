@@ -50,8 +50,8 @@ class Store {
     fileprivate func saveData(_ json: AnyObject?, URL: Foundation.URL, notificationName: String) {
         guard let data = json else { return }
 
-        let saveOp = SaveOperation(data: data, saveURL: URL)
-//        let produceOb = DidFinishObserver<SaveOperation> { (op, errors) in
+        let saveOp = SaveProcedure(data: data, saveURL: URL)
+//        let produceOb = DidFinishObserver<SaveProcedure> { (op, errors) in
 //
 //            if let error = errors.first {
 //                print("Impossible to save data at \(URL): \(error)")
@@ -72,12 +72,12 @@ class Store {
         if let bookmarkCache = bookmarkCache {
             completion(bookmarkCache, nil)
         } else {
-            let readOp = ReadArrayOperation(url: Store.StopsFileURL)
+            let readOp = ReadArrayProcedure(url: Store.StopsFileURL)
 //            let producedObserver = DidFinishObserver { (op, errors) in
 //
 //                OperationQueue.main.addOperation {
 //                    let error = errors.first
-//                    let result = (op as! ReadArrayOperation).result
+//                    let result = (op as! ReadArrayProcedure).result
 //                    self.bookmarkCache = result
 //
 //                    completion(result: result, error: error)
@@ -115,7 +115,7 @@ class Store {
 
     func readBookmarksAndRegistery(_ completion: @escaping (_ bookmarks: [[String: AnyObject]]?, _ registery: [String: AnyObject]?, _ error: Error?) -> Void) {
 
-        let readBookOp = ReadArrayOperation(url: Store.StopsFileURL)
+        let readBookOp = ReadArrayProcedure(url: Store.StopsFileURL)
         let readRegisteryOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
 
         readBookOp.addDependency(readRegisteryOp)

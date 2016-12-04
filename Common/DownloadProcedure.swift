@@ -10,7 +10,7 @@ import ProcedureKit
 import ProcedureKitNetwork
 import TPGSwift
 
-final class DownloadOperation: GroupProcedure {
+final class DownloadProcedure: GroupProcedure {
 
     var result: URL?
 
@@ -19,7 +19,7 @@ final class DownloadOperation: GroupProcedure {
 
         let downloadTask = URLSession.shared.downloadTask(with: call.URL) { (tempURL, response, error) in
 
-           // self.didDownloadData(tempURL, response: response, error: error)
+            self.didDownloadData(tempURL, response: response, error: error)
         }
 
         let downloadOperation = NetworkDataProcedure(session: URLSession.shared)

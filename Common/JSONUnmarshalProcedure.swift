@@ -1,5 +1,5 @@
 //
-//  JSONUnmarshalOperation.swift
+//  JSONUnmarshalProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 04.07.16.
@@ -8,7 +8,7 @@
 
 import ProcedureKit
 
-final class JSONUnmarshalOperation: Procedure {
+final class JSONUnmarshalProcedure: Procedure {
 
 
     var requirement: URL?

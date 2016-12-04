@@ -62,7 +62,7 @@ class DeparturesInterfaceController: WKInterfaceController {
     func fetchDepartures(_ stopCode: String) {
 
         self.errorLabel.setHidden(true)
-        let op = GetNextDeparturesOperation(code: stopCode) { resultJSON, error in
+        let op = GetNextDeparturesProcedure(code: stopCode) { resultJSON, error in
 
             if let error = error {
                 print("Error: \(error)")

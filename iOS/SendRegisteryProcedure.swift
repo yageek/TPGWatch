@@ -1,5 +1,5 @@
 //
-//  SendRegisteryOperation.swift
+//  SendRegisteryProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 14.07.16.
@@ -10,7 +10,7 @@ import ProcedureKit
 import CoreData
 import WatchConnectivity
 
-class SendRegisteryOperation: Operation {
+class SendRegisteryProcedure: Operation {
 
     let context: NSManagedObjectContext
     let watchProxy: WatchProxy

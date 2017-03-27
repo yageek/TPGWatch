@@ -31,13 +31,13 @@ final class GetStopsProcedure: GroupProcedure {
         self.completion = completion
 
         // Line Operations
-        let getLinesCall = API.GetLinesColors
+        let getLinesCall = API.getLinesColors
         let downloadLinesOp = DownloadProcedure(call: getLinesCall)
         let parseLinesOp = JSONDeserializationProcedure<ParsedLineColorRecord>().injectPayload(fromNetwork: downloadLinesOp)
         let importLinesOp = ImportLinesColorsProcedure(context: context).injectResult(from: parseLinesOp)
 
         // Stops Operations
-        let getStopsCall = API.GetStops(stopCode: nil, stopName: nil, line: nil, latitude: nil, longitude: nil)
+        let getStopsCall = API.getStops(stopCode: nil, stopName: nil, line: nil, latitude: nil, longitude: nil)
         let downloadStopsOp = DownloadProcedure(call: getStopsCall)
         let parseStopsOp = JSONDeserializationProcedure<ParsedStopsRecord>().injectPayload(fromNetwork: downloadStopsOp)
         let importStopsOp = ImportStopProcedure(context: context).injectResult(from: parseStopsOp)

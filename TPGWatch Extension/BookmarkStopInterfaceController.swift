@@ -111,12 +111,12 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
     // MARK: Notification
     func bookmarkNotification(_ notif: Notification) {
-        lastStops = notif.object as? [[String:AnyObject]]
+        lastStops = notif.object as? [[String:Any]]
         self.reloadData()
     }
 
     func registeryNotification(_ notif: Notification) {
-        registery = notif.object as? [String:AnyObject]
+        registery = notif.object as? [String:Any]
         self.reloadData()
     }
 }

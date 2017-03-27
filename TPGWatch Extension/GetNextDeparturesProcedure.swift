@@ -20,7 +20,7 @@ class GetNextDeparturesProcedure: GroupProcedure {
 
     init(code: String, completion: @escaping (ParsedNextDeparturesRecord?, NSError?) -> Void) {
 
-        let getDeparturesCall = API.GetNextDepartures(stopCode: code, departureCode: nil , linesCode: nil, destinationsCode: nil)
+        let getDeparturesCall = API.getNextDepartures(stopCode: code, departureCode: nil , linesCode: nil, destinationsCode: nil)
         let downloadDepartures = DownloadProcedure(call: getDeparturesCall)
         let parseDepartures = JSONDeserializationProcedure<ParsedNextDeparturesRecord>().injectPayload(fromNetwork: downloadDepartures)
         parseDepartures.addDidFinishBlockObserver { (procedure, errors) in

@@ -34,11 +34,11 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         if let stopsData = applicationContext["stops"] as? [[String: Any]] {
-            Store.sharedInstance.saveBookmarks(stopsData as AnyObject, notificationName: WatchProxy.BookmarkUpdateNotification)
+            Store.sharedInstance.saveBookmarks(stopsData as Any, notificationName: WatchProxy.BookmarkUpdateNotification)
         }
 
         if let registery = applicationContext["registery"] as? [String: Any] {
-            Store.sharedInstance.saveRegistery(registery as AnyObject, notificationName: WatchProxy.RegisteryUpdateNotification)
+            Store.sharedInstance.saveRegistery(registery as Any, notificationName: WatchProxy.RegisteryUpdateNotification)
         }
         
     }

@@ -10,10 +10,10 @@ import ProcedureKit
 
 class SaveProcedure: Procedure {
 
-    let data: AnyObject?
+    let data: Any?
     let saveURL: URL
 
-    init(data: AnyObject, saveURL: URL) {
+    init(data: Any, saveURL: URL) {
         self.data = data
         self.saveURL = saveURL
 

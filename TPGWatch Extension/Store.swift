@@ -36,18 +36,18 @@ class Store {
         return savePath
     }()
 
-    func saveBookmarks(_ json: AnyObject, notificationName: String) {
-        self.bookmarkCache = json as? [[String: AnyObject]]
+    func saveBookmarks(_ json: Any, notificationName: String) {
+        self.bookmarkCache = json as? [[String: Any]]
         self.saveData(json, URL: Store.StopsFileURL, notificationName: notificationName)
     }
 
-    func saveRegistery(_ json: AnyObject, notificationName: String) {
-        self.registeryCache = json as? [String: AnyObject]
+    func saveRegistery(_ json: Any, notificationName: String) {
+        self.registeryCache = json as? [String: Any]
         self.saveData(json, URL: Store.RegisteryFileURL, notificationName: notificationName)
     }
 
 
-    fileprivate func saveData(_ json: AnyObject?, URL: Foundation.URL, notificationName: String) {
+    fileprivate func saveData(_ json: Any?, URL: Foundation.URL, notificationName: String) {
         guard let data = json else { return }
 
         let saveOp = SaveProcedure(data: data, saveURL: URL)

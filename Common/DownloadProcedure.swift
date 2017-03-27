@@ -26,11 +26,11 @@ class ValidAPICodeProcedure<T: Equatable>: Procedure, InputProcedure, OutputProc
 
         switch input.response.statusCode {
         case 200..<299:
-            print("OK - URL: \(input.response.url) - Status: \(input.response.statusCode)")
+            print("OK - Status: \(input.response.statusCode)")
             self.output = .ready(.success(input))
             self.finish()
         default:
-            print("ERROR - URL: \(input.response.url) - Status: \(input.response.statusCode)")
+            print("ERROR - Status: \(input.response.statusCode)")
             print("ERROR - Content: \(input.payload)")
             self.output = .ready(.failure(GeneralError.apiError))
             finish(withError: GeneralError.apiError)

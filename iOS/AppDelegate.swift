@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import TPGSwift
 import WatchConnectivity
+import ProcedureKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,13 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var proxy: WatchProxy?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         applyAppearance()
         setupDefaultPreferences()
 
+        LogManager.severity = .fatal
         API.Key = TPGKey
         return true
     }

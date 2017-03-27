@@ -40,7 +40,7 @@ final class LinesRendererContext {
         request.resultType = .dictionaryResultType
 
         do {
-            let linesDicts = try context.fetch(request) as! [[String: AnyObject]]
+            let linesDicts = try context.fetch(request) as! [[String: Any]]
 
             for lineDict in linesDicts {
                 guard

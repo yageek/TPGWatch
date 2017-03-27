@@ -1,3 +1,4 @@
-git "file:///Users/yheinrich/dev/github/TPGSwift" "develop"
-github "ProcedureKit/ProcedureKit" "development"
+github "yageek/TPGSwift" "2.0.0"
+github "ProcedureKit/ProcedureKit" "4.0.0.beta.6"
 github "pkluz/PKHUD"
+github "DaveWoodCom/XCGLogger" ~> 4.0.0

@@ -13,6 +13,7 @@ enum GeneralError: Int, Error {
     case unexpectedData
     case serviceUnavailable
     case unexpectedError
+    case apiError
 }
 
 extension GeneralError {
@@ -29,6 +30,8 @@ extension GeneralError {
         case .serviceUnavailable:
             return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The TPG server is unavailable.", comment: ""), NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Retry later", comment: "")])
         case .unexpectedError:
+            return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
+        case .apiError:
             return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
         }
     }

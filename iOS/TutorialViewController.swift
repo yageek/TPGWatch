@@ -43,7 +43,7 @@ class TutorialViewController: UIViewController {
             let maskLayer = CAShapeLayer()
             let path = CGMutablePath()
 
-            CGPathAddRect(path, nil, self.view.bounds)
+            path.addRect(self.view.bounds)
             path.__addRoundedRect(transform: nil, rect: self.addButtonRect(), cornerWidth: 5, cornerHeight: 5)
 
             maskLayer.path = path

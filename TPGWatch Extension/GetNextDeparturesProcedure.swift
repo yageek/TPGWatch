@@ -10,51 +10,22 @@ import WatchKit
 import ProcedureKit
 import TPGSwift
 
+extension ParsedNextDeparturesRecord: JSONUnmarshable {
+    public init?(JSON: [String: Any]) {
+        self.init(json: JSON)
+    }
+}
 class GetNextDeparturesProcedure: GroupProcedure {
 
     let completion: (ParsedNextDeparturesRecord?, NSError?) -> Void
 
     init(code: String, completion: @escaping (ParsedNextDeparturesRecord?, NSError?) -> Void) {
         self.completion = completion
-
-        super.init(operations: [])
-
         let getDeparturesCall = API.GetNextDepartures(stopCode: code, departureCode: nil , linesCode: nil, destinationsCode: nil)
         let downloadDepartures = DownloadProcedure(call: getDeparturesCall)
-        let parseDepartures = JSONUnmarshalProcedure()
+        let parseDepartures = JSONDeserializationProcedure<ParsedNextDeparturesRecord>().injectPayload(fromNetwork: downloadDepartures)
 
-        let blockOp = BlockProcedure {
-
-            if let elements = parseDepartures.result as? [String: AnyObject] {
-                if let record =  ParsedNextDeparturesRecord(json: elements) {
-                    self.completion(record, nil)
-                    return
-                }
-            }
-
-            self.completion(nil, NSError(domain: "", code: 0, userInfo: nil))
-        }
-
-        parseDepartures.inject(dependency: downloadDepartures) { (parseProcedure, downloadProcedure, errors) in
-
-            parseProcedure.requirement = downloadProcedure.result
-        }
-
-        blockOp.addDependency(parseDepartures)
-        //blockOp.addCondition(condition: NoFailedDependenciesCondition())
-
-
-        add(children: downloadDepartures, parseDepartures, blockOp)
+        super.init(operations: [downloadDepartures, parseDepartures])
         name = "Watch download stops"
     }
-
-//    override func operationDidFinish(_ errors: [Error]) {
-//
-//        if let _ = errors.first {
-//            self.completion(nil, NSError(domain: "", code: 0, userInfo: nil))
-//        }
-//
-//
-//    }
-
 }

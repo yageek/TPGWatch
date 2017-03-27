@@ -13,8 +13,7 @@ import UIKit
 
 final class ImportLinesColorsProcedure: Procedure, InputProcedure {
 
-    var requirement: Pending<AnyObject> = .pending
-
+    var input: Pending<Resource<ParsedLineColorRecord>> = .pending
     let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
@@ -31,17 +30,13 @@ final class ImportLinesColorsProcedure: Procedure, InputProcedure {
 
     override func execute() {
 
-        guard !isCancelled else { return }
-        
-        guard let lineColorRecordJSON = self.requirement as? [String:AnyObject] else {
-            self.finish(GeneralError.UnexpectedData)
+        guard !isCancelled else { self.finish(); return }
+
+        guard let lineColorRecord = self.input.value?.value else {
+            self.finish(withError: GeneralError.unexpectedData)
             return
         }
 
-        guard let lineColorRecord = ParsedLineColorRecord(json: lineColorRecordJSON) else {
-            self.finish(GeneralError.UnexpectedData)
-            return
-        }
 
         context.perform {
             for lineColor in lineColorRecord.lineColors {
@@ -59,7 +54,7 @@ final class ImportLinesColorsProcedure: Procedure, InputProcedure {
                 self.finish()
             } catch let error as NSError {
                 print("Error during saving:\(error)")
-                self.finish(error)
+                self.finish(withError: error)
             }
         }
 

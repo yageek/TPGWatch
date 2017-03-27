@@ -31,6 +31,14 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
     }
 
+    func sessionDidBecomeInactive(_ session: WCSession) {
+
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+
+    }
+
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
 
         if let error = error {
@@ -45,11 +53,11 @@ class WatchProxy: NSObject, WCSessionDelegate {
         let sendRegisteryOp = SendRegisteryProcedure(context: UIMoc(), proxy: self)
         let sendBookmarkOp = SendBookmarkOperation(context: UIMoc(), proxy: self)
 
-        queue.addOperations(sendRegisteryOp, sendBookmarkOp)
+        queue.add(operations: sendRegisteryOp, sendBookmarkOp)
 
     }
 
-    func sendData(_ data: [String: AnyObject]) throws {
+    func sendData(_ data: [String: Any]) throws {
 
         try session.updateApplicationContext(data)
     }

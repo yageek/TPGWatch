@@ -10,51 +10,58 @@ import ProcedureKit
 import ProcedureKitNetwork
 import TPGSwift
 
-final class DownloadProcedure: GroupProcedure {
+class ValidAPICodeProcedure<T: Equatable>: Procedure, InputProcedure, OutputProcedure {
 
-    var result: URL?
+    var input: Pending<HTTPPayloadResponse<T>> = .pending
+    var output: Pending<ProcedureResult<HTTPPayloadResponse<T>>> = .pending
 
-    init(call: API) {
-        super.init(operations: [])
+    override func execute() {
 
-        let downloadTask = URLSession.shared.downloadTask(with: call.URL) { (tempURL, response, error) in
+        guard !isCancelled else { self.finish(); return }
 
-            self.didDownloadData(tempURL, response: response, error: error)
+        guard let input = input.value else {
+            self.finish(withError: ProcedureKitError.requirementNotSatisfied())
+            return
         }
 
-        let downloadOperation = NetworkDataProcedure(session: URLSession.shared)
-
-
-        #if os(iOS)
-        let reachabilityCondition = ReachabilityCondition(url: call.URL)
-        let observer = NetworkObserver()
-
-        downloadOperation.addCondition(reachabilityCondition)
-        downloadOperation.addObserver(observer)
-        #endif
-
-        self.add(child: downloadOperation)
+        switch input.response.statusCode {
+        case 200..<299:
+            print("OK - URL: \(input.response.url) - Status: \(input.response.statusCode)")
+            self.output = .ready(.success(input))
+            self.finish()
+        default:
+            print("ERROR - URL: \(input.response.url) - Status: \(input.response.statusCode)")
+            print("ERROR - Content: \(input.payload)")
+            self.output = .ready(.failure(GeneralError.apiError))
+            finish(withError: GeneralError.apiError)
+        }
+        
     }
+}
 
-    internal func didDownloadData(_ file: URL?, response: URLResponse?, error: NSError?) {
+final class DownloadProcedure: GroupProcedure, OutputProcedure {
 
-        guard let response = response as? HTTPURLResponse else { self.finish(withError: GeneralError.unexpectedError); return }
+    var output: Pending<ProcedureResult<HTTPPayloadResponse<URL>>> = .pending
+    init(call: API) {
 
-        if let error = error {
-            self.finish(withError: error)
-            return
-        } else {
+        let network = NetworkDownloadProcedure(session: URLSession.shared, request: URLRequest(url: call.URL))
+        let decode = ValidAPICodeProcedure().injectResult(from: network)
 
-            switch response.statusCode {
-            case 200:
-                result = file
-                self.finish()
-            case 503:
-                self.finish(withError: GeneralError.serviceUnavailable)
-            default:
-                self.finish(withError: GeneralError.unexpectedError)
-            }
+//
+//        #if os(iOS)
+//        let reachabilityCondition = ReachabilityCondition(url: call.URL)
+//        let observer = NetworkObserver()
+//
+//        downloadOperation.addCondition(reachabilityCondition)
+//        downloadOperation.addObserver(observer)
+//        #endif
+//
+//        self.add(child: downloadOperation)
 
+        super.init(operations: [network, decode])
+
+        decode.addDidFinishBlockObserver { [unowned self](procedure, _)  in
+            self.output = procedure.output
         }
     }
 

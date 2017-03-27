@@ -9,7 +9,7 @@
 import ProcedureKit
 import CoreData
 
-class SendBookmarkOperation: Operation {
+class SendBookmarkOperation: Procedure {
     let context: NSManagedObjectContext
     let watchProxy: WatchProxy
 
@@ -44,13 +44,13 @@ class SendBookmarkOperation: Operation {
                 ]
             })
 
-            let dict: [String: AnyObject] = ["stops": stops as AnyObject]
+            let dict: [String: Any] = ["stops": stops as AnyObject]
 
             try watchProxy.sendData(dict)
             self.finish()
         } catch let error {
             print("Can not send error:\(error)")
-            self.finish(error)
+            self.finish(withError: error)
         }
     }
 

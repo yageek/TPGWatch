@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B037F0A1D35728600EEF1D5 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */; };
-		0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalProcedure.swift */; };
-		0B037F101D3573F600EEF1D5 /* JSONUnmarshalProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalProcedure.swift */; };
 		0B037F121D35741800EEF1D5 /* DownloadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */; };
 		0B037F131D35741B00EEF1D5 /* DownloadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */; };
 		0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
@@ -59,6 +57,8 @@
 		0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801D1D5927C20065C403 /* DepartureInfo.swift */; };
 		0BB2801F1D59D4160065C403 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
 		0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadProcedure.swift */; };
+		0BD1A6871E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
+		0BD1A6881E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
 		0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007231D33FFF4008877F9 /* AppDelegate.swift */; };
@@ -138,7 +138,6 @@
 
 /* Begin PBXFileReference section */
 		0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDeparturesProcedure.swift; sourceTree = "<group>"; };
-		0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONUnmarshalProcedure.swift; path = Common/JSONUnmarshalProcedure.swift; sourceTree = "<group>"; };
 		0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadProcedure.swift; path = Common/DownloadProcedure.swift; sourceTree = "<group>"; };
 		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
 		0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitNetwork.framework; path = Carthage/Build/watchOS/ProcedureKitNetwork.framework; sourceTree = "<group>"; };
@@ -199,6 +198,7 @@
 		0BB2801A1D5927680065C403 /* BookmarkedStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkedStop.swift; sourceTree = "<group>"; };
 		0BB2801D1D5927C20065C403 /* DepartureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureInfo.swift; sourceTree = "<group>"; };
 		0BBDC1881D54D447005C8297 /* ReadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadProcedure.swift; sourceTree = "<group>"; };
+		0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializationProcedure.swift; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 			children = (
 				0BF007341D340040008877F9 /* Error.swift */,
 				0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */,
-				0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalProcedure.swift */,
+				0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */,
 				0B037F141D3579AA00EEF1D5 /* Keys.swift */,
 			);
 			name = Common;
@@ -740,6 +740,7 @@
 				0B037F0A1D35728600EEF1D5 /* GetNextDeparturesProcedure.swift in Sources */,
 				0BB280141D591F730065C403 /* UpdateDisplayProcedure.swift in Sources */,
 				0BB280181D5922590065C403 /* PresentFirstScreenProcedure.swift in Sources */,
+				0BD1A6881E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */,
 				0BB280121D591C310065C403 /* InitProcedure.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
 				0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */,
@@ -752,7 +753,6 @@
 				0BB2801F1D59D4160065C403 /* Error.swift in Sources */,
 				0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */,
 				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
-				0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalProcedure.swift in Sources */,
 				0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */,
 				0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */,
 				0B037F121D35741800EEF1D5 /* DownloadProcedure.swift in Sources */,
@@ -774,10 +774,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */,
+				0BD1A6871E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */,
 				0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */,
 				0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */,
 				0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */,
-				0B037F101D3573F600EEF1D5 /* JSONUnmarshalProcedure.swift in Sources */,
 				0BF007411D340061008877F9 /* ImportLinesColorsProcedure.swift in Sources */,
 				0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,

@@ -10,6 +10,18 @@ import ProcedureKit
 import CoreData
 import TPGSwift
 
+extension ParsedLineColorRecord: JSONUnmarshable {
+    public init?(JSON: [String: Any]) {
+        self.init(json: JSON)
+    }
+}
+
+extension ParsedStopsRecord: JSONUnmarshable {
+    public init?(JSON: [String: Any]) {
+        self.init(json: JSON)
+    }
+}
+
 final class GetStopsProcedure: GroupProcedure {
 
     let completion: (_ inner: () throws -> Void) -> Void
@@ -21,49 +33,44 @@ final class GetStopsProcedure: GroupProcedure {
         // Line Operations
         let getLinesCall = API.GetLinesColors
         let downloadLinesOp = DownloadProcedure(call: getLinesCall)
-        let parseLinesOp = JSONUnmarshalProcedure()
-        let importLinesOp = ImportLinesColorsProcedure(context: context)
-
-        parseLinesOp.injectResultFromDependency(downloadLinesOp)
-        importLinesOp.injectResultFromDependency(parseLinesOp)
-
+        let parseLinesOp = JSONDeserializationProcedure<ParsedLineColorRecord>().injectPayload(fromNetwork: downloadLinesOp)
+        let importLinesOp = ImportLinesColorsProcedure(context: context).injectResult(from: parseLinesOp)
 
         // Stops Operations
-        let getStopsCall = API.getStops(stopCode: nil, stopName: nil, line: nil, latitude: nil, longitude: nil)
+        let getStopsCall = API.GetStops(stopCode: nil, stopName: nil, line: nil, latitude: nil, longitude: nil)
         let downloadStopsOp = DownloadProcedure(call: getStopsCall)
-        let parseStopsOp = JSONUnmarshalProcedure()
-        let importStopsOp = ImportStopProcedure(context: context)
-
-
-        parseStopsOp.injectResultFromDependency(downloadStopsOp)
-        importStopsOp.injectResultFromDependency(parseStopsOp)
+        let parseStopsOp = JSONDeserializationProcedure<ParsedStopsRecord>().injectPayload(fromNetwork: downloadStopsOp)
+        let importStopsOp = ImportStopProcedure(context: context).injectResult(from: parseStopsOp)
 
         // Synchronisation
         importStopsOp.addDependency(importLinesOp)
-        importStopsOp.addCondition(NoFailedDependenciesCondition())
+        importStopsOp.add(condition: NoFailedDependenciesCondition())
 
         super.init(operations: [])
 
         name = "Get Stops operations"
 
-        addCondition(MutuallyExclusive<GetStopsProcedure>())
-        addOperations([downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp])
+        add(condition: MutuallyExclusive<GetStopsProcedure>())
+        add(children: [downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp])
 
         if let proxy = proxy {
             let sendRegisteryOp = SendRegisteryProcedure(context: context, proxy: proxy)
-            sendRegisteryOp.addDependency(importStopsOp)
-            sendRegisteryOp.addCondition(NoFailedDependenciesCondition())
-            self.addOperation(sendRegisteryOp)
+            sendRegisteryOp.add(dependency: importStopsOp)
+            sendRegisteryOp.add(condition: NoFailedDependenciesCondition())
+            add(child: sendRegisteryOp)
         }
-    }
 
-    override func operationDidFinish(_ errors: [Error]) {
-        print("Errors: \(errors)")
 
-        self.completion { 
-            if let error = errors.first {
-                throw error
+        addDidFinishBlockObserver { (_, errors) in
+            print("Errors: \(errors)")
+
+            self.completion {
+                if let error = errors.first {
+                    throw error
+                }
             }
+
         }
     }
+
 }

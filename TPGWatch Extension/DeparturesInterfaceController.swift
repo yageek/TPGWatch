@@ -24,20 +24,20 @@ class DeparturesInterfaceController: WKInterfaceController {
     var queue = ProcedureKit.OperationQueue()
     var record: ParsedNextDeparturesRecord?
 
-    var stop: [String: AnyObject]  = [:]
-    var registery: [String: AnyObject] = [:]
+    var stop: [String: Any]  = [:]
+    var registery: [String: Any] = [:]
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
         reloadButton.setHidden(true)
 
-        guard let ctx = context as? [String: AnyObject] else {
+        guard let ctx = context as? [String: Any] else {
             print("Unexpected context :\(context)")
             return
         }
 
-        stop = ctx["stop"] as! [String: AnyObject]
+        stop = ctx["stop"] as! [String: Any]
 
         fetchDepartures(stop["code"] as! String)
     }

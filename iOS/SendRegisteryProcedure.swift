@@ -10,7 +10,7 @@ import ProcedureKit
 import CoreData
 import WatchConnectivity
 
-class SendRegisteryProcedure: Operation {
+class SendRegisteryProcedure: Procedure {
 
     let context: NSManagedObjectContext
     let watchProxy: WatchProxy
@@ -40,7 +40,7 @@ class SendRegisteryProcedure: Operation {
                 lines = try self.context.fetch(request) as! [Line]
             } catch let error {
                 print("Impossible to fetch stops: \(error)")
-                self.finish(error)
+                self.finish(withError: error)
             }
 
             defer {
@@ -58,7 +58,7 @@ class SendRegisteryProcedure: Operation {
 
     fileprivate func sendLines(_ lines: [Line]) throws {
 
-        var linesJSON: [String: AnyObject] = [:]
+        var linesJSON: [String: Any] = [:]
 
         for line in lines {
             linesJSON[line.code] =   [

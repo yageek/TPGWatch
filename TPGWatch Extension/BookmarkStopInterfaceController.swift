@@ -17,8 +17,8 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
     @IBOutlet var noElementGroups: WKInterfaceGroup!
 
-    var lastStops: [[String: AnyObject]]?
-    var registery: [String: AnyObject]?
+    var lastStops: [[String: Any]]?
+    var registery: [String: Any]?
 
     override func willActivate() {
         super.willActivate()
@@ -67,7 +67,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
             for i in 0..<min(4, linesStops.count) {
 
                 let lineCode = linesStops[i]
-                let lineInfo = registery[lineCode] as! [String: AnyObject]
+                let lineInfo = registery[lineCode] as! [String: Any]
 
                 let textColor = lineInfo["textColor"] as! String
                 let backgroundColor = lineInfo["backgroundColor"] as! String

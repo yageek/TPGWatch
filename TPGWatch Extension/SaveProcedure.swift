@@ -23,13 +23,13 @@ class SaveProcedure: Procedure {
     }
 
     override func execute() {
-        guard !isCancelled else { return }
+        guard !isCancelled else { self.finish(); return }
 
         var result: Bool = false
 
-        if let array = data as? [[String: AnyObject]] {
+        if let array = data as? [[String: Any]] {
             result = (array as NSArray).write(to: self.saveURL, atomically: true)
-        } else if let dict = data as? [String: AnyObject] {
+        } else if let dict = data as? [String: Any] {
             result = (dict as NSDictionary).write(to: self.saveURL, atomically: true)
         }
 

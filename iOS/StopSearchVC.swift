@@ -208,32 +208,31 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             } catch let error {
                 print("Error during download:\(error)")
 
-                let alert = AlertOperation(presentAlertFrom: self)
-                alert.title = NSLocalizedString("Error while downloading", comment: "")
-
-                if let error = error as? GeneralError {
-                    alert.message = error.error.localizedDescription
-                } else if let _ = error as? ReachabilityCondition.Error {
-                    alert.message = GeneralError.NoNetworkConnection.error.localizedDescription
-                } else {
-                    alert.message = NSLocalizedString("An error occurs while downloading. Please retry later", comment: "")
-                }
-
-                self.queue.addOperation(alert)
+//                let alert = AlertOperation(presentAlertFrom: self)
+//                alert.title = NSLocalizedString("Error while downloading", comment: "")
+//
+//                if let error = error as? GeneralError {
+//                    alert.message = error.error.localizedDescription
+//                } else if let _ = error as? ReachabilityCondition.Error {
+//                    alert.message = GeneralError.NoNetworkConnection.error.localizedDescription
+//                } else {
+//                    alert.message = NSLocalizedString("An error occurs while downloading. Please retry later", comment: "")
+//                }
+//
+//                self.queue.addOperation(alert)
             }
         }
 
         getStopsOp.completionBlock = {
-            OperationQueue.mainQueue().addOperationWithBlock {
+            ProcedureQueue.main.addOperation {
                 self.refreshControl?.endRefreshing()
             }
         }
 
         if showHud {
 
-            let observer = BlockObserver(willExecute: { (operation) in
-
-                OperationQueue.mainQueue().addOperationWithBlock {
+            getStopsOp.addWillExecuteBlockObserver(block: { (_) in
+                ProcedureQueue.main.addOperation {
                     let view = PKHUDProgressView()
                     view.subtitleLabel.text = NSLocalizedString("Loading stops...", comment: "")
                     PKHUD.sharedHUD.contentView = view
@@ -241,16 +240,17 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
                 }
 
-                }, willCancel: nil, didCancel: nil, didProduce: nil, willFinish: nil, didFinish: { (operation, errors) in
-
-                    OperationQueue.mainQueue().addOperationWithBlock {
-                        PKHUD.sharedHUD.hide()
-                    }
             })
 
-            getStopsOp.addObserver(observer)
+            getStopsOp.addDidFinishBlockObserver(block: { (_, errors) in
+                ProcedureQueue.main.addOperation {
+                    PKHUD.sharedHUD.hide()
+
+                }
+            })
         }
-        queue.addOperations(getStopsOp)
+
+        queue.addOperation(getStopsOp)
 
 
     }
@@ -269,7 +269,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
                     filteredStops = fetchedStops
                 } else {
                     print("User input:\(userInput)")
-                    filteredStops = fetchedStops.filter{ return $0.name?.localizedCaseInsensitiveContainsString(userInput) ?? false}
+                    filteredStops = fetchedStops.filter{ return $0.name?.localizedCaseInsensitiveContains(userInput) ?? false}
                 }
 
                 print("Searching stops : \(userInput) in \(fetchedStops.count) elements - Found: \(filteredStops.count) elements")

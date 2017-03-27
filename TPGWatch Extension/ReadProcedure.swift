@@ -10,7 +10,7 @@ import ProcedureKit
 
 class ReadArrayProcedure: Procedure {
 
-    var result: [[String: AnyObject]]?
+    var result: [[String: Any]]?
     let url: URL
 
     init(url: URL) {
@@ -22,7 +22,7 @@ class ReadArrayProcedure: Procedure {
 
     override func execute() {
 
-        if let data = NSArray(contentsOf: url) as? [[String: AnyObject]]{
+        if let data = NSArray(contentsOf: url) as? [[String: Any]]{
             result = data
             self.finish()
         } else {
@@ -33,7 +33,7 @@ class ReadArrayProcedure: Procedure {
 
 class ReadDictionaryOperation: Procedure {
 
-    var result: [String: AnyObject]?
+    var result: [String: Any]?
     let url: URL
 
     init(url: URL) {
@@ -45,7 +45,7 @@ class ReadDictionaryOperation: Procedure {
 
     override func execute() {
 
-        if let data = NSDictionary(contentsOf: url) as? [String: AnyObject]{
+        if let data = NSDictionary(contentsOf: url) as? [String: Any]{
             result = data
             self.finish()
         } else {

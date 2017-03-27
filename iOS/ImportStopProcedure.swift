@@ -10,9 +10,9 @@ import ProcedureKit
 import CoreData
 import TPGSwift
 
-final class ImportStopProcedure: Operation, InputProcedure {
+final class ImportStopProcedure: Procedure, InputProcedure {
 
-    var input: Pending<AnyObject> = .pending
+    var input: Pending<Resource<ParsedStopsRecord>> = .pending
     let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
@@ -30,15 +30,15 @@ final class ImportStopProcedure: Operation, InputProcedure {
 
     override func execute() {
 
-        guard !isCancelled else { return }
+        guard !isCancelled else { self.finish(); return }
 
-        guard let stopRecordJSON = self.requirement as? [String:AnyObject] else {
-            self.finish(withError: GeneralError.UnexpectedData)
+        guard case let .ready(requirement) = self.input, let stopRecordJSON = requirement as? [String: Any] else {
+            self.finish(withError: GeneralError.unexpectedData)
             return
         }
 
         guard let  stopRecord = ParsedStopsRecord(json: stopRecordJSON) else {
-            self.finish(withError: GeneralError.UnexpectedData)
+            self.finish(withError: GeneralError.unexpectedData)
             return
         }
 
@@ -72,7 +72,7 @@ final class ImportStopProcedure: Operation, InputProcedure {
                 self.finish()
             } catch let error as NSError {
                 print("Error during saving:\(error)")
-                self.finish(error)
+                self.finish(withError: error)
             }
         }
 

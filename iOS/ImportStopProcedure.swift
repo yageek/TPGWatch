@@ -32,13 +32,8 @@ final class ImportStopProcedure: Procedure, InputProcedure {
 
         guard !isCancelled else { self.finish(); return }
 
-        guard case let .ready(requirement) = self.input, let stopRecordJSON = requirement as? [String: Any] else {
-            self.finish(withError: GeneralError.unexpectedData)
-            return
-        }
-
-        guard let  stopRecord = ParsedStopsRecord(json: stopRecordJSON) else {
-            self.finish(withError: GeneralError.unexpectedData)
+        guard let stopRecord = self.input.value?.value else {
+            self.finish(withError: GeneralError.apiError)
             return
         }
 

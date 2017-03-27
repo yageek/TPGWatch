@@ -8,9 +8,9 @@
 
 import ProcedureKit
 
-class ReadArrayProcedure: Procedure {
+class ReadArrayProcedure: Procedure, OutputProcedure {
 
-    var result: [[String: Any]]?
+    var output: Pending<ProcedureResult<[[String: Any]]>> = .pending
     let url: URL
 
     init(url: URL) {
@@ -23,17 +23,16 @@ class ReadArrayProcedure: Procedure {
     override func execute() {
 
         if let data = NSArray(contentsOf: url) as? [[String: Any]]{
-            result = data
-            self.finish()
+            self.finish(withResult: .success(data))
         } else {
             self.finish(withError: NSError(domain: "", code: 0, userInfo: nil))
         }
     }
 }
 
-class ReadDictionaryOperation: Procedure {
+class ReadDictionaryOperation: Procedure, OutputProcedure {
 
-    var result: [String: Any]?
+    var output: Pending<ProcedureResult<[String: Any]>> = .pending
     let url: URL
 
     init(url: URL) {
@@ -46,8 +45,7 @@ class ReadDictionaryOperation: Procedure {
     override func execute() {
 
         if let data = NSDictionary(contentsOf: url) as? [String: Any]{
-            result = data
-            self.finish()
+            self.finish(withResult: .success(data))
         } else {
             self.finish(withError: NSError(domain: "", code: 0, userInfo: nil))
         }

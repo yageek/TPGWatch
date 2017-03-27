@@ -59,6 +59,7 @@
 		0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadProcedure.swift */; };
 		0BD1A6871E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
 		0BD1A6881E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
+		0BD1A7231E89684600EA0C1A /* ProcedureKitMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD1A7221E89684600EA0C1A /* ProcedureKitMobile.framework */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
 		0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007231D33FFF4008877F9 /* AppDelegate.swift */; };
@@ -199,6 +200,7 @@
 		0BB2801D1D5927C20065C403 /* DepartureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureInfo.swift; sourceTree = "<group>"; };
 		0BBDC1881D54D447005C8297 /* ReadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadProcedure.swift; sourceTree = "<group>"; };
 		0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializationProcedure.swift; sourceTree = "<group>"; };
+		0BD1A7221E89684600EA0C1A /* ProcedureKitMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitMobile.framework; path = Carthage/Build/iOS/ProcedureKitMobile.framework; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD1A7231E89684600EA0C1A /* ProcedureKitMobile.framework in Frameworks */,
 				0B13489C1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework in Frameworks */,
 				0B353BF51DC90B8200A306B9 /* ProcedureKit.framework in Frameworks */,
 				0B8250091D3841390094946B /* PKHUD.framework in Frameworks */,
@@ -313,6 +316,7 @@
 		0B353BF31DC90B8200A306B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0BD1A7221E89684600EA0C1A /* ProcedureKitMobile.framework */,
 				0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */,
 				0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */,
 				0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */,
@@ -720,6 +724,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TPGSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitNetwork.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitMobile.framework",
 			);
 			name = Carthage;
 			outputPaths = (

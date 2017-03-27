@@ -41,13 +41,10 @@ class SyncController: WKInterfaceController {
     func startCleanup() {
         let cleanUpOp = InitProcedure(label: startLabel, root: self)
 
+        cleanUpOp.addDidFinishBlockObserver { (_, _) in
+             WatchProxy.sharedInstance.startSession()
+        }
 
-//        let finishObserver = DidFinishObserver<InitProcedure> { (_, _) in
-//            WatchProxy.sharedInstance.startSession()
-//        }
-
-        //cleanUpOp.addObserver(finish)
-//        cleanUpOp.add(observer: finish)
         queue.addOperation(cleanUpOp)
     }
 

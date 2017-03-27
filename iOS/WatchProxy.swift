@@ -9,7 +9,7 @@
 import UIKit
 import WatchConnectivity
 import CoreData
-import Operations
+import ProcedureKit
 import TPGSwift
 
 class WatchProxy: NSObject, WCSessionDelegate {
@@ -27,11 +27,19 @@ class WatchProxy: NSObject, WCSessionDelegate {
         super.init()
 
         session.delegate = self
-        session.activateSession()
+        session.activate()
 
     }
 
-    func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+    func sessionDidBecomeInactive(_ session: WCSession) {
+
+    }
+
+    func sessionDidDeactivate(_ session: WCSession) {
+
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
 
         if let error = error {
             print("Impossible to acvitate session: \(error)")
@@ -42,14 +50,14 @@ class WatchProxy: NSObject, WCSessionDelegate {
     }
 
     func syncData() {
-        let sendRegisteryOp = SendRegisteryOperation(context: UIMoc(), proxy: self)
+        let sendRegisteryOp = SendRegisteryProcedure(context: UIMoc(), proxy: self)
         let sendBookmarkOp = SendBookmarkOperation(context: UIMoc(), proxy: self)
 
-        queue.addOperations(sendRegisteryOp, sendBookmarkOp)
+        queue.add(operations: sendRegisteryOp, sendBookmarkOp)
 
     }
 
-    func sendData(data: [String: AnyObject]) throws {
+    func sendData(_ data: [String: Any]) throws {
 
         try session.updateApplicationContext(data)
     }

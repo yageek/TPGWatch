@@ -1,5 +1,5 @@
 //
-//  PresentFirstScreenOperation.swift
+//  PresentFirstScreenProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
@@ -7,11 +7,11 @@
 //
 
 import WatchKit
-import Operations
+import ProcedureKit
 
-class PresentFirstScreenOperation: Operation, AutomaticInjectionOperationType {
+class PresentFirstScreenProcedure: Procedure {
     let label: WKInterfaceLabel
-    var requirement: CheckFilesOperation.Result
+    var requirement: CheckFilesProcedure.Result
     let rootController: WKInterfaceController
 
     init(label: WKInterfaceLabel, rootController: WKInterfaceController) {
@@ -26,7 +26,7 @@ class PresentFirstScreenOperation: Operation, AutomaticInjectionOperationType {
     override func execute() {
 
         guard let req = requirement else {
-            finish(NSError(domain: "", code: 0, userInfo: nil))
+            finish(withError: NSError(domain: "", code: 0, userInfo: nil))
             return
         }
 
@@ -40,7 +40,7 @@ class PresentFirstScreenOperation: Operation, AutomaticInjectionOperationType {
             label.setText(text)
 
         } else {
-            WKInterfaceController.reloadRootControllersWithNames(["BookmarkStopInterfaceController"], contexts: [])
+            WKInterfaceController.reloadRootControllers(withNames: ["BookmarkStopInterfaceController"], contexts: [])
         }
 
     }

@@ -8,16 +8,17 @@
 
 import WatchKit
 import Foundation
-import Operations
+import ProcedureKit
 
 class SyncController: WKInterfaceController {
 
-    let queue = OperationQueue()
+    let queue = ProcedureKit.OperationQueue()
 
     @IBOutlet var startLabel: WKInterfaceLabel!
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+
         
         startCleanup()
     }
@@ -26,8 +27,8 @@ class SyncController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(registeryHasBeenUpdate), name: WatchProxy.RegisteryUpdateNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(registeryHasBeenUpdate), name: WatchProxy.BookmarkUpdateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(registeryHasBeenUpdate), name: NSNotification.Name(rawValue: WatchProxy.RegisteryUpdateNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(registeryHasBeenUpdate), name: NSNotification.Name(rawValue: WatchProxy.BookmarkUpdateNotification), object: nil)
 
     }
 
@@ -35,26 +36,24 @@ class SyncController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
 
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     func startCleanup() {
-        let cleanUpOp = InitOperation(label: startLabel, root: self)
+        let cleanUpOp = InitProcedure(label: startLabel, root: self)
 
-
-        let finish = DidFinishObserver { (operation, errors) in
-            WatchProxy.sharedInstance.startSession()
+        cleanUpOp.addDidFinishBlockObserver { (_, _) in
+             WatchProxy.sharedInstance.startSession()
         }
 
-        cleanUpOp.addObserver(finish)
         queue.addOperation(cleanUpOp)
     }
 
 
-    func registeryHasBeenUpdate(notification: NSNotification) {
+    func registeryHasBeenUpdate(_ notification: Notification) {
 
         if Store.sharedInstance.registeryCache != nil && Store.sharedInstance.bookmarkCache != nil {
-            WKInterfaceController.reloadRootControllersWithNames(["BookmarkStopInterfaceController"], contexts: [])
+            WKInterfaceController.reloadRootControllers(withNames: ["BookmarkStopInterfaceController"], contexts: [])
         }
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 
 class LineColorToLineStringTransformationPolicy: NSEntityMigrationPolicy {
 
-    func colorToColorHex(color: UIColor) -> String {
+    func colorToColorHex(_ color: UIColor) -> String {
         return color.hexString
     }
 }

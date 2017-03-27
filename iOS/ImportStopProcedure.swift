@@ -1,23 +1,23 @@
 //
-//  ImportStopOperation.swift
+//  ImportStopProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 04.07.16.
 //  Copyright © 2016 yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import CoreData
 import TPGSwift
 
-final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
+final class ImportStopProcedure: Procedure, InputProcedure {
 
-    var requirement: AnyObject?
+    var input: Pending<Resource<ParsedStopsRecord>> = .pending
     let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
 
-        let importContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         importContext.persistentStoreCoordinator = context.persistentStoreCoordinator
         importContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         
@@ -30,23 +30,18 @@ final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
 
     override func execute() {
 
-        guard !cancelled else { return }
+        guard !isCancelled else { self.finish(); return }
 
-        guard let stopRecordJSON = self.requirement as? [String:AnyObject] else {
-            self.finish(GeneralError.UnexpectedData)
+        guard let stopRecord = self.input.value?.value else {
+            self.finish(withError: GeneralError.apiError)
             return
         }
 
-        guard let  stopRecord = ParsedStopsRecord(json: stopRecordJSON) else {
-            self.finish(GeneralError.UnexpectedData)
-            return
-        }
-
-        context.performBlock { 
+        context.perform { 
 
             for stopJSON in stopRecord.stops {
 
-                let stop = NSEntityDescription.insertNewObjectForEntityForName(Stop.EntityName, inManagedObjectContext: self.context) as! Stop
+                let stop = NSEntityDescription.insertNewObject(forEntityName: Stop.EntityName, into: self.context) as! Stop
 
                 stop.name = stopJSON.name
                 stop.code = stopJSON.code
@@ -56,7 +51,7 @@ final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
 
                 for jsonConnection in stopJSON.connections {
 
-                    let CDConnection = NSEntityDescription.insertNewObjectForEntityForName(Connection.EntityName, inManagedObjectContext: self.context) as! Connection
+                    let CDConnection = NSEntityDescription.insertNewObject(forEntityName: Connection.EntityName, into: self.context) as! Connection
 
                     CDConnection.destinationCode = jsonConnection.destinationCode
                     CDConnection.destinationName = jsonConnection.destinationName
@@ -72,20 +67,20 @@ final class ImportStopOperation: Operation, AutomaticInjectionOperationType {
                 self.finish()
             } catch let error as NSError {
                 print("Error during saving:\(error)")
-                self.finish(error)
+                self.finish(withError: error)
             }
         }
 
     }
 
-    private func lineForCode(lineCode:String) -> Line? {
+    fileprivate func lineForCode(_ lineCode:String) -> Line? {
 
-        let request = NSFetchRequest(entityName: Line.EntityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Line.EntityName)
         request.predicate = NSPredicate(format: "code == %@", lineCode)
         request.fetchLimit = 1
         request.includesSubentities = false
 
-        let lines = try? context.executeFetchRequest(request) as! [Line]
+        let lines = try? context.fetch(request) as! [Line]
         return lines?.first
     }
 

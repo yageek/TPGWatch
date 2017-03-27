@@ -8,10 +8,12 @@
 
 import WatchKit
 import TPGSwift
+import ProcedureKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
+        LogManager.severity = .fatal
         API.Key = TPGKey
     }
 }

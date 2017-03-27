@@ -1,16 +1,16 @@
 //
-//  SendRegisteryOperation.swift
+//  SendRegisteryProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 14.07.16.
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import CoreData
 import WatchConnectivity
 
-class SendRegisteryOperation: Operation {
+class SendRegisteryProcedure: Procedure {
 
     let context: NSManagedObjectContext
     let watchProxy: WatchProxy
@@ -19,7 +19,7 @@ class SendRegisteryOperation: Operation {
 
         self.watchProxy = proxy
 
-        let importContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         importContext.persistentStoreCoordinator = context.persistentStoreCoordinator
         self.context = context
         super.init()
@@ -30,17 +30,17 @@ class SendRegisteryOperation: Operation {
     override func execute() {
 
         // FetchStops
-        let request = NSFetchRequest(entityName: Line.EntityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Line.EntityName)
         request.includesSubentities = false
 
-        context.performBlock { 
+        context.perform { 
 
             var lines: [Line] = []
             do {
-                lines = try self.context.executeFetchRequest(request) as! [Line]
+                lines = try self.context.fetch(request) as! [Line]
             } catch let error {
                 print("Impossible to fetch stops: \(error)")
-                self.finish(error)
+                self.finish(withError: error)
             }
 
             defer {
@@ -56,9 +56,9 @@ class SendRegisteryOperation: Operation {
         }
     }
 
-    private func sendLines(lines: [Line]) throws {
+    fileprivate func sendLines(_ lines: [Line]) throws {
 
-        var linesJSON: [String: AnyObject] = [:]
+        var linesJSON: [String: Any] = [:]
 
         for line in lines {
             linesJSON[line.code] =   [

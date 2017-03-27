@@ -1,15 +1,15 @@
 //
-//  UpdateDisplayOperation.swift
+//  UpdateDisplayProcedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import WatchKit
 
-class UpdateDisplayOperation: Operation {
+class UpdateDisplayProcedure: Procedure{
 
     let label: WKInterfaceLabel
     let text: String
@@ -21,7 +21,7 @@ class UpdateDisplayOperation: Operation {
     }
 
     override func execute() {
-        NSOperationQueue.mainQueue().addOperationWithBlock {
+        Foundation.OperationQueue.main.addOperation {
             self.label.setText(self.text)
             self.finish()
         }

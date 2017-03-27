@@ -6,10 +6,10 @@
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import Operations
+import ProcedureKit
 import CoreData
 
-class SendBookmarkOperation: Operation {
+class SendBookmarkOperation: Procedure {
     let context: NSManagedObjectContext
     let watchProxy: WatchProxy
 
@@ -17,7 +17,7 @@ class SendBookmarkOperation: Operation {
 
         self.watchProxy = proxy
 
-        let importContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         importContext.persistentStoreCoordinator = context.persistentStoreCoordinator
         self.context = context
         super.init()
@@ -26,31 +26,31 @@ class SendBookmarkOperation: Operation {
     }
     override func execute() {
 
-        let request = NSFetchRequest(entityName: Stop.EntityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Stop.EntityName)
         request.predicate = NSPredicate(format: "bookmarked == true")
         request.propertiesToFetch = ["code", "name"]
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
         do {
-            let stopsObjects = try context.executeFetchRequest(request) as! [Stop]
+            let stopsObjects = try context.fetch(request) as! [Stop]
             let stops = stopsObjects.map({ (stop) -> [String:AnyObject] in
 
-                let connections = stop.valueForKeyPath("connections.line.code")?.allObjects ?? []
+                let connections = (stop.value(forKeyPath: "connections.line.code") as AnyObject).allObjects ?? []
 
                 return [
-                    "name" : stop.name!,
-                    "code" : stop.code!,
-                    "lines": connections,
+                    "name" : stop.name! as AnyObject,
+                    "code" : stop.code! as AnyObject,
+                    "lines": connections as AnyObject,
                 ]
             })
 
-            let dict: [String: AnyObject] = ["stops": stops]
+            let dict: [String: Any] = ["stops": stops as AnyObject]
 
             try watchProxy.sendData(dict)
             self.finish()
         } catch let error {
             print("Can not send error:\(error)")
-            self.finish(error)
+            self.finish(withError: error)
         }
     }
 

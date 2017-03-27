@@ -7,143 +7,122 @@
 //
 
 import Foundation
-import Operations
+import ProcedureKit
 
 class Store {
 
-    class var sharedInstance: Store {
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: Store? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = Store()
-        }
-        return Static.instance!
-    }
+    static let sharedInstance: Store = { Store() }()
 
-    private init() {}
+    fileprivate init() {}
 
-    private(set) var registeryCache: [String: AnyObject]?
-    private(set) var bookmarkCache: [[String: AnyObject]]?
+    fileprivate(set) var registeryCache: [String: Any]?
+    fileprivate(set) var bookmarkCache: [[String: Any]]?
 
-    let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.qualityOfService = .Background
+    let queue: ProcedureQueue = {
+        let queue = ProcedureKit.ProcedureQueue()
+        queue.qualityOfService = .background
         return queue
     }()
 
-    static let StopsFileURL: NSURL = {
-        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let savePath = directory.URLByAppendingPathComponent("boorkmarked.plist")
+    static let StopsFileURL: URL = {
+        let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let savePath = directory.appendingPathComponent("boorkmarked.plist")
         return savePath
     }()
 
-    static let RegisteryFileURL: NSURL = {
-        let directory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let savePath = directory.URLByAppendingPathComponent("registery.plist")
+    static let RegisteryFileURL: URL = {
+        let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let savePath = directory.appendingPathComponent("registery.plist")
         return savePath
     }()
 
-    func saveBookmarks(json: AnyObject, notificationName: String) {
-        self.bookmarkCache = json as? [[String: AnyObject]]
+    func saveBookmarks(_ json: Any, notificationName: String) {
+        self.bookmarkCache = json as? [[String: Any]]
         self.saveData(json, URL: Store.StopsFileURL, notificationName: notificationName)
     }
 
-    func saveRegistery(json: AnyObject, notificationName: String) {
-        self.registeryCache = json as? [String: AnyObject]
+    func saveRegistery(_ json: Any, notificationName: String) {
+        self.registeryCache = json as? [String: Any]
         self.saveData(json, URL: Store.RegisteryFileURL, notificationName: notificationName)
     }
 
 
-    private func saveData(json: AnyObject?, URL: NSURL, notificationName: String) {
+    fileprivate func saveData(_ json: Any?, URL: Foundation.URL, notificationName: String) {
         guard let data = json else { return }
 
-        let saveOp = SaveOperation(data: data, saveURL: URL)
-        let produceOb = DidFinishObserver { (op, errors) in
-
+        let saveOp = SaveProcedure(data: data, saveURL: URL)
+        saveOp.addDidFinishBlockObserver { (_, errors) in
             if let error = errors.first {
                 print("Impossible to save data at \(URL): \(error)")
             } else {
                 print("Sucessfully save data at \(URL)")
-                NSOperationQueue.mainQueue().addOperationWithBlock {
-                    NSNotificationCenter.defaultCenter().postNotificationName(notificationName, object: json)
+                Foundation.OperationQueue.main.addOperation {
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: notificationName), object: json)
                 }
             }
         }
-
-        saveOp.addObserver(produceOb)
-        queue.addOperations(saveOp)
+        queue.addOperation(saveOp)
     }
 
-    func readBookmarks(completion: (result: [[String: AnyObject]]?, error: ErrorType?) -> Void) {
+    func readBookmarks(_ completion: @escaping (_ result: [[String: Any]]?, _ error: Error?) -> Void) {
 
         if let bookmarkCache = bookmarkCache {
-            completion(result: bookmarkCache, error: nil)
+            completion(bookmarkCache, nil)
         } else {
-            let readOp = ReadArrayOperation(url: Store.StopsFileURL)
-            let producedObserver = DidFinishObserver { (op, errors) in
+            let readOp = ReadArrayProcedure(url: Store.StopsFileURL)
+            readOp.addDidFinishBlockObserver { (op, errors) in
 
-                NSOperationQueue.mainQueue().addOperationWithBlock {
-
+                ProcedureQueue.main.addOperation {
                     let error = errors.first
-                    let result = (op as! ReadArrayOperation).result
+                    let result = op.output.success
                     self.bookmarkCache = result
-                    completion(result: result, error: error)
-
+                    completion(result, error)
                 }
             }
-
-            readOp.addObserver(producedObserver)
             queue.addOperation(readOp)
         }
     }
 
-    func readRegistery(completion: (result: [String: AnyObject]?, error: ErrorType?) -> Void) {
+    func readRegistery(_ completion: @escaping (_ result: [String: Any]?, _ error: Error?) -> Void) {
 
         if let registeryCache = registeryCache {
-            completion(result: registeryCache, error: nil)
+            completion(registeryCache, nil)
         } else {
             let readOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
-            let producedObserver = DidFinishObserver { (op, errors) in
+            readOp.addDidFinishBlockObserver { (op, errors) in
 
-                NSOperationQueue.mainQueue().addOperationWithBlock {
-
+                ProcedureQueue.main.addOperation {
                     let error = errors.first
-                    let result = (op as! ReadDictionaryOperation).result
+                    let result = op.output.success
                     self.registeryCache = result
-                    completion(result: result, error: error)
+                    completion(result, error)
+
                 }
             }
 
-            readOp.addObserver(producedObserver)
             queue.addOperation(readOp)
 
         }
     }
 
-    func readBookmarksAndRegistery(completion: (bookmarks: [[String: AnyObject]]?, registery: [String: AnyObject]?, error: ErrorType?) -> Void) {
+    func readBookmarksAndRegistery(_ completion: @escaping (_ bookmarks: [[String: Any]]?, _ registery: [String: Any]?, _ error: Error?) -> Void) {
 
-        let readBookOp = ReadArrayOperation(url: Store.StopsFileURL)
+        let readBookOp = ReadArrayProcedure(url: Store.StopsFileURL)
         let readRegisteryOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
 
         readBookOp.addDependency(readRegisteryOp)
-        let groupOp = GroupOperation(operations: readBookOp, readRegisteryOp)
+        let groupOp = GroupProcedure(operations: readBookOp, readRegisteryOp)
 
-        let produceOb = DidFinishObserver { (op, errors) in
-
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-
+        groupOp.addDidFinishBlockObserver { (op, errors) in
+            ProcedureQueue.main.addOperation {
                 let error = errors.first
 
-                self.registeryCache = readRegisteryOp.result
-                self.bookmarkCache = readBookOp.result
-                
-                completion(bookmarks: readBookOp.result , registery: readRegisteryOp.result, error: error)
+                self.registeryCache = readRegisteryOp.output.success
+                self.bookmarkCache = readBookOp.output.success
+                completion(readBookOp.output.success , readRegisteryOp.output.success, error)
+
             }
         }
-
-        groupOp.addObserver(produceOb)
 
         queue.addOperation(groupOp)
     }

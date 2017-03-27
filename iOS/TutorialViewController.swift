@@ -11,15 +11,15 @@ import UIKit
 class TutorialViewController: UIViewController {
 
     @IBOutlet weak var descriptionLabel: UILabel!
-    var addButtonCoordinate: CGRect = CGRectZero
+    var addButtonCoordinate: CGRect = CGRect.zero
     var tapGesture: UITapGestureRecognizer!
 
       override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor.clear
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapTriggered))
-        tapGesture.enabled = false
+        tapGesture.isEnabled = false
 
         self.view.addGestureRecognizer(tapGesture)
     }
@@ -30,7 +30,7 @@ class TutorialViewController: UIViewController {
     }
 
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         startSpotlight()
@@ -39,25 +39,25 @@ class TutorialViewController: UIViewController {
 
     func startSpotlight() {
 
-        UIView.animateWithDuration(1.0, delay: 0, options: .CurveEaseOut, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut, animations: {
             let maskLayer = CAShapeLayer()
-            let path = CGPathCreateMutable()
+            let path = CGMutablePath()
 
-            CGPathAddRect(path, nil, self.view.bounds)
-            CGPathAddRoundedRect(path, nil, self.addButtonRect(), 5, 5)
+            path.addRect(self.view.bounds)
+            path.__addRoundedRect(transform: nil, rect: self.addButtonRect(), cornerWidth: 5, cornerHeight: 5)
 
             maskLayer.path = path
             maskLayer.fillRule = kCAFillRuleEvenOdd
             maskLayer.opacity = 0.6
             // Set the mask of the view.
             self.view.layer.mask = maskLayer;
-            self.view.backgroundColor = UIColor.blackColor()
+            self.view.backgroundColor = UIColor.black
 
 
             }, completion: {(finished) in
                 guard finished else { return }
-                self.tapGesture.enabled = true
-                self.descriptionLabel.hidden = false
+                self.tapGesture.isEnabled = true
+                self.descriptionLabel.isHidden = false
         } )
     }
 
@@ -67,9 +67,9 @@ class TutorialViewController: UIViewController {
         return maskRect
     }
 
-    internal func tapTriggered(sender: UITapGestureRecognizer) {
+    internal func tapTriggered(_ sender: UITapGestureRecognizer) {
 
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

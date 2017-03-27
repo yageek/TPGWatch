@@ -1,5 +1,5 @@
 //
-//  CleanUpV2Operation.swift
+//  CleanUpV2Procedure.swift
 //  TPGWatch
 //
 //  Created by Yannick Heinrich on 08.08.16.
@@ -7,18 +7,18 @@
 //
 
 import WatchKit
-import Operations
+import ProcedureKit
 
 /**
  Cleanup Old V2 storage file.
  */
-class CleanUpV2Operation: GroupOperation {
+class CleanUpV2Procedure: GroupProcedure {
 
     init() {
 
 
-        let bookOp = DeleteFileOperation(url: Store.StopsFileURL.URLByDeletingPathExtension!.URLByAppendingPathExtension("json"))
-        let registeryOp = DeleteFileOperation(url:  Store.RegisteryFileURL.URLByDeletingPathExtension!.URLByAppendingPathExtension("json"))
+        let bookOp = DeleteFileProcedure(url: Store.StopsFileURL.deletingPathExtension().appendingPathExtension("json"))
+        let registeryOp = DeleteFileProcedure(url:  Store.RegisteryFileURL.deletingPathExtension().appendingPathExtension("json"))
 
         super.init(operations: [bookOp, registeryOp])
 
@@ -26,11 +26,11 @@ class CleanUpV2Operation: GroupOperation {
     }
 }
 
-class DeleteFileOperation: Operation {
+class DeleteFileProcedure: Procedure{
 
-    let url: NSURL
+    let url: URL
 
-    init(url: NSURL) {
+    init(url: URL) {
         self.url = url
         super.init()
 
@@ -39,9 +39,9 @@ class DeleteFileOperation: Operation {
 
     override func execute() {
 
-        let fileManager = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
 
-        guard fileManager.fileExistsAtPath(url.path!) else {
+        guard fileManager.fileExists(atPath: url.path) else {
             print("Nothing to delete at \(url). Finish...")
             self.finish()
             return
@@ -49,10 +49,10 @@ class DeleteFileOperation: Operation {
 
         do {
             print("Deleting file at: \(url)")
-            try fileManager.removeItemAtURL(url)
+            try fileManager.removeItem(at: url)
         } catch let error {
             print("Can not delete file at path: \(error)")
-            self.finish(error)
+            self.finish(withError: error)
         }
         self.finish()
     }

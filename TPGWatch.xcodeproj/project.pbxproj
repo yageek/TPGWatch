@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B037F0A1D35728600EEF1D5 /* GetNextDeparturesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */; };
-		0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
-		0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */; };
-		0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
-		0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadOperation.swift */; };
+		0B037F0A1D35728600EEF1D5 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */; };
+		0B037F121D35741800EEF1D5 /* DownloadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */; };
+		0B037F131D35741B00EEF1D5 /* DownloadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */; };
 		0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
+		0B13489A1DC9CFE000E2B23F /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */; };
+		0B13489C1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */; };
 		0B134F801D48122200D1489A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B134F821D48122200D1489A /* Localizable.strings */; };
 		0B28DDE41D58CE99003ACC0F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007471D340082008877F9 /* Color.swift */; };
 		0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007481D340082008877F9 /* Palette.swift */; };
@@ -25,6 +25,9 @@
 		0B32C3981D34DEA200D97205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3971D34DEA200D97205 /* Assets.xcassets */; };
 		0B32C39C1D34DEA200D97205 /* TPGWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0B32C3821D34DEA200D97205 /* TPGWatch.app */; };
 		0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32C3A61D34DEF600D97205 /* WatchProxy.swift */; };
+		0B353BF51DC90B8200A306B9 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */; };
+		0B353BF61DC90BDF00A306B9 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
+		0B353BF81DC90BE000A306B9 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */; };
 		0B3F1FF41D3C1F7A0093AC66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F1FF61D3C1F7A0093AC66 /* Main.storyboard */; };
 		0B3F1FFD1D3C232D0093AC66 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F1FFF1D3C232D0093AC66 /* Localizable.strings */; };
 		0B3F20021D3C232D0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20041D3C232D0093AC66 /* InfoPlist.strings */; };
@@ -37,24 +40,26 @@
 		0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */; };
 		0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */; };
 		0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0EA1D547E930005F6E3 /* Store.swift */; };
-		0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
 		0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */; };
 		0B8250091D3841390094946B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
-		0B84C1441D529EA700594499 /* SendRegisteryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */; };
+		0B84C1441D529EA700594499 /* SendRegisteryProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryProcedure.swift */; };
 		0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1451D529FE100594499 /* WatchProxy.swift */; };
-		0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveOperation.swift */; };
+		0B84C14A1D52A6AD00594499 /* SaveProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveProcedure.swift */; };
 		0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C14B1D52AD5400594499 /* TPGWatch.xcdatamodeld */; };
 		0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401ED1D5917A500FEF28C /* SyncController.swift */; };
-		0BA401F11D59183A00FEF28C /* CleanUpV2Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */; };
+		0BA401F11D59183A00FEF28C /* CleanUpV2Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401F01D59183A00FEF28C /* CleanUpV2Procedure.swift */; };
 		0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA66D021D34DC2B00FDB554 /* DataHelper.swift */; };
-		0BB280121D591C310065C403 /* InitOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280111D591C310065C403 /* InitOperation.swift */; };
-		0BB280141D591F730065C403 /* UpdateDisplayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280131D591F730065C403 /* UpdateDisplayOperation.swift */; };
-		0BB280161D591FA90065C403 /* CheckFilesOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280151D591FA90065C403 /* CheckFilesOperation.swift */; };
-		0BB280181D5922590065C403 /* PresentFirstScreenOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280171D5922590065C403 /* PresentFirstScreenOperation.swift */; };
+		0BB280121D591C310065C403 /* InitProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280111D591C310065C403 /* InitProcedure.swift */; };
+		0BB280141D591F730065C403 /* UpdateDisplayProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280131D591F730065C403 /* UpdateDisplayProcedure.swift */; };
+		0BB280161D591FA90065C403 /* CheckFilesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280151D591FA90065C403 /* CheckFilesProcedure.swift */; };
+		0BB280181D5922590065C403 /* PresentFirstScreenProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB280171D5922590065C403 /* PresentFirstScreenProcedure.swift */; };
 		0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801A1D5927680065C403 /* BookmarkedStop.swift */; };
 		0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801D1D5927C20065C403 /* DepartureInfo.swift */; };
 		0BB2801F1D59D4160065C403 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
-		0BBDC1891D54D447005C8297 /* ReadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadOperation.swift */; };
+		0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadProcedure.swift */; };
+		0BD1A6871E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
+		0BD1A6881E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
+		0BD1A7231E89684600EA0C1A /* ProcedureKitMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BD1A7221E89684600EA0C1A /* ProcedureKitMobile.framework */; };
 		0BF007171D33FF6E008877F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007161D33FF6E008877F9 /* Assets.xcassets */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
 		0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007231D33FFF4008877F9 /* AppDelegate.swift */; };
@@ -65,9 +70,9 @@
 		0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */; };
 		0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007311D34002F008877F9 /* StopSearchVC.swift */; };
 		0BF007351D340040008877F9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
-		0BF0073F1D340061008877F9 /* ImportStopOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073A1D340061008877F9 /* ImportStopOperation.swift */; };
-		0BF007401D340061008877F9 /* GetStopsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073B1D340061008877F9 /* GetStopsOperation.swift */; };
-		0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */; };
+		0BF0073F1D340061008877F9 /* ImportStopProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073A1D340061008877F9 /* ImportStopProcedure.swift */; };
+		0BF007401D340061008877F9 /* GetStopsProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073B1D340061008877F9 /* GetStopsProcedure.swift */; };
+		0BF007411D340061008877F9 /* ImportLinesColorsProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0073C1D340061008877F9 /* ImportLinesColorsProcedure.swift */; };
 		0BF007441D34006F008877F9 /* LinesRendererContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007421D34006F008877F9 /* LinesRendererContext.swift */; };
 		0BF007451D34006F008877F9 /* LineRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007431D34006F008877F9 /* LineRenderer.swift */; };
 		0BF007491D340082008877F9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007471D340082008877F9 /* Color.swift */; };
@@ -79,9 +84,8 @@
 		0BF007581D3400A7008877F9 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007521D3400A7008877F9 /* Line.swift */; };
 		0BF007591D3400A7008877F9 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007531D3400A7008877F9 /* Stop.swift */; };
 		0BF0075F1D340172008877F9 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075D1D340172008877F9 /* TPGSwift.framework */; };
-		0BF007601D340172008877F9 /* Operations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075E1D340172008877F9 /* Operations.framework */; };
 		0BF007621D340185008877F9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF007611D340185008877F9 /* CoreData.framework */; };
-		0BFAD9321D5BDF9D00182161 /* SendBookmarkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */; };
+		0BFAD9321D5BDF9D00182161 /* SendBookmarkProedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAD9311D5BDF9D00182161 /* SendBookmarkProedure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,10 +138,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDeparturesOperation.swift; sourceTree = "<group>"; };
-		0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONUnmarshalOperation.swift; path = Common/JSONUnmarshalOperation.swift; sourceTree = "<group>"; };
-		0B037F111D35741800EEF1D5 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadOperation.swift; path = Common/DownloadOperation.swift; sourceTree = "<group>"; };
+		0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDeparturesProcedure.swift; sourceTree = "<group>"; };
+		0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadProcedure.swift; path = Common/DownloadProcedure.swift; sourceTree = "<group>"; };
 		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
+		0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitNetwork.framework; path = Carthage/Build/watchOS/ProcedureKitNetwork.framework; sourceTree = "<group>"; };
+		0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitNetwork.framework; path = Carthage/Build/iOS/ProcedureKitNetwork.framework; sourceTree = "<group>"; };
 		0B134F811D48122200D1489A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B134F831D48122C00D1489A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B134F851D4817A600D1489A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -151,6 +156,8 @@
 		0B32C3971D34DEA200D97205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B32C3991D34DEA200D97205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B32C3A61D34DEF600D97205 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
+		0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKit.framework; path = Carthage/Build/iOS/ProcedureKit.framework; sourceTree = "<group>"; };
+		0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKit.framework; path = Carthage/Build/watchOS/ProcedureKit.framework; sourceTree = "<group>"; };
 		0B3F1FF51D3C1F7A0093AC66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B3F1FF71D3C1F9A0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		0B3F1FF81D3C1F9A0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Interface.strings; sourceTree = "<group>"; };
@@ -174,24 +181,26 @@
 		0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 1_to_2_model.xcmappingmodel; sourceTree = "<group>"; };
 		0B4DB0E81D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColorToLineStringTransformationPolicy.swift; sourceTree = "<group>"; };
 		0B4DB0EA1D547E930005F6E3 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryOperation.swift; sourceTree = "<group>"; };
+		0B58737D1D375CDA001B7416 /* SendRegisteryProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryProcedure.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
 		0B8250081D3841390094946B /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		0B84C1451D529FE100594499 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
-		0B84C1491D52A6AD00594499 /* SaveOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveOperation.swift; sourceTree = "<group>"; };
+		0B84C1491D52A6AD00594499 /* SaveProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProcedure.swift; sourceTree = "<group>"; };
 		0B84C14C1D52AD5400594499 /* TPGWatch 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TPGWatch 2.xcdatamodel"; sourceTree = "<group>"; };
 		0B84C14D1D52AD5400594499 /* TPGWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TPGWatch.xcdatamodel; sourceTree = "<group>"; };
 		0BA401ED1D5917A500FEF28C /* SyncController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncController.swift; sourceTree = "<group>"; };
-		0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanUpV2Operation.swift; sourceTree = "<group>"; };
+		0BA401F01D59183A00FEF28C /* CleanUpV2Procedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanUpV2Procedure.swift; sourceTree = "<group>"; };
 		0BA66D021D34DC2B00FDB554 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
-		0BB280111D591C310065C403 /* InitOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitOperation.swift; sourceTree = "<group>"; };
-		0BB280131D591F730065C403 /* UpdateDisplayOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDisplayOperation.swift; sourceTree = "<group>"; };
-		0BB280151D591FA90065C403 /* CheckFilesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckFilesOperation.swift; sourceTree = "<group>"; };
-		0BB280171D5922590065C403 /* PresentFirstScreenOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFirstScreenOperation.swift; sourceTree = "<group>"; };
+		0BB280111D591C310065C403 /* InitProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitProcedure.swift; sourceTree = "<group>"; };
+		0BB280131D591F730065C403 /* UpdateDisplayProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDisplayProcedure.swift; sourceTree = "<group>"; };
+		0BB280151D591FA90065C403 /* CheckFilesProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckFilesProcedure.swift; sourceTree = "<group>"; };
+		0BB280171D5922590065C403 /* PresentFirstScreenProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFirstScreenProcedure.swift; sourceTree = "<group>"; };
 		0BB2801A1D5927680065C403 /* BookmarkedStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkedStop.swift; sourceTree = "<group>"; };
 		0BB2801D1D5927C20065C403 /* DepartureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureInfo.swift; sourceTree = "<group>"; };
-		0BBDC1881D54D447005C8297 /* ReadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadOperation.swift; sourceTree = "<group>"; };
+		0BBDC1881D54D447005C8297 /* ReadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadProcedure.swift; sourceTree = "<group>"; };
+		0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializationProcedure.swift; sourceTree = "<group>"; };
+		0BD1A7221E89684600EA0C1A /* ProcedureKitMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitMobile.framework; path = Carthage/Build/iOS/ProcedureKitMobile.framework; sourceTree = "<group>"; };
 		0BF0070C1D33FF6D008877F9 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF007161D33FF6E008877F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BF0071B1D33FF6E008877F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,9 +213,9 @@
 		0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopBookmarkVC.swift; sourceTree = "<group>"; };
 		0BF007311D34002F008877F9 /* StopSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopSearchVC.swift; sourceTree = "<group>"; };
 		0BF007341D340040008877F9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = iOS/Error.swift; sourceTree = "<group>"; };
-		0BF0073A1D340061008877F9 /* ImportStopOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportStopOperation.swift; sourceTree = "<group>"; };
-		0BF0073B1D340061008877F9 /* GetStopsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStopsOperation.swift; sourceTree = "<group>"; };
-		0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportLinesColorsOperation.swift; sourceTree = "<group>"; };
+		0BF0073A1D340061008877F9 /* ImportStopProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportStopProcedure.swift; sourceTree = "<group>"; };
+		0BF0073B1D340061008877F9 /* GetStopsProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStopsProcedure.swift; sourceTree = "<group>"; };
+		0BF0073C1D340061008877F9 /* ImportLinesColorsProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportLinesColorsProcedure.swift; sourceTree = "<group>"; };
 		0BF007421D34006F008877F9 /* LinesRendererContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesRendererContext.swift; sourceTree = "<group>"; };
 		0BF007431D34006F008877F9 /* LineRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineRenderer.swift; sourceTree = "<group>"; };
 		0BF007471D340082008877F9 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -220,9 +229,8 @@
 		0BF0075A1D3400B4008877F9 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		0BF0075B1D3400DC008877F9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0BF0075D1D340172008877F9 /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/iOS/TPGSwift.framework; sourceTree = "<group>"; };
-		0BF0075E1D340172008877F9 /* Operations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Operations.framework; path = Carthage/Build/iOS/Operations.framework; sourceTree = "<group>"; };
 		0BF007611D340185008877F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendBookmarkOperation.swift; sourceTree = "<group>"; };
+		0BFAD9311D5BDF9D00182161 /* SendBookmarkProedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendBookmarkProedure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +238,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7BF67C1D352A430044E75F /* TPGSwift.framework in Frameworks */,
+				0B13489A1DC9CFE000E2B23F /* ProcedureKitNetwork.framework in Frameworks */,
+				0B353BF81DC90BE000A306B9 /* ProcedureKit.framework in Frameworks */,
+				0B353BF61DC90BDF00A306B9 /* TPGSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +255,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD1A7231E89684600EA0C1A /* ProcedureKitMobile.framework in Frameworks */,
+				0B13489C1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework in Frameworks */,
+				0B353BF51DC90B8200A306B9 /* ProcedureKit.framework in Frameworks */,
 				0B8250091D3841390094946B /* PKHUD.framework in Frameworks */,
 				0BF007621D340185008877F9 /* CoreData.framework in Frameworks */,
 				0BF0075F1D340172008877F9 /* TPGSwift.framework in Frameworks */,
-				0BF007601D340172008877F9 /* Operations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				0BF007341D340040008877F9 /* Error.swift */,
-				0B037F111D35741800EEF1D5 /* DownloadOperation.swift */,
-				0B037F0E1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift */,
+				0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */,
+				0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */,
 				0B037F141D3579AA00EEF1D5 /* Keys.swift */,
 			);
 			name = Common;
@@ -299,6 +311,18 @@
 				0B32C3A61D34DEF600D97205 /* WatchProxy.swift */,
 			);
 			name = WatchProxy;
+			sourceTree = "<group>";
+		};
+		0B353BF31DC90B8200A306B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BD1A7221E89684600EA0C1A /* ProcedureKitMobile.framework */,
+				0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */,
+				0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */,
+				0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */,
+				0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */ = {
@@ -342,11 +366,11 @@
 		0BA401EF1D59181900FEF28C /* Startup */ = {
 			isa = PBXGroup;
 			children = (
-				0BB280111D591C310065C403 /* InitOperation.swift */,
-				0BA401F01D59183A00FEF28C /* CleanUpV2Operation.swift */,
-				0BB280131D591F730065C403 /* UpdateDisplayOperation.swift */,
-				0BB280151D591FA90065C403 /* CheckFilesOperation.swift */,
-				0BB280171D5922590065C403 /* PresentFirstScreenOperation.swift */,
+				0BB280111D591C310065C403 /* InitProcedure.swift */,
+				0BA401F01D59183A00FEF28C /* CleanUpV2Procedure.swift */,
+				0BB280131D591F730065C403 /* UpdateDisplayProcedure.swift */,
+				0BB280151D591FA90065C403 /* CheckFilesProcedure.swift */,
+				0BB280171D5922590065C403 /* PresentFirstScreenProcedure.swift */,
 			);
 			name = Startup;
 			sourceTree = "<group>";
@@ -373,9 +397,9 @@
 			isa = PBXGroup;
 			children = (
 				0BA401EF1D59181900FEF28C /* Startup */,
-				0B037F091D35728600EEF1D5 /* GetNextDeparturesOperation.swift */,
-				0B84C1491D52A6AD00594499 /* SaveOperation.swift */,
-				0BBDC1881D54D447005C8297 /* ReadOperation.swift */,
+				0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */,
+				0B84C1491D52A6AD00594499 /* SaveProcedure.swift */,
+				0BBDC1881D54D447005C8297 /* ReadProcedure.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -387,7 +411,6 @@
 				0B7BF67B1D352A430044E75F /* TPGSwift.framework */,
 				0BF007611D340185008877F9 /* CoreData.framework */,
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
-				0BF0075E1D340172008877F9 /* Operations.framework */,
 				0BF0075B1D3400DC008877F9 /* README.md */,
 				0BF0075A1D3400B4008877F9 /* Cartfile */,
 				0B037F0D1D3573E700EEF1D5 /* Common */,
@@ -396,6 +419,7 @@
 				0B32C3921D34DEA200D97205 /* TPGWatch Extension */,
 				0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */,
 				0BF0070D1D33FF6D008877F9 /* Products */,
+				0B353BF31DC90B8200A306B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,12 +479,11 @@
 		0BF007361D340048008877F9 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				0BFAD9331D5BE34E00182161 /* SendBookmarkOperation.swift */,
-				0BF0073A1D340061008877F9 /* ImportStopOperation.swift */,
-				0BF0073B1D340061008877F9 /* GetStopsOperation.swift */,
-				0BF0073C1D340061008877F9 /* ImportLinesColorsOperation.swift */,
-				0B58737D1D375CDA001B7416 /* SendRegisteryOperation.swift */,
-				0BFAD9311D5BDF9D00182161 /* SendBookmarkOperation.swift */,
+				0BF0073A1D340061008877F9 /* ImportStopProcedure.swift */,
+				0BF0073B1D340061008877F9 /* GetStopsProcedure.swift */,
+				0BF0073C1D340061008877F9 /* ImportLinesColorsProcedure.swift */,
+				0B58737D1D375CDA001B7416 /* SendRegisteryProcedure.swift */,
+				0BFAD9311D5BDF9D00182161 /* SendBookmarkProedure.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -582,24 +605,28 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Yageek;
 				TargetAttributes = {
 					0B32C3811D34DEA200D97205 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5QGK56P5P5;
+						LastSwiftMigration = 0810;
 					};
 					0B32C38D1D34DEA200D97205 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5QGK56P5P5;
+						LastSwiftMigration = 0810;
 					};
 					0B3F201C1D3C27B00093AC66 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 0BF0070B1D33FF6D008877F9;
 					};
 					0BF0070B1D33FF6D008877F9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5QGK56P5P5;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -677,7 +704,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/watchOS/TPGSwift.framework",
-				"$(SRCROOT)/Carthage/Build/watchOS/Operations.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/ProcedureKit.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/ProcedureKitNetwork.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -692,9 +720,11 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Operations.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TPGSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitNetwork.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitMobile.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -710,28 +740,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B84C14A1D52A6AD00594499 /* SaveOperation.swift in Sources */,
+				0B84C14A1D52A6AD00594499 /* SaveProcedure.swift in Sources */,
 				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
-				0B037F0A1D35728600EEF1D5 /* GetNextDeparturesOperation.swift in Sources */,
-				0BB280141D591F730065C403 /* UpdateDisplayOperation.swift in Sources */,
-				0BB280181D5922590065C403 /* PresentFirstScreenOperation.swift in Sources */,
-				0BB280121D591C310065C403 /* InitOperation.swift in Sources */,
+				0B037F0A1D35728600EEF1D5 /* GetNextDeparturesProcedure.swift in Sources */,
+				0BB280141D591F730065C403 /* UpdateDisplayProcedure.swift in Sources */,
+				0BB280181D5922590065C403 /* PresentFirstScreenProcedure.swift in Sources */,
+				0BD1A6881E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */,
+				0BB280121D591C310065C403 /* InitProcedure.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
 				0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */,
 				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
 				0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */,
 				0B28DDE41D58CE99003ACC0F /* Color.swift in Sources */,
 				0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */,
-				0BB280161D591FA90065C403 /* CheckFilesOperation.swift in Sources */,
+				0BB280161D591FA90065C403 /* CheckFilesProcedure.swift in Sources */,
 				0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */,
 				0BB2801F1D59D4160065C403 /* Error.swift in Sources */,
 				0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */,
 				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
-				0B037F0F1D3573F300EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
 				0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */,
-				0BBDC1891D54D447005C8297 /* ReadOperation.swift in Sources */,
-				0B037F121D35741800EEF1D5 /* DownloadOperation.swift in Sources */,
-				0BA401F11D59183A00FEF28C /* CleanUpV2Operation.swift in Sources */,
+				0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */,
+				0B037F121D35741800EEF1D5 /* DownloadProcedure.swift in Sources */,
+				0BA401F11D59183A00FEF28C /* CleanUpV2Procedure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,21 +779,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */,
+				0BD1A6871E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */,
 				0BA66D031D34DC2B00FDB554 /* DataHelper.swift in Sources */,
 				0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */,
 				0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */,
-				0B037F101D3573F600EEF1D5 /* JSONUnmarshalOperation.swift in Sources */,
-				0BF007411D340061008877F9 /* ImportLinesColorsOperation.swift in Sources */,
+				0BF007411D340061008877F9 /* ImportLinesColorsProcedure.swift in Sources */,
 				0B84C14E1D52AD5400594499 /* TPGWatch.xcdatamodeld in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,
 				0BF007451D34006F008877F9 /* LineRenderer.swift in Sources */,
 				0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */,
-				0B84C1441D529EA700594499 /* SendRegisteryOperation.swift in Sources */,
+				0B84C1441D529EA700594499 /* SendRegisteryProcedure.swift in Sources */,
 				0B4525501D473C600026907E /* TutorialViewController.swift in Sources */,
 				0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */,
-				0BFAD9321D5BDF9D00182161 /* SendBookmarkOperation.swift in Sources */,
+				0BFAD9321D5BDF9D00182161 /* SendBookmarkProedure.swift in Sources */,
 				0BF007591D3400A7008877F9 /* Stop.swift in Sources */,
-				0B037F131D35741B00EEF1D5 /* DownloadOperation.swift in Sources */,
+				0B037F131D35741B00EEF1D5 /* DownloadProcedure.swift in Sources */,
 				0BF007571D3400A7008877F9 /* Connection.swift in Sources */,
 				0BF0072A1D34000A008877F9 /* StopCell.swift in Sources */,
 				0BF007351D340040008877F9 /* Error.swift in Sources */,
@@ -775,8 +805,8 @@
 				0BF0072C1D34000A008877F9 /* StopCellSearch.swift in Sources */,
 				0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */,
 				0BF0074A1D340082008877F9 /* Palette.swift in Sources */,
-				0BF007401D340061008877F9 /* GetStopsOperation.swift in Sources */,
-				0BF0073F1D340061008877F9 /* ImportStopOperation.swift in Sources */,
+				0BF007401D340061008877F9 /* GetStopsProcedure.swift in Sources */,
+				0BF0073F1D340061008877F9 /* ImportStopProcedure.swift in Sources */,
 				0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,15 +913,16 @@
 		0B32C39D1D34DEA200D97205 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TPGWatch_Extension;
 				INFOPLIST_FILE = TPGWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -900,15 +931,16 @@
 		0B32C39E1D34DEA200D97205 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TPGWatch_Extension;
 				INFOPLIST_FILE = TPGWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -928,6 +960,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -947,6 +980,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -959,6 +993,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "iOS App";
 			};
 			name = Debug;
@@ -970,6 +1005,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "iOS App";
 			};
 			name = Release;
@@ -978,6 +1014,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -988,8 +1025,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1023,6 +1062,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1033,8 +1073,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1053,6 +1095,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1066,6 +1109,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1073,6 +1117,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = TPGWatch;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1085,12 +1130,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = TPGWatch;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -8,10 +8,10 @@
 
 import UIKit
 import CoreData
-import Operations
+import ProcedureKit
 
 protocol LinesRendererContextDelegate {
-    func context(context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: NSIndexPath)
+    func context(_ context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: IndexPath)
 }
 
 final class LinesRendererContext {
@@ -19,7 +19,7 @@ final class LinesRendererContext {
     var queue = OperationQueue()
 
     var renderers: [String: LineRenderer] = [:]
-    var renderersOperation: [String: NSOperation] = [:]
+    var renderersOperation: [String: Operation] = [:]
     var context: NSManagedObjectContext
 
     var delegate: LinesRendererContextDelegate?
@@ -28,19 +28,19 @@ final class LinesRendererContext {
         self.context = context
     }
 
-    func renderLines(stop: Stop, cell: StopCell, indexPath: NSIndexPath) {
+    func renderLines(_ stop: Stop, cell: StopCell, indexPath: IndexPath) {
 
         guard let stopCode = stop.code else { return }
 
         let renderSize = CGSize(width: 40.0, height: 32.0)
 
-        let request = NSFetchRequest(entityName: Line.EntityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Line.EntityName)
         request.predicate = NSPredicate(format: "ANY connections.stops.code == %@", stopCode)
         request.returnsDistinctResults = true
-        request.resultType = .DictionaryResultType
+        request.resultType = .dictionaryResultType
 
         do {
-            let linesDicts = try context.executeFetchRequest(request) as! [[String: AnyObject]]
+            let linesDicts = try context.fetch(request) as! [[String: Any]]
 
             for lineDict in linesDicts {
                 guard
@@ -51,7 +51,7 @@ final class LinesRendererContext {
 
                 let renderer = self.renderers[lineCode]
 
-                if let rend = renderer where rend.hasRendered {
+                if let rend = renderer, rend.hasRendered {
                     cell.addImageLine(rend.render(renderSize))
                 }
 
@@ -62,10 +62,10 @@ final class LinesRendererContext {
 
                     self.renderers[lineCode] = rend
 
-                    let blockOp = NSBlockOperation {
+                    let blockOp = BlockOperation {
                         let image = rend.render(renderSize)
 
-                        NSOperationQueue.mainQueue().addOperationWithBlock({
+                        OperationQueue.main.addOperation({
                             self.delegate?.context(self, finishRenderingImage: image, forIndexPath: indexPath)
                         })
                     }

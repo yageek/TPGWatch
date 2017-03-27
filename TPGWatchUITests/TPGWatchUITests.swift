@@ -28,35 +28,35 @@ class TPGWatchUITests: XCTestCase {
 
         snapshot("01BookmarksEmpty")
         //Click on "+" button.
-        app.navigationBars.elementBoundByIndex(0).buttons.elementBoundByIndex(0).tap()
+        app.navigationBars.element(boundBy: 0).buttons.element(boundBy: 0).tap()
 
-        let exp = self.expectationWithDescription("Screenshots")
+        let exp = self.expectation(description: "Screenshots")
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(5.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(5.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
 
             snapshot("02Searchs")
 
             // Click on search
             let tablesQuery = app.tables
-            var searchField = tablesQuery.searchFields.elementBoundByIndex(0)
+            var searchField = tablesQuery.searchFields.element(boundBy: 0)
             searchField.tap()
 
             //Enter text
-            searchField = app.searchFields.elementBoundByIndex(0)
+            searchField = app.searchFields.element(boundBy: 0)
             searchField.tap()
             searchField.typeText("Gare")
             snapshot("03SearchsFilled")
 
             //Cancel
-            let abbrechenButton = app.buttons.elementBoundByIndex(1)
+            let abbrechenButton = app.buttons.element(boundBy: 1)
             abbrechenButton.tap()
 
 
-            tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(1).staticTexts.elementBoundByIndex(0).tap()
-            tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(2).staticTexts.elementBoundByIndex(0).tap()
+            tablesQuery.children(matching: .cell).element(boundBy: 1).staticTexts.element(boundBy: 0).tap()
+            tablesQuery.children(matching: .cell).element(boundBy: 2).staticTexts.element(boundBy: 0).tap()
 
             snapshot("04SearchsSelected")
-            app.navigationBars.elementBoundByIndex(0).buttons.elementBoundByIndex(0).tap()
+            app.navigationBars.element(boundBy: 0).buttons.element(boundBy: 0).tap()
 
             // Type text
             // Cancel
@@ -68,7 +68,7 @@ class TPGWatchUITests: XCTestCase {
 
         }
 
-        self.waitForExpectationsWithTimeout(300) { (error) in
+        self.waitForExpectations(timeout: 300) { (error) in
             if let error = error {
                 print("Impossible to take screenshots: \(error)")
             }

@@ -16,29 +16,29 @@ class WatchProxy: NSObject, WCSessionDelegate {
 
     static let sharedInstance = WatchProxy()
     
-    let session = WCSession.defaultSession()
+    let session = WCSession.default()
 
-    private override init() {
+    fileprivate override init() {
          super.init()
     }
 
     func startSession() {
         session.delegate = self
-        session.activateSession()
+        session.activate()
     }
 
 
-    func session(session: WCSession, activationDidCompleteWithState activationState: WCSessionActivationState, error: NSError?) {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("[watch] Session changed with state:\(activationState)")
     }
 
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        if let stopsData = applicationContext["stops"] as? [[String: AnyObject]] {
-            Store.sharedInstance.saveBookmarks(stopsData, notificationName: WatchProxy.BookmarkUpdateNotification)
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        if let stopsData = applicationContext["stops"] as? [[String: Any]] {
+            Store.sharedInstance.saveBookmarks(stopsData as Any, notificationName: WatchProxy.BookmarkUpdateNotification)
         }
 
-        if let registery = applicationContext["registery"] as? [String: AnyObject] {
-            Store.sharedInstance.saveRegistery(registery, notificationName: WatchProxy.RegisteryUpdateNotification)
+        if let registery = applicationContext["registery"] as? [String: Any] {
+            Store.sharedInstance.saveRegistery(registery as Any, notificationName: WatchProxy.RegisteryUpdateNotification)
         }
         
     }

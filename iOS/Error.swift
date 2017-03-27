@@ -8,11 +8,12 @@
 
 import Foundation
 
-enum GeneralError: Int, ErrorType {
-    case NoNetworkConnection
-    case UnexpectedData
-    case ServiceUnavailable
-    case UnexpectedError
+enum GeneralError: Int, Error {
+    case noNetworkConnection
+    case unexpectedData
+    case serviceUnavailable
+    case unexpectedError
+    case apiError
 }
 
 extension GeneralError {
@@ -20,17 +21,17 @@ extension GeneralError {
     static var Domain = "net.yageek.TPGWatch"
 
     var error: NSError {
-
-
         switch self {
 
-        case .NoNetworkConnection:
+        case .noNetworkConnection:
             return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("No internet connection is available", comment: ""), NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Retry later", comment: "")])
-        case .UnexpectedData:
+        case .unexpectedData:
             return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
-        case .ServiceUnavailable:
+        case .serviceUnavailable:
             return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The TPG server is unavailable.", comment: ""), NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Retry later", comment: "")])
-        case .UnexpectedError:
+        case .unexpectedError:
+            return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
+        case .apiError:
             return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
         }
     }

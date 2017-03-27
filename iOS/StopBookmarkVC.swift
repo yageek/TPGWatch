@@ -7,20 +7,20 @@
 //
 
 import UIKit
-import Operations
+import ProcedureKit
 import TPGSwift
 import CoreData
 
 final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDelegate, LinesRendererContextDelegate {
     let queue = OperationQueue()
     var renderingContext: LinesRendererContext = {
-        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         let rendering = LinesRendererContext(context: context)
         return rendering
     }()
 
 
-    var fetchedResultsController:NSFetchedResultsController?
+    var fetchedResultsController:NSFetchedResultsController<NSFetchRequestResult>?
     var backgroundLabel: UILabel!
 
 
@@ -33,20 +33,20 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         setupFetchController()
 
 
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
         fetchedResultsController?.delegate = self
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.8 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)){
 
             self.presentTutorialScreenIfFirstTime()
         }
@@ -54,7 +54,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     }
 
 
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         fetchedResultsController?.delegate = nil
 
@@ -66,20 +66,20 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     }
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController?.sections?.count ?? 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = fetchedResultsController?.sections?[section]
 
         return section?.numberOfObjects ?? 0
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("StopCell", forIndexPath: indexPath) as! StopCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StopCell", for: indexPath) as! StopCell
 
-        if let stop = self.fetchedResultsController?.objectAtIndexPath(indexPath) as? Stop {
+        if let stop = self.fetchedResultsController?.object(at: indexPath) as? Stop {
 
             cell.resetStacks()
             cell.stopLabel?.text = stop.name
@@ -88,14 +88,14 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         return cell
     }
 
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
-        if let stop = fetchedResultsController?.objectAtIndexPath(indexPath) as? Stop {
+        if let stop = fetchedResultsController?.object(at: indexPath) as? Stop {
             stop.bookmarked = false
         }
     }
 
-    override func setEditing(editing: Bool, animated: Bool) {
+    override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
 
         if !editing {
@@ -105,14 +105,14 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     }
 
     // MARK: NSFetchedResultsControllerDelegate
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
 
         guard let indexPath = indexPath else { return }
 
         self.tableView.beginUpdates()
         switch type {
-        case .Delete:
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        case .delete:
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         default:
             break;
         }
@@ -122,13 +122,13 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     // MARK: Helpers
 
     internal func UIMoc() -> NSManagedObjectContext {
-        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         return context
     }
 
 
     internal func setupFetchController() {
-        let request = NSFetchRequest(entityName: Stop.EntityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Stop.EntityName)
         request.predicate = NSPredicate(format: "bookmarked == true")
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
@@ -139,19 +139,19 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     }
 
     internal func setupTableView() {
-        tableView.tableFooterView = UIView(frame: CGRectZero)
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
 
-        let label = UILabel(frame: CGRectZero)
-        label.textAlignment = .Center
+        let label = UILabel(frame: CGRect.zero)
+        label.textAlignment = .center
         label.center = tableView.center
 
         backgroundLabel = label
 
         let nib = UINib(nibName: "StopCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "StopCell")
+        tableView.register(nib, forCellReuseIdentifier: "StopCell")
     }
 
-    private func updateUI(){
+    fileprivate func updateUI(){
         do {
             try fetchedResultsController?.performFetch()
             updateCentralLabel()
@@ -163,8 +163,8 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         tableView.reloadData()
     }
 
-    private func updateCentralLabel() {
-        if let count = fetchedResultsController?.fetchedObjects?.count where count == 0 {
+    fileprivate func updateCentralLabel() {
+        if let count = fetchedResultsController?.fetchedObjects?.count, count == 0 {
             setBackgroundText(NSLocalizedString("Empty list", comment: "On the first screen, when no bookmarks are in the list"))
         } else {
             hideBackgroundText()
@@ -172,7 +172,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
 
     }
 
-    func setBackgroundText(text:String){
+    func setBackgroundText(_ text:String){
         backgroundLabel.text = text
         self.tableView.backgroundView = backgroundLabel
     }
@@ -181,31 +181,31 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         self.tableView.backgroundView = nil
     }
 
-    private func addImageToStopCell(image: UIImage, indexPath: NSIndexPath) {
-        if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? StopCell {
+    fileprivate func addImageToStopCell(_ image: UIImage, indexPath: IndexPath) {
+        if let cell = self.tableView.cellForRow(at: indexPath) as? StopCell {
             cell.addImageLine(image)
         }
     }
     
     // MARK:  LinesRendererContextDelegate
-    func context(context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: NSIndexPath) {
+    func context(_ context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: IndexPath) {
         addImageToStopCell(image, indexPath: indexPath)
     }
 
     // MARK:  TutorialScreen
     internal func presentTutorialScreenIfFirstTime() {
 
-        let numberOfBookmarks = self.tableView.numberOfRowsInSection(0)
-        if(NSUserDefaults.standardUserDefaults().boolForKey(AppDelegate.FirsTimeShowKey) && numberOfBookmarks == 0) {
+        let numberOfBookmarks = self.tableView.numberOfRows(inSection: 0)
+        if(UserDefaults.standard.bool(forKey: AppDelegate.FirsTimeShowKey) && numberOfBookmarks == 0) {
 
-            if let mainController = UIApplication.sharedApplication().windows.first?.rootViewController {
+            if let mainController = UIApplication.shared.windows.first?.rootViewController {
 
                 let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-                let tutorialController = storyBoard.instantiateViewControllerWithIdentifier("TutorialScreen") as! TutorialViewController
+                let tutorialController = storyBoard.instantiateViewController(withIdentifier: "TutorialScreen") as! TutorialViewController
 
                 tutorialController.addButtonCoordinate = addButtonCoord()
-                mainController.presentViewController(tutorialController, animated: true, completion: {
-                    NSUserDefaults.standardUserDefaults().setBool(false, forKey: AppDelegate.FirsTimeShowKey)
+                mainController.present(tutorialController, animated: true, completion: {
+                    UserDefaults.standard.set(false, forKey: AppDelegate.FirsTimeShowKey)
                 })
             }
         }
@@ -213,14 +213,14 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
 
     internal func addButtonCoord() -> CGRect {
 
-        guard let navigationController = UIApplication.sharedApplication().windows.first?.rootViewController as? UINavigationController else { return CGRectZero }
+        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController else { return CGRect.zero }
 
         let buttonItems = navigationController.navigationBar.subviews.filter { (view) -> Bool in
-            return view.isKindOfClass(UIControl.self)
+            return view.isKind(of: UIControl.self)
         }
 
-        guard let addButton = buttonItems.first as? UIControl else { return CGRectZero }
-        return addButton.convertRect(addButton.frame, toView: nil)
+        guard let addButton = buttonItems.first as? UIControl else { return CGRect.zero }
+        return addButton.convert(addButton.frame, to: nil)
     }
 
 

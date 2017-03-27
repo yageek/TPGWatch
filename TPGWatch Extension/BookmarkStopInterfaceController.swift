@@ -9,7 +9,7 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
-import Operations
+import ProcedureKit
 
 
 class BookmarkStopInterfaceController: WKInterfaceController {
@@ -17,8 +17,8 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
     @IBOutlet var noElementGroups: WKInterfaceGroup!
 
-    var lastStops: [[String: AnyObject]]?
-    var registery: [String: AnyObject]?
+    var lastStops: [[String: Any]]?
+    var registery: [String: Any]?
 
     override func willActivate() {
         super.willActivate()
@@ -29,13 +29,13 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     override func didAppear() {
         super.didAppear()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(bookmarkNotification), name: WatchProxy.BookmarkUpdateNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(registeryNotification), name: WatchProxy.RegisteryUpdateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(bookmarkNotification), name: NSNotification.Name(rawValue: WatchProxy.BookmarkUpdateNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(registeryNotification), name: NSNotification.Name(rawValue: WatchProxy.RegisteryUpdateNotification), object: nil)
     }
 
     override func willDisappear() {
         super.willDisappear()
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     func reloadData() {
@@ -50,7 +50,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
         for i in 0 ..< rowCount {
 
-            let row = bookmarkedStopsTable.rowControllerAtIndex(i) as! BookmarkedStop
+            let row = bookmarkedStopsTable.rowController(at: i) as! BookmarkedStop
             let stopName = stops[i]["name"] as! String
             row.hideAllLines()
 
@@ -67,7 +67,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
             for i in 0..<min(4, linesStops.count) {
 
                 let lineCode = linesStops[i]
-                let lineInfo = registery[lineCode] as! [String: AnyObject]
+                let lineInfo = registery[lineCode] as! [String: Any]
 
                 let textColor = lineInfo["textColor"] as! String
                 let backgroundColor = lineInfo["backgroundColor"] as! String
@@ -86,7 +86,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     func readData() {
 
         Store.sharedInstance.readBookmarksAndRegistery { (bookmarks, registery, error) in
-            if let bookmarks = bookmarks, registery = registery {
+            if let bookmarks = bookmarks, let registery = registery {
                 self.lastStops = bookmarks
                 self.registery = registery
                 self.reloadData()
@@ -97,7 +97,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     }
 
     // MARK: Table
-    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         guard let stop = self.lastStops?[rowIndex] else {
             return
         }
@@ -106,17 +106,17 @@ class BookmarkStopInterfaceController: WKInterfaceController {
             "stop": stop
         ]
 
-        self.pushControllerWithName("DeparturesInterfaceController", context: context)
+        self.pushController(withName: "DeparturesInterfaceController", context: context)
     }
 
     // MARK: Notification
-    func bookmarkNotification(notif: NSNotification) {
-        lastStops = notif.object as? [[String:AnyObject]]
+    func bookmarkNotification(_ notif: Notification) {
+        lastStops = notif.object as? [[String:Any]]
         self.reloadData()
     }
 
-    func registeryNotification(notif: NSNotification) {
-        registery = notif.object as? [String:AnyObject]
+    func registeryNotification(_ notif: Notification) {
+        registery = notif.object as? [String:Any]
         self.reloadData()
     }
 }

@@ -18,5 +18,4 @@ extension Connection {
     @NSManaged var destinationName: String?
     @NSManaged var line: Line?
     @NSManaged var stops: Stop?
-
 }

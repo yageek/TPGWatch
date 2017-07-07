@@ -9,7 +9,7 @@
 import WatchKit
 import ProcedureKit
 
-class PresentFirstScreenProcedure: Procedure {
+final class PresentFirstScreenProcedure: Procedure {
     let label: WKInterfaceLabel
     var requirement: CheckFilesProcedure.Result
     let rootController: WKInterfaceController

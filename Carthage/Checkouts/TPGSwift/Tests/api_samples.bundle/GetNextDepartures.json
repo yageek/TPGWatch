@@ -1,0 +1,852 @@
+{
+    "timestamp": "2017-07-04T16:41:01+0200",
+    "stop": {
+        "stopCode": "WTC0",
+        "stopName": "WTC",
+        "connections": [
+            {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "10",
+                "destinationName": "Jonction",
+                "destinationCode": "JONCTION"
+            },
+            {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            {
+                "lineCode": "23",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "23",
+                "destinationName": "Le Rolliet",
+                "destinationCode": "LE ROLLIET"
+            },
+            {
+                "lineCode": "23",
+                "destinationName": "ZIPLO",
+                "destinationCode": "ZIPLO"
+            },
+            {
+                "lineCode": "28",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "28",
+                "destinationName": "Jardin Botanique",
+                "destinationCode": "JAR. BOTANIQUE"
+            },
+            {
+                "lineCode": "28",
+                "destinationName": "Parfumerie",
+                "destinationCode": "PARFUMERIE"
+            },
+            {
+                "lineCode": "57",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "57",
+                "destinationName": "Hôpital la Tour",
+                "destinationCode": "HOPITAL LA TOUR"
+            },
+            {
+                "lineCode": "57",
+                "destinationName": "ZIMEYSA-Gare",
+                "destinationCode": "ZIMEYSA GARE"
+            },
+            {
+                "lineCode": "Y",
+                "destinationName": "Ferney-Voltaire",
+                "destinationCode": "FERNEY-VOLTAIRE"
+            },
+            {
+                "lineCode": "Y",
+                "destinationName": "Val-Thoiry",
+                "destinationCode": "VAL-THOIRY"
+            }
+        ]
+    },
+    "departures": [
+        {
+            "departureCode": 5480,
+            "timestamp": "2017-07-04T16:42:01+0200",
+            "waitingTimeMillis": 74000,
+            "waitingTime": "1",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 785
+        },
+        {
+            "departureCode": 183795,
+            "timestamp": "2017-07-04T16:43:01+0200",
+            "waitingTimeMillis": 154000,
+            "waitingTime": "2",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Val-Thoiry",
+                "destinationCode": "VAL-THOIRY"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21923
+        },
+        {
+            "departureCode": 65145,
+            "timestamp": "2017-07-04T16:48:01+0200",
+            "waitingTimeMillis": 408000,
+            "waitingTime": "6",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 1164
+        },
+        {
+            "departureCode": 108694,
+            "timestamp": "2017-07-04T16:48:01+0200",
+            "waitingTimeMillis": 410000,
+            "waitingTime": "6",
+            "line": {
+                "lineCode": "57",
+                "destinationName": "ZIMEYSA-Gare",
+                "destinationCode": "ZIMEYSA GARE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21908,
+            "disruptions": [
+                {
+                    "disruptionCode": 1707040008,
+                    "timestamp": "2017-07-04T06:04:00+0200",
+                    "place": " direction Zimeysa-Gare",
+                    "nature": "Travaux",
+                    "consequence": "Détournée entre les arrêts Meyrin-Mairie et Vernes.Les arrêts Ste-Cecile,Meyrin-Gravière,Champs-Fréchets et Bugnons ne sont pas desservis."
+                }
+            ]
+        },
+        {
+            "departureCode": 5996,
+            "timestamp": "2017-07-04T16:48:01+0200",
+            "waitingTimeMillis": 413000,
+            "waitingTime": "6",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBA",
+            "vehiculeNo": 768
+        },
+        {
+            "departureCode": 65818,
+            "timestamp": "2017-07-04T16:49:01+0200",
+            "waitingTimeMillis": 499000,
+            "waitingTime": "8",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "ZIPLO",
+                "destinationCode": "ZIPLO"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 1108
+        },
+        {
+            "departureCode": 5999,
+            "timestamp": "2017-07-04T16:51:01+0200",
+            "waitingTimeMillis": 614000,
+            "waitingTime": "10",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBA",
+            "vehiculeNo": 768
+        },
+        {
+            "departureCode": 71339,
+            "timestamp": "2017-07-04T16:51:01+0200",
+            "waitingTimeMillis": 619000,
+            "waitingTime": "10",
+            "line": {
+                "lineCode": "28",
+                "destinationName": "Jardin Botanique",
+                "destinationCode": "JAR. BOTANIQUE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21906
+        },
+        {
+            "departureCode": 183548,
+            "timestamp": "2017-07-04T16:53:01+0200",
+            "waitingTimeMillis": 711000,
+            "waitingTime": "11",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Ferney-Voltaire",
+                "destinationCode": "FERNEY-VOLTAIRE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 20966
+        },
+        {
+            "departureCode": 7340,
+            "timestamp": "2017-07-04T16:53:01+0200",
+            "waitingTimeMillis": 748000,
+            "waitingTime": "12",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 789
+        },
+        {
+            "departureCode": 7343,
+            "timestamp": "2017-07-04T16:59:01+0200",
+            "waitingTimeMillis": 1094000,
+            "waitingTime": "18",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 789
+        },
+        {
+            "departureCode": 6632,
+            "timestamp": "2017-07-04T17:00:01+0200",
+            "waitingTimeMillis": 1161000,
+            "waitingTime": "19",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 787
+        },
+        {
+            "departureCode": 69574,
+            "timestamp": "2017-07-04T17:00:01+0200",
+            "waitingTimeMillis": 1170000,
+            "waitingTime": "19",
+            "line": {
+                "lineCode": "28",
+                "destinationName": "Parfumerie",
+                "destinationCode": "PARFUMERIE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 20484
+        },
+        {
+            "departureCode": 65150,
+            "timestamp": "2017-07-04T17:01:01+0200",
+            "waitingTimeMillis": 1219000,
+            "waitingTime": "20",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "ZIPLO",
+                "destinationCode": "ZIPLO"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 1164
+        },
+        {
+            "departureCode": 66184,
+            "timestamp": "2017-07-04T17:03:01+0200",
+            "waitingTimeMillis": 1301000,
+            "waitingTime": "21",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 167
+        },
+        {
+            "departureCode": 183680,
+            "timestamp": "2017-07-04T17:03:01+0200",
+            "waitingTimeMillis": 1302000,
+            "waitingTime": "21",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Ferney-Voltaire",
+                "destinationCode": "FERNEY-VOLTAIRE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 20961
+        },
+        {
+            "departureCode": 107028,
+            "timestamp": "2017-07-04T17:04:01+0200",
+            "waitingTimeMillis": 1411000,
+            "waitingTime": "23",
+            "line": {
+                "lineCode": "57",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21907,
+            "disruptions": [
+                {
+                    "disruptionCode": 1707040008,
+                    "timestamp": "2017-07-04T06:04:00+0200",
+                    "place": " direction Zimeysa-Gare",
+                    "nature": "Travaux",
+                    "consequence": "Détournée entre les arrêts Meyrin-Mairie et Vernes.Les arrêts Ste-Cecile,Meyrin-Gravière,Champs-Fréchets et Bugnons ne sont pas desservis."
+                }
+            ]
+        },
+        {
+            "departureCode": 6635,
+            "timestamp": "2017-07-04T17:07:01+0200",
+            "waitingTimeMillis": 1574000,
+            "waitingTime": "26",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 787
+        },
+        {
+            "departureCode": 8075,
+            "timestamp": "2017-07-04T17:10:01+0200",
+            "waitingTimeMillis": 1729000,
+            "waitingTime": "28",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBA",
+            "vehiculeNo": 1631
+        },
+        {
+            "departureCode": 107033,
+            "timestamp": "2017-07-04T17:10:01+0200",
+            "waitingTimeMillis": 1740000,
+            "waitingTime": "29",
+            "line": {
+                "lineCode": "57",
+                "destinationName": "ZIMEYSA-Gare",
+                "destinationCode": "ZIMEYSA GARE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21907,
+            "disruptions": [
+                {
+                    "disruptionCode": 1707040008,
+                    "timestamp": "2017-07-04T06:04:00+0200",
+                    "place": " direction Zimeysa-Gare",
+                    "nature": "Travaux",
+                    "consequence": "Détournée entre les arrêts Meyrin-Mairie et Vernes.Les arrêts Ste-Cecile,Meyrin-Gravière,Champs-Fréchets et Bugnons ne sont pas desservis."
+                }
+            ]
+        },
+        {
+            "departureCode": 184059,
+            "timestamp": "2017-07-04T17:11:01+0200",
+            "waitingTimeMillis": 1786000,
+            "waitingTime": "29",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Val-Thoiry",
+                "destinationCode": "VAL-THOIRY"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 20965
+        },
+        {
+            "departureCode": 63704,
+            "timestamp": "2017-07-04T17:11:01+0200",
+            "waitingTimeMillis": 1791000,
+            "waitingTime": "29",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 188
+        },
+        {
+            "departureCode": 71240,
+            "timestamp": "2017-07-04T17:12:01+0200",
+            "waitingTimeMillis": 1894000,
+            "waitingTime": "31",
+            "line": {
+                "lineCode": "28",
+                "destinationName": "Jardin Botanique",
+                "destinationCode": "JAR. BOTANIQUE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 21963
+        },
+        {
+            "departureCode": 66189,
+            "timestamp": "2017-07-04T17:13:01+0200",
+            "waitingTimeMillis": 1939000,
+            "waitingTime": "32",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "ZIPLO",
+                "destinationCode": "ZIPLO"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 167
+        },
+        {
+            "departureCode": 184279,
+            "timestamp": "2017-07-04T17:13:01+0200",
+            "waitingTimeMillis": 1940000,
+            "waitingTime": "32",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Val-Thoiry",
+                "destinationCode": "VAL-THOIRY"
+            },
+            "reliability": "T"
+        },
+        {
+            "departureCode": 8078,
+            "timestamp": "2017-07-04T17:15:01+0200",
+            "waitingTimeMillis": 2054000,
+            "waitingTime": "34",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBA",
+            "vehiculeNo": 1631
+        },
+        {
+            "departureCode": 4391,
+            "timestamp": "2017-07-04T17:16:01+0200",
+            "waitingTimeMillis": 2127000,
+            "waitingTime": "35",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 783
+        },
+        {
+            "departureCode": 183944,
+            "timestamp": "2017-07-04T17:18:01+0200",
+            "waitingTimeMillis": 2215000,
+            "waitingTime": "36",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Ferney-Voltaire",
+                "destinationCode": "FERNEY-VOLTAIRE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 20964
+        },
+        {
+            "departureCode": 70748,
+            "timestamp": "2017-07-04T17:21:01+0200",
+            "waitingTimeMillis": 2400000,
+            "waitingTime": "40",
+            "line": {
+                "lineCode": "28",
+                "destinationName": "Parfumerie",
+                "destinationCode": "PARFUMERIE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 20481
+        },
+        {
+            "departureCode": 108567,
+            "timestamp": "2017-07-04T17:21:01+0200",
+            "waitingTimeMillis": 2430000,
+            "waitingTime": "40",
+            "line": {
+                "lineCode": "57",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21911,
+            "disruptions": [
+                {
+                    "disruptionCode": 1707040008,
+                    "timestamp": "2017-07-04T06:04:00+0200",
+                    "place": " direction Zimeysa-Gare",
+                    "nature": "Travaux",
+                    "consequence": "Détournée entre les arrêts Meyrin-Mairie et Vernes.Les arrêts Ste-Cecile,Meyrin-Gravière,Champs-Fréchets et Bugnons ne sont pas desservis."
+                }
+            ]
+        },
+        {
+            "departureCode": 64270,
+            "timestamp": "2017-07-04T17:23:01+0200",
+            "waitingTimeMillis": 2506000,
+            "waitingTime": "41",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 185
+        },
+        {
+            "departureCode": 4394,
+            "timestamp": "2017-07-04T17:23:01+0200",
+            "waitingTimeMillis": 2534000,
+            "waitingTime": "42",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 783
+        },
+        {
+            "departureCode": 4870,
+            "timestamp": "2017-07-04T17:24:01+0200",
+            "waitingTimeMillis": 2607000,
+            "waitingTime": "43",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 782
+        },
+        {
+            "departureCode": 63709,
+            "timestamp": "2017-07-04T17:26:01+0200",
+            "waitingTimeMillis": 2719000,
+            "waitingTime": "45",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "ZIPLO",
+                "destinationCode": "ZIPLO"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 188
+        },
+        {
+            "departureCode": 183573,
+            "timestamp": "2017-07-04T17:28:01+0200",
+            "waitingTimeMillis": 2840000,
+            "waitingTime": "47",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Val-Thoiry",
+                "destinationCode": "VAL-THOIRY"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 20966
+        },
+        {
+            "departureCode": 4873,
+            "timestamp": "2017-07-04T17:31:01+0200",
+            "waitingTimeMillis": 3014000,
+            "waitingTime": "50",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 782
+        },
+        {
+            "departureCode": 108572,
+            "timestamp": "2017-07-04T17:32:01+0200",
+            "waitingTimeMillis": 3060000,
+            "waitingTime": "51",
+            "line": {
+                "lineCode": "57",
+                "destinationName": "ZIMEYSA-Gare",
+                "destinationCode": "ZIMEYSA GARE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21911,
+            "disruptions": [
+                {
+                    "disruptionCode": 1707040008,
+                    "timestamp": "2017-07-04T06:04:00+0200",
+                    "place": " direction Zimeysa-Gare",
+                    "nature": "Travaux",
+                    "consequence": "Détournée entre les arrêts Meyrin-Mairie et Vernes.Les arrêts Ste-Cecile,Meyrin-Gravière,Champs-Fréchets et Bugnons ne sont pas desservis."
+                }
+            ]
+        },
+        {
+            "departureCode": 7879,
+            "timestamp": "2017-07-04T17:32:01+0200",
+            "waitingTimeMillis": 3087000,
+            "waitingTime": "51",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBA",
+            "vehiculeNo": 755
+        },
+        {
+            "departureCode": 70150,
+            "timestamp": "2017-07-04T17:33:01+0200",
+            "waitingTimeMillis": 3154000,
+            "waitingTime": "52",
+            "line": {
+                "lineCode": "28",
+                "destinationName": "Jardin Botanique",
+                "destinationCode": "JAR. BOTANIQUE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21966
+        },
+        {
+            "departureCode": 65677,
+            "timestamp": "2017-07-04T17:35:01+0200",
+            "waitingTimeMillis": 3226000,
+            "waitingTime": "53",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 166
+        },
+        {
+            "departureCode": 64275,
+            "timestamp": "2017-07-04T17:38:01+0200",
+            "waitingTimeMillis": 3439000,
+            "waitingTime": "57",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "ZIPLO",
+                "destinationCode": "ZIPLO"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 185
+        },
+        {
+            "departureCode": 7882,
+            "timestamp": "2017-07-04T17:39:01+0200",
+            "waitingTimeMillis": 3494000,
+            "waitingTime": "58",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBA",
+            "vehiculeNo": 755
+        },
+        {
+            "departureCode": 8368,
+            "timestamp": "2017-07-04T17:40:01+0200",
+            "waitingTimeMillis": 3567000,
+            "waitingTime": "59",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "TBA",
+            "vehiculeNo": 1622
+        },
+        {
+            "departureCode": 184208,
+            "timestamp": "2017-07-04T17:40:01+0200",
+            "waitingTimeMillis": 3578000,
+            "waitingTime": "59",
+            "line": {
+                "lineCode": "Y",
+                "destinationName": "Ferney-Voltaire",
+                "destinationCode": "FERNEY-VOLTAIRE"
+            },
+            "reliability": "F",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21921
+        },
+        {
+            "departureCode": 7423,
+            "timestamp": "2017-07-04T19:29:01+0200",
+            "waitingTimeMillis": 10091000,
+            "waitingTime": "&gt;1h",
+            "line": {
+                "lineCode": "10",
+                "destinationName": "Jonction",
+                "destinationCode": "JONCTION"
+            },
+            "reliability": "T",
+            "characteristics": "PMR",
+            "vehiculeType": "TBAA",
+            "vehiculeNo": 789
+        },
+        {
+            "departureCode": 107153,
+            "timestamp": "2017-07-04T19:51:01+0200",
+            "waitingTimeMillis": 11425000,
+            "waitingTime": "&gt;1h",
+            "line": {
+                "lineCode": "57",
+                "destinationName": "Hôpital la Tour",
+                "destinationCode": "HOPITAL LA TOUR"
+            },
+            "reliability": "T",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21907,
+            "disruptions": [
+                {
+                    "disruptionCode": 1707040008,
+                    "timestamp": "2017-07-04T06:04:00+0200",
+                    "place": " direction Zimeysa-Gare",
+                    "nature": "Travaux",
+                    "consequence": "Détournée entre les arrêts Meyrin-Mairie et Vernes.Les arrêts Ste-Cecile,Meyrin-Gravière,Champs-Fréchets et Bugnons ne sont pas desservis."
+                }
+            ]
+        },
+        {
+            "departureCode": 64407,
+            "timestamp": "2017-07-04T20:34:01+0200",
+            "waitingTimeMillis": 13990000,
+            "waitingTime": "&gt;1h",
+            "line": {
+                "lineCode": "23",
+                "destinationName": "Le Rolliet",
+                "destinationCode": "LE ROLLIET"
+            },
+            "reliability": "T",
+            "characteristics": "PMR",
+            "vehiculeType": "ABA",
+            "vehiculeNo": 185
+        },
+        {
+            "departureCode": 70278,
+            "timestamp": "2017-07-04T20:38:01+0200",
+            "waitingTimeMillis": 14254000,
+            "waitingTime": "&gt;1h",
+            "line": {
+                "lineCode": "28",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            "reliability": "T",
+            "characteristics": "PMR",
+            "vehiculeType": "AB",
+            "vehiculeNo": 21966
+        }
+    ]
+}

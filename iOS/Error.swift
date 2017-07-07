@@ -16,23 +16,82 @@ enum GeneralError: Int, Error {
     case apiError
 }
 
-extension GeneralError {
+extension GeneralError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .noNetworkConnection:
+            return NSLocalizedString("No internet connection is available", comment: "")
+        case .unexpectedData:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .serviceUnavailable:
+            return NSLocalizedString("The TPG server is unavailable.", comment: "")
+        case .unexpectedError:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .apiError:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        }
+    }
+    public var failureReason: String? {
+        switch self {
+        case .noNetworkConnection:
+            return NSLocalizedString("No internet connection is available", comment: "")
+        case .unexpectedData:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .serviceUnavailable:
+            return NSLocalizedString("The TPG server is unavailable.", comment: "")
+        case .unexpectedError:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .apiError:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        }
+    }
+    public var recoverySuggestion: String? {
+        switch self {
+        case .noNetworkConnection:
+            return NSLocalizedString("No internet connection is available", comment: "")
+        case .unexpectedData:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .serviceUnavailable:
+            return NSLocalizedString("The TPG server is unavailable.", comment: "")
+        case .unexpectedError:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .apiError:
+            return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        }
+    }
+}
+extension GeneralError: CustomNSError {
+    static var errorDomain = "net.yageek.TPGWatch"
 
-    static var Domain = "net.yageek.TPGWatch"
+    var errorCode: Int {
+        return self.rawValue
+    }
 
-    var error: NSError {
+    var errorUserInfo: [String: Any] {
         switch self {
 
         case .noNetworkConnection:
-            return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("No internet connection is available", comment: ""), NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Retry later", comment: "")])
+            return [
+                NSLocalizedDescriptionKey: errorDescription!,
+                NSLocalizedRecoverySuggestionErrorKey: localizedDescription
+            ]
         case .unexpectedData:
-            return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
+            return [
+                NSLocalizedDescriptionKey: errorDescription!
+            ]
         case .serviceUnavailable:
-            return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The TPG server is unavailable.", comment: ""), NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Retry later", comment: "")])
+            return [
+                NSLocalizedDescriptionKey: errorDescription!,
+                NSLocalizedRecoverySuggestionErrorKey: localizedDescription
+            ]
         case .unexpectedError:
-            return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
+            return [
+                NSLocalizedDescriptionKey: errorDescription!
+            ]
         case .apiError:
-            return NSError(domain: GeneralError.Domain, code: self.rawValue, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("The server returned an unexpected answer", comment: "")])
+            return [
+                NSLocalizedDescriptionKey: errorDescription!
+            ]
         }
     }
 }

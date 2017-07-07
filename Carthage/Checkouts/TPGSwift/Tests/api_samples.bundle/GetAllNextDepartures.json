@@ -1,0 +1,190 @@
+{
+    "timestamp": "2017-07-04T16:57:42+0200",
+    "stop": {
+        "stopCode": "CVIN",
+        "stopName": "Gare Cornavin",
+        "connections": [
+            {
+                "lineCode": "1",
+                "destinationName": "Hôpital Trois-Chêne",
+                "destinationCode": "H. TROIS-CHENE"
+            },
+            {
+                "lineCode": "1",
+                "destinationName": "Jardin Botanique",
+                "destinationCode": "JAR. BOTANIQUE"
+            },
+            {
+                "lineCode": "1",
+                "destinationName": "Petit-Bel-Air",
+                "destinationCode": "PETIT-BEL-AIR"
+            },
+            {
+                "lineCode": "3",
+                "destinationName": "Gardiol",
+                "destinationCode": "GARDIOL"
+            },
+            {
+                "lineCode": "5",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "5",
+                "destinationName": "Thônex-Vallard",
+                "destinationCode": "THONEX-VALLARD"
+            },
+            {
+                "lineCode": "5+",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "5+",
+                "destinationName": "Rieu",
+                "destinationCode": "RIEU"
+            },
+            {
+                "lineCode": "5+",
+                "destinationName": "Thônex-Vallard",
+                "destinationCode": "THONEX-VALLARD"
+            },
+            {
+                "lineCode": "6",
+                "destinationName": "Vernier",
+                "destinationCode": "VERNIER"
+            },
+            {
+                "lineCode": "8",
+                "destinationName": "OMS",
+                "destinationCode": "OMS"
+            },
+            {
+                "lineCode": "8",
+                "destinationName": "Veyrier",
+                "destinationCode": "VEYRIER"
+            },
+            {
+                "lineCode": "8",
+                "destinationName": "Veyrier-Douane",
+                "destinationCode": "VEYRIER-DOUANE"
+            },
+            {
+                "lineCode": "8",
+                "destinationName": "Veyrier-Tournettes",
+                "destinationCode": "VEYRIER-TOURNET."
+            },
+            {
+                "lineCode": "9",
+                "destinationName": "Petit-Bel-Air",
+                "destinationCode": "PETIT-BEL-AIR"
+            },
+            {
+                "lineCode": "9",
+                "destinationName": "Tours Lignon",
+                "destinationCode": "TOURS LIGNON"
+            },
+            {
+                "lineCode": "10",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "14",
+                "destinationName": "Carouge",
+                "destinationCode": "CAROUGE"
+            },
+            {
+                "lineCode": "14",
+                "destinationName": "Meyrin-Gravière",
+                "destinationCode": "MEYRIN-GRAVIERE"
+            },
+            {
+                "lineCode": "14",
+                "destinationName": "P+R Bernex",
+                "destinationCode": "P+R BERNEX"
+            },
+            {
+                "lineCode": "15",
+                "destinationName": "De-Staël",
+                "destinationCode": "DE STAEL"
+            },
+            {
+                "lineCode": "15",
+                "destinationName": "Nations",
+                "destinationCode": "NATIONS"
+            },
+            {
+                "lineCode": "15",
+                "destinationName": "Palettes",
+                "destinationCode": "PALETTES"
+            },
+            {
+                "lineCode": "18",
+                "destinationName": "CERN",
+                "destinationCode": "CERN"
+            },
+            {
+                "lineCode": "18",
+                "destinationName": "Carouge",
+                "destinationCode": "CAROUGE"
+            },
+            {
+                "lineCode": "18",
+                "destinationName": "De-Staël",
+                "destinationCode": "DE STAEL"
+            },
+            {
+                "lineCode": "19",
+                "destinationName": "Vernier",
+                "destinationCode": "VERNIER"
+            },
+            {
+                "lineCode": "25",
+                "destinationName": "Jardin Botanique",
+                "destinationCode": "JAR. BOTANIQUE"
+            },
+            {
+                "lineCode": "25",
+                "destinationName": "Thônex-Vallard",
+                "destinationCode": "THONEX-VALLARD"
+            },
+            {
+                "lineCode": "61",
+                "destinationName": "Annemasse Gare",
+                "destinationCode": "ANNEMASSE GARE"
+            },
+            {
+                "lineCode": "F",
+                "destinationName": "Ferney-Voltaire",
+                "destinationCode": "FERNEY-VOLTAIRE"
+            },
+            {
+                "lineCode": "F",
+                "destinationName": "Gex",
+                "destinationCode": "GEX"
+            },
+            {
+                "lineCode": "G+",
+                "destinationName": "Veigy-Douane",
+                "destinationCode": "VEIGY-DOUANE"
+            },
+            {
+                "lineCode": "V",
+                "destinationName": "CS La Bécassière",
+                "destinationCode": "CS LA BECASSIERE"
+            },
+            {
+                "lineCode": "Z",
+                "destinationName": "Bois-Chatton",
+                "destinationCode": "BOIS-CHATTON"
+            },
+            {
+                "lineCode": "Z",
+                "destinationName": "Bossy",
+                "destinationCode": "BOSSY"
+            }
+        ]
+    },
+    "departures": []
+}

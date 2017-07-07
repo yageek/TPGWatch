@@ -12,13 +12,11 @@ import ProcedureKit
 /**
  Cleanup Old V2 storage file.
  */
-class CleanUpV2Procedure: GroupProcedure {
+final class CleanUpV2Procedure: GroupProcedure {
 
     init() {
-
-
         let bookOp = DeleteFileProcedure(url: Store.StopsFileURL.deletingPathExtension().appendingPathExtension("json"))
-        let registeryOp = DeleteFileProcedure(url:  Store.RegisteryFileURL.deletingPathExtension().appendingPathExtension("json"))
+        let registeryOp = DeleteFileProcedure(url: Store.RegisteryFileURL.deletingPathExtension().appendingPathExtension("json"))
 
         super.init(operations: [bookOp, registeryOp])
 
@@ -26,7 +24,7 @@ class CleanUpV2Procedure: GroupProcedure {
     }
 }
 
-class DeleteFileProcedure: Procedure{
+final class DeleteFileProcedure: Procedure {
 
     let url: URL
 

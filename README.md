@@ -14,6 +14,13 @@ let TPGKey = "API_KEY"
 
 ## Changelog
 
+### 1.6
+* Swift 4
+* iOS 11 changes.
+
+### 1.5
+* Swift 3
+
 ### 1.4
 * Fix synchronisation
 

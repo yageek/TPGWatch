@@ -11,8 +11,7 @@ import Foundation
 import WatchConnectivity
 import ProcedureKit
 
-
-class BookmarkStopInterfaceController: WKInterfaceController {
+final class BookmarkStopInterfaceController: WKInterfaceController {
 
     @IBOutlet var bookmarkedStopsTable: WKInterfaceTable!
     @IBOutlet var noElementGroups: WKInterfaceGroup!
@@ -47,7 +46,6 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
         self.noElementGroups.setHidden(rowCount != 0)
 
-
         for i in 0 ..< rowCount {
 
             let row = bookmarkedStopsTable.rowController(at: i) as! BookmarkedStop
@@ -56,9 +54,8 @@ class BookmarkStopInterfaceController: WKInterfaceController {
 
             row.stopLabel.setText(stopName)
 
-
             guard let registery = self.registery else {
-                return;
+                return
             }
 
             //Fill lines colors
@@ -84,8 +81,7 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     }
 
     func readData() {
-
-        Store.sharedInstance.readBookmarksAndRegistery { (bookmarks, registery, error) in
+        Store.sharedInstance.readBookmarksAndRegistery { (bookmarks, registery, _) in
             if let bookmarks = bookmarks, let registery = registery {
                 self.lastStops = bookmarks
                 self.registery = registery
@@ -110,13 +106,13 @@ class BookmarkStopInterfaceController: WKInterfaceController {
     }
 
     // MARK: Notification
-    func bookmarkNotification(_ notif: Notification) {
-        lastStops = notif.object as? [[String:Any]]
+    @objc func bookmarkNotification(_ notif: Notification) {
+        lastStops = notif.object as? [[String: Any]]
         self.reloadData()
     }
 
-    func registeryNotification(_ notif: Notification) {
-        registery = notif.object as? [String:Any]
+    @objc func registeryNotification(_ notif: Notification) {
+        registery = notif.object as? [String: Any]
         self.reloadData()
     }
 }

@@ -13,7 +13,11 @@ import ProcedureKit
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        LogManager.severity = .fatal
+        #if DEBUG
+            LogManager.severity = .verbose
+        #else
+            LogManager.severity = .fatal
+        #endif
         API.Key = TPGKey
     }
 }

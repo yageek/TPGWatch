@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="2.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="2.0">
     <entity name="Connection" representedClassName=".Connection" syncable="YES">
         <attribute name="destinationCode" attributeType="String" syncable="YES"/>
         <attribute name="destinationName" attributeType="String" syncable="YES"/>
-        <relationship name="line" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Line" inverseName="connections" inverseEntity="Line" syncable="YES"/>
-        <relationship name="stops" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Stop" inverseName="connections" inverseEntity="Stop" syncable="YES"/>
-        <compoundIndexes>
-            <compoundIndex>
-                <index value="destinationCode"/>
-                <index value="destinationName"/>
-            </compoundIndex>
-        </compoundIndexes>
+        <relationship name="line" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Line" inverseName="connections" inverseEntity="Line" syncable="YES"/>
+        <relationship name="stops" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stop" inverseName="connections" inverseEntity="Stop" syncable="YES"/>
+        <fetchIndex name="compoundIndex">
+            <fetchIndexElement property="destinationCode" type="Binary" order="ascending"/>
+            <fetchIndexElement property="destinationName" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="Line" representedClassName=".Line" syncable="YES">
         <attribute name="backgroundColor" attributeType="String" syncable="YES"/>
         <attribute name="code" attributeType="String" syncable="YES"/>
         <attribute name="ribonColor" attributeType="String" syncable="YES"/>
         <attribute name="textColor" attributeType="String" syncable="YES"/>
-        <relationship name="connections" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Connection" inverseName="line" inverseEntity="Connection" syncable="YES"/>
-        <compoundIndexes>
-            <compoundIndex>
-                <index value="code"/>
-            </compoundIndex>
-        </compoundIndexes>
+        <relationship name="connections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Connection" inverseName="line" inverseEntity="Connection" syncable="YES"/>
+        <fetchIndex name="compoundIndex">
+            <fetchIndexElement property="code" type="Binary" order="ascending"/>
+        </fetchIndex>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="code"/>
@@ -30,16 +26,14 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Stop" representedClassName=".Stop" syncable="YES">
-        <attribute name="bookmarked" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bookmarked" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="code" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="connections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Connection" inverseName="stops" inverseEntity="Connection" syncable="YES"/>
-        <compoundIndexes>
-            <compoundIndex>
-                <index value="code"/>
-                <index value="name"/>
-            </compoundIndex>
-        </compoundIndexes>
+        <fetchIndex name="compoundIndex">
+            <fetchIndexElement property="code" type="Binary" order="ascending"/>
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="code"/>

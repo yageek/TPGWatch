@@ -9,9 +9,14 @@
 import CoreData
 import UIKit
 
-class LineColorToLineStringTransformationPolicy: NSEntityMigrationPolicy {
+final class LineColorToLineStringTransformationPolicy: NSEntityMigrationPolicy {
 
-    func colorToColorHex(_ color: UIColor) -> String {
+    @objc func colorToColorHex(_ color: UIColor) -> String {
         return color.hexString
     }
+
+    @objc func colorHexToColor(_ colorHex: String) -> UIColor {
+        return UIColor(rgba: colorHex)
+    }
+
 }

@@ -10,16 +10,14 @@ import WatchKit
 import Foundation
 import ProcedureKit
 
-class SyncController: WKInterfaceController {
+final class SyncController: WKInterfaceController {
 
-    let queue = ProcedureKit.OperationQueue()
+    let queue = ProcedureQueue()
 
     @IBOutlet var startLabel: WKInterfaceLabel!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-
-        
         startCleanup()
     }
 
@@ -35,7 +33,6 @@ class SyncController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -49,8 +46,7 @@ class SyncController: WKInterfaceController {
         queue.addOperation(cleanUpOp)
     }
 
-
-    func registeryHasBeenUpdate(_ notification: Notification) {
+    @objc func registeryHasBeenUpdate(_ notification: Notification) {
 
         if Store.sharedInstance.registeryCache != nil && Store.sharedInstance.bookmarkCache != nil {
             WKInterfaceController.reloadRootControllers(withNames: ["BookmarkStopInterfaceController"], contexts: [])

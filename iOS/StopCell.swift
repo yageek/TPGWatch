@@ -23,7 +23,7 @@ class StopCell: UITableViewCell {
     @IBOutlet weak var topStack: UIStackView!
     @IBOutlet weak var bottomStack: UIStackView!
 
-    fileprivate weak var currentFillingStack:UIStackView!
+    fileprivate weak var currentFillingStack: UIStackView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,13 +62,13 @@ class StopCell: UITableViewCell {
         }
     }
 
-    fileprivate func resetStacks(_ stack:UIStackView){
+    fileprivate func resetStacks(_ stack: UIStackView) {
         for view in stack.arrangedSubviews {
             view.removeFromSuperview()
         }
     }
 
-    func resetStacks(){
+    func resetStacks() {
         resetStacks(topStack)
         resetStacks(bottomStack)
         currentFillingStack = topStack

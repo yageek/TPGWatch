@@ -12,23 +12,34 @@ import CoreData
 import ProcedureKit
 import TPGSwift
 
-class WatchProxy: NSObject, WCSessionDelegate {
+final class WatchProxy: NSObject, WCSessionDelegate {
 
-    let session: WCSession
-    let queue: OperationQueue =  {
-        let queue = OperationQueue()
+    let session: WCSession?
+
+    let queue: ProcedureQueue = {
+        let queue = ProcedureQueue()
         queue.maxConcurrentOperationCount = 1
         queue.name = "net.yageek.tpgwatch.syncqueue"
         return queue
     }()
 
-    init(session: WCSession) {
-        self.session = session
+    static var shared = WatchProxy()
+    static var isWatchSupported: Bool {
+        return WCSession.isSupported()
+    }
+
+    private override init() {
+
+        if WatchProxy.isWatchSupported {
+            self.session = WCSession.default
+        } else {
+            self.session = nil
+        }
+
         super.init()
 
-        session.delegate = self
-        session.activate()
-
+        session?.delegate = self
+        session?.activate()
     }
 
     func sessionDidBecomeInactive(_ session: WCSession) {
@@ -40,32 +51,28 @@ class WatchProxy: NSObject, WCSessionDelegate {
     }
 
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-
         if let error = error {
             print("Impossible to acvitate session: \(error)")
             return
         }
-
         syncData()
     }
 
     func syncData() {
-        let sendRegisteryOp = SendRegisteryProcedure(context: UIMoc(), proxy: self)
-        let sendBookmarkOp = SendBookmarkOperation(context: UIMoc(), proxy: self)
+        let moc = Store.shared.viewContext
+        let sendRegisteryOp = SendRegisteryProcedure(context: moc, proxy: self)
+        let sendBookmarkOp = SendBookmarkProcedure(context: moc, proxy: self)
 
         queue.add(operations: sendRegisteryOp, sendBookmarkOp)
 
     }
 
     func sendData(_ data: [String: Any]) throws {
-
-        try session.updateApplicationContext(data)
+        try session?.updateApplicationContext(data)
     }
 
     func sendBookmarkedStops () {
-        let sendBookmarkOp = SendBookmarkOperation(context: UIMoc(), proxy: self)
+        let sendBookmarkOp = SendBookmarkProcedure(context: Store.shared.viewContext, proxy: self)
         queue.addOperation(sendBookmarkOp)
     }
-
-
 }

@@ -9,8 +9,6 @@
 import UIKit
 
 /// The main App color
-
 extension UIColor {
-
     static func appOrange() -> UIColor { return UIColor(red: 255.0/255.0, green: 126.0/255.0, blue: 0.0, alpha: 1.0) }
 }

@@ -10,26 +10,26 @@ import UIKit
 import CoreData
 import ProcedureKit
 
-protocol LinesRendererContextDelegate {
+protocol LinesRendererContextDelegate: class {
     func context(_ context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: IndexPath)
 }
 
 final class LinesRendererContext {
 
-    var queue = OperationQueue()
+    var queue = ProcedureQueue()
 
+    let lock = NSLock()
     var renderers: [String: LineRenderer] = [:]
     var renderersOperation: [String: Operation] = [:]
     var context: NSManagedObjectContext
 
-    var delegate: LinesRendererContextDelegate?
+    weak var delegate: LinesRendererContextDelegate?
 
     init(context: NSManagedObjectContext) {
         self.context = context
     }
 
     func renderLines(_ stop: Stop, cell: StopCell, indexPath: IndexPath) {
-
         guard let stopCode = stop.code else { return }
 
         let renderSize = CGSize(width: 40.0, height: 32.0)
@@ -58,7 +58,7 @@ final class LinesRendererContext {
                 if renderer == nil {
 
                     let options = LineRenderer.LineRenderingOptions(backgroundColor: UIColor(rgba: backgroundColor), textColor: UIColor(rgba: textColor), ribonColor: UIColor(rgba: ribonColor))
-                    let rend = LineRenderer(text: lineCode, options:  options)
+                    let rend = LineRenderer(text: lineCode, options: options)
 
                     self.renderers[lineCode] = rend
 
@@ -68,18 +68,24 @@ final class LinesRendererContext {
                         OperationQueue.main.addOperation({
                             self.delegate?.context(self, finishRenderingImage: image, forIndexPath: indexPath)
                         })
+                        self.lock.lock()
+                        defer {
+                            self.lock.unlock()
+                        }
+
+                        self.renderersOperation.removeValue(forKey: lineCode)
+                    }
+                    self.lock.lock()
+                    defer {
+                        self.lock.unlock()
                     }
                     self.renderersOperation[lineCode] = blockOp
                     queue.addOperation(blockOp)
-                    
                 }
-                
             }
-            
         } catch let error {
             print("Error:\(error)")
         }
-        
     }
 
 }

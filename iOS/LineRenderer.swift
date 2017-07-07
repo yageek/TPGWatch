@@ -16,15 +16,22 @@ final class LineRenderer {
         let backgroundColor: UIColor
         let textColor: UIColor
         let ribonColor: UIColor
-
     }
+
+    private let lock = NSLock()
 
     let text: String
     let options: LineRenderingOptions
 
     fileprivate(set) var image: UIImage?
 
-    var hasRendered: Bool { return image != nil}
+    var hasRendered: Bool {
+        lock.lock()
+        defer {
+            lock.unlock()
+        }
+        return image != nil
+    }
 
     init(text: String, options: LineRenderingOptions) {
         self.text = text
@@ -64,9 +71,9 @@ final class LineRenderer {
         bezierPath.stroke()
         bezierPath.fill()
 
-        let properties = [
-            NSFontAttributeName : options.textFont,
-            NSForegroundColorAttributeName : options.textColor
+        let properties: [NSAttributedStringKey: Any] = [
+            .font: options.textFont,
+            .foregroundColor: options.textColor
         ]
 
         let measureRect = text.boundingRect(with: bounds.size, options: [], attributes: properties, context: nil)
@@ -76,6 +83,8 @@ final class LineRenderer {
 
         let renderedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        lock.lock()
+        defer { lock.unlock() }
         image = renderedImage
         return renderedImage!
     }

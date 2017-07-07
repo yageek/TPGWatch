@@ -1,0 +1,13 @@
+lane :test do
+    puts "⏳ - Install dependencies..."
+    bundle_install
+    
+    puts "🖥 - Testing ..."
+    scan(scheme: "TPGSwift-macOS")
+
+    puts "📱 - Testing ..."
+    scan(scheme: "TPGSwift-iOS")
+
+    puts "📺 - Testing ..."
+    scan(scheme: "TPGSwift-tvOS")
+end

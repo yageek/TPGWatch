@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="21g-Uk-nbd">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="21g-Uk-nbd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,8 +16,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="21g-Uk-nbd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Lz-xu-DXp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2Lz-xu-DXp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -30,7 +34,7 @@
             <objects>
                 <tableViewController definesPresentationContext="YES" id="7cM-o2-BF7" customClass="StopBookmarkVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="697-FN-gGj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
@@ -59,16 +63,12 @@
         <scene sceneID="Rtl-Pc-lTf">
             <objects>
                 <viewController storyboardIdentifier="TutorialScreen" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="QBX-YA-FpN" customClass="TutorialViewController" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nwa-ay-Udz"/>
-                        <viewControllerLayoutGuide type="bottom" id="jsF-39-S83"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cdX-lI-fZ1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Click on the button to add bookmarks to the watch" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnl-14-d4X">
-                                <frame key="frameInset" minX="175" minY="120" width="250" height="21"/>
+                                <rect key="frame" x="175" y="120" width="250" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="EcW-Mf-xmz"/>
                                 </constraints>
@@ -79,9 +79,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Lnl-14-d4X" firstAttribute="top" secondItem="nwa-ay-Udz" secondAttribute="bottom" constant="100" id="UAf-yN-aoN"/>
-                            <constraint firstItem="Lnl-14-d4X" firstAttribute="centerX" secondItem="cdX-lI-fZ1" secondAttribute="centerX" id="Xa7-DZ-Qf9"/>
+                            <constraint firstItem="Lnl-14-d4X" firstAttribute="top" secondItem="X3x-lC-EdH" secondAttribute="top" constant="100" id="UAf-yN-aoN"/>
+                            <constraint firstItem="Lnl-14-d4X" firstAttribute="centerX" secondItem="X3x-lC-EdH" secondAttribute="centerX" id="Xa7-DZ-Qf9"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="X3x-lC-EdH"/>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Lnl-14-d4X" id="jUH-1t-noT"/>
@@ -96,7 +97,7 @@
             <objects>
                 <tableViewController id="b7Y-zS-Yom" customClass="StopSearchVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQn-4U-6fm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
@@ -118,5 +119,4 @@
             <point key="canvasLocation" x="1241" y="291"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

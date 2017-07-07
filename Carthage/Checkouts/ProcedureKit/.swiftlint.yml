@@ -1,0 +1,23 @@
+included:
+  - Sources
+disabled_rules:
+  - valid_docs
+  - statement_position
+  - line_length
+  - type_name
+  - large_tuple
+  - identifier_name
+  - implicit_getter
+  - syntactic_sugar
+file_length:
+  warning: 750
+  error: 1200
+variable_name:
+  excluded:
+    - id
+    - URL
+    - of
+    - in
+    - on
+    - x
+    - y  

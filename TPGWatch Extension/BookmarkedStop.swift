@@ -41,9 +41,7 @@ class BookmarkedStop: NSObject {
         groups()[index]?.setHidden(hidden)
     }
 
-
     func setLine(_ index: Int, text: String, textColor: UIColor, backgroundColor: UIColor) {
-
 
         let group = groups()[index]
         group?.setBackgroundColor(backgroundColor)
@@ -60,7 +58,6 @@ class BookmarkedStop: NSObject {
         for i in 0..<groups().count {
             setHideLineAtIndex(i, hidden: true)
         }
-        
         self.moreLabel.setHidden(true)
     }
 }

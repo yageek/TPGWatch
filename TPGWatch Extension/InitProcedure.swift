@@ -9,7 +9,7 @@
 import ProcedureKit
 import WatchKit
 
-class InitProcedure: GroupProcedure {
+final class InitProcedure: GroupProcedure {
 
     init(label: WKInterfaceLabel, root: WKInterfaceController) {
 
@@ -20,7 +20,6 @@ class InitProcedure: GroupProcedure {
         let cleanUpOp = CleanUpV2Procedure()
         cleanUpOp.addDependency(cleanupDisplayOp)
 
-
         // Check presence of files on watch
         let checkString = NSLocalizedString("Checking files...", comment: "Check files")
 
@@ -30,10 +29,9 @@ class InitProcedure: GroupProcedure {
         checkFilesDisplayOp.addDependency(cleanUpOp)
         checkFilesOp.addDependency(checkFilesDisplayOp)
 
-
         let presentScreenOp = PresentFirstScreenProcedure(label: label, rootController: root)
 
-        presentScreenOp.inject(dependency: checkFilesOp) { (presentProcedure, checkFileProcedure, errors) in
+        presentScreenOp.inject(dependency: checkFilesOp) { (presentProcedure, _, _) in
             presentProcedure.requirement = checkFilesOp.result
         }
 

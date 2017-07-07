@@ -9,45 +9,16 @@
 import ProcedureKit
 import ProcedureKitNetwork
 
-public enum Resource<T> {
-    case none
-    case single(T)
-    case collection(Array<T>)
-
-    public var allObjects: [T] {
-
-        switch self {
-        case .none:
-            return []
-        case .single(let val):
-            return [val]
-        case .collection(let elements):
-            return elements
-        }
-    }
-    public var value: T? {
-        switch self {
-        case .collection:
-            return nil
-        case .single(let t):
-            return t
-        case .none:
-            return .none
-        }
-    }
- }
-
-public protocol JSONUnmarshable {
-    associatedtype Raw: Any
-    init?(JSON: Raw)
-}
-
-
-public final class JSONDeserializationProcedure<T: JSONUnmarshable>: Procedure, InputProcedure, OutputProcedure {
+public final class JSONDeserializationProcedure<T: Decodable>: Procedure, InputProcedure, OutputProcedure {
 
     public var input: Pending<URL> = .pending
-    public var output: Pending<ProcedureResult<Resource<T>>> = .pending
+    public var output: Pending<ProcedureResult<T>> = .pending
 
+    let json: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
     override init() {
         super.init()
 
@@ -60,56 +31,15 @@ public final class JSONDeserializationProcedure<T: JSONUnmarshable>: Procedure, 
             return
         }
 
-        guard let stream = InputStream(url: url) else {
-            finish(withError: GeneralError.apiError)
-            return;
-        }
-
-        stream.open()
-
-        defer {
-            stream.close()
-        }
-
         do {
-            let JSONValue = try JSONSerialization.jsonObject(with: stream, options: [])
-
-            var result: Resource<T>? = nil
-
-            if let collectionObject = JSONValue as? [T.Raw] {
-
-                result = readCollectionObject(object: collectionObject)
-            } else if let singleObject = JSONValue as? T.Raw {
-
-                result = readSingleObject(object: singleObject)
-
-            }
-
-            guard let finalResult = result else {
-                self.finish(withError: GeneralError.apiError)
-                return
-            }
-
-            self.output = .ready(.success(finalResult))
-            finish()
-
+            let data = try Data(contentsOf: url)
+            let element = try json.decode(T.self, from: data)
+            print("Elements decoded \(element)")
+            self.finish(withResult: .success(element))
 
         } catch let error {
-            self.output = .ready(.failure(error))
+            print("Finish with error: \(error)")
+            self.finish(withError: error)
         }
     }
-
-    private func readSingleObject<T: JSONUnmarshable>(object: T.Raw) -> Resource<T>? {
-
-        guard let object = T(JSON: object) else { return nil }
-        return .single(object)
-    }
-
-    private func readCollectionObject<T: JSONUnmarshable>(object: [T.Raw]) -> Resource<T>? {
-        let collection = object.flatMap { T(JSON: $0) }
-
-        guard collection.count == object.count else { return nil }
-        return .collection(collection)
-    }
-
 }

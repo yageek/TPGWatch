@@ -1,0 +1,16 @@
+disabled_rules:
+- line_length
+- identifier_name
+- nesting
+- force_cast
+- notification_center_detachment
+- type_name
+opt_in_rules:
+- empty_count
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- Carthage
+- Pods
+included:
+- iOS
+- Common
+- TPGWatch Extension

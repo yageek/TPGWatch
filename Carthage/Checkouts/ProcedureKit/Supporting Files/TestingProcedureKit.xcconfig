@@ -1,0 +1,18 @@
+//
+//  ProcedureKit
+//
+//  Copyright © 2016 ProcedureKit. All rights reserved.
+//
+
+PRODUCT_BUNDLE_IDENTIFIER = run.kit.procedure.TestingProcedureKit
+PRODUCT_NAME = TestingProcedureKit
+
+APPLICATION_EXTENSION_API_ONLY = NO
+
+ENABLE_BITCODE = NO
+
+INSTALL_PATH = @rpath
+
+SUPPORTED_PLATFORMS = macosx iphoneos appletvos appletvsimulator iphonesimulator
+
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PLATFORM_DIR)/Developer/Library/Frameworks

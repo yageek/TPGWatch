@@ -46,7 +46,6 @@ class Store {
         self.saveData(json, URL: Store.RegisteryFileURL, notificationName: notificationName)
     }
 
-
     fileprivate func saveData(_ json: Any?, URL: Foundation.URL, notificationName: String) {
         guard let data = json else { return }
 
@@ -113,19 +112,15 @@ class Store {
         readBookOp.addDependency(readRegisteryOp)
         let groupOp = GroupProcedure(operations: readBookOp, readRegisteryOp)
 
-        groupOp.addDidFinishBlockObserver { (op, errors) in
+        groupOp.addDidFinishBlockObserver { (_, errors) in
             ProcedureQueue.main.addOperation {
                 let error = errors.first
 
                 self.registeryCache = readRegisteryOp.output.success
                 self.bookmarkCache = readBookOp.output.success
-                completion(readBookOp.output.success , readRegisteryOp.output.success, error)
-
+                completion(readBookOp.output.success, readRegisteryOp.output.success, error)
             }
         }
-
         queue.addOperation(groupOp)
     }
-
-
 }

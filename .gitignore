@@ -17,5 +17,5 @@ DerivedData
 timeline.xctimeline
 
 /Framework
-Carthage/
+# Carthage/
 screenshots/

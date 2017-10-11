@@ -12,7 +12,7 @@ import TPGSwift
 
 final class ImportStopProcedure: Procedure, InputProcedure {
 
-    var input: Pending<Resource<ParsedStopsRecord>> = .pending
+    var input: Pending<Record<TPGSwift.Stop>> = .pending
     let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
@@ -20,26 +20,22 @@ final class ImportStopProcedure: Procedure, InputProcedure {
         let importContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         importContext.persistentStoreCoordinator = context.persistentStoreCoordinator
         importContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-        
+
         self.context = importContext
         super.init()
 
         name = "Import Stop operations"
     }
 
-
     override func execute() {
-
-        guard !isCancelled else { self.finish(); return }
-
-        guard let stopRecord = self.input.value?.value else {
+        guard let stopRecord = self.input.value else {
             self.finish(withError: GeneralError.apiError)
             return
         }
 
-        context.perform { 
+        context.perform {
 
-            for stopJSON in stopRecord.stops {
+            for stopJSON in stopRecord.elements {
 
                 let stop = NSEntityDescription.insertNewObject(forEntityName: Stop.EntityName, into: self.context) as! Stop
 
@@ -47,11 +43,10 @@ final class ImportStopProcedure: Procedure, InputProcedure {
                 stop.code = stopJSON.code
                 stop.bookmarked = false
 
-                var connections:[Connection] = []
+                var connections: [Connection] = []
 
                 for jsonConnection in stopJSON.connections {
-
-                    let CDConnection = NSEntityDescription.insertNewObject(forEntityName: Connection.EntityName, into: self.context) as! Connection
+                    let CDConnection: Connection = NSEntityDescription.insertNewObject(forEntityName: Connection.EntityName, into: self.context) as! Connection
 
                     CDConnection.destinationCode = jsonConnection.destinationCode
                     CDConnection.destinationName = jsonConnection.destinationName
@@ -73,7 +68,7 @@ final class ImportStopProcedure: Procedure, InputProcedure {
 
     }
 
-    fileprivate func lineForCode(_ lineCode:String) -> Line? {
+    fileprivate func lineForCode(_ lineCode: String) -> Line? {
 
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Line.EntityName)
         request.predicate = NSPredicate(format: "code == %@", lineCode)

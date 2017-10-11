@@ -3,5 +3,6 @@ included:
 disabled_rules:
 - line_length
 - variable_name
+- nesting
 opt_in_rules:
 - empty_count

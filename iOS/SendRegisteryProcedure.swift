@@ -10,7 +10,7 @@ import ProcedureKit
 import CoreData
 import WatchConnectivity
 
-class SendRegisteryProcedure: Procedure {
+final class SendRegisteryProcedure: Procedure {
 
     let context: NSManagedObjectContext
     let watchProxy: WatchProxy
@@ -32,8 +32,7 @@ class SendRegisteryProcedure: Procedure {
         // FetchStops
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Line.EntityName)
         request.includesSubentities = false
-
-        context.perform { 
+        context.perform {
 
             var lines: [Line] = []
             do {
@@ -43,36 +42,37 @@ class SendRegisteryProcedure: Procedure {
                 self.finish(withError: error)
             }
 
-            defer {
-                self.finish()
-            }
-            
             do {
                 try self.sendLines(lines)
-                self.finish()
             } catch let error {
                 print("WARN - App watch is not connected: \(error)")
+                self.finish(withError: error)
             }
         }
     }
 
     fileprivate func sendLines(_ lines: [Line]) throws {
+        guard !self.isCancelled else { self.finish(); return }
+
+        defer {
+            self.finish()
+        }
 
         var linesJSON: [String: Any] = [:]
 
         for line in lines {
             linesJSON[line.code] =   [
-                "backgroundColor" : line.backgroundColor,
-                "textColor" : line.textColor,
-                "ribonColor" : line.ribonColor
+                "backgroundColor": line.backgroundColor,
+                "textColor": line.textColor,
+                "ribonColor": line.ribonColor
             ]
         }
 
-        guard linesJSON.count > 0 else {
+        guard !linesJSON.isEmpty else {
             print("Registery is empty")
             return
         }
-        
+
         let registery = ["registery": linesJSON]
         try watchProxy.sendData(registery)
     }

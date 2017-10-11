@@ -1,29 +1,13 @@
-lane :build do
+lane :test do
     puts "⏳ - Install dependencies..."
     bundle_install
-
-    puts "🖥 - Building ..."
-    xcodebuild(scheme: "TPGSwift-macOS", project: "TPGSwift.xcodeproj")
-
-    puts "📱 - Building ..."
-    xcodebuild(scheme: "TPGSwift-iOS", project: "TPGSwift.xcodeproj")
-
-    puts "📺 - Building ..."
-    xcodebuild(scheme: "TPGSwift-tvOS", project: "TPGSwift.xcodeproj")
-
-    puts "⌚️ - Building ..."
-    xcodebuild(scheme: "TPGSwift-watchOS", project: "TPGSwift.xcodeproj")
-end
-
-lane :test do
-    bundle_install
+    
+    puts "🖥 - Testing ..."
     scan(scheme: "TPGSwift-macOS")
+
+    puts "📱 - Testing ..."
     scan(scheme: "TPGSwift-iOS")
+
+    puts "📺 - Testing ..."
     scan(scheme: "TPGSwift-tvOS")
-    slather(
-        coverage_service: coveralls,
-        proj: "TPGSwift.xcodeproj",
-        scheme: "TPGSwift-macOS",
-        ignore:['../../*']
-    )
 end

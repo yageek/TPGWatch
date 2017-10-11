@@ -3,6 +3,8 @@ TPGSwift
 
 Swift libary for the TPG Open Data.
 
+For more explanation: [TPG Open Data](http://www.tpg.ch/fr/web/open-data/mode-d-emploi)
+
 [![Build Status](https://travis-ci.org/yageek/TPGSwift.svg?branch=master)](https://travis-ci.org/yageek/TPGSwift)
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
@@ -12,9 +14,46 @@ Swift libary for the TPG Open Data.
 
 # Changelog
 
+ - 3.0.0: Swift 4 support
  - 2.1.0: Fix enum code style.
  - 2.0.0: Swift 3 compatible.
  - 1.0.0: Basic JSON unmarshal structures.
+
+# Usage
+
+```swift
+import TPGSwift
+
+// MARK: - Setting the key
+
+// Set the API Key
+API.Key = "MY_API_KEY"
+
+// MARK: - Creating an API call url
+
+// Get stops for the stop code "WTC0"
+let getStops = API.getStops(stopCode: "WTC0", stopName: nil, line: nil, latitude: nil, longitude: nil)
+
+print("API Stops: \(getStops.URL)")
+// -> API Stops: https://prod.ivtr-od.tpg.ch/v1/GetStops.json?key=KEY&stopCode=WTC0
+
+// MARK: - Decode
+
+let json = JSONDecoder()
+do {
+    let stops = try json.decode(Record<Stop>.self, from: data)
+    print("Stops: \(stops)")
+} catch let error {
+    print("Error: \(error)")
+}
+
+```
+
+# Paw
+
+You can find a basic Paw file which will help you to play with the API.
+Open `TPGSwift.paw` and change the `KEY` variable in the `Production` group
+with the one received from the TPG.
 
 # License
 

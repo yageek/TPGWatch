@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 class Connection: NSManagedObject {
      static let EntityName = "Connection"
 }

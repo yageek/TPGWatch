@@ -9,7 +9,7 @@
 import ProcedureKit
 import WatchKit
 
-class UpdateDisplayProcedure: Procedure{
+final class UpdateDisplayProcedure: Procedure {
 
     let label: WKInterfaceLabel
     let text: String

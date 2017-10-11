@@ -7,62 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B278A7C1F0CD604003D82B7 /* ColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A7B1F0CD604003D82B7 /* ColorsTest.swift */; };
+		0B278A7D1F0CD608003D82B7 /* ColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A7B1F0CD604003D82B7 /* ColorsTest.swift */; };
+		0B278A7E1F0CD609003D82B7 /* ColorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A7B1F0CD604003D82B7 /* ColorsTest.swift */; };
+		0B278A821F0CDC6F003D82B7 /* URLSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A811F0CDC6F003D82B7 /* URLSerialization.swift */; };
+		0B278A831F0CDC6F003D82B7 /* URLSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A811F0CDC6F003D82B7 /* URLSerialization.swift */; };
+		0B278A841F0CDC6F003D82B7 /* URLSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A811F0CDC6F003D82B7 /* URLSerialization.swift */; };
+		0B278A861F0CE69D003D82B7 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A851F0CE69D003D82B7 /* ErrorCode.swift */; };
+		0B278A871F0CE69D003D82B7 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A851F0CE69D003D82B7 /* ErrorCode.swift */; };
+		0B278A881F0CE69D003D82B7 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A851F0CE69D003D82B7 /* ErrorCode.swift */; };
+		0B278A891F0CE69D003D82B7 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B278A851F0CE69D003D82B7 /* ErrorCode.swift */; };
+		0B2950171F0AA5AD007CD911 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2950161F0AA5AD007CD911 /* Record.swift */; };
+		0B2950181F0AA5AD007CD911 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2950161F0AA5AD007CD911 /* Record.swift */; };
+		0B2950191F0AA5AD007CD911 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2950161F0AA5AD007CD911 /* Record.swift */; };
+		0B29501A1F0AA5AD007CD911 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2950161F0AA5AD007CD911 /* Record.swift */; };
 		0B485AC91DF69C8100849902 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7CD89E1CE332CA00958468 /* TPGSwift.framework */; };
-		0B485AD21DF69CF200849902 /* TPGSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B485AD11DF69C9300849902 /* TPGSwiftTests.swift */; };
 		0B485ADC1DF69DB800849902 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCAD4B41D2EA46500C3FDC4 /* TPGSwift.framework */; };
 		0B485AEB1DF69DC800849902 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCAD4C11D2EA4BF00C3FDC4 /* TPGSwift.framework */; };
 		0BCAD4941D2EA22000C3FDC4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4861D2EA22000C3FDC4 /* API.swift */; };
 		0BCAD4951D2EA22000C3FDC4 /* APICommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4871D2EA22000C3FDC4 /* APICommons.swift */; };
 		0BCAD4961D2EA22000C3FDC4 /* APIURLSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4881D2EA22000C3FDC4 /* APIURLSerialization.swift */; };
-		0BCAD4981D2EA22000C3FDC4 /* ParsedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* ParsedConnection.swift */; };
-		0BCAD4991D2EA22000C3FDC4 /* ParsedCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* ParsedCoordinates.swift */; };
-		0BCAD49A1D2EA22000C3FDC4 /* ParsedDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* ParsedDeviation.swift */; };
-		0BCAD49B1D2EA22000C3FDC4 /* ParsedDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* ParsedDisruption.swift */; };
-		0BCAD49C1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift */; };
-		0BCAD49D1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift */; };
-		0BCAD49E1D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift */; };
-		0BCAD49F1D2EA22000C3FDC4 /* ParsedStopsRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* ParsedStopsRecord.swift */; };
-		0BCAD4A01D2EA22000C3FDC4 /* ParsedThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* ParsedThermometer.swift */; };
+		0BCAD4981D2EA22000C3FDC4 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* Connection.swift */; };
+		0BCAD4991D2EA22000C3FDC4 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* Coordinates.swift */; };
+		0BCAD49A1D2EA22000C3FDC4 /* Deviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* Deviation.swift */; };
+		0BCAD49B1D2EA22000C3FDC4 /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* Disruption.swift */; };
+		0BCAD49C1D2EA22000C3FDC4 /* LineColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* LineColor.swift */; };
+		0BCAD49D1D2EA22000C3FDC4 /* NextDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* NextDepartures.swift */; };
+		0BCAD49E1D2EA22000C3FDC4 /* PhysicalStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* PhysicalStop.swift */; };
+		0BCAD49F1D2EA22000C3FDC4 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* Stop.swift */; };
+		0BCAD4A01D2EA22000C3FDC4 /* Thermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* Thermometer.swift */; };
 		0BCAD4A11D2EA22000C3FDC4 /* TPGSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BCAD4931D2EA22000C3FDC4 /* TPGSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BCAD4C91D2EA54C00C3FDC4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4861D2EA22000C3FDC4 /* API.swift */; };
 		0BCAD4CA1D2EA54C00C3FDC4 /* APICommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4871D2EA22000C3FDC4 /* APICommons.swift */; };
 		0BCAD4CB1D2EA54C00C3FDC4 /* APIURLSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4881D2EA22000C3FDC4 /* APIURLSerialization.swift */; };
-		0BCAD4CC1D2EA54C00C3FDC4 /* ParsedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* ParsedConnection.swift */; };
-		0BCAD4CD1D2EA54C00C3FDC4 /* ParsedCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* ParsedCoordinates.swift */; };
-		0BCAD4CE1D2EA54C00C3FDC4 /* ParsedDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* ParsedDeviation.swift */; };
-		0BCAD4CF1D2EA54C00C3FDC4 /* ParsedDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* ParsedDisruption.swift */; };
-		0BCAD4D01D2EA54C00C3FDC4 /* ParsedLineColorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift */; };
-		0BCAD4D11D2EA54C00C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift */; };
-		0BCAD4D21D2EA54C00C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift */; };
-		0BCAD4D31D2EA54C00C3FDC4 /* ParsedStopsRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* ParsedStopsRecord.swift */; };
-		0BCAD4D41D2EA54C00C3FDC4 /* ParsedThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* ParsedThermometer.swift */; };
+		0BCAD4CC1D2EA54C00C3FDC4 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* Connection.swift */; };
+		0BCAD4CD1D2EA54C00C3FDC4 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* Coordinates.swift */; };
+		0BCAD4CE1D2EA54C00C3FDC4 /* Deviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* Deviation.swift */; };
+		0BCAD4CF1D2EA54C00C3FDC4 /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* Disruption.swift */; };
+		0BCAD4D01D2EA54C00C3FDC4 /* LineColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* LineColor.swift */; };
+		0BCAD4D11D2EA54C00C3FDC4 /* NextDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* NextDepartures.swift */; };
+		0BCAD4D21D2EA54C00C3FDC4 /* PhysicalStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* PhysicalStop.swift */; };
+		0BCAD4D31D2EA54C00C3FDC4 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* Stop.swift */; };
+		0BCAD4D41D2EA54C00C3FDC4 /* Thermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* Thermometer.swift */; };
 		0BCAD4D51D2EA54C00C3FDC4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4861D2EA22000C3FDC4 /* API.swift */; };
 		0BCAD4D61D2EA54C00C3FDC4 /* APICommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4871D2EA22000C3FDC4 /* APICommons.swift */; };
 		0BCAD4D71D2EA54C00C3FDC4 /* APIURLSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4881D2EA22000C3FDC4 /* APIURLSerialization.swift */; };
-		0BCAD4D81D2EA54C00C3FDC4 /* ParsedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* ParsedConnection.swift */; };
-		0BCAD4D91D2EA54C00C3FDC4 /* ParsedCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* ParsedCoordinates.swift */; };
-		0BCAD4DA1D2EA54C00C3FDC4 /* ParsedDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* ParsedDeviation.swift */; };
-		0BCAD4DB1D2EA54C00C3FDC4 /* ParsedDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* ParsedDisruption.swift */; };
-		0BCAD4DC1D2EA54C00C3FDC4 /* ParsedLineColorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift */; };
-		0BCAD4DD1D2EA54C00C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift */; };
-		0BCAD4DE1D2EA54C00C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift */; };
-		0BCAD4DF1D2EA54C00C3FDC4 /* ParsedStopsRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* ParsedStopsRecord.swift */; };
-		0BCAD4E01D2EA54C00C3FDC4 /* ParsedThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* ParsedThermometer.swift */; };
+		0BCAD4D81D2EA54C00C3FDC4 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* Connection.swift */; };
+		0BCAD4D91D2EA54C00C3FDC4 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* Coordinates.swift */; };
+		0BCAD4DA1D2EA54C00C3FDC4 /* Deviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* Deviation.swift */; };
+		0BCAD4DB1D2EA54C00C3FDC4 /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* Disruption.swift */; };
+		0BCAD4DC1D2EA54C00C3FDC4 /* LineColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* LineColor.swift */; };
+		0BCAD4DD1D2EA54C00C3FDC4 /* NextDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* NextDepartures.swift */; };
+		0BCAD4DE1D2EA54C00C3FDC4 /* PhysicalStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* PhysicalStop.swift */; };
+		0BCAD4DF1D2EA54C00C3FDC4 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* Stop.swift */; };
+		0BCAD4E01D2EA54C00C3FDC4 /* Thermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* Thermometer.swift */; };
 		0BCAD4E11D2EA54D00C3FDC4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4861D2EA22000C3FDC4 /* API.swift */; };
 		0BCAD4E21D2EA54D00C3FDC4 /* APICommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4871D2EA22000C3FDC4 /* APICommons.swift */; };
 		0BCAD4E31D2EA54D00C3FDC4 /* APIURLSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4881D2EA22000C3FDC4 /* APIURLSerialization.swift */; };
-		0BCAD4E41D2EA54D00C3FDC4 /* ParsedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* ParsedConnection.swift */; };
-		0BCAD4E51D2EA54D00C3FDC4 /* ParsedCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* ParsedCoordinates.swift */; };
-		0BCAD4E61D2EA54D00C3FDC4 /* ParsedDeviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* ParsedDeviation.swift */; };
-		0BCAD4E71D2EA54D00C3FDC4 /* ParsedDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* ParsedDisruption.swift */; };
-		0BCAD4E81D2EA54D00C3FDC4 /* ParsedLineColorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift */; };
-		0BCAD4E91D2EA54D00C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift */; };
-		0BCAD4EA1D2EA54D00C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift */; };
-		0BCAD4EB1D2EA54D00C3FDC4 /* ParsedStopsRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* ParsedStopsRecord.swift */; };
-		0BCAD4EC1D2EA54D00C3FDC4 /* ParsedThermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* ParsedThermometer.swift */; };
+		0BCAD4E41D2EA54D00C3FDC4 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48A1D2EA22000C3FDC4 /* Connection.swift */; };
+		0BCAD4E51D2EA54D00C3FDC4 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48B1D2EA22000C3FDC4 /* Coordinates.swift */; };
+		0BCAD4E61D2EA54D00C3FDC4 /* Deviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48C1D2EA22000C3FDC4 /* Deviation.swift */; };
+		0BCAD4E71D2EA54D00C3FDC4 /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48D1D2EA22000C3FDC4 /* Disruption.swift */; };
+		0BCAD4E81D2EA54D00C3FDC4 /* LineColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48E1D2EA22000C3FDC4 /* LineColor.swift */; };
+		0BCAD4E91D2EA54D00C3FDC4 /* NextDepartures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD48F1D2EA22000C3FDC4 /* NextDepartures.swift */; };
+		0BCAD4EA1D2EA54D00C3FDC4 /* PhysicalStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4901D2EA22000C3FDC4 /* PhysicalStop.swift */; };
+		0BCAD4EB1D2EA54D00C3FDC4 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4911D2EA22000C3FDC4 /* Stop.swift */; };
+		0BCAD4EC1D2EA54D00C3FDC4 /* Thermometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCAD4921D2EA22000C3FDC4 /* Thermometer.swift */; };
 		0BCAD4ED1D2EA55200C3FDC4 /* TPGSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BCAD4931D2EA22000C3FDC4 /* TPGSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BCAD4EE1D2EA55300C3FDC4 /* TPGSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BCAD4931D2EA22000C3FDC4 /* TPGSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BCAD4EF1D2EA55300C3FDC4 /* TPGSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BCAD4931D2EA22000C3FDC4 /* TPGSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BF642171F0C2D19003CE540 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF642131F0C2D0B003CE540 /* Decodable.swift */; };
+		0BF642181F0C2D1A003CE540 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF642131F0C2D0B003CE540 /* Decodable.swift */; };
+		0BF642191F0C2D1A003CE540 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF642131F0C2D0B003CE540 /* Decodable.swift */; };
+		0BF6421A1F0C2EDF003CE540 /* api_samples.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0BF642121F0C2D0B003CE540 /* api_samples.bundle */; };
+		0BF6421B1F0C2EE0003CE540 /* api_samples.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0BF642121F0C2D0B003CE540 /* api_samples.bundle */; };
+		0BF6421C1F0C2EE1003CE540 /* api_samples.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0BF642121F0C2D0B003CE540 /* api_samples.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,9 +110,11 @@
 
 /* Begin PBXFileReference section */
 		0B237D3C1CE37CBF006AD14C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B278A7B1F0CD604003D82B7 /* ColorsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTest.swift; sourceTree = "<group>"; };
+		0B278A811F0CDC6F003D82B7 /* URLSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSerialization.swift; sourceTree = "<group>"; };
+		0B278A851F0CE69D003D82B7 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		0B2950161F0AA5AD007CD911 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		0B485AC41DF69C8100849902 /* TPGSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPGSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B485AD01DF69C9300849902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B485AD11DF69C9300849902 /* TPGSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGSwiftTests.swift; sourceTree = "<group>"; };
 		0B485AD71DF69DB800849902 /* TPGSwiftTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TPGSwiftTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B485AE61DF69DC800849902 /* TPGSwiftTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TPGSwiftTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B58FC051DF5FCB0002301DB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -110,21 +131,24 @@
 		0BCAD4871D2EA22000C3FDC4 /* APICommons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICommons.swift; sourceTree = "<group>"; };
 		0BCAD4881D2EA22000C3FDC4 /* APIURLSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURLSerialization.swift; sourceTree = "<group>"; };
 		0BCAD4891D2EA22000C3FDC4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BCAD48A1D2EA22000C3FDC4 /* ParsedConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedConnection.swift; sourceTree = "<group>"; };
-		0BCAD48B1D2EA22000C3FDC4 /* ParsedCoordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedCoordinates.swift; sourceTree = "<group>"; };
-		0BCAD48C1D2EA22000C3FDC4 /* ParsedDeviation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedDeviation.swift; sourceTree = "<group>"; };
-		0BCAD48D1D2EA22000C3FDC4 /* ParsedDisruption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedDisruption.swift; sourceTree = "<group>"; };
-		0BCAD48E1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedLineColorRecord.swift; sourceTree = "<group>"; };
-		0BCAD48F1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedNextDeparturesRecord.swift; sourceTree = "<group>"; };
-		0BCAD4901D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedPhysicalStopRecord.swift; sourceTree = "<group>"; };
-		0BCAD4911D2EA22000C3FDC4 /* ParsedStopsRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedStopsRecord.swift; sourceTree = "<group>"; };
-		0BCAD4921D2EA22000C3FDC4 /* ParsedThermometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedThermometer.swift; sourceTree = "<group>"; };
+		0BCAD48A1D2EA22000C3FDC4 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		0BCAD48B1D2EA22000C3FDC4 /* Coordinates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		0BCAD48C1D2EA22000C3FDC4 /* Deviation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deviation.swift; sourceTree = "<group>"; };
+		0BCAD48D1D2EA22000C3FDC4 /* Disruption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disruption.swift; sourceTree = "<group>"; };
+		0BCAD48E1D2EA22000C3FDC4 /* LineColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineColor.swift; sourceTree = "<group>"; };
+		0BCAD48F1D2EA22000C3FDC4 /* NextDepartures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextDepartures.swift; sourceTree = "<group>"; };
+		0BCAD4901D2EA22000C3FDC4 /* PhysicalStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalStop.swift; sourceTree = "<group>"; };
+		0BCAD4911D2EA22000C3FDC4 /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		0BCAD4921D2EA22000C3FDC4 /* Thermometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thermometer.swift; sourceTree = "<group>"; };
 		0BCAD4931D2EA22000C3FDC4 /* TPGSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPGSwift.h; sourceTree = "<group>"; };
 		0BCAD4A71D2EA3FD00C3FDC4 /* TPGSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPGSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCAD4B41D2EA46500C3FDC4 /* TPGSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPGSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCAD4C11D2EA4BF00C3FDC4 /* TPGSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPGSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD0D3D71CE4671800375C8C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0BD0D3D81CE4671800375C8C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0BF642121F0C2D0B003CE540 /* api_samples.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = api_samples.bundle; sourceTree = "<group>"; };
+		0BF642131F0C2D0B003CE540 /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		0BF642141F0C2D0B003CE540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,16 +200,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B485ACF1DF69C9300849902 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				0B485AD01DF69C9300849902 /* Info.plist */,
-				0B485AD11DF69C9300849902 /* TPGSwiftTests.swift */,
-			);
-			name = Tests;
-			path = Sources/Tests;
-			sourceTree = "<group>";
-		};
 		0B58FC0A1DF5FE61002301DB /* fastlane */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +232,7 @@
 				0B237D3C1CE37CBF006AD14C /* .gitignore */,
 				0B7CD8BB1CE3345800958468 /* .swiftlint.yml */,
 				0BCAD4851D2EA22000C3FDC4 /* Sources */,
-				0B485ACF1DF69C9300849902 /* Tests */,
+				0BF642111F0C2D0B003CE540 /* Tests */,
 				0B7CD89F1CE332CA00958468 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -244,18 +258,32 @@
 				0BCAD4871D2EA22000C3FDC4 /* APICommons.swift */,
 				0BCAD4881D2EA22000C3FDC4 /* APIURLSerialization.swift */,
 				0BCAD4891D2EA22000C3FDC4 /* Info.plist */,
-				0BCAD48A1D2EA22000C3FDC4 /* ParsedConnection.swift */,
-				0BCAD48B1D2EA22000C3FDC4 /* ParsedCoordinates.swift */,
-				0BCAD48C1D2EA22000C3FDC4 /* ParsedDeviation.swift */,
-				0BCAD48D1D2EA22000C3FDC4 /* ParsedDisruption.swift */,
-				0BCAD48E1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift */,
-				0BCAD48F1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift */,
-				0BCAD4901D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift */,
-				0BCAD4911D2EA22000C3FDC4 /* ParsedStopsRecord.swift */,
-				0BCAD4921D2EA22000C3FDC4 /* ParsedThermometer.swift */,
+				0BCAD48A1D2EA22000C3FDC4 /* Connection.swift */,
+				0BCAD48B1D2EA22000C3FDC4 /* Coordinates.swift */,
+				0BCAD48C1D2EA22000C3FDC4 /* Deviation.swift */,
+				0BCAD48D1D2EA22000C3FDC4 /* Disruption.swift */,
+				0BCAD48E1D2EA22000C3FDC4 /* LineColor.swift */,
+				0BCAD48F1D2EA22000C3FDC4 /* NextDepartures.swift */,
+				0BCAD4901D2EA22000C3FDC4 /* PhysicalStop.swift */,
+				0BCAD4911D2EA22000C3FDC4 /* Stop.swift */,
+				0BCAD4921D2EA22000C3FDC4 /* Thermometer.swift */,
 				0BCAD4931D2EA22000C3FDC4 /* TPGSwift.h */,
+				0B2950161F0AA5AD007CD911 /* Record.swift */,
+				0B278A851F0CE69D003D82B7 /* ErrorCode.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		0BF642111F0C2D0B003CE540 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0BF642121F0C2D0B003CE540 /* api_samples.bundle */,
+				0BF642131F0C2D0B003CE540 /* Decodable.swift */,
+				0B278A7B1F0CD604003D82B7 /* ColorsTest.swift */,
+				0B278A811F0CDC6F003D82B7 /* URLSerialization.swift */,
+				0BF642141F0C2D0B003CE540 /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +439,7 @@
 				0BCAD4BD1D2EA4BF00C3FDC4 /* Frameworks */,
 				0BCAD4BE1D2EA4BF00C3FDC4 /* Headers */,
 				0BCAD4BF1D2EA4BF00C3FDC4 /* Resources */,
+				0B278A7F1F0CD976003D82B7 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -428,7 +457,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "yageek's company";
 				TargetAttributes = {
 					0B485AC31DF69C8100849902 = {
@@ -443,6 +472,7 @@
 					0B485AE51DF69DC800849902 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 5VGYH76875;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					0B7CD89D1CE332CA00958468 = {
@@ -457,6 +487,7 @@
 					};
 					0BCAD4C01D2EA4BF00C3FDC4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -488,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF6421A1F0C2EDF003CE540 /* api_samples.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF6421B1F0C2EE0003CE540 /* api_samples.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF6421C1F0C2EE1003CE540 /* api_samples.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +563,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B278A7F1F0CD976003D82B7 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		0B7CD8BD1CE3348B00958468 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -550,7 +598,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B485AD21DF69CF200849902 /* TPGSwiftTests.swift in Sources */,
+				0BF642171F0C2D19003CE540 /* Decodable.swift in Sources */,
+				0B278A821F0CDC6F003D82B7 /* URLSerialization.swift in Sources */,
+				0B278A7C1F0CD604003D82B7 /* ColorsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +608,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF642181F0C2D1A003CE540 /* Decodable.swift in Sources */,
+				0B278A831F0CDC6F003D82B7 /* URLSerialization.swift in Sources */,
+				0B278A7D1F0CD608003D82B7 /* ColorsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +618,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF642191F0C2D1A003CE540 /* Decodable.swift in Sources */,
+				0B278A841F0CDC6F003D82B7 /* URLSerialization.swift in Sources */,
+				0B278A7E1F0CD609003D82B7 /* ColorsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,17 +628,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BCAD4981D2EA22000C3FDC4 /* ParsedConnection.swift in Sources */,
-				0BCAD49D1D2EA22000C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */,
-				0BCAD4991D2EA22000C3FDC4 /* ParsedCoordinates.swift in Sources */,
-				0BCAD49A1D2EA22000C3FDC4 /* ParsedDeviation.swift in Sources */,
-				0BCAD49F1D2EA22000C3FDC4 /* ParsedStopsRecord.swift in Sources */,
-				0BCAD49E1D2EA22000C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */,
-				0BCAD49C1D2EA22000C3FDC4 /* ParsedLineColorRecord.swift in Sources */,
+				0BCAD4981D2EA22000C3FDC4 /* Connection.swift in Sources */,
+				0BCAD49D1D2EA22000C3FDC4 /* NextDepartures.swift in Sources */,
+				0BCAD4991D2EA22000C3FDC4 /* Coordinates.swift in Sources */,
+				0B278A861F0CE69D003D82B7 /* ErrorCode.swift in Sources */,
+				0BCAD49A1D2EA22000C3FDC4 /* Deviation.swift in Sources */,
+				0BCAD49F1D2EA22000C3FDC4 /* Stop.swift in Sources */,
+				0BCAD49E1D2EA22000C3FDC4 /* PhysicalStop.swift in Sources */,
+				0BCAD49C1D2EA22000C3FDC4 /* LineColor.swift in Sources */,
+				0B2950171F0AA5AD007CD911 /* Record.swift in Sources */,
 				0BCAD4961D2EA22000C3FDC4 /* APIURLSerialization.swift in Sources */,
 				0BCAD4941D2EA22000C3FDC4 /* API.swift in Sources */,
-				0BCAD4A01D2EA22000C3FDC4 /* ParsedThermometer.swift in Sources */,
-				0BCAD49B1D2EA22000C3FDC4 /* ParsedDisruption.swift in Sources */,
+				0BCAD4A01D2EA22000C3FDC4 /* Thermometer.swift in Sources */,
+				0BCAD49B1D2EA22000C3FDC4 /* Disruption.swift in Sources */,
 				0BCAD4951D2EA22000C3FDC4 /* APICommons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,17 +649,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BCAD4E41D2EA54D00C3FDC4 /* ParsedConnection.swift in Sources */,
-				0BCAD4E91D2EA54D00C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */,
-				0BCAD4E51D2EA54D00C3FDC4 /* ParsedCoordinates.swift in Sources */,
-				0BCAD4E61D2EA54D00C3FDC4 /* ParsedDeviation.swift in Sources */,
-				0BCAD4EB1D2EA54D00C3FDC4 /* ParsedStopsRecord.swift in Sources */,
-				0BCAD4EA1D2EA54D00C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */,
-				0BCAD4E81D2EA54D00C3FDC4 /* ParsedLineColorRecord.swift in Sources */,
+				0BCAD4E41D2EA54D00C3FDC4 /* Connection.swift in Sources */,
+				0BCAD4E91D2EA54D00C3FDC4 /* NextDepartures.swift in Sources */,
+				0BCAD4E51D2EA54D00C3FDC4 /* Coordinates.swift in Sources */,
+				0B278A871F0CE69D003D82B7 /* ErrorCode.swift in Sources */,
+				0BCAD4E61D2EA54D00C3FDC4 /* Deviation.swift in Sources */,
+				0BCAD4EB1D2EA54D00C3FDC4 /* Stop.swift in Sources */,
+				0BCAD4EA1D2EA54D00C3FDC4 /* PhysicalStop.swift in Sources */,
+				0BCAD4E81D2EA54D00C3FDC4 /* LineColor.swift in Sources */,
+				0B2950181F0AA5AD007CD911 /* Record.swift in Sources */,
 				0BCAD4E31D2EA54D00C3FDC4 /* APIURLSerialization.swift in Sources */,
 				0BCAD4E11D2EA54D00C3FDC4 /* API.swift in Sources */,
-				0BCAD4EC1D2EA54D00C3FDC4 /* ParsedThermometer.swift in Sources */,
-				0BCAD4E71D2EA54D00C3FDC4 /* ParsedDisruption.swift in Sources */,
+				0BCAD4EC1D2EA54D00C3FDC4 /* Thermometer.swift in Sources */,
+				0BCAD4E71D2EA54D00C3FDC4 /* Disruption.swift in Sources */,
 				0BCAD4E21D2EA54D00C3FDC4 /* APICommons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,17 +670,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BCAD4D81D2EA54C00C3FDC4 /* ParsedConnection.swift in Sources */,
-				0BCAD4DD1D2EA54C00C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */,
-				0BCAD4D91D2EA54C00C3FDC4 /* ParsedCoordinates.swift in Sources */,
-				0BCAD4DA1D2EA54C00C3FDC4 /* ParsedDeviation.swift in Sources */,
-				0BCAD4DF1D2EA54C00C3FDC4 /* ParsedStopsRecord.swift in Sources */,
-				0BCAD4DE1D2EA54C00C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */,
-				0BCAD4DC1D2EA54C00C3FDC4 /* ParsedLineColorRecord.swift in Sources */,
+				0BCAD4D81D2EA54C00C3FDC4 /* Connection.swift in Sources */,
+				0BCAD4DD1D2EA54C00C3FDC4 /* NextDepartures.swift in Sources */,
+				0BCAD4D91D2EA54C00C3FDC4 /* Coordinates.swift in Sources */,
+				0B278A881F0CE69D003D82B7 /* ErrorCode.swift in Sources */,
+				0BCAD4DA1D2EA54C00C3FDC4 /* Deviation.swift in Sources */,
+				0BCAD4DF1D2EA54C00C3FDC4 /* Stop.swift in Sources */,
+				0BCAD4DE1D2EA54C00C3FDC4 /* PhysicalStop.swift in Sources */,
+				0BCAD4DC1D2EA54C00C3FDC4 /* LineColor.swift in Sources */,
+				0B2950191F0AA5AD007CD911 /* Record.swift in Sources */,
 				0BCAD4D71D2EA54C00C3FDC4 /* APIURLSerialization.swift in Sources */,
 				0BCAD4D51D2EA54C00C3FDC4 /* API.swift in Sources */,
-				0BCAD4E01D2EA54C00C3FDC4 /* ParsedThermometer.swift in Sources */,
-				0BCAD4DB1D2EA54C00C3FDC4 /* ParsedDisruption.swift in Sources */,
+				0BCAD4E01D2EA54C00C3FDC4 /* Thermometer.swift in Sources */,
+				0BCAD4DB1D2EA54C00C3FDC4 /* Disruption.swift in Sources */,
 				0BCAD4D61D2EA54C00C3FDC4 /* APICommons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,17 +691,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BCAD4CC1D2EA54C00C3FDC4 /* ParsedConnection.swift in Sources */,
-				0BCAD4D11D2EA54C00C3FDC4 /* ParsedNextDeparturesRecord.swift in Sources */,
-				0BCAD4CD1D2EA54C00C3FDC4 /* ParsedCoordinates.swift in Sources */,
-				0BCAD4CE1D2EA54C00C3FDC4 /* ParsedDeviation.swift in Sources */,
-				0BCAD4D31D2EA54C00C3FDC4 /* ParsedStopsRecord.swift in Sources */,
-				0BCAD4D21D2EA54C00C3FDC4 /* ParsedPhysicalStopRecord.swift in Sources */,
-				0BCAD4D01D2EA54C00C3FDC4 /* ParsedLineColorRecord.swift in Sources */,
+				0BCAD4CC1D2EA54C00C3FDC4 /* Connection.swift in Sources */,
+				0BCAD4D11D2EA54C00C3FDC4 /* NextDepartures.swift in Sources */,
+				0BCAD4CD1D2EA54C00C3FDC4 /* Coordinates.swift in Sources */,
+				0B278A891F0CE69D003D82B7 /* ErrorCode.swift in Sources */,
+				0BCAD4CE1D2EA54C00C3FDC4 /* Deviation.swift in Sources */,
+				0BCAD4D31D2EA54C00C3FDC4 /* Stop.swift in Sources */,
+				0BCAD4D21D2EA54C00C3FDC4 /* PhysicalStop.swift in Sources */,
+				0BCAD4D01D2EA54C00C3FDC4 /* LineColor.swift in Sources */,
+				0B29501A1F0AA5AD007CD911 /* Record.swift in Sources */,
 				0BCAD4CB1D2EA54C00C3FDC4 /* APIURLSerialization.swift in Sources */,
 				0BCAD4C91D2EA54C00C3FDC4 /* API.swift in Sources */,
-				0BCAD4D41D2EA54C00C3FDC4 /* ParsedThermometer.swift in Sources */,
-				0BCAD4CF1D2EA54C00C3FDC4 /* ParsedDisruption.swift in Sources */,
+				0BCAD4D41D2EA54C00C3FDC4 /* Thermometer.swift in Sources */,
+				0BCAD4CF1D2EA54C00C3FDC4 /* Disruption.swift in Sources */,
 				0BCAD4CA1D2EA54C00C3FDC4 /* APICommons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,7 +741,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGSwiftTests;
 				PRODUCT_NAME = TPGSwiftTests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -692,7 +757,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGSwiftTests;
 				PRODUCT_NAME = TPGSwiftTests;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -708,7 +774,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
@@ -724,7 +791,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
@@ -744,7 +812,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -762,7 +831,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -775,14 +845,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -826,14 +902,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -879,7 +961,8 @@
 				PRODUCT_NAME = TPGSwift;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -899,7 +982,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGSwift;
 				PRODUCT_NAME = TPGSwift;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -919,7 +1003,8 @@
 				PRODUCT_NAME = TPGSwift;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -941,7 +1026,8 @@
 				PRODUCT_NAME = TPGSwift;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -962,7 +1048,8 @@
 				PRODUCT_NAME = TPGSwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -983,7 +1070,8 @@
 				PRODUCT_NAME = TPGSwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1007,7 +1095,8 @@
 				PRODUCT_NAME = TPGSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1029,7 +1118,8 @@
 				PRODUCT_NAME = TPGSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

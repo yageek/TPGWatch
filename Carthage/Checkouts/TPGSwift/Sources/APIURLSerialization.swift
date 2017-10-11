@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 // MARK: - URL serialization.
 extension API {
 
@@ -26,21 +25,21 @@ extension API {
 
         guard let Key = API.Key else { fatalError("API KEY has to been set.") }
 
-        let result:(path: String, parameters: [String:AnyObject?]?) = {
+        let result:(path: String, parameters: [String: Any?]?) = {
             switch self {
 
             case .getStops(let stopCode, let stopName, let line, let longitude, let latitude):
-                return ("GetStops", [API.StopCodeParameter : stopCode as Optional<AnyObject>, API.StopNameParameter: stopName as Optional<AnyObject>, API.LineParameter: line as Optional<AnyObject>, API.LongitudeParameter: longitude as Optional<AnyObject>, API.LatitudeParameter: latitude as Optional<AnyObject>])
+                return ("GetStops", [API.StopCodeParameter: stopCode, API.StopNameParameter: stopName, API.LineParameter: line, API.LongitudeParameter: longitude, API.LatitudeParameter: latitude])
             case .getPhysicalStops(let stopCode, let stopName):
-                return ("GetPhysicalStops", [API.StopCodeParameter  : stopCode as Optional<AnyObject>, API.StopNameParameter : stopName as Optional<AnyObject>])
+                return ("GetPhysicalStops", [API.StopCodeParameter: stopCode, API.StopNameParameter: stopName])
             case .getNextDepartures(let stopCode, let departureCode, let linesCode, let destinationsCode):
-                return ("GetNextDepartures", [API.StopCodeParameter  : stopCode as Optional<AnyObject>, API.DepartureCodeParameter: departureCode as Optional<AnyObject>, API.LinesCodeParameter: linesCode as Optional<AnyObject>, API.DestinationsCodeParameter: destinationsCode as Optional<AnyObject>])
+                return ("GetNextDepartures", [API.StopCodeParameter: stopCode, API.DepartureCodeParameter: departureCode, API.LinesCodeParameter: linesCode, API.DestinationsCodeParameter: destinationsCode])
             case .getAllNextDepartures(let stopCode, let linesCode, let destinationsCode):
-                return ("GetNextDepartures", [API.StopCodeParameter  : stopCode as Optional<AnyObject>, API.LinesCodeParameter: linesCode as Optional<AnyObject>, API.DestinationsCodeParameter: destinationsCode as Optional<AnyObject>])
+                return ("GetNextDepartures", [API.StopCodeParameter: stopCode, API.LinesCodeParameter: linesCode, API.DestinationsCodeParameter: destinationsCode])
             case .getThermometer(let departureCode):
-                return ("GetThermometer", [API.DepartureCodeParameter : departureCode as Optional<AnyObject>])
+                return ("GetThermometer", [API.DepartureCodeParameter: departureCode])
             case .getThermometerPhysicalStops(let departureCode):
-                return ("GetThermometerPhysicalStops", [API.DepartureCodeParameter  : departureCode as Optional<AnyObject>])
+                return ("GetThermometerPhysicalStops", [API.DepartureCodeParameter: departureCode])
             case .getLinesColors:
                 return ("GetLinesColors", nil)
             case .getDisruptions:
@@ -58,11 +57,11 @@ extension API {
 
         let pathURL = API.HostURL.appendingPathComponent(result.path).appendingPathExtension("json")
         var components = URLComponents(url: pathURL, resolvingAgainstBaseURL: true)
-        components?.queryItems = parameters.map({ (key, value) -> URLQueryItem in
-            return URLQueryItem(name: key, value: String(describing: value))
-        })
+        components?.queryItems = parameters.map { value in
+            return URLQueryItem(name: value.key, value: "\(value.value)")
+        }
 
-        let url = components?.url
-        return url!
+        guard let url = components?.url else { fatalError("Wrong API specification")}
+        return url
     }
 }

@@ -39,10 +39,3 @@ public enum API {
     // MARK: Disruptions
     case getDisruptions
 }
-
-
-/// JSONMarshable represents an item
-/// that can be convertible to JSON.
-public protocol JSONMarshable {
-    init?(json: [String:Any])
-}

@@ -19,6 +19,5 @@ extension Stop {
     @NSManaged var name: String?
     @NSManaged var connections: NSSet?
 
-
     @NSManaged func addConnectionsObject(_ value: Connection)
 }

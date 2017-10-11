@@ -10,25 +10,18 @@ import WatchKit
 import ProcedureKit
 import TPGSwift
 
-extension ParsedNextDeparturesRecord: JSONUnmarshable {
-    public init?(JSON: [String: Any]) {
-        self.init(json: JSON)
-    }
-}
 class GetNextDeparturesProcedure: GroupProcedure {
+    init(code: String, completion: @escaping (NextDepartureRecord?, NSError?) -> Void) {
 
-
-    init(code: String, completion: @escaping (ParsedNextDeparturesRecord?, NSError?) -> Void) {
-
-        let getDeparturesCall = API.getNextDepartures(stopCode: code, departureCode: nil , linesCode: nil, destinationsCode: nil)
+        let getDeparturesCall = API.getNextDepartures(stopCode: code, departureCode: nil, linesCode: nil, destinationsCode: nil)
         let downloadDepartures = DownloadProcedure(call: getDeparturesCall)
-        let parseDepartures = JSONDeserializationProcedure<ParsedNextDeparturesRecord>().injectPayload(fromNetwork: downloadDepartures)
-        parseDepartures.addDidFinishBlockObserver { (procedure, errors) in
+        let parseDepartures = JSONDeserializationProcedure<NextDepartureRecord>().injectPayload(fromNetwork: downloadDepartures)
+        parseDepartures.addDidFinishBlockObserver { (procedure, _) in
 
             if let value = procedure.output.success {
                 ProcedureQueue.main.addOperation {
                     print("Value: \(value)")
-                    completion(value.value, nil)
+                    completion(value, nil)
                 }
             } else {
                 ProcedureQueue.main.addOperation {

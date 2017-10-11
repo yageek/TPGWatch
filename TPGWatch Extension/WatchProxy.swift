@@ -15,8 +15,8 @@ class WatchProxy: NSObject, WCSessionDelegate {
     static let RegisteryUpdateNotification = "net.yageek.TPGWatch.watchkitapp.watchkitextension.registeryupdate"
 
     static let sharedInstance = WatchProxy()
-    
-    let session = WCSession.default()
+
+    let session = WCSession.default
 
     fileprivate override init() {
          super.init()
@@ -27,12 +27,11 @@ class WatchProxy: NSObject, WCSessionDelegate {
         session.activate()
     }
 
-
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("[watch] Session changed with state:\(activationState)")
     }
 
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
         if let stopsData = applicationContext["stops"] as? [[String: Any]] {
             Store.sharedInstance.saveBookmarks(stopsData as Any, notificationName: WatchProxy.BookmarkUpdateNotification)
         }
@@ -40,6 +39,5 @@ class WatchProxy: NSObject, WCSessionDelegate {
         if let registery = applicationContext["registery"] as? [String: Any] {
             Store.sharedInstance.saveRegistery(registery as Any, notificationName: WatchProxy.RegisteryUpdateNotification)
         }
-        
     }
 }

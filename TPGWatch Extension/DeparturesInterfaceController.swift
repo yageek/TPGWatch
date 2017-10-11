@@ -11,8 +11,7 @@ import Foundation
 import TPGSwift
 import ProcedureKit
 
-class DeparturesInterfaceController: WKInterfaceController {
-
+final class DeparturesInterfaceController: WKInterfaceController {
 
     @IBOutlet var loadingGroup: WKInterfaceGroup!
 
@@ -21,19 +20,19 @@ class DeparturesInterfaceController: WKInterfaceController {
     @IBOutlet var departuresTable: WKInterfaceTable!
     @IBOutlet var reloadButton: WKInterfaceButton!
 
-    var queue = ProcedureKit.OperationQueue()
-    var record: ParsedNextDeparturesRecord?
+    var queue = ProcedureQueue()
+    var record: NextDepartureRecord?
 
     var stop: [String: Any]  = [:]
     var registery: [String: Any] = [:]
-    
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
         reloadButton.setHidden(true)
 
         guard let ctx = context as? [String: Any] else {
-            print("Unexpected context :\(context)")
+            print("Unexpected context :\(String(describing: context))")
             return
         }
 
@@ -42,12 +41,10 @@ class DeparturesInterfaceController: WKInterfaceController {
         fetchDepartures(stop["code"] as! String)
     }
 
-
     override func didDeactivate() {
         super.didDeactivate()
         queue.cancelAllOperations()
     }
-
 
     @IBAction func reloadTriggered() {
 
@@ -66,7 +63,7 @@ class DeparturesInterfaceController: WKInterfaceController {
 
             if let error = error {
                 print("Error: \(error)")
-                DispatchQueue.main.async{
+                DispatchQueue.main.async {
                     self.errorLabel.setHidden(false)
                     self.loadingGroup.setHidden(true)
                     self.reloadButton.setHidden(false)
@@ -74,7 +71,7 @@ class DeparturesInterfaceController: WKInterfaceController {
 
             } else if let result = resultJSON {
                 self.record = result
-                DispatchQueue.main.async{
+                DispatchQueue.main.async {
                     self.loadingGroup.setHidden(true)
                     self.reloadButton.setHidden(false)
                     self.errorLabel.setHidden(true)
@@ -120,8 +117,6 @@ class DeparturesInterfaceController: WKInterfaceController {
             } else {
                 row.lineGroup.setHidden(true)
             }
-
-
 
             // Next departure time
             var departureTimeText = "\(departure.waitingTime)"

@@ -13,7 +13,7 @@ import UIKit
 
 final class ImportLinesColorsProcedure: Procedure, InputProcedure {
 
-    var input: Pending<Resource<ParsedLineColorRecord>> = .pending
+    var input: Pending<Record<TPGSwift.LineColor>> = .pending
     let context: NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
@@ -30,23 +30,19 @@ final class ImportLinesColorsProcedure: Procedure, InputProcedure {
 
     override func execute() {
 
-        guard !isCancelled else { self.finish(); return }
-
-        guard let lineColorRecord = self.input.value?.value else {
+        guard let lineColorRecord = self.input.value else {
             self.finish(withError: GeneralError.unexpectedData)
             return
         }
 
-
         context.perform {
-            for lineColor in lineColorRecord.lineColors {
+            for lineColor in lineColorRecord.elements {
 
                 let line = NSEntityDescription.insertNewObject(forEntityName: Line.EntityName, into: self.context) as! Line
-
-                line.code = lineColor.lineCode
-                line.backgroundColor = "#\(lineColor.background)"
-                line.textColor = "#\(lineColor.text)"
-                line.ribonColor = "#\(lineColor.hexa)"
+                line.code = lineColor.code
+                line.backgroundColor = lineColor.background.hexString
+                line.textColor = lineColor.text.hexString
+                line.ribonColor = lineColor.hexa.hexString
             }
 
             do {
@@ -57,8 +53,5 @@ final class ImportLinesColorsProcedure: Procedure, InputProcedure {
                 self.finish(withError: error)
             }
         }
-
     }
-
-
 }

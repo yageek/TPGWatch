@@ -25,5 +25,4 @@ class DepartureInfo: NSObject {
         label?.setText(text)
         label?.setTextColor(textColor)
     }
-    
 }

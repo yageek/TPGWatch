@@ -38,7 +38,5 @@ class SaveProcedure: Procedure {
         } else {
             self.finish()
         }
-
-
     }
 }

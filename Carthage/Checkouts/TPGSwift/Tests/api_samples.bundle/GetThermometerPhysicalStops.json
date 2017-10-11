@@ -1,0 +1,1669 @@
+{
+    "timestamp": "2017-07-04T22:02:36+0200",
+    "stop": {
+        "stopCode": "ESRT",
+        "stopName": "Les Esserts",
+        "connections": [
+            {
+                "lineCode": "14",
+                "destinationName": "Carouge",
+                "destinationCode": "CAROUGE"
+            },
+            {
+                "lineCode": "14",
+                "destinationName": "De-Staël",
+                "destinationCode": "DE STAEL"
+            },
+            {
+                "lineCode": "14",
+                "destinationName": "Meyrin-Gravière",
+                "destinationCode": "MEYRIN-GRAVIERE"
+            },
+            {
+                "lineCode": "14",
+                "destinationName": "P+R Bernex",
+                "destinationCode": "P+R BERNEX"
+            },
+            {
+                "lineCode": "21",
+                "destinationName": "Cressy",
+                "destinationCode": "CRESSY"
+            },
+            {
+                "lineCode": "21",
+                "destinationName": "Gare des Eaux-Vives",
+                "destinationCode": "GARE EAUX-VIVES"
+            },
+            {
+                "lineCode": "22",
+                "destinationName": "Nations",
+                "destinationCode": "NATIONS"
+            },
+            {
+                "lineCode": "22",
+                "destinationName": "Tours-de-Carouge",
+                "destinationCode": "TOURS-DE-CAROUGE"
+            },
+            {
+                "lineCode": "23",
+                "destinationName": "Aéroport",
+                "destinationCode": "AEROPORT"
+            },
+            {
+                "lineCode": "23",
+                "destinationName": "Le Rolliet",
+                "destinationCode": "LE ROLLIET"
+            },
+            {
+                "lineCode": "23",
+                "destinationName": "ZIPLO",
+                "destinationCode": "ZIPLO"
+            },
+            {
+                "lineCode": "J",
+                "destinationName": "Avusy",
+                "destinationCode": "AVUSY"
+            },
+            {
+                "lineCode": "J",
+                "destinationName": "Lancy - hubert",
+                "destinationCode": "LANCY - HUBERT"
+            },
+            {
+                "lineCode": "K",
+                "destinationName": "Chancy-Douane",
+                "destinationCode": "CHANCY-DOUANE"
+            },
+            {
+                "lineCode": "K",
+                "destinationName": "Lancy-Hubert",
+                "destinationCode": "LANCY-HUBERT"
+            },
+            {
+                "lineCode": "K",
+                "destinationName": "Pougny-Gare",
+                "destinationCode": "POUGNY-GARE"
+            }
+        ]
+    },
+    "lineCode": "K",
+    "destinationName": "Lancy-Hubert",
+    "destinationCode": "LANCY-HUBERT",
+    "steps": [
+        {
+            "departureCode": 156861,
+            "timestamp": "2017-07-04T11:33:00+0200",
+            "stop": {
+                "stopCode": "CYDN",
+                "stopName": "Chancy-Douane",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "CYDN01",
+                "stopName": "Chancy-Douane",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.144473,
+                    "longitude": 5.965827
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156862,
+            "timestamp": "2017-07-04T11:34:23+0200",
+            "stop": {
+                "stopCode": "CYVI",
+                "stopName": "Chancy-Village",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "CYVI01",
+                "stopName": "Chancy-Village",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.150178,
+                    "longitude": 5.969984
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156863,
+            "timestamp": "2017-07-04T11:35:39+0200",
+            "stop": {
+                "stopCode": "CYRA",
+                "stopName": "Chancy-Raclerets",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "CYRA01",
+                "stopName": "Chancy-Raclerets",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.14967,
+                    "longitude": 5.972431
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156864,
+            "timestamp": "2017-07-04T11:36:20+0200",
+            "stop": {
+                "stopCode": "BOUV",
+                "stopName": "Les Bouveries",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "BOUV01",
+                "stopName": "Les Bouveries",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.151208,
+                    "longitude": 5.97516
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156865,
+            "timestamp": "2017-07-04T11:38:21+0200",
+            "stop": {
+                "stopCode": "CYUS",
+                "stopName": "Chancy-Usine",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "CYUS01",
+                "stopName": "Chancy-Usine",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.156632,
+                    "longitude": 5.981371
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156866,
+            "timestamp": "2017-07-04T11:38:44+0200",
+            "stop": {
+                "stopCode": "ALMA",
+                "stopName": "Avully-Martinet",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "ALMA01",
+                "stopName": "Avully-Martinet",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.158577,
+                    "longitude": 5.986343
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156867,
+            "timestamp": "2017-07-04T11:39:59+0200",
+            "stop": {
+                "stopCode": "ALBA",
+                "stopName": "Avully-Bachères",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "ALBA01",
+                "stopName": "Avully-Bachères",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.164628,
+                    "longitude": 5.992333
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156868,
+            "timestamp": "2017-07-04T11:41:05+0200",
+            "stop": {
+                "stopCode": "ALGE",
+                "stopName": "Avully-Gennecy",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "ALGE01",
+                "stopName": "Avully-Gennecy",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.168212,
+                    "longitude": 5.996135
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156869,
+            "timestamp": "2017-07-04T11:42:40+0200",
+            "stop": {
+                "stopCode": "ALVI",
+                "stopName": "Avully-Village",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "ALVI01",
+                "stopName": "Avully-Village",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "X",
+                        "destinationName": "La plaine-gare",
+                        "destinationCode": "LA PLAINE-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.169544,
+                    "longitude": 6.001099
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156870,
+            "timestamp": "2017-07-04T11:43:39+0200",
+            "stop": {
+                "stopCode": "ALEC",
+                "stopName": "Avully-Ecole",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "ALEC01",
+                "stopName": "Avully-Ecole",
+                "connections": [
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.167175,
+                    "longitude": 6.005136
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156871,
+            "timestamp": "2017-07-04T11:45:28+0200",
+            "stop": {
+                "stopCode": "EAUM",
+                "stopName": "Eaumorte",
+                "connections": [
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "EAUM01",
+                "stopName": "Eaumorte",
+                "connections": [
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.163371,
+                    "longitude": 6.019493
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156872,
+            "timestamp": "2017-07-04T11:52:00+0200",
+            "stop": {
+                "stopCode": "BXPL",
+                "stopName": "Bernex-Place",
+                "connections": [
+                    {
+                        "lineCode": "47",
+                        "destinationName": "Bernex-Vailly",
+                        "destinationCode": "BERNEX - VAILLY"
+                    },
+                    {
+                        "lineCode": "47",
+                        "destinationName": "Lully",
+                        "destinationCode": "LULLY"
+                    },
+                    {
+                        "lineCode": "47",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "L",
+                        "destinationName": "Athenaz",
+                        "destinationCode": "ATHENAZ"
+                    },
+                    {
+                        "lineCode": "L",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Croisée de Confignon",
+                        "destinationCode": "CR. CONFIGNON"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Satigny-Gare",
+                        "destinationCode": "SATIGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "BXPL02",
+                "stopName": "Bernex-Place",
+                "connections": [
+                    {
+                        "lineCode": "47",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "L",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Croisée de Confignon",
+                        "destinationCode": "CR. CONFIGNON"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.177122,
+                    "longitude": 6.076846
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156873,
+            "timestamp": "2017-07-04T11:52:40+0200",
+            "stop": {
+                "stopCode": "VUIL",
+                "stopName": "Vuillonnex",
+                "connections": [
+                    {
+                        "lineCode": "47",
+                        "destinationName": "Bernex-Vailly",
+                        "destinationCode": "BERNEX - VAILLY"
+                    },
+                    {
+                        "lineCode": "47",
+                        "destinationName": "Lully",
+                        "destinationCode": "LULLY"
+                    },
+                    {
+                        "lineCode": "47",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "L",
+                        "destinationName": "Athenaz",
+                        "destinationCode": "ATHENAZ"
+                    },
+                    {
+                        "lineCode": "L",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Croisée de Confignon",
+                        "destinationCode": "CR. CONFIGNON"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Satigny-Gare",
+                        "destinationCode": "SATIGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "VUIL01",
+                "stopName": "Vuillonnex",
+                "connections": [
+                    {
+                        "lineCode": "47",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "L",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Croisée de Confignon",
+                        "destinationCode": "CR. CONFIGNON"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.177876,
+                    "longitude": 6.07969
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156874,
+            "timestamp": "2017-07-04T11:54:00+0200",
+            "stop": {
+                "stopCode": "PRBE",
+                "stopName": "P+R Bernex",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "42",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "42",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "47",
+                        "destinationName": "Bernex-Vailly",
+                        "destinationCode": "BERNEX - VAILLY"
+                    },
+                    {
+                        "lineCode": "47",
+                        "destinationName": "Lully",
+                        "destinationCode": "LULLY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "L",
+                        "destinationName": "Athenaz",
+                        "destinationCode": "ATHENAZ"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Croisée de Confignon",
+                        "destinationCode": "CR. CONFIGNON"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Satigny-Gare",
+                        "destinationCode": "SATIGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "PRBE04",
+                "stopName": "P+R Bernex",
+                "connections": [
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Croisée de Confignon",
+                        "destinationCode": "CR. CONFIGNON"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.178439,
+                    "longitude": 6.085323
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156875,
+            "timestamp": "2017-07-04T11:55:05+0200",
+            "stop": {
+                "stopCode": "CRCO",
+                "stopName": "Croisée de Confignon",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "42",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "42",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "42",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    },
+                    {
+                        "lineCode": "S",
+                        "destinationName": "Satigny-Gare",
+                        "destinationCode": "SATIGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "CRCO01",
+                "stopName": "Croisée de Confignon",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.178843,
+                    "longitude": 6.089768
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156876,
+            "timestamp": "2017-07-04T11:56:16+0200",
+            "stop": {
+                "stopCode": "DODE",
+                "stopName": "La Dode",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "DODE01",
+                "stopName": "La Dode",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.181207,
+                    "longitude": 6.095616
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156877,
+            "timestamp": "2017-07-04T11:58:19+0200",
+            "stop": {
+                "stopCode": "ONEX",
+                "stopName": "Onex-Salle communale",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "21",
+                        "destinationName": "Cressy",
+                        "destinationCode": "CRESSY"
+                    },
+                    {
+                        "lineCode": "21",
+                        "destinationName": "Gare des Eaux-Vives",
+                        "destinationCode": "GARE EAUX-VIVES"
+                    },
+                    {
+                        "lineCode": "43",
+                        "destinationName": "Bellins",
+                        "destinationCode": "BELLINS"
+                    },
+                    {
+                        "lineCode": "43",
+                        "destinationName": "Loëx-Hôpital",
+                        "destinationCode": "LOEX-HOPITAL"
+                    },
+                    {
+                        "lineCode": "43",
+                        "destinationName": "Onex-vallet",
+                        "destinationCode": "ONEX-VALLET"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "ONEX01",
+                "stopName": "Onex-Salle communale",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "43",
+                        "destinationName": "Bellins",
+                        "destinationCode": "BELLINS"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.183622,
+                    "longitude": 6.10053
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156878,
+            "timestamp": "2017-07-04T11:59:49+0200",
+            "stop": {
+                "stopCode": "BNDL",
+                "stopName": "Bandol",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "BNDL01",
+                "stopName": "Bandol",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.186044,
+                    "longitude": 6.106779
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 156879,
+            "timestamp": "2017-07-04T12:02:19+0200",
+            "stop": {
+                "stopCode": "ESRT",
+                "stopName": "Les Esserts",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "21",
+                        "destinationName": "Cressy",
+                        "destinationCode": "CRESSY"
+                    },
+                    {
+                        "lineCode": "21",
+                        "destinationName": "Gare des Eaux-Vives",
+                        "destinationCode": "GARE EAUX-VIVES"
+                    },
+                    {
+                        "lineCode": "22",
+                        "destinationName": "Nations",
+                        "destinationCode": "NATIONS"
+                    },
+                    {
+                        "lineCode": "22",
+                        "destinationName": "Tours-de-Carouge",
+                        "destinationCode": "TOURS-DE-CAROUGE"
+                    },
+                    {
+                        "lineCode": "23",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "23",
+                        "destinationName": "Le Rolliet",
+                        "destinationCode": "LE ROLLIET"
+                    },
+                    {
+                        "lineCode": "23",
+                        "destinationName": "ZIPLO",
+                        "destinationCode": "ZIPLO"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "ESRT01",
+                "stopName": "Les Esserts",
+                "connections": [
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Lancy - hubert",
+                        "destinationCode": "LANCY - HUBERT"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Lancy-Hubert",
+                        "destinationCode": "LANCY-HUBERT"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.188219,
+                    "longitude": 6.113449
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": true
+        },
+        {
+            "departureCode": 156880,
+            "timestamp": "2017-07-04T12:05:02+0200",
+            "stop": {
+                "stopCode": "UBER",
+                "stopName": "Lancy-Hubert",
+                "connections": [
+                    {
+                        "lineCode": "21",
+                        "destinationName": "Cressy",
+                        "destinationCode": "CRESSY"
+                    },
+                    {
+                        "lineCode": "21",
+                        "destinationName": "Gare des Eaux-Vives",
+                        "destinationCode": "GARE EAUX-VIVES"
+                    },
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ]
+            },
+            "physicalStop": {
+                "physicalStopCode": "UBER00",
+                "stopName": "Lancy-Hubert",
+                "connections": [
+                    {
+                        "lineCode": "J",
+                        "destinationName": "Avusy",
+                        "destinationCode": "AVUSY"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Chancy-Douane",
+                        "destinationCode": "CHANCY-DOUANE"
+                    },
+                    {
+                        "lineCode": "K",
+                        "destinationName": "Pougny-Gare",
+                        "destinationCode": "POUGNY-GARE"
+                    }
+                ],
+                "coordinates": {
+                    "referential": "WGS84",
+                    "latitude": 46.192425,
+                    "longitude": 6.110018
+                }
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": true
+        }
+    ]
+}

@@ -17,6 +17,7 @@ class PKHUDUITests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         XCUIApplication().launch()
+        XCTAssertFalse(PKHUD.sharedHUD.isVisible)
     }
 
     override func tearDown() {
@@ -59,7 +60,7 @@ class PKHUDUITests: XCTestCase {
         self.waitForHudToDisappear()
     }
 
-    func waitForCondition(element: XCUIElement, predicate: NSPredicate, timeout: TimeInterval = 5) {
+    func waitForCondition(element: XCUIElement, predicate: NSPredicate, timeout: TimeInterval = 3.5) {
         expectation(for: predicate, evaluatedWith: element, handler:nil)
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -69,6 +70,6 @@ class PKHUDUITests: XCTestCase {
     }
 
     func waitForHudToAppear() {
-            self.waitForCondition(element: app.otherElements["PKHUD"], predicate: NSPredicate(format: "exists == true"), timeout: 1)
+            self.waitForCondition(element: app.otherElements["PKHUD"], predicate: NSPredicate(format: "exists == true"), timeout: 1.5)
     }
 }

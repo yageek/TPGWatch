@@ -57,7 +57,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       enableThreadSanitizer = "YES"
-      enableUBSanitizer = "YES"
       language = "fr"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"

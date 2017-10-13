@@ -10,11 +10,5 @@ import Foundation
 import CoreData
 
 class Stop: NSManagedObject {
-
     static let EntityName = "Stop"
-    var sectionName: String? {
-        guard let name = self.name else {return nil}
-        let ch = name[name.startIndex]
-        return String(ch)
-    }
 }

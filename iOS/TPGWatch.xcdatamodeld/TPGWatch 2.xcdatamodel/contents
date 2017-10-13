@@ -29,6 +29,7 @@
         <attribute name="bookmarked" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="code" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="sectionIdentifier" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <relationship name="connections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Connection" inverseName="stops" inverseEntity="Connection" syncable="YES"/>
         <fetchIndex name="compoundIndex">
             <fetchIndexElement property="code" type="Binary" order="ascending"/>
@@ -44,6 +45,6 @@
     <elements>
         <element name="Connection" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="Line" positionX="-36" positionY="54" width="128" height="120"/>
-        <element name="Stop" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Stop" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

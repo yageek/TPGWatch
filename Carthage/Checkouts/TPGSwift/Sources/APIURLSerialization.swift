@@ -17,7 +17,7 @@ extension API {
     fileprivate static let LinesCodeParameter = "linesCode"
     fileprivate static let LongitudeParameter = "longitude"
     fileprivate static let LatitudeParameter = "latitude"
-    fileprivate static let DepartureCodeParameter = "departudeCode"
+    fileprivate static let DepartureCodeParameter = "departureCode"
     fileprivate static let DestinationsCodeParameter = "destinationsCode"
 
     /// The `NSURL` requests corresponding to the current enum value.
@@ -47,7 +47,7 @@ extension API {
             }
         }()
 
-        var parameters = ["key": Key as AnyObject] as [String:Any]
+        var parameters = ["key": Key as AnyObject] as [String: Any]
 
         if let additionalParameters = result.parameters {
             for (key, value) in additionalParameters {

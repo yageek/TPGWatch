@@ -27,7 +27,6 @@ final class SyncController: WKInterfaceController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(registeryHasBeenUpdate), name: NSNotification.Name(rawValue: WatchProxy.RegisteryUpdateNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(registeryHasBeenUpdate), name: NSNotification.Name(rawValue: WatchProxy.BookmarkUpdateNotification), object: nil)
-
     }
 
     override func didDeactivate() {
@@ -49,7 +48,7 @@ final class SyncController: WKInterfaceController {
     @objc func registeryHasBeenUpdate(_ notification: Notification) {
 
         if Store.sharedInstance.registeryCache != nil && Store.sharedInstance.bookmarkCache != nil {
-            WKInterfaceController.reloadRootControllers(withNames: ["BookmarkStopInterfaceController"], contexts: [])
+            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: "BookmarkStopInterfaceController", context: [] as AnyObject)])
         }
     }
 }

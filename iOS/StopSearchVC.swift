@@ -40,7 +40,6 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         super.viewDidLoad()
 
         renderingContext.delegate = self
-        setupTableView()
         setupSearchController()
         setupFetchController()
         updateUI(firstTime: true)
@@ -89,7 +88,9 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             setCell(cell, bookmarked: stop.bookmarked)
             cell.stopLabel?.text = stop.name
             cell.resetStacks()
-            renderingContext.renderLines(stop, cell: cell, indexPath: indexPath)
+            for image in renderingContext.renderLines(stop.code, indexPath: indexPath) {
+                cell.addImageLine(image)
+            }
         }
 
         return cell
@@ -118,11 +119,6 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
     // MARK: Helpers
-    func setupTableView() {
-        let nib = UINib(nibName: "StopCellSearch", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "StopCellSearch")
-    }
-
     func setupFetchController() {
         //Fetch Manager
         let request = NSFetchRequest<Stop>(entityName: Stop.EntityName)
@@ -196,7 +192,6 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             print("Error in the fetched results controller: \(error).")
         }
 
-        //
         if firstTime {
             self.tableView.setContentOffset(.zero, animated: false)
         }
@@ -205,7 +200,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     private func updateIndexList() {
         guard let objects = fetchedResultsController?.fetchedObjects else { return }
         let firstLetters = objects.flatMap { (stop) -> String? in
-            guard let firstLetter = stop.name?.first else { return nil}
+            guard let firstLetter = stop.name.first else { return nil}
             return String(firstLetter)
             }.reduce([]) { (index, letter) -> [String] in
                 if index.contains(letter) {
@@ -221,9 +216,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
             do {
                 try inner()
-
                 OperationQueue.main.addOperation {
-
                     self.updateUI()
                 }
 
@@ -284,7 +277,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
                     filteredStops = fetchedStops
                 } else {
                     print("User input:\(userInput)")
-                    filteredStops = fetchedStops.filter { return $0.name?.localizedCaseInsensitiveContains(userInput) ?? false }
+                    filteredStops = fetchedStops.filter { return $0.name.localizedCaseInsensitiveContains(userInput) }
                 }
 
                 print("Searching stops : \(userInput) in \(fetchedStops.count) elements - Found: \(filteredStops.count) elements")
@@ -299,6 +292,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     private func addImageToStopCell(_ image: UIImage, indexPath: IndexPath) {
         if let cell = self.tableView.cellForRow(at: indexPath) as? StopCellSearch {
             cell.addImageLine(image)
+            tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
 

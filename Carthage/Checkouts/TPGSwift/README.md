@@ -12,13 +12,6 @@ For more explanation: [TPG Open Data](http://www.tpg.ch/fr/web/open-data/mode-d-
  [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TPGSwift.svg)](https://img.shields.io/cocoapods/v/TPGSwift.svg)
  [![Platform](https://img.shields.io/cocoapods/p/TPGSwift.svg?style=flat)](http://cocoadocs.org/docsets/TPGSwift)
 
-# Changelog
-
- - 3.0.0: Swift 4 support
- - 2.1.0: Fix enum code style.
- - 2.0.0: Swift 3 compatible.
- - 1.0.0: Basic JSON unmarshal structures.
-
 # Usage
 
 ```swift
@@ -40,6 +33,9 @@ print("API Stops: \(getStops.URL)")
 // MARK: - Decode
 
 let json = JSONDecoder()
+// This is mandatory
+decoder.dateDecodingStrategy = .iso8601
+
 do {
     let stops = try json.decode(Record<Stop>.self, from: data)
     print("Stops: \(stops)")

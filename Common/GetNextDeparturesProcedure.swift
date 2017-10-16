@@ -6,11 +6,14 @@
 //  Copyright © 2016 Yageek. All rights reserved.
 //
 
-import WatchKit
 import ProcedureKit
 import TPGSwift
 
-class GetNextDeparturesProcedure: GroupProcedure {
+#if os(iOS)
+import ProcedureKitMobile
+#endif
+
+final class GetNextDeparturesProcedure: GroupProcedure {
     init(code: String, completion: @escaping (NextDepartureRecord?, NSError?) -> Void) {
 
         let getDeparturesCall = API.getNextDepartures(stopCode: code, departureCode: nil, linesCode: nil, destinationsCode: nil)
@@ -31,6 +34,6 @@ class GetNextDeparturesProcedure: GroupProcedure {
         }
 
         super.init(operations: [downloadDepartures, parseDepartures])
-        name = "Watch download stops"
+        name = "Download Stops Procedure \(code)"
     }
 }

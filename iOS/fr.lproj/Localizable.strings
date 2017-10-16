@@ -8,7 +8,7 @@
 "Error while downloading" = "Une erreur est survenue.";
 
 /* No comment provided by engineer. */
-"Loading stops..." = "Chargement...";
+"Loading stops..." = "Chargement des arrêts...";
 
 /* No comment provided by engineer. */
 "No internet connection is available" = "Aucune connexion Internet disponible";
@@ -21,4 +21,6 @@
 
 /* No comment provided by engineer. */
 "The server returned an unexpected answer" = "Le serveur a retourné une réponse non connue";
+
+"Loading data..." = "Chargement des données...";
 

@@ -15,5 +15,5 @@ public extension API {
     public static var Key: String?
     static let Host = "https://prod.ivtr-od.tpg.ch/v1"
     /// The host of the TPG server. Equals "https://prod.ivtr-od.tpg.ch/v1".
-    public static let HostURL  = Foundation.URL(string:Host)!
+    public static let HostURL  = Foundation.URL(string: Host)!
 }

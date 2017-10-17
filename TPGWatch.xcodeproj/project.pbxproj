@@ -43,7 +43,6 @@
 		0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0EA1D547E930005F6E3 /* Store.swift */; };
 		0B5ED2461F8D33B4004276B6 /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */; };
 		0B5ED2471F8D33B4004276B6 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */; };
-		0B5ED2481F8D33B4004276B6 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
 		0B5ED2491F8D3463004276B6 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075D1D340172008877F9 /* TPGSwift.framework */; };
 		0B5ED24A1F8D3499004276B6 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */; };
 		0B5ED24B1F8D3499004276B6 /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */; };
@@ -51,6 +50,7 @@
 		0B84C1441D529EA700594499 /* SendRegisteryProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryProcedure.swift */; };
 		0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1451D529FE100594499 /* WatchProxy.swift */; };
 		0B84C14A1D52A6AD00594499 /* SaveProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveProcedure.swift */; };
+		0B96A3411F966474001F2F11 /* LoadingTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B96A3401F966474001F2F11 /* LoadingTableView.xib */; };
 		0B97E5611F96220D00ECC029 /* ThermometerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97E5601F96220D00ECC029 /* ThermometerInterfaceController.swift */; };
 		0B97E5631F96242A00ECC029 /* ThermometerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97E5621F96242A00ECC029 /* ThermometerInfo.swift */; };
 		0B98DEDB1F9611F700B640E2 /* ThermometerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98DEDA1F9611F700B640E2 /* ThermometerCell.swift */; };
@@ -200,9 +200,9 @@
 		0B58737D1D375CDA001B7416 /* SendRegisteryProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryProcedure.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
-		0B8250081D3841390094946B /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		0B84C1451D529FE100594499 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
 		0B84C1491D52A6AD00594499 /* SaveProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProcedure.swift; sourceTree = "<group>"; };
+		0B96A3401F966474001F2F11 /* LoadingTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableView.xib; sourceTree = "<group>"; };
 		0B97E5601F96220D00ECC029 /* ThermometerInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerInterfaceController.swift; sourceTree = "<group>"; };
 		0B97E5621F96242A00ECC029 /* ThermometerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerInfo.swift; sourceTree = "<group>"; };
 		0B98DEDA1F9611F700B640E2 /* ThermometerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerCell.swift; sourceTree = "<group>"; };
@@ -276,7 +276,6 @@
 				0B5ED2491F8D3463004276B6 /* TPGSwift.framework in Frameworks */,
 				0B5ED2461F8D33B4004276B6 /* ProcedureKitNetwork.framework in Frameworks */,
 				0B5ED2471F8D33B4004276B6 /* ProcedureKit.framework in Frameworks */,
-				0B5ED2481F8D33B4004276B6 /* PKHUD.framework in Frameworks */,
 				0BF007621D340185008877F9 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +386,14 @@
 			name = 1_2;
 			sourceTree = "<group>";
 		};
+		0B96A33F1F966461001F2F11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B96A3401F966474001F2F11 /* LoadingTableView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		0BA401EC1D590DC500FEF28C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,7 +458,6 @@
 			isa = PBXGroup;
 			children = (
 				0B3532641F8E6FAA00AB7EE7 /* Images.xcassets */,
-				0B8250081D3841390094946B /* PKHUD.framework */,
 				0B7BF67B1D352A430044E75F /* TPGSwift.framework */,
 				0BF007611D340185008877F9 /* CoreData.framework */,
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
@@ -513,6 +519,7 @@
 		0BF0072E1D340017008877F9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0B96A33F1F966461001F2F11 /* Views */,
 				0BF007311D34002F008877F9 /* StopSearchVC.swift */,
 				0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */,
 				0B2258CA1F90EFCC00E04111 /* NextDeparturesVC.swift */,
@@ -730,6 +737,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B96A3411F966474001F2F11 /* LoadingTableView.xib in Resources */,
 				0B3F200C1D3C232E0093AC66 /* InfoPlist.strings in Resources */,
 				0B3532651F8E6FAA00AB7EE7 /* Images.xcassets in Resources */,
 				0B3F1FFD1D3C232D0093AC66 /* Localizable.strings in Resources */,
@@ -798,7 +806,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitNetwork.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TPGSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitMobile.framework",
 			);
 			name = Carthage;
@@ -806,7 +813,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ProcedureKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ProcedureKitNetwork.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TPGSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PKHUD.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ProcedureKitMobile.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,6 @@ import ProcedureKit
 import ProcedureKitMobile
 import TPGSwift
 import ProcedureKit
-import PKHUD
 
 final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegate {
 
@@ -27,12 +26,25 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     var stop: Stop?
 
+    lazy var loadingBackgroundView: UIView = {
+        let nib = UINib(nibName: "LoadingTableView", bundle: nil)
+        return nib.instantiate(withOwner: self, options: nil).first as! UIView
+    }()
+
+    // MARK: - View lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
         downloadData(stop: stop)
         renderingContext.delegate = self
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        queue.cancelAllOperations()
     }
 
     // MARK: - Table view data source
@@ -94,17 +106,14 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         }
 
         getDepartures.addWillExecuteBlockObserver { (_, _) in
-            ProcedureQueue.main.addOperation {
-                let view = PKHUDProgressView()
-                view.subtitleLabel.text = NSLocalizedString("Loading data...", comment: "")
-                PKHUD.sharedHUD.contentView = view
-                PKHUD.sharedHUD.show()
+            ProcedureQueue.main.addOperation { [unowned self] in
+                self.tableView.backgroundView = self.loadingBackgroundView
             }
         }
 
         getDepartures.addDidFinishBlockObserver(block: { (_, _) in
-            ProcedureQueue.main.addOperation {
-                PKHUD.sharedHUD.hide()
+            ProcedureQueue.main.addOperation { [unowned self] in
+                self.tableView.backgroundView = nil
             }
         })
 

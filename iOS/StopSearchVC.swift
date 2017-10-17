@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import ProcedureKit
 import ProcedureKitMobile
-import PKHUD
 
 final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, LinesRendererContextDelegate {
 
@@ -25,11 +24,17 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     // Core Data
     private var fetchedResultsController: NSFetchedResultsController<Stop>?
 
-    //Search
+    // Search
     private var searchController: UISearchController?
     private var filteredStops: [Stop] = []
     private var searchModeEnabled = false
     var tableIndexes = [String]()
+
+    // LoadingView
+    lazy var loadingBackgroundView: UIView = {
+        let nib = UINib(nibName: "LoadingTableView", bundle: nil)
+        return nib.instantiate(withOwner: self, options: nil).first as! UIView
+    }()
 
     // MARK: View lifecycle
 
@@ -244,17 +249,14 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         if showHud {
 
             getStopsOp.addWillExecuteBlockObserver(block: { (_, _) in
-                ProcedureQueue.main.addOperation {
-                    let view = PKHUDProgressView()
-                    view.subtitleLabel.text = NSLocalizedString("Loading stops...", comment: "")
-                    PKHUD.sharedHUD.contentView = view
-                    PKHUD.sharedHUD.show()
+                ProcedureQueue.main.addOperation { [unowned self] in
+                    self.tableView.backgroundView = self.loadingBackgroundView
                 }
             })
 
             getStopsOp.addDidFinishBlockObserver(block: { (_, _) in
-                ProcedureQueue.main.addOperation {
-                    PKHUD.sharedHUD.hide()
+                ProcedureQueue.main.addOperation { [unowned self] in
+                    self.tableView.backgroundView = nil
                 }
             })
         }

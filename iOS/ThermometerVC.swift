@@ -26,6 +26,11 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
         return formatter
     }()
 
+    lazy var loadingBackgroundView: UIView = {
+        let nib = UINib(nibName: "LoadingTableView", bundle: nil)
+        return nib.instantiate(withOwner: self, options: nil).first as! UIView
+    }()
+
     // Concurrency
     private let queue = ProcedureQueue()
 
@@ -103,6 +108,18 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
                 self.updateUI(thermometer: thermometer)
             }
         }
+
+        thermometer.addWillExecuteBlockObserver { (_, _) in
+            ProcedureQueue.main.addOperation { [unowned self] in
+                self.tableView.backgroundView = self.loadingBackgroundView
+            }
+        }
+
+        thermometer.addDidFinishBlockObserver(block: { (_, _) in
+            ProcedureQueue.main.addOperation { [unowned self] in
+                self.tableView.backgroundView = nil
+            }
+        })
 
         queue.add(operation: thermometer)
     }

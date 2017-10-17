@@ -1,3 +1,2 @@
 github "yageek/TPGSwift" ~> 3.0.1
 github "ProcedureKit/ProcedureKit" ~> 4.4.0
-github "pkluz/PKHUD"

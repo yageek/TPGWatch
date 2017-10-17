@@ -11,9 +11,6 @@
 "Open the phone app to sync data" = "Öffnen Sie TPGWatch zu synchronisieren Daten";
 
 /* No comment provided by engineer. */
-"Retry later" = "Die Operation später wiederholen";
-
-/* No comment provided by engineer. */
 "The TPG server is unavailable." = "Der Server von TPG ist nicht verfügbar";
 
 /* No comment provided by engineer. */
@@ -21,5 +18,4 @@
 
 /* Shortcut for hour */
 "h" = "St";
-
 

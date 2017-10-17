@@ -26,9 +26,9 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
         return formatter
     }()
 
-    lazy var loadingBackgroundView: UIView = {
+    lazy var loadingBackgroundView: LoadingTableView = {
         let nib = UINib(nibName: "LoadingTableView", bundle: nil)
-        return nib.instantiate(withOwner: self, options: nil).first as! UIView
+        return nib.instantiate(withOwner: self, options: nil).first as! LoadingTableView
     }()
 
     // Concurrency
@@ -81,7 +81,7 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
 
         return cell
     }
-    // MARK: - Setup Data
+    // MARK: - Helpers
     func downloadData() {
         guard let departureCode = departure?.code else {
             return
@@ -91,13 +91,32 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
 
     private func updateUI(thermometer: Thermometer) {
         DispatchQueue.main.async { [unowned self] in
+            self.clearBackground()
+
             self.thermometer = thermometer
             self.steps = thermometer.steps.filter { $0.arrivalTime != nil }
             self.tableView.reloadData()
+
+            if self.steps.isEmpty {
+                self.setNoResults()
+            }
         }
     }
+    private func setLoading() {
+        loadingBackgroundView.setText(NSLocalizedString("Loading ...", comment: ""), loading: true)
+        self.tableView.backgroundView = loadingBackgroundView
+    }
 
-    func downloadThermometer(departureCode: Int) {
+    private func clearBackground() {
+        self.tableView.backgroundView = nil
+    }
+
+    private func setNoResults() {
+        loadingBackgroundView.setText(NSLocalizedString("No departures found!", comment: ""), loading: false)
+        self.tableView.backgroundView = loadingBackgroundView
+    }
+
+    private func downloadThermometer(departureCode: Int) {
 
         let thermometer = GetThermometerProcedure(departureCode: departureCode) { [unowned self] (thermometer, error) in
             if let error = error {
@@ -111,19 +130,13 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
 
         thermometer.addWillExecuteBlockObserver { (_, _) in
             ProcedureQueue.main.addOperation { [unowned self] in
-                self.tableView.backgroundView = self.loadingBackgroundView
+                self.setLoading()
             }
         }
 
-        thermometer.addDidFinishBlockObserver(block: { (_, _) in
-            ProcedureQueue.main.addOperation { [unowned self] in
-                self.tableView.backgroundView = nil
-            }
-        })
-
         queue.add(operation: thermometer)
     }
-    // MARK: - Helpers
+
     private func presentAlert(title: String, message: String) {
         let alert = AlertProcedure(presentAlertFrom: self)
         alert.title = title

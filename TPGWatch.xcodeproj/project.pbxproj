@@ -16,6 +16,7 @@
 		0B2258CB1F90EFCC00E04111 /* NextDeparturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CA1F90EFCC00E04111 /* NextDeparturesVC.swift */; };
 		0B2258CE1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */; };
 		0B2258CF1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */; };
+		0B25C0521F9699B700D2D77B /* LoadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25C0511F9699B700D2D77B /* LoadingTableView.swift */; };
 		0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007481D340082008877F9 /* Palette.swift */; };
 		0B300DC41F94B727008FEF9E /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B300DC31F94B727008FEF9E /* TimeUtils.swift */; };
 		0B300DC51F94B727008FEF9E /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B300DC31F94B727008FEF9E /* TimeUtils.swift */; };
@@ -160,6 +161,7 @@
 		0B2095151F8E146F00C2D67F /* TPGWatch 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TPGWatch 2.xcdatamodel"; sourceTree = "<group>"; };
 		0B2258CA1F90EFCC00E04111 /* NextDeparturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDeparturesVC.swift; sourceTree = "<group>"; };
 		0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetNextDeparturesProcedure.swift; path = Common/GetNextDeparturesProcedure.swift; sourceTree = "<group>"; };
+		0B25C0511F9699B700D2D77B /* LoadingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableView.swift; sourceTree = "<group>"; };
 		0B300DC31F94B727008FEF9E /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeUtils.swift; path = Common/TimeUtils.swift; sourceTree = "<group>"; };
 		0B32C3821D34DEA200D97205 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B32C3851D34DEA200D97205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				0B96A3401F966474001F2F11 /* LoadingTableView.xib */,
+				0B25C0511F9699B700D2D77B /* LoadingTableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				0BF007561D3400A7008877F9 /* Line+CoreDataProperties.swift in Sources */,
 				0BF007581D3400A7008877F9 /* Line.swift in Sources */,
 				0B2258CE1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */,
+				0B25C0521F9699B700D2D77B /* LoadingTableView.swift in Sources */,
 				0BF007541D3400A7008877F9 /* Connection+CoreDataProperties.swift in Sources */,
 				0BF007441D34006F008877F9 /* LinesRendererContext.swift in Sources */,
 				0BCDBF421F94DAD5006D1B0D /* ThermometerVC.swift in Sources */,

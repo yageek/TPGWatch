@@ -26,9 +26,9 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     var stop: Stop?
 
-    lazy var loadingBackgroundView: UIView = {
+    lazy var loadingBackgroundView: LoadingTableView = {
         let nib = UINib(nibName: "LoadingTableView", bundle: nil)
-        return nib.instantiate(withOwner: self, options: nil).first as! UIView
+        return nib.instantiate(withOwner: self, options: nil).first as! LoadingTableView
     }()
 
     // MARK: - View lifecycle
@@ -79,9 +79,16 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     // MARK: - Helpers
     private func updateUI(record: NextDepartureRecord) {
+        clearBackground()
+
         self.nextDepartures = record.departures.filter { $0.waitingTime != "no more"}
         tableView.reloadData()
+
+        if nextDepartures.isEmpty {
+            setNoResults()
+        }
     }
+
     private func downloadData(stop: Stop?) {
         guard let stop = stop else {
             return
@@ -107,17 +114,24 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
         getDepartures.addWillExecuteBlockObserver { (_, _) in
             ProcedureQueue.main.addOperation { [unowned self] in
-                self.tableView.backgroundView = self.loadingBackgroundView
+                self.setLoading()
             }
         }
-
-        getDepartures.addDidFinishBlockObserver(block: { (_, _) in
-            ProcedureQueue.main.addOperation { [unowned self] in
-                self.tableView.backgroundView = nil
-            }
-        })
-
         queue.add(operation: getDepartures)
+    }
+
+    private func setLoading() {
+        loadingBackgroundView.setText(NSLocalizedString("Loading ...", comment: ""), loading: true)
+        self.tableView.backgroundView = loadingBackgroundView
+    }
+
+    private func clearBackground() {
+        self.tableView.backgroundView = nil
+    }
+
+    private func setNoResults() {
+        loadingBackgroundView.setText(NSLocalizedString("No departures found!", comment: ""), loading: false)
+        self.tableView.backgroundView = loadingBackgroundView
     }
 
     private func presentAlert(title: String, message: String) {

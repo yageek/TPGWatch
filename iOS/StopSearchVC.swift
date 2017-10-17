@@ -31,9 +31,9 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     var tableIndexes = [String]()
 
     // LoadingView
-    lazy var loadingBackgroundView: UIView = {
+    lazy var loadingBackgroundView: LoadingTableView = {
         let nib = UINib(nibName: "LoadingTableView", bundle: nil)
-        return nib.instantiate(withOwner: self, options: nil).first as! UIView
+        return nib.instantiate(withOwner: self, options: nil).first as! LoadingTableView
     }()
 
     // MARK: View lifecycle
@@ -152,6 +152,15 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
+    private func setLoading(enabled: Bool) {
+        if enabled {
+            loadingBackgroundView.textLabel.text = NSLocalizedString("Loading ...", comment: "")
+            self.tableView.backgroundView = loadingBackgroundView
+        } else {
+            self.tableView.backgroundView = nil
+        }
+    }
+
     private func toggleStopAtIndexPath(_ indexPath: IndexPath) {
 
         if let stop = stopAtIndexPath(indexPath), let cell = tableView.cellForRow(at: indexPath) {
@@ -174,7 +183,6 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
     // MARK: Data update
-
     func setCell(_ cell: StopCellSearch, bookmarked: Bool) {
 
         let image = bookmarked ? UIImage(imageLiteralResourceName: "bookmark-on") : UIImage(imageLiteralResourceName: "bookmark-off")
@@ -250,13 +258,13 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
             getStopsOp.addWillExecuteBlockObserver(block: { (_, _) in
                 ProcedureQueue.main.addOperation { [unowned self] in
-                    self.tableView.backgroundView = self.loadingBackgroundView
+                    self.setLoading(enabled: true)
                 }
             })
 
             getStopsOp.addDidFinishBlockObserver(block: { (_, _) in
                 ProcedureQueue.main.addOperation { [unowned self] in
-                    self.tableView.backgroundView = nil
+                    self.setLoading(enabled: false)
                 }
             })
         }

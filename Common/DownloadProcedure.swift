@@ -41,7 +41,9 @@ final class DownloadProcedure: GroupProcedure, OutputProcedure {
     init(call: API) {
 
         let URL = call.URL
-        print("URL: \(URL)")
+        #if DEBUG
+            print("URL: \(URL)")
+        #endif
         let network = NetworkDownloadProcedure(session: URLSession.shared, request: URLRequest(url: URL))
         let decode = ValidAPICodeProcedure().injectResult(from: network)
 

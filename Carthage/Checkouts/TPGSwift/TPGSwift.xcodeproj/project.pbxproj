@@ -110,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		0B237D3C1CE37CBF006AD14C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0B263E301F9408410049443A /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		0B278A7B1F0CD604003D82B7 /* ColorsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTest.swift; sourceTree = "<group>"; };
 		0B278A811F0CDC6F003D82B7 /* URLSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSerialization.swift; sourceTree = "<group>"; };
 		0B278A851F0CE69D003D82B7 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
@@ -228,6 +229,7 @@
 				0B91355C1D0AF1F800D70411 /* Package.swift */,
 				0BD0D3D71CE4671800375C8C /* LICENSE */,
 				0BD0D3D81CE4671800375C8C /* README.md */,
+				0B263E301F9408410049443A /* CHANGELOG.md */,
 				0B5B82D51CE39DAD009BBD8F /* .travis.yml */,
 				0B237D3C1CE37CBF006AD14C /* .gitignore */,
 				0B7CD8BB1CE3345800958468 /* .swiftlint.yml */,

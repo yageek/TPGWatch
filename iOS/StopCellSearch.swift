@@ -8,6 +8,6 @@
 
 import UIKit
 
-class StopCellSearch: StopCell {
+ final class StopCellSearch: StopCell {
     @IBOutlet weak var bookmarkImageView: UIImageView!
 }

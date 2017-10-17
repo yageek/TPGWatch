@@ -98,9 +98,7 @@ class Store {
 
                 }
             }
-
             queue.addOperation(readOp)
-
         }
     }
 

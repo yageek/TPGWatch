@@ -15,8 +15,8 @@ import CoreData
 extension Stop {
 
     @NSManaged var bookmarked: Bool
-    @NSManaged var code: String?
-    @NSManaged var name: String?
+    @NSManaged var code: String
+    @NSManaged var name: String
     @NSManaged var connections: NSSet?
 
     @NSManaged func addConnectionsObject(_ value: Connection)
@@ -30,8 +30,6 @@ extension Stop {
         if let tmp = tmp {
             return tmp
         }
-
-        guard let name = name else { return nil }
         let ch = name[name.startIndex]
 
         let val = String(ch)

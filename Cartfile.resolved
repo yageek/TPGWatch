@@ -1,4 +1,3 @@
-github "DaveWoodCom/XCGLogger" "6.0.1"
 github "ProcedureKit/ProcedureKit" "4.4.0"
 github "pkluz/PKHUD" "5.0.0"
-github "yageek/TPGSwift" "3.0.0"
+github "yageek/TPGSwift" "3.0.1"

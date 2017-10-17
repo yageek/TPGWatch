@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RPj-t7-7SU">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RPj-t7-7SU">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
     </dependencies>
     <scenes>
         <!--Favorites-->
@@ -26,7 +29,7 @@
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
-                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </group>
                                                     <group width="20" height="15" alignment="left" radius="8" id="uFH-Lp-bkB" userLabel="LineGroupTwo">
                                                         <items>
@@ -34,7 +37,7 @@
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
-                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </group>
                                                     <group width="20" height="15" alignment="left" radius="8" id="NL5-Fy-ild" userLabel="LineGroupThree">
                                                         <items>
@@ -42,7 +45,7 @@
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
-                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </group>
                                                     <group width="20" height="15" alignment="left" radius="8" id="7t7-K4-W7h" userLabel="LineGroupFour">
                                                         <items>
@@ -50,7 +53,7 @@
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
-                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </group>
                                                     <label width="20" height="15" alignment="left" text="..." textAlignment="center" id="hcZ-zN-G1X">
                                                         <fontDescription key="font" type="system" pointSize="16"/>
@@ -89,7 +92,81 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-157" y="231"/>
+            <point key="canvasLocation" x="-158" y="224"/>
+        </scene>
+        <!--Thermometer-->
+        <scene sceneID="bXP-6c-jbY">
+            <objects>
+                <controller identifier="ThermometerInterfaceController" title="Thermometer" id="j6k-5u-xc0" customClass="ThermometerInterfaceController" customModule="TPGWatch_Extension">
+                    <items>
+                        <table alignment="left" id="zX8-DI-L7Q">
+                            <items>
+                                <tableRow identifier="ThermometerInfo" selectable="NO" id="6aN-zk-sMA" customClass="ThermometerInfo" customModule="TPGWatch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="IJ3-Dc-cy6">
+                                        <items>
+                                            <group width="1" alignment="left" id="jBy-At-U5s">
+                                                <items>
+                                                    <label alignment="left" text="Label" id="B4R-Vr-dCP">
+                                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="60B-nV-qVf">
+                                                <items>
+                                                    <imageView width="10" height="10" alignment="left" verticalAlignment="center" image="waiting" contentMode="scaleAspectFit" id="aRh-wb-aEZ"/>
+                                                    <label alignment="left" text="Label" textAlignment="left" id="L11-OG-OUm">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="4i5-vQ-ac1">
+                                                <items>
+                                                    <imageView width="10" height="10" alignment="left" verticalAlignment="center" image="clock" contentMode="scaleAspectFit" id="PQQ-11-hxY"/>
+                                                    <label alignment="left" text="Label" id="nzq-sl-fWb">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="hourLabel" destination="nzq-sl-fWb" id="FWW-O3-wnh"/>
+                                        <outlet property="stopLabel" destination="B4R-Vr-dCP" id="wTt-n3-9mn"/>
+                                        <outlet property="timeLabel" destination="L11-OG-OUm" id="83F-2M-LEl"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="2" id="Ofn-0b-F1M">
+                            <items>
+                                <group width="1" alignment="center" layout="vertical" id="6hr-Bc-jYE">
+                                    <items>
+                                        <imageView width="40" height="40" alignment="center" verticalAlignment="center" image="logo" id="H5I-o4-n9x"/>
+                                        <label alignment="center" verticalAlignment="bottom" text="Loading ..." textAlignment="center" numberOfLines="0" id="uoH-bW-olg"/>
+                                    </items>
+                                </group>
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" id="AVW-4a-cTK"/>
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departures found" id="cLv-bs-2PE"/>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Reload" id="nRk-OM-pHr">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="reloadTriggered" destination="j6k-5u-xc0" id="CMm-5A-ZU8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="errorLabel" destination="AVW-4a-cTK" id="Smz-2c-yUc"/>
+                        <outlet property="loadButton" destination="nRk-OM-pHr" id="XoT-Vd-moF"/>
+                        <outlet property="loadGroup" destination="6hr-Bc-jYE" id="MVO-Nc-9Tt"/>
+                        <outlet property="noDepartureFoundLabel" destination="cLv-bs-2PE" id="1cI-ff-Iif"/>
+                        <outlet property="thermometerTable" destination="zX8-DI-L7Q" id="xjr-wd-2B0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="407" y="224"/>
         </scene>
         <!--Sync Controller-->
         <scene sceneID="sbA-H9-xBt">
@@ -119,7 +196,7 @@
                     <items>
                         <table alignment="left" id="wxJ-bM-u3X">
                             <items>
-                                <tableRow identifier="DepartureInfo" selectable="NO" id="9Pp-5e-xhR" customClass="DepartureInfo" customModule="TPGWatch_Extension">
+                                <tableRow identifier="DepartureInfo" id="9Pp-5e-xhR" customClass="DepartureInfo" customModule="TPGWatch_Extension">
                                     <group key="rootItem" width="1" height="40" alignment="left" layout="vertical" spacing="4" id="lT0-Rf-gc8">
                                         <items>
                                             <group width="1" alignment="left" spacing="3" id="bNb-un-MTe">
@@ -130,21 +207,30 @@
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
-                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.47843137250000001" green="0.73725490199999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </group>
-                                                    <label width="1" alignment="center" text="Name" minimumScaleFactor="0.90000000000000002" id="Be9-40-pf7">
-                                                        <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
-                                                    </label>
+                                                    <group width="0.80000000000000004" alignment="left" id="mSC-sI-MaQ">
+                                                        <items>
+                                                            <label alignment="left" text="Name" minimumScaleFactor="0.90000000000000002" id="Be9-40-pf7">
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                            </label>
+                                                            <imageView width="15" height="15" alignment="right" verticalAlignment="center" image="wheelchair" id="kdo-zB-FUM"/>
+                                                        </items>
+                                                    </group>
                                                 </items>
                                             </group>
                                             <group width="1" alignment="left" verticalAlignment="bottom" id="hmE-TA-J3b">
                                                 <items>
-                                                    <label alignment="right" verticalAlignment="center" text="1`" textAlignment="right" id="kNu-ig-JFM"/>
+                                                    <imageView width="10" height="10" alignment="left" verticalAlignment="center" image="waiting" contentMode="scaleAspectFit" id="rqN-t3-mpZ"/>
+                                                    <label alignment="left" verticalAlignment="center" text="1`" textAlignment="right" id="kNu-ig-JFM">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
                                                 </items>
                                             </group>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="PMRImage" destination="kdo-zB-FUM" id="4ah-Ya-Qmw"/>
                                         <outlet property="lineGroup" destination="i0G-NX-m57" id="5ft-KM-k5g"/>
                                         <outlet property="lineLabel" destination="o0d-o4-B2H" id="JBm-KN-UBs"/>
                                         <outlet property="stopNameLabel" destination="Be9-40-pf7" id="6G0-vC-4d3"/>
@@ -162,14 +248,14 @@
                                     </items>
                                 </group>
                                 <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" textAlignment="center" id="qsh-Zs-b0b">
-                                    <color key="textColor" red="1" green="0.3462042447" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="0.3462042447" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departure found" id="ao8-kT-Z0B">
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departures found" id="ao8-kT-Z0B">
                                     <fontDescription key="font" type="system" pointSize="12"/>
                                 </label>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="Reload" id="9qu-Wg-qa4">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="reloadTriggered" destination="cCm-JV-dAr" id="Unk-C8-hqc"/>
                                     </connections>
@@ -186,8 +272,8 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="175" y="228"/>
+            <point key="canvasLocation" x="126" y="224"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="1" green="0.4702892642" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="0.4702892642" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

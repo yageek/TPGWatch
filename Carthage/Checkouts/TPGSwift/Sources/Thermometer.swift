@@ -51,7 +51,7 @@ public struct Step: Decodable {
     public let timestamp: Date
 
     /// The arrival time if the schedure reference is provided
-    public let arrivalTime: Double?
+    public let arrivalTime: String?
 
     /// The reliabilty
     public let reliability: String

@@ -20,24 +20,23 @@ public struct NextDepartureRecord: Decodable {
     /// The next departures
     public let departures: [NextDeparture]
 
-
     /// A NextDeparture object
     public struct NextDeparture: Decodable {
 
         /// The departure code
-        public let code: Int
+        public let code: Int?
 
         /// The waiting time
         public let waitingTime: String
 
         /// The waiting time in millisecond
-        public let waitingTimeMillis: TimeInterval
+        public let waitingTimeMillis: TimeInterval?
 
         /// The connection waitingTime in millisecond
         public let connectionWaitingTime: TimeInterval?
 
         /// The reliability
-        public let reliability: String
+        public let reliability: String?
 
         /// The concerned line
         public let line: Connection

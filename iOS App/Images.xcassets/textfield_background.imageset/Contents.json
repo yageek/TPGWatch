@@ -15,7 +15,7 @@
           "left" : 8
         }
       },
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "filename" : "Rectangle.png",
       "scale" : "1x"
     },
@@ -34,7 +34,7 @@
           "left" : 16
         }
       },
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "filename" : "Rectangle@2x.png",
       "scale" : "2x"
     },
@@ -53,7 +53,7 @@
           "left" : 24
         }
       },
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "filename" : "Rectangle@3x.png",
       "scale" : "3x"
     }

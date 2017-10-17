@@ -61,7 +61,10 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
 
             cell.resetStacks()
             cell.stopLabel?.text = stop.name
-            renderingContext.renderLines(stop, cell: cell, indexPath: indexPath)
+            for image in renderingContext.renderLines(stop.code, indexPath: indexPath) {
+                cell.addImageLine(image)
+            }
+
         }
         return cell
     }
@@ -73,6 +76,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
+    // MARK: - Editing
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
 
@@ -82,6 +86,10 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
             updateCentralLabel()
         }
     }
+
+    // MARK: - Actions
+
+    @IBAction func unwindToBookmark(_ segue: UIStoryboardSegue) { }
 
     // MARK: NSFetchedResultsControllerDelegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -120,9 +128,6 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         label.center = tableView.center
 
         backgroundLabel = label
-
-        let nib = UINib(nibName: "StopCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "StopCell")
     }
 
     private func updateUI() {
@@ -159,6 +164,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     fileprivate func addImageToStopCell(_ image: UIImage, indexPath: IndexPath) {
         if let cell = self.tableView.cellForRow(at: indexPath) as? StopCell {
             cell.addImageLine(image)
+            tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
     // MARK: - LinesRendererContextDelegate
@@ -177,4 +183,10 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         guard let addButton = buttonItems.first as? UIControl else { return CGRect.zero }
         return addButton.convert(addButton.frame, to: nil)
     }
-   }
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? NextDeparturesVC, let index = tableView.indexPathForSelectedRow {
+            dest.stop = self.fetchedResultsController?.object(at: index)
+        }
+    }
+}

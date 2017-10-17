@@ -10,6 +10,7 @@ import WatchKit
 
 class DepartureInfo: NSObject {
 
+    @IBOutlet var PMRImage: WKInterfaceImage!
     @IBOutlet var stopNameLabel: WKInterfaceLabel!
     @IBOutlet var timeLabel: WKInterfaceLabel!
     @IBOutlet var lineGroup: WKInterfaceGroup!

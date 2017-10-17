@@ -1,0 +1,375 @@
+{
+  "timestamp": "2017-10-15T23:01:54+0200",
+  "stop": {
+      "stopCode": "31DC",
+      "stopName": "31 Décembre",
+      "connections": [
+          {
+              "lineCode": "1",
+              "destinationName": "Hôpital Trois-Chêne",
+              "destinationCode": "H. TROIS-CHENE"
+          },
+          {
+              "lineCode": "1",
+              "destinationName": "Jardin Botanique",
+              "destinationCode": "JAR. BOTANIQUE"
+          },
+          {
+              "lineCode": "1",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          {
+              "lineCode": "9",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          {
+              "lineCode": "9",
+              "destinationName": "Tours Lignon",
+              "destinationCode": "TOURS LIGNON"
+          },
+          {
+              "lineCode": "33",
+              "destinationName": "Puplinge",
+              "destinationCode": "PUPLINGE"
+          },
+          {
+              "lineCode": "33",
+              "destinationName": "Rive",
+              "destinationCode": "RIVE"
+          },
+          {
+              "lineCode": "A",
+              "destinationName": "Gy",
+              "destinationCode": "GY"
+          },
+          {
+              "lineCode": "A",
+              "destinationName": "Rive",
+              "destinationCode": "RIVE"
+          },
+          {
+              "lineCode": "NP",
+              "destinationName": "Corsier-Village",
+              "destinationCode": "CORSIER-VILLAGE"
+          }
+      ]
+  },
+  "departures": [
+      {
+          "departureCode": 84697,
+          "timestamp": "2017-10-15T23:01:54+0200",
+          "waitingTimeMillis": -22000,
+          "waitingTime": "0",
+          "line": {
+              "lineCode": "9",
+              "destinationName": "Tours Lignon",
+              "destinationCode": "TOURS LIGNON"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1109
+      },
+      {
+          "departureCode": 2011,
+          "timestamp": "2017-10-15T23:03:54+0200",
+          "waitingTimeMillis": 151000,
+          "waitingTime": "2",
+          "line": {
+              "lineCode": "1",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1187,
+          "disruptions": [
+              {
+                  "disruptionCode": 1710150003,
+                  "timestamp": "2017-10-15T03:25:00+0200",
+                  "place": "Direction Jardin Botanique",
+                  "nature": "Travaux - Boulevard des Philosophes",
+                  "consequence": "La ligne est détournée via Place de Neuve entre Hôpital et Cirque. L'arrêt Philosophes n'est pas desservi. L'arrêt Plainpalais est déplacé à l'angle rue du Conseil Général et rue De-Saussure.\t\n"
+              }
+          ]
+      },
+      {
+          "departureCode": 83251,
+          "timestamp": "2017-10-15T23:11:54+0200",
+          "waitingTimeMillis": 587000,
+          "waitingTime": "9",
+          "line": {
+              "lineCode": "1",
+              "destinationName": "Jardin Botanique",
+              "destinationCode": "JAR. BOTANIQUE"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1155,
+          "disruptions": [
+              {
+                  "disruptionCode": 1710150003,
+                  "timestamp": "2017-10-15T03:25:00+0200",
+                  "place": "Direction Jardin Botanique",
+                  "nature": "Travaux - Boulevard des Philosophes",
+                  "consequence": "La ligne est détournée via Place de Neuve entre Hôpital et Cirque. L'arrêt Philosophes n'est pas desservi. L'arrêt Plainpalais est déplacé à l'angle rue du Conseil Général et rue De-Saussure.\t\n"
+              }
+          ]
+      },
+      {
+          "departureCode": 83978,
+          "timestamp": "2017-10-15T23:12:54+0200",
+          "waitingTimeMillis": 648000,
+          "waitingTime": "10",
+          "line": {
+              "lineCode": "9",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1163
+      },
+      {
+          "departureCode": 87415,
+          "timestamp": "2017-10-15T23:13:54+0200",
+          "waitingTimeMillis": 703000,
+          "waitingTime": "11",
+          "line": {
+              "lineCode": "33",
+              "destinationName": "Puplinge",
+              "destinationCode": "PUPLINGE"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "AB",
+          "vehiculeNo": 528
+      },
+      {
+          "departureCode": 48817,
+          "timestamp": "2017-10-15T23:19:54+0200",
+          "waitingTimeMillis": 1105000,
+          "waitingTime": "18",
+          "line": {
+              "lineCode": "9",
+              "destinationName": "Tours Lignon",
+              "destinationCode": "TOURS LIGNON"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1182
+      },
+      {
+          "departureCode": 86584,
+          "timestamp": "2017-10-15T23:21:54+0200",
+          "waitingTimeMillis": 1226000,
+          "waitingTime": "20",
+          "line": {
+              "lineCode": "1",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1106,
+          "disruptions": [
+              {
+                  "disruptionCode": 1710150003,
+                  "timestamp": "2017-10-15T03:25:00+0200",
+                  "place": "Direction Jardin Botanique",
+                  "nature": "Travaux - Boulevard des Philosophes",
+                  "consequence": "La ligne est détournée via Place de Neuve entre Hôpital et Cirque. L'arrêt Philosophes n'est pas desservi. L'arrêt Plainpalais est déplacé à l'angle rue du Conseil Général et rue De-Saussure.\t\n"
+              }
+          ]
+      },
+      {
+          "departureCode": 89171,
+          "timestamp": "2017-10-15T23:25:54+0200",
+          "waitingTimeMillis": 1449000,
+          "waitingTime": "24",
+          "line": {
+              "lineCode": "33",
+              "destinationName": "Rive",
+              "destinationCode": "RIVE"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "AB",
+          "vehiculeNo": 531
+      },
+      {
+          "departureCode": 2038,
+          "timestamp": "2017-10-15T23:29:54+0200",
+          "waitingTimeMillis": 1698000,
+          "waitingTime": "28",
+          "line": {
+              "lineCode": "1",
+              "destinationName": "Jardin Botanique",
+              "destinationCode": "JAR. BOTANIQUE"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1187,
+          "disruptions": [
+              {
+                  "disruptionCode": 1710150003,
+                  "timestamp": "2017-10-15T03:25:00+0200",
+                  "place": "Direction Jardin Botanique",
+                  "nature": "Travaux - Boulevard des Philosophes",
+                  "consequence": "La ligne est détournée via Place de Neuve entre Hôpital et Cirque. L'arrêt Philosophes n'est pas desservi. L'arrêt Plainpalais est déplacé à l'angle rue du Conseil Général et rue De-Saussure.\t\n"
+              }
+          ]
+      },
+      {
+          "departureCode": 721,
+          "timestamp": "2017-10-15T23:32:54+0200",
+          "waitingTimeMillis": 1866000,
+          "waitingTime": "31",
+          "line": {
+              "lineCode": "9",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1146
+      },
+      {
+          "departureCode": 84005,
+          "timestamp": "2017-10-15T23:39:54+0200",
+          "waitingTimeMillis": 2305000,
+          "waitingTime": "38",
+          "line": {
+              "lineCode": "9",
+              "destinationName": "Tours Lignon",
+              "destinationCode": "TOURS LIGNON"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1163
+      },
+      {
+          "departureCode": 67051,
+          "timestamp": "2017-10-15T23:42:54+0200",
+          "waitingTimeMillis": 2476000,
+          "waitingTime": "41",
+          "line": {
+              "lineCode": "1",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1104,
+          "disruptions": [
+              {
+                  "disruptionCode": 1710150003,
+                  "timestamp": "2017-10-15T03:25:00+0200",
+                  "place": "Direction Jardin Botanique",
+                  "nature": "Travaux - Boulevard des Philosophes",
+                  "consequence": "La ligne est détournée via Place de Neuve entre Hôpital et Cirque. L'arrêt Philosophes n'est pas desservi. L'arrêt Plainpalais est déplacé à l'angle rue du Conseil Général et rue De-Saussure.\t\n"
+              }
+          ]
+      },
+      {
+          "departureCode": 89176,
+          "timestamp": "2017-10-15T23:48:54+0200",
+          "waitingTimeMillis": 2803000,
+          "waitingTime": "46",
+          "line": {
+              "lineCode": "A",
+              "destinationName": "Gy",
+              "destinationCode": "GY"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "AB",
+          "vehiculeNo": 531
+      },
+      {
+          "departureCode": 86611,
+          "timestamp": "2017-10-15T23:49:54+0200",
+          "waitingTimeMillis": 2898000,
+          "waitingTime": "48",
+          "line": {
+              "lineCode": "1",
+              "destinationName": "Jardin Botanique",
+              "destinationCode": "JAR. BOTANIQUE"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1106,
+          "disruptions": [
+              {
+                  "disruptionCode": 1710150003,
+                  "timestamp": "2017-10-15T03:25:00+0200",
+                  "place": "Direction Jardin Botanique",
+                  "nature": "Travaux - Boulevard des Philosophes",
+                  "consequence": "La ligne est détournée via Place de Neuve entre Hôpital et Cirque. L'arrêt Philosophes n'est pas desservi. L'arrêt Plainpalais est déplacé à l'angle rue du Conseil Général et rue De-Saussure.\t\n"
+              }
+          ]
+      },
+      {
+          "departureCode": 49946,
+          "timestamp": "2017-10-15T23:52:54+0200",
+          "waitingTimeMillis": 3046000,
+          "waitingTime": "50",
+          "line": {
+              "lineCode": "9",
+              "destinationName": "Petit-Bel-Air",
+              "destinationCode": "PETIT-BEL-AIR"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "ABA",
+          "vehiculeNo": 1189
+      },
+      {
+          "departureCode": 88320,
+          "timestamp": "2017-10-15T23:54:54+0200",
+          "waitingTimeMillis": 3180000,
+          "waitingTime": "53",
+          "line": {
+              "lineCode": "A",
+              "destinationName": "Rive",
+              "destinationCode": "RIVE"
+          },
+          "reliability": "F",
+          "characteristics": "PMR",
+          "vehiculeType": "AB",
+          "vehiculeNo": 533
+      },
+      {
+          "departureCode": 108814,
+          "timestamp": "2017-10-16T03:09:54+0200",
+          "waitingTimeMillis": 14906000,
+          "waitingTime": "&gt;1h",
+          "line": {
+              "lineCode": "NP",
+              "destinationName": "Corsier-Village",
+              "destinationCode": "CORSIER-VILLAGE"
+          },
+          "reliability": "F"
+      },
+      {
+          "waitingTime": "no more",
+          "line": {
+              "lineCode": "1",
+              "destinationName": "Hôpital Trois-Chêne",
+              "destinationCode": "H. TROIS-CHENE"
+          }
+      }
+  ]
+}

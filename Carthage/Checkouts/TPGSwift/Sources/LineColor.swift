@@ -57,7 +57,7 @@ func colorFromString(hex: String) throws -> Color {
     } else {
         throw ColorError.scanError
     }
-    return Color(red:red, green:green, blue:blue, alpha:alpha)
+    return Color(red: red, green: green, blue: blue, alpha: alpha)
 }
 
 // MARK: - LineColor

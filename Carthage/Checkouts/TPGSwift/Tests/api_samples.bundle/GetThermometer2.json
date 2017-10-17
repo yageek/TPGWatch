@@ -1,0 +1,1875 @@
+{
+    "timestamp": "2017-10-16T21:10:13+0200",
+    "stop": {
+        "stopCode": "31DC",
+        "stopName": "31 Décembre",
+        "connections": [
+            {
+                "lineCode": "1",
+                "destinationName": "Hôpital Trois-Chêne",
+                "destinationCode": "H. TROIS-CHENE"
+            },
+            {
+                "lineCode": "1",
+                "destinationName": "Jardin Botanique",
+                "destinationCode": "JAR. BOTANIQUE"
+            },
+            {
+                "lineCode": "1",
+                "destinationName": "Petit-Bel-Air",
+                "destinationCode": "PETIT-BEL-AIR"
+            },
+            {
+                "lineCode": "9",
+                "destinationName": "Petit-Bel-Air",
+                "destinationCode": "PETIT-BEL-AIR"
+            },
+            {
+                "lineCode": "9",
+                "destinationName": "Tours Lignon",
+                "destinationCode": "TOURS LIGNON"
+            },
+            {
+                "lineCode": "33",
+                "destinationName": "Puplinge",
+                "destinationCode": "PUPLINGE"
+            },
+            {
+                "lineCode": "33",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            },
+            {
+                "lineCode": "80",
+                "destinationName": "Bus scolaire",
+                "destinationCode": "BUS SCOLAIRE"
+            },
+            {
+                "lineCode": "A",
+                "destinationName": "Gy",
+                "destinationCode": "GY"
+            },
+            {
+                "lineCode": "A",
+                "destinationName": "Rive",
+                "destinationCode": "RIVE"
+            }
+        ]
+    },
+    "lineCode": "1",
+    "destinationName": "Petit-Bel-Air",
+    "destinationCode": "PETIT-BEL-AIR",
+    "vehiculeType": "ABA",
+    "vehiculeNo": 1120,
+    "steps": [
+        {
+            "departureCode": 115740,
+            "timestamp": "2017-10-16T20:40:07+0200",
+            "stop": {
+                "stopCode": "JARB",
+                "stopName": "Jardin Botanique",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "11",
+                        "destinationName": "Bout-du-Monde",
+                        "destinationCode": "BOUT-DU-MONDE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "28",
+                        "destinationName": "Parfumerie",
+                        "destinationCode": "PARFUMERIE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115741,
+            "timestamp": "2017-10-16T20:41:24+0200",
+            "stop": {
+                "stopCode": "SECH",
+                "stopName": "Sécheron",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115742,
+            "timestamp": "2017-10-16T20:42:46+0200",
+            "stop": {
+                "stopCode": "CBRI",
+                "stopName": "De-Chateaubriand",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115743,
+            "timestamp": "2017-10-16T20:44:21+0200",
+            "stop": {
+                "stopCode": "GAUT",
+                "stopName": "Gautier",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115744,
+            "timestamp": "2017-10-16T20:45:24+0200",
+            "stop": {
+                "stopCode": "NAVI",
+                "stopName": "Navigation",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115745,
+            "timestamp": "2017-10-16T20:46:06+0200",
+            "stop": {
+                "stopCode": "MOTU",
+                "stopName": "Monthoux",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115746,
+            "timestamp": "2017-10-16T20:46:58+0200",
+            "stop": {
+                "stopCode": "ALPE",
+                "stopName": "Alpes",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115747,
+            "timestamp": "2017-10-16T20:49:26+0200",
+            "stop": {
+                "stopCode": "CVIN",
+                "stopName": "Gare Cornavin",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Gardiol",
+                        "destinationCode": "GARDIOL"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Rieu",
+                        "destinationCode": "RIEU"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "6",
+                        "destinationName": "Vernier",
+                        "destinationCode": "VERNIER"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "OMS",
+                        "destinationCode": "OMS"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "Veyrier",
+                        "destinationCode": "VEYRIER"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "Veyrier-Douane",
+                        "destinationCode": "VEYRIER-DOUANE"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "Veyrier-Tournettes",
+                        "destinationCode": "VEYRIER-TOURNET."
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "10",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Bachet",
+                        "destinationCode": "BACHET"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Nations",
+                        "destinationCode": "NATIONS"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes-Bachet",
+                        "destinationCode": "PALETTES-BACHET"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "CERN",
+                        "destinationCode": "CERN"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "Palettes-Bachet",
+                        "destinationCode": "PALETTES-BACHET"
+                    },
+                    {
+                        "lineCode": "19",
+                        "destinationName": "Vernier",
+                        "destinationCode": "VERNIER"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "61",
+                        "destinationName": "Annemasse Gare",
+                        "destinationCode": "ANNEMASSE GARE"
+                    },
+                    {
+                        "lineCode": "F",
+                        "destinationName": "Ferney-Voltaire",
+                        "destinationCode": "FERNEY-VOLTAIRE"
+                    },
+                    {
+                        "lineCode": "F",
+                        "destinationName": "Gex",
+                        "destinationCode": "GEX"
+                    },
+                    {
+                        "lineCode": "G+",
+                        "destinationName": "Veigy-Douane",
+                        "destinationCode": "VEIGY-DOUANE"
+                    },
+                    {
+                        "lineCode": "V",
+                        "destinationName": "CS La Bécassière",
+                        "destinationCode": "CS LA BECASSIERE"
+                    },
+                    {
+                        "lineCode": "Z",
+                        "destinationName": "Bois-Chatton",
+                        "destinationCode": "BOIS-CHATTON"
+                    },
+                    {
+                        "lineCode": "Z",
+                        "destinationName": "Bossy",
+                        "destinationCode": "BOSSY"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115748,
+            "timestamp": "2017-10-16T20:51:26+0200",
+            "stop": {
+                "stopCode": "ISAM",
+                "stopName": "Mercier",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "7",
+                        "destinationName": "Hôpital",
+                        "destinationCode": "HÔPITAL"
+                    },
+                    {
+                        "lineCode": "7",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "7",
+                        "destinationName": "Lignon",
+                        "destinationCode": "LIGNON"
+                    },
+                    {
+                        "lineCode": "7",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Bachet",
+                        "destinationCode": "BACHET"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes-Bachet",
+                        "destinationCode": "PALETTES-BACHET"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115749,
+            "timestamp": "2017-10-16T20:52:46+0200",
+            "stop": {
+                "stopCode": "STND",
+                "stopName": "Stand",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Bachet",
+                        "destinationCode": "BACHET"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Nations",
+                        "destinationCode": "NATIONS"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes-Bachet",
+                        "destinationCode": "PALETTES-BACHET"
+                    },
+                    {
+                        "lineCode": "D",
+                        "destinationName": "Bel-Air",
+                        "destinationCode": "BEL-AIR"
+                    },
+                    {
+                        "lineCode": "D",
+                        "destinationName": "Saint-Julien",
+                        "destinationCode": "ST-JULIEN-GARE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115750,
+            "timestamp": "2017-10-16T20:53:46+0200",
+            "stop": {
+                "stopCode": "CIRQ",
+                "stopName": "Cirque",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "2",
+                        "destinationName": "Genève-Plage",
+                        "destinationCode": "GENEVE-PLAGE"
+                    },
+                    {
+                        "lineCode": "2",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "2",
+                        "destinationName": "Onex-Cité",
+                        "destinationCode": "ONEX-CITE"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Champel",
+                        "destinationCode": "CHAMPEL"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Gardiol",
+                        "destinationCode": "GARDIOL"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "6",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "7",
+                        "destinationName": "Hôpital",
+                        "destinationCode": "HÔPITAL"
+                    },
+                    {
+                        "lineCode": "7",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "7",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "10",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "10",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "10",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Bachet",
+                        "destinationCode": "BACHET"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Nations",
+                        "destinationCode": "NATIONS"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "15",
+                        "destinationName": "Palettes-Bachet",
+                        "destinationCode": "PALETTES-BACHET"
+                    },
+                    {
+                        "lineCode": "19",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "19",
+                        "destinationName": "Onex-Cité",
+                        "destinationCode": "ONEX-CITE"
+                    },
+                    {
+                        "lineCode": "19",
+                        "destinationName": "Vernier",
+                        "destinationCode": "VERNIER"
+                    },
+                    {
+                        "lineCode": "35",
+                        "destinationName": "Beau-Séjour",
+                        "destinationCode": "BEAU-SEJOUR"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115751,
+            "timestamp": "2017-10-16T20:54:46+0200",
+            "stop": {
+                "stopCode": "EMED",
+                "stopName": "Ecole-Médecine",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "35",
+                        "destinationName": "Beau-Séjour",
+                        "destinationCode": "BEAU-SEJOUR"
+                    },
+                    {
+                        "lineCode": "35",
+                        "destinationName": "Sainte-Clotilde",
+                        "destinationCode": "SAINTE-CLOTILDE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115752,
+            "timestamp": "2017-10-16T20:56:46+0200",
+            "stop": {
+                "stopCode": "PTAR",
+                "stopName": "Pont-d'Arve",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "Moillesulaz",
+                        "destinationCode": "MOILLESULAZ"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Meyrin-Gravière",
+                        "destinationCode": "MEYRIN-GRAVIERE"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "P+R Bernex",
+                        "destinationCode": "P+R BERNEX"
+                    },
+                    {
+                        "lineCode": "14",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "CERN",
+                        "destinationCode": "CERN"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "18",
+                        "destinationName": "Palettes-Bachet",
+                        "destinationCode": "PALETTES-BACHET"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115753,
+            "timestamp": "2017-10-16T21:00:07+0200",
+            "stop": {
+                "stopCode": "LOHO",
+                "stopName": "Lombard hopital",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115754,
+            "timestamp": "2017-10-16T21:02:06+0200",
+            "stop": {
+                "stopCode": "CLAP",
+                "stopName": "Claparède",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Champel",
+                        "destinationCode": "CHAMPEL"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Gardiol",
+                        "destinationCode": "GARDIOL"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115755,
+            "timestamp": "2017-10-16T21:03:26+0200",
+            "stop": {
+                "stopCode": "PESC",
+                "stopName": "Peschier",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Champel",
+                        "destinationCode": "CHAMPEL"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Gardiol",
+                        "destinationCode": "GARDIOL"
+                    },
+                    {
+                        "lineCode": "3",
+                        "destinationName": "Jonction",
+                        "destinationCode": "JONCTION"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115756,
+            "timestamp": "2017-10-16T21:04:06+0200",
+            "stop": {
+                "stopCode": "CTMI",
+                "stopName": "Contamines",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "OMS",
+                        "destinationCode": "OMS"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "Veyrier",
+                        "destinationCode": "VEYRIER"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "Veyrier-Douane",
+                        "destinationCode": "VEYRIER-DOUANE"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "Veyrier-Tournettes",
+                        "destinationCode": "VEYRIER-TOURNET."
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115757,
+            "timestamp": "2017-10-16T21:05:48+0200",
+            "stop": {
+                "stopCode": "MUSE",
+                "stopName": "Muséum",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "5",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Rieu",
+                        "destinationCode": "RIEU"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "8",
+                        "destinationName": "OMS",
+                        "destinationCode": "OMS"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115758,
+            "timestamp": "2017-10-16T21:07:36+0200",
+            "stop": {
+                "stopCode": "TRSI",
+                "stopName": "Terrassière",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Aéroport",
+                        "destinationCode": "AEROPORT"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Rieu",
+                        "destinationCode": "RIEU"
+                    },
+                    {
+                        "lineCode": "5+",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "Carouge",
+                        "destinationCode": "CAROUGE"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "De-Staël",
+                        "destinationCode": "DE STAEL"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "Moillesulaz",
+                        "destinationCode": "MOILLESULAZ"
+                    },
+                    {
+                        "lineCode": "12",
+                        "destinationName": "Palettes",
+                        "destinationCode": "PALETTES"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "25",
+                        "destinationName": "Thônex-Vallard",
+                        "destinationCode": "THONEX-VALLARD"
+                    },
+                    {
+                        "lineCode": "61",
+                        "destinationName": "Annemasse Gare",
+                        "destinationCode": "ANNEMASSE GARE"
+                    },
+                    {
+                        "lineCode": "61",
+                        "destinationName": "Gare Cornavin",
+                        "destinationCode": "GARE CORNAVIN"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "visible": false
+        },
+        {
+            "departureCode": 115759,
+            "timestamp": "2017-10-16T21:10:06+0200",
+            "stop": {
+                "stopCode": "31DC",
+                "stopName": "31 Décembre",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Puplinge",
+                        "destinationCode": "PUPLINGE"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    },
+                    {
+                        "lineCode": "80",
+                        "destinationName": "Bus scolaire",
+                        "destinationCode": "BUS SCOLAIRE"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Gy",
+                        "destinationCode": "GY"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "00",
+            "visible": true
+        },
+        {
+            "departureCode": 115760,
+            "timestamp": "2017-10-16T21:11:14+0200",
+            "stop": {
+                "stopCode": "MTCH",
+                "stopName": "Montchoisy",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Puplinge",
+                        "destinationCode": "PUPLINGE"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    },
+                    {
+                        "lineCode": "80",
+                        "destinationName": "Bus scolaire",
+                        "destinationCode": "BUS SCOLAIRE"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Gy",
+                        "destinationCode": "GY"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "1",
+            "visible": true
+        },
+        {
+            "departureCode": 115761,
+            "timestamp": "2017-10-16T21:11:58+0200",
+            "stop": {
+                "stopCode": "CUIS",
+                "stopName": "Cuisine",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Puplinge",
+                        "destinationCode": "PUPLINGE"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    },
+                    {
+                        "lineCode": "80",
+                        "destinationName": "Bus scolaire",
+                        "destinationCode": "BUS SCOLAIRE"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Gy",
+                        "destinationCode": "GY"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "2",
+            "visible": true
+        },
+        {
+            "departureCode": 115762,
+            "timestamp": "2017-10-16T21:13:04+0200",
+            "stop": {
+                "stopCode": "FRON",
+                "stopName": "Frontenex",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Puplinge",
+                        "destinationCode": "PUPLINGE"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    },
+                    {
+                        "lineCode": "80",
+                        "destinationName": "Bus scolaire",
+                        "destinationCode": "BUS SCOLAIRE"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Gy",
+                        "destinationCode": "GY"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "3",
+            "visible": true
+        },
+        {
+            "departureCode": 115763,
+            "timestamp": "2017-10-16T21:14:04+0200",
+            "stop": {
+                "stopCode": "GRDL",
+                "stopName": "Gradelle",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Puplinge",
+                        "destinationCode": "PUPLINGE"
+                    },
+                    {
+                        "lineCode": "33",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    },
+                    {
+                        "lineCode": "80",
+                        "destinationName": "Bus scolaire",
+                        "destinationCode": "BUS SCOLAIRE"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Gy",
+                        "destinationCode": "GY"
+                    },
+                    {
+                        "lineCode": "A",
+                        "destinationName": "Rive",
+                        "destinationCode": "RIVE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "4",
+            "visible": true
+        },
+        {
+            "departureCode": 115764,
+            "timestamp": "2017-10-16T21:14:47+0200",
+            "stop": {
+                "stopCode": "CMOL",
+                "stopName": "Clos du Môlan",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "4",
+            "visible": true
+        },
+        {
+            "departureCode": 115765,
+            "timestamp": "2017-10-16T21:15:44+0200",
+            "stop": {
+                "stopCode": "CEPR",
+                "stopName": "Ch. de l'Eperon",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "5",
+            "visible": true
+        },
+        {
+            "departureCode": 115766,
+            "timestamp": "2017-10-16T21:16:23+0200",
+            "stop": {
+                "stopCode": "FOUR",
+                "stopName": "Fourches",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "6",
+            "visible": true
+        },
+        {
+            "departureCode": 115767,
+            "timestamp": "2017-10-16T21:17:11+0200",
+            "stop": {
+                "stopCode": "INDE",
+                "stopName": "Coq-d'Inde",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "7",
+            "visible": true
+        },
+        {
+            "departureCode": 115768,
+            "timestamp": "2017-10-16T21:17:42+0200",
+            "stop": {
+                "stopCode": "CAST",
+                "stopName": "Castan",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "7",
+            "visible": true
+        },
+        {
+            "departureCode": 115769,
+            "timestamp": "2017-10-16T21:18:31+0200",
+            "stop": {
+                "stopCode": "MGNE",
+                "stopName": "Montagne",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "34",
+                        "destinationName": "Chevrier",
+                        "destinationCode": "CHEVRIER"
+                    },
+                    {
+                        "lineCode": "34",
+                        "destinationName": "Veyrier-Tournettes",
+                        "destinationCode": "VEYRIER-TOURNET."
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "8",
+            "visible": true
+        },
+        {
+            "departureCode": 115770,
+            "timestamp": "2017-10-16T21:19:13+0200",
+            "stop": {
+                "stopCode": "SEYM",
+                "stopName": "Seymaz",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Petit-Bel-Air",
+                        "destinationCode": "PETIT-BEL-AIR"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "34",
+                        "destinationName": "Chevrier",
+                        "destinationCode": "CHEVRIER"
+                    },
+                    {
+                        "lineCode": "34",
+                        "destinationName": "Veyrier-Tournettes",
+                        "destinationCode": "VEYRIER-TOURNET."
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "9",
+            "visible": true
+        },
+        {
+            "departureCode": 115771,
+            "timestamp": "2017-10-16T21:20:03+0200",
+            "stop": {
+                "stopCode": "PBAL",
+                "stopName": "Petit-Bel-Air",
+                "connections": [
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Hôpital Trois-Chêne",
+                        "destinationCode": "H. TROIS-CHENE"
+                    },
+                    {
+                        "lineCode": "1",
+                        "destinationName": "Jardin Botanique",
+                        "destinationCode": "JAR. BOTANIQUE"
+                    },
+                    {
+                        "lineCode": "9",
+                        "destinationName": "Tours Lignon",
+                        "destinationCode": "TOURS LIGNON"
+                    },
+                    {
+                        "lineCode": "31",
+                        "destinationName": "P+R Sous-Moulin",
+                        "destinationCode": "P+R SOUS-MOULIN"
+                    },
+                    {
+                        "lineCode": "31",
+                        "destinationName": "Puplinge",
+                        "destinationCode": "PUPLINGE"
+                    }
+                ]
+            },
+            "deviation": false,
+            "reliability": "F",
+            "arrivalTime": "10",
+            "visible": true
+        }
+    ]
+}

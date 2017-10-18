@@ -17,6 +17,7 @@
 		0B2258CE1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */; };
 		0B2258CF1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */; };
 		0B25C0521F9699B700D2D77B /* LoadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25C0511F9699B700D2D77B /* LoadingTableView.swift */; };
+		0B25C0561F96A6FF00D2D77B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25C0551F96A6FF00D2D77B /* SnapshotHelper.swift */; };
 		0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007481D340082008877F9 /* Palette.swift */; };
 		0B300DC41F94B727008FEF9E /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B300DC31F94B727008FEF9E /* TimeUtils.swift */; };
 		0B300DC51F94B727008FEF9E /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B300DC31F94B727008FEF9E /* TimeUtils.swift */; };
@@ -36,7 +37,6 @@
 		0B3F20021D3C232D0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20041D3C232D0093AC66 /* InfoPlist.strings */; };
 		0B3F20071D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20091D3C232E0093AC66 /* InfoPlist.strings */; };
 		0B3F200C1D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F200E1D3C232E0093AC66 /* InfoPlist.strings */; };
-		0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */; };
 		0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */; };
 		0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */; };
 		0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */; };
@@ -162,6 +162,7 @@
 		0B2258CA1F90EFCC00E04111 /* NextDeparturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDeparturesVC.swift; sourceTree = "<group>"; };
 		0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetNextDeparturesProcedure.swift; path = Common/GetNextDeparturesProcedure.swift; sourceTree = "<group>"; };
 		0B25C0511F9699B700D2D77B /* LoadingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableView.swift; sourceTree = "<group>"; };
+		0B25C0551F96A6FF00D2D77B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0B300DC31F94B727008FEF9E /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeUtils.swift; path = Common/TimeUtils.swift; sourceTree = "<group>"; };
 		0B32C3821D34DEA200D97205 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B32C3851D34DEA200D97205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -193,7 +194,6 @@
 		0B3F201D1D3C27B00093AC66 /* TPGWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPGWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGWatchUITests.swift; sourceTree = "<group>"; };
 		0B3F20211D3C27B00093AC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		0B3F20311D3C43CA0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20331D3C43DA0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 1_to_2_model.xcmappingmodel; sourceTree = "<group>"; };
@@ -362,8 +362,8 @@
 		0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0B25C0551F96A6FF00D2D77B /* SnapshotHelper.swift */,
 				0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */,
-				0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */,
 				0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */,
 				0B3F20211D3C27B00093AC66 /* Info.plist */,
 			);
@@ -862,8 +862,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */,
 				0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */,
+				0B25C0561F96A6FF00D2D77B /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

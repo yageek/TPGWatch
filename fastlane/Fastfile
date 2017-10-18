@@ -1,0 +1,64 @@
+# Customise this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+
+# Configuration
+
+languages = [
+  "en-US",
+  "de-DE",
+  "fr-FR"
+]
+
+# If you want to automatically update fastlane if a new version is available:
+update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.62.0"
+
+default_platform :ios
+
+platform :ios do
+  lane :screenshots do
+    # Legacy
+    snapshot(
+      skip_open_summary: true,
+      ios_version: "10.3.1",
+      concurrent_simulators: true,
+      scheme: "iOS App",
+      languages: languages,
+      devices: [
+        "iPhone 5s",
+      ],
+      clean: true
+    )
+
+    # iOS 11
+    snapshot(
+      skip_open_summary: true,
+      concurrent_simulators: true,
+      scheme: "iOS App",
+      languages: languages,
+      devices: [
+        "iPhone SE",
+        "iPhone 6s",
+        "iPhone 6 Plus",
+        "iPhone 7",
+        "iPhone 7 Plus",
+        "iPhone 8",
+        "iPhone X"
+      ],
+      clean: true
+    )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used. No personal data is recorded. 
+# Learn more at https://github.com/fastlane/fastlane#metrics

@@ -197,8 +197,15 @@
                             <outlet property="delegate" destination="q1j-jb-Lee" id="D09-i5-oF7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Next Departures" id="MB9-o4-eU6"/>
+                    <navigationItem key="navigationItem" title="Next Departures" id="MB9-o4-eU6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Jwi-w7-aqM">
+                            <connections>
+                                <action selector="refreshTriggered:" destination="q1j-jb-Lee" id="gk2-RB-G0z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="refreshItem" destination="Jwi-w7-aqM" id="Tr7-s8-lCq"/>
                         <segue destination="Suc-BE-Mn5" kind="unwind" identifier="unwindToBookmark" unwindAction="unwindToBookmark:" id="fwz-85-t9p"/>
                     </connections>
                 </tableViewController>
@@ -330,8 +337,15 @@
                             <outlet property="delegate" destination="7p8-VU-mOZ" id="ncU-3f-loT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Some Title" id="HFf-Ls-0ep"/>
+                    <navigationItem key="navigationItem" title="Some Title" id="HFf-Ls-0ep">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="xMq-hg-9eV">
+                            <connections>
+                                <action selector="reloadTriggered:" destination="7p8-VU-mOZ" id="y0J-2m-t9l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="loadItem" destination="xMq-hg-9eV" id="P9a-qI-RXj"/>
                         <segue destination="HAU-XP-yih" kind="unwind" identifier="unwindToNextDepartures" unwindAction="unwindToNextDepartures:" id="xwb-2H-w5D"/>
                     </connections>
                 </tableViewController>

@@ -16,6 +16,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     private var nextDepartures: [NextDepartureRecord.NextDeparture] = []
 
+    @IBOutlet weak var refreshItem: UIBarButtonItem!
     // Concurrency
     private let queue = ProcedureQueue()
 
@@ -37,7 +38,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
-        downloadData(stop: stop)
+        downloadData()
         renderingContext.delegate = self
     }
 
@@ -77,6 +78,10 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
     // MARK: - Actions
     @IBAction func unwindToNextDepartures(_ segue: UIStoryboardSegue) { }
 
+    @IBAction func refreshTriggered(_ sender: Any) {
+        downloadData()
+    }
+
     // MARK: - Helpers
     private func updateUI(record: NextDepartureRecord) {
         clearBackground()
@@ -89,7 +94,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         }
     }
 
-    private func downloadData(stop: Stop?) {
+    private func downloadData() {
         guard let stop = stop else {
             return
         }
@@ -98,6 +103,11 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     private func downloadNextDepartures(stopCode: String) {
 
+        self.nextDepartures = []
+        self.tableView.reloadData()
+        self.setLoading()
+
+        refreshItem.isEnabled = false
         let getDepartures = GetNextDeparturesProcedure(code: stopCode) { [unowned self] (record, error) in
 
             if let error = error {
@@ -112,11 +122,18 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
             }
         }
 
-        getDepartures.addWillExecuteBlockObserver { (_, _) in
+        getDepartures.addWillExecuteBlockObserver { [unowned self] (_, _) in
             ProcedureQueue.main.addOperation { [unowned self] in
                 self.setLoading()
             }
         }
+
+        getDepartures.addDidFinishBlockObserver { [unowned self] (_, _) in
+            ProcedureQueue.main.addOperation { [unowned self] in
+                self.refreshItem.isEnabled = true
+            }
+        }
+
         queue.add(operation: getDepartures)
     }
 

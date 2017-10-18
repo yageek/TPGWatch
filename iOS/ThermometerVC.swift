@@ -17,6 +17,8 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
     var departure: NextDepartureRecord.NextDeparture?
     var stop: Stop?
 
+    @IBOutlet weak var loadItem: UIBarButtonItem!
+
     private var thermometer: Thermometer?
     private var steps: [Step] = []
     private let formatter: DateFormatter = {
@@ -81,6 +83,10 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
 
         return cell
     }
+    @IBAction func reloadTriggered(_ sender: Any) {
+        downloadData()
+    }
+
     // MARK: - Helpers
     func downloadData() {
         guard let departureCode = departure?.code else {
@@ -117,6 +123,10 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
     }
 
     private func downloadThermometer(departureCode: Int) {
+        self.steps = []
+        self.tableView.reloadData()
+        self.setLoading()
+        self.loadItem.isEnabled = false
 
         let thermometer = GetThermometerProcedure(departureCode: departureCode) { [unowned self] (thermometer, error) in
             if let error = error {
@@ -128,12 +138,17 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
             }
         }
 
-        thermometer.addWillExecuteBlockObserver { (_, _) in
+        thermometer.addWillExecuteBlockObserver {  [unowned self] (_, _) in
             ProcedureQueue.main.addOperation { [unowned self] in
                 self.setLoading()
             }
         }
 
+        thermometer.addDidFinishBlockObserver { [unowned self]  (_, _) in
+            ProcedureQueue.main.addOperation {
+                 self.loadItem.isEnabled = true
+            }
+        }
         queue.add(operation: thermometer)
     }
 

@@ -53,8 +53,8 @@ final class DownloadProcedure: GroupProcedure, OutputProcedure {
 
         super.init(operations: [network, decode])
 
-        decode.addDidFinishBlockObserver { [unowned self](procedure, _)  in
-            self.output = procedure.output
+        decode.addDidFinishBlockObserver { [weak self](procedure, _)  in
+            self?.output = procedure.output
         }
 
         #if os(iOS)

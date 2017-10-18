@@ -14,7 +14,11 @@ import ProcedureKitMobile
 final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, UISearchControllerDelegate, LinesRendererContextDelegate {
 
     // Concurrency
-    private let queue = ProcedureQueue()
+    private let queue: ProcedureQueue = {
+         let queue = ProcedureQueue()
+         queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
 
     var renderingContext: LinesRendererContext = {
         let rendering = LinesRendererContext(context: Store.shared.viewContext)

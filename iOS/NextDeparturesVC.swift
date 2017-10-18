@@ -18,7 +18,12 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     @IBOutlet weak var refreshItem: UIBarButtonItem!
     // Concurrency
-    private let queue = ProcedureQueue()
+    private let queue: ProcedureQueue = {
+        let queue = ProcedureQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+
 
     var renderingContext: LinesRendererContext = {
         let rendering = LinesRendererContext(context: Store.shared.viewContext)

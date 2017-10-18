@@ -12,7 +12,13 @@ import TPGSwift
 import CoreData
 
 final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDelegate, LinesRendererContextDelegate {
-    let queue = ProcedureQueue()
+    // Concurrency
+    private let queue: ProcedureQueue = {
+        let queue = ProcedureQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+
     var renderingContext: LinesRendererContext = {
         let rendering = LinesRendererContext(context: Store.shared.viewContext)
         return rendering

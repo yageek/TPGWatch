@@ -9,10 +9,6 @@
 import ProcedureKit
 import TPGSwift
 
-#if os(iOS)
-import ProcedureKitMobile
-#endif
-
 final class GetNextDeparturesProcedure: GroupProcedure {
     init(code: String, completion: @escaping (NextDepartureRecord?, NSError?) -> Void) {
 

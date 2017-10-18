@@ -9,6 +9,9 @@
 import ProcedureKit
 import ProcedureKitNetwork
 import TPGSwift
+#if os(iOS)
+    import ProcedureKitMobile
+#endif
 
 final class ValidAPICodeProcedure<T: Equatable>: Procedure, InputProcedure, OutputProcedure {
 
@@ -38,6 +41,7 @@ final class ValidAPICodeProcedure<T: Equatable>: Procedure, InputProcedure, Outp
 final class DownloadProcedure: GroupProcedure, OutputProcedure {
 
     var output: Pending<ProcedureResult<HTTPPayloadResponse<URL>>> = .pending
+
     init(call: API) {
 
         let URL = call.URL
@@ -52,6 +56,10 @@ final class DownloadProcedure: GroupProcedure, OutputProcedure {
         decode.addDidFinishBlockObserver { [unowned self](procedure, _)  in
             self.output = procedure.output
         }
+
+        #if os(iOS)
+            decode.add(observer: NetworkObserver(controller: NetworkActivityController()))
+        #endif
     }
 
 }

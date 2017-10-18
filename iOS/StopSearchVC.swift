@@ -41,6 +41,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     deinit {
         searchController?.view.removeFromSuperview()
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,6 +55,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         super.viewWillAppear(animated)
         fetchedResultsController?.delegate = self
     }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -252,15 +254,19 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
                 } else {
                     alert.message = NSLocalizedString("An error occurs while downloading. Please retry later", comment: "")
                 }
+
+                alert.add(actionWithTitle: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: { [unowned self] (_, _) in
+                    self.refreshControl?.endRefreshing()
+                })
                 self.queue.addOperation(alert)
             }
         }
 
-        getStopsOp.completionBlock = {
-            ProcedureQueue.main.addOperation {
+        getStopsOp.addDidFinishBlockObserver(block: { (_, _) in
+            ProcedureQueue.main.addOperation { [unowned self] in
                 self.refreshControl?.endRefreshing()
             }
-        }
+        })
 
         if showHud {
 
@@ -275,6 +281,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
                     self.setLoading(enabled: false)
                 }
             })
+
         }
 
         queue.addOperation(getStopsOp)

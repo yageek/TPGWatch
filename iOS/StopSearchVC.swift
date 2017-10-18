@@ -11,7 +11,7 @@ import CoreData
 import ProcedureKit
 import ProcedureKitMobile
 
-final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, LinesRendererContextDelegate {
+final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, UISearchControllerDelegate, LinesRendererContextDelegate {
 
     // Concurrency
     private let queue = ProcedureQueue()
@@ -102,6 +102,10 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if searchModeEnabled {
+            return nil
+        }
+
         guard let sectionInfo = fetchedResultsController?.sections?[section] else {
             return nil
         }
@@ -109,6 +113,9 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
     }
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if searchModeEnabled {
+            return []
+        }
         return Array(tableIndexes)
     }
 
@@ -136,6 +143,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
         searchController = UISearchController(searchResultsController: nil)
         searchController?.searchResultsUpdater = self
+        searchController?.delegate = self
         searchController?.dimsBackgroundDuringPresentation = false
         searchController?.isActive = true
 
@@ -272,8 +280,16 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
         queue.addOperation(getStopsOp)
 
     }
-    // MARK: Search
+    // MARK: - UISearchControllerDelegate
+    func didDismissSearchController(_ searchController: UISearchController) {
+        self.tableView.reloadSectionIndexTitles()
+    }
 
+    func didPresentSearchController(_ searchController: UISearchController) {
+        self.tableView.reloadSectionIndexTitles()
+    }
+
+    // MARK: - UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
         searchModeEnabled = searchController.isActive
 

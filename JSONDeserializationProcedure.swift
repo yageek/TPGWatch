@@ -7,7 +7,6 @@
 //
 
 import ProcedureKit
-import ProcedureKitNetwork
 
 public final class JSONDeserializationProcedure<T: Decodable>: Procedure, InputProcedure, OutputProcedure {
 

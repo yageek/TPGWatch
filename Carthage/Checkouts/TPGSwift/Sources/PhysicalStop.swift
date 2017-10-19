@@ -27,7 +27,6 @@ public struct PhysicalStopInfos: Decodable, APIObject {
         case stops = "physicalStops"
     }
 
-
     /// A physical stop response
     public struct PhysicalStop: Decodable {
 

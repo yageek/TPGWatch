@@ -4,11 +4,17 @@
 /* Class = "WKInterfaceButton"; title = "Reload"; ObjectID = "9qu-Wg-qa4"; */
 "9qu-Wg-qa4.title" = "Neu laden";
 
+/* Class = "WKInterfaceLabel"; text = "Error :("; ObjectID = "AVW-4a-cTK"; */
+"AVW-4a-cTK.text" = "Error :(";
+
 /* Class = "WKInterfaceController"; title = "Favorites"; ObjectID = "AgC-eL-Hgc"; */
 "AgC-eL-Hgc.title" = "Favoriten";
 
 /* Class = "WKInterfaceLabel"; text = "Name"; ObjectID = "Be9-40-pf7"; */
 "Be9-40-pf7.text" = "Name";
+
+/* Class = "WKInterfaceLabel"; text = "Invalid Time"; ObjectID = "L11-OG-OUm"; */
+"L11-OG-OUm.text" = "Ungültige Zeit";
 
 /* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "UBg-ur-Mkb"; */
 "UBg-ur-Mkb.text" = "Label";
@@ -19,7 +25,7 @@
 /* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "Za8-WZ-UH1"; */
 "Za8-WZ-UH1.text" = "64";
 
-/* Class = "WKInterfaceLabel"; text = "No departure found"; ObjectID = "ao8-kT-Z0B"; */
+/* Class = "WKInterfaceLabel"; text = "No departures found"; ObjectID = "ao8-kT-Z0B"; */
 "ao8-kT-Z0B.text" = "Kein Abfahrt gefunden";
 
 /* Class = "WKInterfaceLabel"; text = "Loading ..."; ObjectID = "b4t-iY-HRj"; */
@@ -27,6 +33,9 @@
 
 /* Class = "WKInterfaceController"; title = "Departures"; ObjectID = "cCm-JV-dAr"; */
 "cCm-JV-dAr.title" = "Abfachten";
+
+/* Class = "WKInterfaceLabel"; text = "No departures found"; ObjectID = "cLv-bs-2PE"; */
+"cLv-bs-2PE.text" = "Kein Abfahrt gefunden";
 
 /* Class = "WKInterfaceLabel"; text = "No favorite"; ObjectID = "f82-1G-JAn"; */
 "f82-1G-JAn.text" = "Kein Favorit";
@@ -37,6 +46,12 @@
 /* Class = "WKInterfaceLabel"; text = "1`"; ObjectID = "kNu-ig-JFM"; */
 "kNu-ig-JFM.text" = "1`";
 
+/* Class = "WKInterfaceButton"; title = "Reload"; ObjectID = "nRk-OM-pHr"; */
+"nRk-OM-pHr.title" = "Neu laden";
+
+/* Class = "WKInterfaceLabel"; text = "Invalid Time"; ObjectID = "nzq-sl-fWb"; */
+"nzq-sl-fWb.text" = "Ungültige Zeit";
+
 /* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "o0d-o4-B2H"; */
 "o0d-o4-B2H.text" = "64";
 
@@ -45,6 +60,9 @@
 
 /* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "s5b-XM-qRh"; */
 "s5b-XM-qRh.text" = "64";
+
+/* Class = "WKInterfaceLabel"; text = "Loading ..."; ObjectID = "uoH-bW-olg"; */
+"uoH-bW-olg.text" = "Laden ...";
 
 /* Class = "WKInterfaceLabel"; text = "Open the phone app to sync data"; ObjectID = "vnP-uV-yNR"; */
 "vnP-uV-yNR.text" = "Öffnen Sie TPGWatch zu synchronisieren Daten";

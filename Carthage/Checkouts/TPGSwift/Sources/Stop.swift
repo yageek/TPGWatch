@@ -28,7 +28,7 @@ public struct Stop: Decodable, APIObject {
 
     /// The connection of the stops
     public let connections: [Connection]
-    
+
     /// The distance to the provided
     /// latitude and longitude
     public let distance: Double?

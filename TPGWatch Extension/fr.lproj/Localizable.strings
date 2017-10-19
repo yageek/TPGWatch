@@ -11,9 +11,6 @@
 "Open the phone app to sync data" = "Ouvrez le téléphone pour la synchronisation";
 
 /* No comment provided by engineer. */
-"Retry later" = "Réessayer plus tard";
-
-/* No comment provided by engineer. */
 "The TPG server is unavailable." = "Le serveur des TPG est injoignable";
 
 /* No comment provided by engineer. */
@@ -21,7 +18,4 @@
 
 /* Shortcut for hour */
 "h" = "h";
-
-/* Minutes */
-"min" = "min";
 

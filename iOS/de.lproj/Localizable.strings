@@ -5,16 +5,19 @@
 "Empty list" = "Leere Liste";
 
 /* No comment provided by engineer. */
+"Error" = "Error";
+
+/* No comment provided by engineer. */
 "Error while downloading" = "Ein Fehler tritt beim Herunterladen. Bitte versuchen Sie es erneut später";
 
 /* No comment provided by engineer. */
-"Loading stops..." = "Daten werden geladen...";
+"Loading ..." = "Laden ...";
+
+/* No comment provided by engineer. */
+"No departures found!" = "Kein Abfahrt gefunden";
 
 /* No comment provided by engineer. */
 "No internet connection is available" = "Keine Internetverbindung verfügbar";
-
-/* No comment provided by engineer. */
-"Retry later" = "Öffnen Sie TPGWatch zu synchronisieren Daten";
 
 /* No comment provided by engineer. */
 "The TPG server is unavailable." = "Die Operation später wiederholen";

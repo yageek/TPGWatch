@@ -9,13 +9,13 @@
 import UIKit
 import CoreData
 import ProcedureKit
-
+import TPGSwift
 protocol LinesRendererContextDelegate: class {
     func context(_ context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: IndexPath)
 }
 
 final class LinesRendererContext {
-
+    static let renderSize = CGSize(width: 40.0, height: 32.0)
     var queue = ProcedureQueue()
 
     let lock = NSLock()
@@ -29,11 +29,76 @@ final class LinesRendererContext {
         self.context = context
     }
 
-    func renderLines(_ stop: Stop, cell: StopCell, indexPath: IndexPath) {
-        guard let stopCode = stop.code else { return }
+    func renderLine(lineCode: String, options: LineRenderer.LineRenderingOptions, indexPath: IndexPath) -> UIImage? {
+        let renderer = self.renderers[lineCode]
 
-        let renderSize = CGSize(width: 40.0, height: 32.0)
+        if let rend = renderer, rend.hasRendered {
+            return rend.render(LinesRendererContext.renderSize)
+        }
 
+        if renderer == nil {
+            let rend = LineRenderer(text: lineCode, options: options)
+
+            self.renderers[lineCode] = rend
+
+            let blockOp = BlockOperation {
+                let image = rend.render(LinesRendererContext.renderSize)
+
+                OperationQueue.main.addOperation({
+                    self.delegate?.context(self, finishRenderingImage: image, forIndexPath: indexPath)
+                })
+                self.lock.lock()
+                defer {
+                    self.lock.unlock()
+                }
+
+                self.renderersOperation.removeValue(forKey: lineCode)
+            }
+            self.lock.lock()
+            defer {
+                self.lock.unlock()
+            }
+            self.renderersOperation[lineCode] = blockOp
+            queue.addOperation(blockOp)
+        }
+        return nil
+    }
+
+    func renderLinesCode(lineDicts: [[String: Any]], indexPath: IndexPath) -> [UIImage] {
+
+        var images = [UIImage]()
+        for lineDict in lineDicts {
+            guard
+                let lineCode = lineDict["code"] as? String,
+                let textColor = lineDict["textColor"] as? String,
+                let backgroundColor = lineDict["backgroundColor"] as? String,
+                let ribonColor = lineDict["ribonColor"] as? String else { continue }
+
+            let options = LineRenderer.LineRenderingOptions(backgroundColor: UIColor(rgba: backgroundColor), textColor: UIColor(rgba: textColor), ribonColor: UIColor(rgba: ribonColor))
+            if let image = renderLine(lineCode: lineCode, options: options, indexPath: indexPath) {
+                images.append(image)
+            }
+        }
+        return images
+    }
+
+    func renderLine(code: String, indexPath: IndexPath) -> UIImage? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Line.EntityName)
+        request.predicate = NSPredicate(format: "code == %@", code)
+        request.returnsDistinctResults = true
+        request.resultType = .dictionaryResultType
+        request.fetchLimit = 1
+
+        do {
+            let linesDicts = try context.fetch(request) as! [[String: Any]]
+            return renderLinesCode(lineDicts: linesDicts, indexPath: indexPath).first
+        } catch let error {
+            print("Error:\(error)")
+        }
+        return nil
+    }
+
+    func renderLines(_ stopCode: String, indexPath: IndexPath) -> [UIImage] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Line.EntityName)
         request.predicate = NSPredicate(format: "ANY connections.stops.code == %@", stopCode)
         request.returnsDistinctResults = true
@@ -41,51 +106,12 @@ final class LinesRendererContext {
 
         do {
             let linesDicts = try context.fetch(request) as! [[String: Any]]
-
-            for lineDict in linesDicts {
-                guard
-                    let lineCode = lineDict["code"] as? String,
-                    let textColor = lineDict["textColor"] as? String,
-                    let backgroundColor = lineDict["backgroundColor"] as? String,
-                    let ribonColor = lineDict["ribonColor"] as? String else { continue }
-
-                let renderer = self.renderers[lineCode]
-
-                if let rend = renderer, rend.hasRendered {
-                    cell.addImageLine(rend.render(renderSize))
-                }
-
-                if renderer == nil {
-
-                    let options = LineRenderer.LineRenderingOptions(backgroundColor: UIColor(rgba: backgroundColor), textColor: UIColor(rgba: textColor), ribonColor: UIColor(rgba: ribonColor))
-                    let rend = LineRenderer(text: lineCode, options: options)
-
-                    self.renderers[lineCode] = rend
-
-                    let blockOp = BlockOperation {
-                        let image = rend.render(renderSize)
-
-                        OperationQueue.main.addOperation({
-                            self.delegate?.context(self, finishRenderingImage: image, forIndexPath: indexPath)
-                        })
-                        self.lock.lock()
-                        defer {
-                            self.lock.unlock()
-                        }
-
-                        self.renderersOperation.removeValue(forKey: lineCode)
-                    }
-                    self.lock.lock()
-                    defer {
-                        self.lock.unlock()
-                    }
-                    self.renderersOperation[lineCode] = blockOp
-                    queue.addOperation(blockOp)
-                }
-            }
+            return renderLinesCode(lineDicts: linesDicts, indexPath: indexPath)
         } catch let error {
             print("Error:\(error)")
         }
+
+        return []
     }
 
 }

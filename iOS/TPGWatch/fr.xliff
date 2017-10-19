@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="TPGWatch Extension/Info.plist" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0" build-num="9A235"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>TPGWatch Extension</source>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="TPGWatch Extension/Localizable.strings" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0" build-num="9A235"/>
+    </header>
+    <body>
+      <trans-unit id="Checking files...">
+        <source>Checking files...</source>
+        <target>Vérification des fichiers</target>
+        <note>Check files</note>
+      </trans-unit>
+      <trans-unit id="Cleaning...">
+        <source>Cleaning...</source>
+        <target>Nettoyage...</target>
+        <note>Cleanup sentence</note>
+      </trans-unit>
+      <trans-unit id="No internet connection is available">
+        <source>No internet connection is available</source>
+        <target>Aucune connexion Internet disponible</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Open the phone app to sync data">
+        <source>Open the phone app to sync data</source>
+        <target>Ouvrez le téléphone pour la synchronisation</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The TPG server is unavailable.">
+        <source>The TPG server is unavailable.</source>
+        <target>Le serveur des TPG est injoignable</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The server returned an unexpected answer">
+        <source>The server returned an unexpected answer</source>
+        <target>Le serveur a retourné une réponse non connue</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="h">
+        <source>h</source>
+        <target>h</target>
+        <note>Shortcut for hour</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="TPGWatch/Base.lproj/Interface.storyboard" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0" build-num="9A235"/>
+    </header>
+    <body>
+      <trans-unit id="8p6-xn-A72.text">
+        <source>64</source>
+        <target>64</target>
+        <note>Class = "WKInterfaceLabel"; text = "64"; ObjectID = "8p6-xn-A72";</note>
+      </trans-unit>
+      <trans-unit id="9qu-Wg-qa4.title">
+        <source>Reload</source>
+        <target>Recharger</target>
+        <note>Class = "WKInterfaceButton"; title = "Reload"; ObjectID = "9qu-Wg-qa4";</note>
+      </trans-unit>
+      <trans-unit id="AVW-4a-cTK.text">
+        <source>Error :(</source>
+        <target>Erreur :(</target>
+        <note>Class = "WKInterfaceLabel"; text = "Error :("; ObjectID = "AVW-4a-cTK";</note>
+      </trans-unit>
+      <trans-unit id="AgC-eL-Hgc.title">
+        <source>Favorites</source>
+        <target>Favoris</target>
+        <note>Class = "WKInterfaceController"; title = "Favorites"; ObjectID = "AgC-eL-Hgc";</note>
+      </trans-unit>
+      <trans-unit id="B4R-Vr-dCP.text">
+        <source>StopDefaultName</source>
+        <note>Class = "WKInterfaceLabel"; text = "StopDefaultName"; ObjectID = "B4R-Vr-dCP";</note>
+      </trans-unit>
+      <trans-unit id="Be9-40-pf7.text">
+        <source>Name</source>
+        <target>Nom</target>
+        <note>Class = "WKInterfaceLabel"; text = "Name"; ObjectID = "Be9-40-pf7";</note>
+      </trans-unit>
+      <trans-unit id="L11-OG-OUm.text">
+        <source>Invalid Time</source>
+        <target>Temps invalide</target>
+        <note>Class = "WKInterfaceLabel"; text = "Invalid Time"; ObjectID = "L11-OG-OUm";</note>
+      </trans-unit>
+      <trans-unit id="UBg-ur-Mkb.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "UBg-ur-Mkb";</note>
+      </trans-unit>
+      <trans-unit id="XXR-9X-VZd.text">
+        <source>64</source>
+        <target>64</target>
+        <note>Class = "WKInterfaceLabel"; text = "64"; ObjectID = "XXR-9X-VZd";</note>
+      </trans-unit>
+      <trans-unit id="Za8-WZ-UH1.text">
+        <source>64</source>
+        <target>64</target>
+        <note>Class = "WKInterfaceLabel"; text = "64"; ObjectID = "Za8-WZ-UH1";</note>
+      </trans-unit>
+      <trans-unit id="ao8-kT-Z0B.text">
+        <source>No departures found</source>
+        <target>Aucun départ trouvé</target>
+        <note>Class = "WKInterfaceLabel"; text = "No departures found"; ObjectID = "ao8-kT-Z0B";</note>
+      </trans-unit>
+      <trans-unit id="b4t-iY-HRj.text">
+        <source>Loading ...</source>
+        <target>Chargement ...</target>
+        <note>Class = "WKInterfaceLabel"; text = "Loading ..."; ObjectID = "b4t-iY-HRj";</note>
+      </trans-unit>
+      <trans-unit id="cCm-JV-dAr.title">
+        <source>Departures</source>
+        <target>Départs</target>
+        <note>Class = "WKInterfaceController"; title = "Departures"; ObjectID = "cCm-JV-dAr";</note>
+      </trans-unit>
+      <trans-unit id="cLv-bs-2PE.text">
+        <source>No departures found</source>
+        <target>Aucun départ trouvé</target>
+        <note>Class = "WKInterfaceLabel"; text = "No departures found"; ObjectID = "cLv-bs-2PE";</note>
+      </trans-unit>
+      <trans-unit id="f82-1G-JAn.text">
+        <source>No favorite</source>
+        <target>Aucun favori</target>
+        <note>Class = "WKInterfaceLabel"; text = "No favorite"; ObjectID = "f82-1G-JAn";</note>
+      </trans-unit>
+      <trans-unit id="hcZ-zN-G1X.text">
+        <source>...</source>
+        <target>...</target>
+        <note>Class = "WKInterfaceLabel"; text = "..."; ObjectID = "hcZ-zN-G1X";</note>
+      </trans-unit>
+      <trans-unit id="j6k-5u-xc0.title">
+        <source>Thermometer</source>
+        <note>Class = "WKInterfaceController"; title = "Thermometer"; ObjectID = "j6k-5u-xc0";</note>
+      </trans-unit>
+      <trans-unit id="kNu-ig-JFM.text">
+        <source>1`</source>
+        <target>1`</target>
+        <note>Class = "WKInterfaceLabel"; text = "1`"; ObjectID = "kNu-ig-JFM";</note>
+      </trans-unit>
+      <trans-unit id="nRk-OM-pHr.title">
+        <source>Reload</source>
+        <target>Recharger</target>
+        <note>Class = "WKInterfaceButton"; title = "Reload"; ObjectID = "nRk-OM-pHr";</note>
+      </trans-unit>
+      <trans-unit id="nzq-sl-fWb.text">
+        <source>Invalid Time</source>
+        <target>Temps invalide</target>
+        <note>Class = "WKInterfaceLabel"; text = "Invalid Time"; ObjectID = "nzq-sl-fWb";</note>
+      </trans-unit>
+      <trans-unit id="o0d-o4-B2H.text">
+        <source>64</source>
+        <target>64</target>
+        <note>Class = "WKInterfaceLabel"; text = "64"; ObjectID = "o0d-o4-B2H";</note>
+      </trans-unit>
+      <trans-unit id="qsh-Zs-b0b.text">
+        <source>Error :(</source>
+        <target>Error :(</target>
+        <note>Class = "WKInterfaceLabel"; text = "Error :("; ObjectID = "qsh-Zs-b0b";</note>
+      </trans-unit>
+      <trans-unit id="s5b-XM-qRh.text">
+        <source>64</source>
+        <target>64</target>
+        <note>Class = "WKInterfaceLabel"; text = "64"; ObjectID = "s5b-XM-qRh";</note>
+      </trans-unit>
+      <trans-unit id="uoH-bW-olg.text">
+        <source>Loading ...</source>
+        <target>Chargment ...</target>
+        <note>Class = "WKInterfaceLabel"; text = "Loading ..."; ObjectID = "uoH-bW-olg";</note>
+      </trans-unit>
+      <trans-unit id="vnP-uV-yNR.text">
+        <source>Open the phone app to sync data</source>
+        <target>Ouvrez le téléphone pour la synchronisation</target>
+        <note>Class = "WKInterfaceLabel"; text = "Open the phone app to sync data"; ObjectID = "vnP-uV-yNR";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="TPGWatch/Info.plist" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0" build-num="9A235"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>TPGWatch</source>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="iOS/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0" build-num="9A235"/>
+    </header>
+    <body>
+      <trans-unit id="3Z1-tW-JEh.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "3Z1-tW-JEh";</note>
+      </trans-unit>
+      <trans-unit id="A7K-0u-EjF.text">
+        <source>StopName</source>
+        <note>Class = "UILabel"; text = "StopName"; ObjectID = "A7K-0u-EjF";</note>
+      </trans-unit>
+      <trans-unit id="HFf-Ls-0ep.title">
+        <source>Some Title</source>
+        <note>Class = "UINavigationItem"; title = "Some Title"; ObjectID = "HFf-Ls-0ep";</note>
+      </trans-unit>
+      <trans-unit id="MB9-o4-eU6.title">
+        <source>Next Departures</source>
+        <target>Départs</target>
+        <note>Class = "UINavigationItem"; title = "Next Departures"; ObjectID = "MB9-o4-eU6";</note>
+      </trans-unit>
+      <trans-unit id="Ocx-p3-3cD.text">
+        <source>StopName</source>
+        <note>Class = "UILabel"; text = "StopName"; ObjectID = "Ocx-p3-3cD";</note>
+      </trans-unit>
+      <trans-unit id="OdT-uO-qXP.title">
+        <source>Bookmarks</source>
+        <target>Favoris</target>
+        <note>Class = "UINavigationItem"; title = "Bookmarks"; ObjectID = "OdT-uO-qXP";</note>
+      </trans-unit>
+      <trans-unit id="P9C-Tu-DS0.title">
+        <source>Search Stops</source>
+        <target>Rechercher</target>
+        <note>Class = "UINavigationItem"; title = "Search Stops"; ObjectID = "P9C-Tu-DS0";</note>
+      </trans-unit>
+      <trans-unit id="YCU-tl-Zbn.text">
+        <source>StopName</source>
+        <note>Class = "UILabel"; text = "StopName"; ObjectID = "YCU-tl-Zbn";</note>
+      </trans-unit>
+      <trans-unit id="aG0-2W-jC6.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "aG0-2W-jC6";</note>
+      </trans-unit>
+      <trans-unit id="ieq-Pb-XT9.text">
+        <source>StopName</source>
+        <note>Class = "UILabel"; text = "StopName"; ObjectID = "ieq-Pb-XT9";</note>
+      </trans-unit>
+      <trans-unit id="oUd-QB-Pxf.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "oUd-QB-Pxf";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="iOS/Info.plist" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0" build-num="9A235"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="iOS/Localizable.strings" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.0" build-num="9A235"/>
+    </header>
+    <body>
+      <trans-unit id="An error occurs while downloading. Please retry later">
+        <source>An error occurs while downloading. Please retry later</source>
+        <target>Une erreur est survenue lors du téléchargement. Veuillez réessayer ultérieurement</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Empty list">
+        <source>Empty list</source>
+        <target>Liste vide</target>
+        <note>On the first screen, when no bookmarks are in the list</note>
+      </trans-unit>
+      <trans-unit id="Error">
+        <source>Error</source>
+        <target>Erreur</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Error while downloading">
+        <source>Error while downloading</source>
+        <target>Une erreur est survenue.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Loading ...">
+        <source>Loading ...</source>
+        <note>No comment provided by engineer.</note><target>Chargement</target>
+      </trans-unit>
+      <trans-unit id="No departures found!">
+        <source>No departures found!</source>
+        <note>No comment provided by engineer.</note><target>Aucun départ trouvé</target>
+      </trans-unit>
+      <trans-unit id="No internet connection is available">
+        <source>No internet connection is available</source>
+        <target>Aucune connexion Internet disponible</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The TPG server is unavailable.">
+        <source>The TPG server is unavailable.</source>
+        <target>Le serveur des TPG est injoignable</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The server returned an unexpected answer">
+        <source>The server returned an unexpected answer</source>
+        <target>Le serveur a retourné une réponse non connue</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="h">
+        <source>h</source>
+        <note>Shortcut for hour</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

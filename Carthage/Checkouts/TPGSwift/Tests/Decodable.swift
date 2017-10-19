@@ -8,7 +8,7 @@
 
 import XCTest
 import Foundation
-@testable import TPGSwift
+import TPGSwift
 
 class DecodableTests: XCTestCase {
 
@@ -43,18 +43,21 @@ class DecodableTests: XCTestCase {
         XCTAssertEqual(1, 1)
         // Stops
         assertDecode(Record<Stop>.self, fileName: "GetStops")
+        assertDecode(Record<Stop>.self, fileName: "GetStops2")
 
         // Physiscal Stops
         assertDecode(Record<PhysicalStopInfos>.self, fileName: "GetPhysicalStops")
 
         // Next Departures
         assertDecode(NextDepartureRecord.self, fileName: "GetNextDepartures")
+        assertDecode(NextDepartureRecord.self, fileName: "GetNextDepartures2")
         
         // All Next Departures
         assertDecode(NextDepartureRecord.self, fileName: "GetAllNextDepartures")
 
         // Thermometers
         assertDecode(Thermometer.self, fileName: "GetThermometer")
+        assertDecode(Thermometer.self, fileName: "GetThermometer2")
 
         // All Phyisical Thermometers
         assertDecode(Thermometer.self, fileName: "GetThermometerPhysicalStops")

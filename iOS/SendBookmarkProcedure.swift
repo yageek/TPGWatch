@@ -38,8 +38,8 @@ final class SendBookmarkProcedure: Procedure {
                 let connections = (stop.value(forKeyPath: "connections.line.code") as AnyObject).allObjects ?? []
 
                 return [
-                    "name": stop.name! as AnyObject,
-                    "code": stop.code! as AnyObject,
+                    "name": stop.name as AnyObject,
+                    "code": stop.code as AnyObject,
                     "lines": connections as AnyObject
                 ]
             })

@@ -15,9 +15,36 @@ import CoreData
 extension Stop {
 
     @NSManaged var bookmarked: Bool
-    @NSManaged var code: String?
-    @NSManaged var name: String?
+    @NSManaged var code: String
+    @NSManaged var name: String
     @NSManaged var connections: NSSet?
 
     @NSManaged func addConnectionsObject(_ value: Connection)
+    @NSManaged private var primitiveSectionIdentifier: String?
+
+    @objc dynamic var sectionIdentifier: String? {
+
+        willAccessValue(forKey: "sectionIdentifier")
+        let tmp = primitiveSectionIdentifier
+        didAccessValue(forKey: "sectionIdentifier")
+        if let tmp = tmp {
+            return tmp
+        }
+        let ch = name[name.startIndex]
+
+        let val = String(ch)
+        willChangeValue(for: \Stop.sectionIdentifier)
+        primitiveSectionIdentifier = val
+        didChangeValue(for: \Stop.sectionIdentifier)
+
+        return val
+    }
+
+    override class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
+        if key == "sectionIdentifier" {
+            return Set<String>(["name"])
+        } else {
+            return super.keyPathsForValuesAffectingValue(forKey: key)
+        }
+    }
 }

@@ -29,7 +29,6 @@ class TPGWatchUITests: XCTestCase {
         snapshot("01BookmarksEmpty")
         //Click on "+" button.
         app.navigationBars.element(boundBy: 0).buttons.element(boundBy: 0).tap()
-
         let exp = self.expectation(description: "Screenshots")
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(5.0 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
@@ -50,7 +49,6 @@ class TPGWatchUITests: XCTestCase {
             //Cancel
             let abbrechenButton = app.buttons.element(boundBy: 1)
             abbrechenButton.tap()
-
 
             tablesQuery.children(matching: .cell).element(boundBy: 1).staticTexts.element(boundBy: 0).tap()
             tablesQuery.children(matching: .cell).element(boundBy: 2).staticTexts.element(boundBy: 0).tap()

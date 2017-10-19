@@ -19,3 +19,9 @@ timeline.xctimeline
 /Framework
 # Carthage/
 screenshots/
+fastlane/metadata/
+fastlane/screenshots/
+fastlane/Deliverfile
+fastlane/Appfile
+fastlane/report.xml
+

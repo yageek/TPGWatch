@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B037F0A1D35728600EEF1D5 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */; };
 		0B037F121D35741800EEF1D5 /* DownloadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */; };
 		0B037F131D35741B00EEF1D5 /* DownloadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */; };
 		0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B037F141D3579AA00EEF1D5 /* Keys.swift */; };
 		0B134F801D48122200D1489A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B134F821D48122200D1489A /* Localizable.strings */; };
 		0B2095161F8E15F700C2D67F /* TPGWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B2095131F8E146F00C2D67F /* TPGWatch.xcdatamodeld */; };
+		0B2258CB1F90EFCC00E04111 /* NextDeparturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CA1F90EFCC00E04111 /* NextDeparturesVC.swift */; };
+		0B2258CE1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */; };
+		0B2258CF1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */; };
+		0B25C0521F9699B700D2D77B /* LoadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25C0511F9699B700D2D77B /* LoadingTableView.swift */; };
+		0B25C0561F96A6FF00D2D77B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25C0551F96A6FF00D2D77B /* SnapshotHelper.swift */; };
 		0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007481D340082008877F9 /* Palette.swift */; };
+		0B300DC41F94B727008FEF9E /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B300DC31F94B727008FEF9E /* TimeUtils.swift */; };
+		0B300DC51F94B727008FEF9E /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B300DC31F94B727008FEF9E /* TimeUtils.swift */; };
 		0B32C3861D34DEA200D97205 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3841D34DEA200D97205 /* Interface.storyboard */; };
 		0B32C3881D34DEA200D97205 /* Watch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B32C3871D34DEA200D97205 /* Watch.xcassets */; };
 		0B32C38F1D34DEA200D97205 /* TPGWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0B32C38E1D34DEA200D97205 /* TPGWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -31,7 +37,6 @@
 		0B3F20021D3C232D0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20041D3C232D0093AC66 /* InfoPlist.strings */; };
 		0B3F20071D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20091D3C232E0093AC66 /* InfoPlist.strings */; };
 		0B3F200C1D3C232E0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F200E1D3C232E0093AC66 /* InfoPlist.strings */; };
-		0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */; };
 		0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */; };
 		0B3F20301D3C43CA0093AC66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */; };
 		0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */; };
@@ -39,7 +44,6 @@
 		0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4DB0EA1D547E930005F6E3 /* Store.swift */; };
 		0B5ED2461F8D33B4004276B6 /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B13489B1DC9CFFB00E2B23F /* ProcedureKitNetwork.framework */; };
 		0B5ED2471F8D33B4004276B6 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF41DC90B8200A306B9 /* ProcedureKit.framework */; };
-		0B5ED2481F8D33B4004276B6 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8250081D3841390094946B /* PKHUD.framework */; };
 		0B5ED2491F8D3463004276B6 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF0075D1D340172008877F9 /* TPGSwift.framework */; };
 		0B5ED24A1F8D3499004276B6 /* ProcedureKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B353BF71DC90BE000A306B9 /* ProcedureKit.framework */; };
 		0B5ED24B1F8D3499004276B6 /* ProcedureKitNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1348981DC9CFC000E2B23F /* ProcedureKitNetwork.framework */; };
@@ -47,6 +51,10 @@
 		0B84C1441D529EA700594499 /* SendRegisteryProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B58737D1D375CDA001B7416 /* SendRegisteryProcedure.swift */; };
 		0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1451D529FE100594499 /* WatchProxy.swift */; };
 		0B84C14A1D52A6AD00594499 /* SaveProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84C1491D52A6AD00594499 /* SaveProcedure.swift */; };
+		0B96A3411F966474001F2F11 /* LoadingTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B96A3401F966474001F2F11 /* LoadingTableView.xib */; };
+		0B97E5611F96220D00ECC029 /* ThermometerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97E5601F96220D00ECC029 /* ThermometerInterfaceController.swift */; };
+		0B97E5631F96242A00ECC029 /* ThermometerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B97E5621F96242A00ECC029 /* ThermometerInfo.swift */; };
+		0B98DEDB1F9611F700B640E2 /* ThermometerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98DEDA1F9611F700B640E2 /* ThermometerCell.swift */; };
 		0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401ED1D5917A500FEF28C /* SyncController.swift */; };
 		0BA401F11D59183A00FEF28C /* CleanUpV2Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA401F01D59183A00FEF28C /* CleanUpV2Procedure.swift */; };
 		0BAE594C1F8EB48200B30D65 /* TPGSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7BF67B1D352A430044E75F /* TPGSwift.framework */; };
@@ -58,15 +66,17 @@
 		0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801D1D5927C20065C403 /* DepartureInfo.swift */; };
 		0BB2801F1D59D4160065C403 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
 		0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadProcedure.swift */; };
+		0BCC7E1C1F949B3D00FA72D3 /* NextDepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC7E1B1F949B3D00FA72D3 /* NextDepartureCell.swift */; };
+		0BCDBF3C1F94DA06006D1B0D /* GetThermometerProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDBF3B1F94DA06006D1B0D /* GetThermometerProcedure.swift */; };
+		0BCDBF3D1F94DA06006D1B0D /* GetThermometerProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDBF3B1F94DA06006D1B0D /* GetThermometerProcedure.swift */; };
+		0BCDBF421F94DAD5006D1B0D /* ThermometerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDBF411F94DAD5006D1B0D /* ThermometerVC.swift */; };
 		0BD1A6871E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
 		0BD1A6881E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */; };
 		0BE73EF51F0FBB6800635FD5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE73EF41F0FBB6800635FD5 /* Store.swift */; };
 		0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */; };
 		0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007231D33FFF4008877F9 /* AppDelegate.swift */; };
 		0BF0072A1D34000A008877F9 /* StopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007261D34000A008877F9 /* StopCell.swift */; };
-		0BF0072B1D34000A008877F9 /* StopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007271D34000A008877F9 /* StopCell.xib */; };
 		0BF0072C1D34000A008877F9 /* StopCellSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007281D34000A008877F9 /* StopCellSearch.swift */; };
-		0BF0072D1D34000A008877F9 /* StopCellSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF007291D34000A008877F9 /* StopCellSearch.xib */; };
 		0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */; };
 		0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007311D34002F008877F9 /* StopSearchVC.swift */; };
 		0BF007351D340040008877F9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
@@ -136,7 +146,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetNextDeparturesProcedure.swift; sourceTree = "<group>"; };
 		0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadProcedure.swift; path = Common/DownloadProcedure.swift; sourceTree = "<group>"; };
 		0B037F141D3579AA00EEF1D5 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Common/Keys.swift; sourceTree = "<group>"; };
 		0B0696651F8D6C93006F7AE3 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -150,6 +159,11 @@
 		0B1B1F661F1E01F500875495 /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = "3rdParty/TPGSwift/build/Debug-iphoneos/TPGSwift.framework"; sourceTree = "<group>"; };
 		0B2095141F8E146F00C2D67F /* TPGWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TPGWatch.xcdatamodel; sourceTree = "<group>"; };
 		0B2095151F8E146F00C2D67F /* TPGWatch 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TPGWatch 2.xcdatamodel"; sourceTree = "<group>"; };
+		0B2258CA1F90EFCC00E04111 /* NextDeparturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDeparturesVC.swift; sourceTree = "<group>"; };
+		0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetNextDeparturesProcedure.swift; path = Common/GetNextDeparturesProcedure.swift; sourceTree = "<group>"; };
+		0B25C0511F9699B700D2D77B /* LoadingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableView.swift; sourceTree = "<group>"; };
+		0B25C0551F96A6FF00D2D77B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		0B300DC31F94B727008FEF9E /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeUtils.swift; path = Common/TimeUtils.swift; sourceTree = "<group>"; };
 		0B32C3821D34DEA200D97205 /* TPGWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPGWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B32C3851D34DEA200D97205 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		0B32C3871D34DEA200D97205 /* Watch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Watch.xcassets; sourceTree = "<group>"; };
@@ -180,7 +194,6 @@
 		0B3F201D1D3C27B00093AC66 /* TPGWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPGWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGWatchUITests.swift; sourceTree = "<group>"; };
 		0B3F20211D3C27B00093AC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		0B3F20311D3C43CA0093AC66 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3F20331D3C43DA0093AC66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B4697F71D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = 1_to_2_model.xcmappingmodel; sourceTree = "<group>"; };
@@ -189,9 +202,12 @@
 		0B58737D1D375CDA001B7416 /* SendRegisteryProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRegisteryProcedure.swift; sourceTree = "<group>"; };
 		0B7BF67B1D352A430044E75F /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = Carthage/Build/watchOS/TPGSwift.framework; sourceTree = "<group>"; };
 		0B7BF67E1D352C120044E75F /* DeparturesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesInterfaceController.swift; sourceTree = "<group>"; };
-		0B8250081D3841390094946B /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		0B84C1451D529FE100594499 /* WatchProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchProxy.swift; sourceTree = "<group>"; };
 		0B84C1491D52A6AD00594499 /* SaveProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveProcedure.swift; sourceTree = "<group>"; };
+		0B96A3401F966474001F2F11 /* LoadingTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableView.xib; sourceTree = "<group>"; };
+		0B97E5601F96220D00ECC029 /* ThermometerInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerInterfaceController.swift; sourceTree = "<group>"; };
+		0B97E5621F96242A00ECC029 /* ThermometerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerInfo.swift; sourceTree = "<group>"; };
+		0B98DEDA1F9611F700B640E2 /* ThermometerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerCell.swift; sourceTree = "<group>"; };
 		0BA401ED1D5917A500FEF28C /* SyncController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncController.swift; sourceTree = "<group>"; };
 		0BA401F01D59183A00FEF28C /* CleanUpV2Procedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanUpV2Procedure.swift; sourceTree = "<group>"; };
 		0BB280111D591C310065C403 /* InitProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitProcedure.swift; sourceTree = "<group>"; };
@@ -201,6 +217,9 @@
 		0BB2801A1D5927680065C403 /* BookmarkedStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkedStop.swift; sourceTree = "<group>"; };
 		0BB2801D1D5927C20065C403 /* DepartureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureInfo.swift; sourceTree = "<group>"; };
 		0BBDC1881D54D447005C8297 /* ReadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadProcedure.swift; sourceTree = "<group>"; };
+		0BCC7E1B1F949B3D00FA72D3 /* NextDepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDepartureCell.swift; sourceTree = "<group>"; };
+		0BCDBF3B1F94DA06006D1B0D /* GetThermometerProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetThermometerProcedure.swift; sourceTree = "<group>"; };
+		0BCDBF411F94DAD5006D1B0D /* ThermometerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerVC.swift; sourceTree = "<group>"; };
 		0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializationProcedure.swift; sourceTree = "<group>"; };
 		0BD1A7221E89684600EA0C1A /* ProcedureKitMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcedureKitMobile.framework; path = Carthage/Build/iOS/ProcedureKitMobile.framework; sourceTree = "<group>"; };
 		0BDB20C11F1E02CB0025DC76 /* TPGSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TPGSwift.framework; path = "3rdParty/TPGSwift/build/Debug-watchos/TPGSwift.framework"; sourceTree = "<group>"; };
@@ -211,9 +230,7 @@
 		0BF007211D33FFC0008877F9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BF007231D33FFF4008877F9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF007261D34000A008877F9 /* StopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopCell.swift; sourceTree = "<group>"; };
-		0BF007271D34000A008877F9 /* StopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopCell.xib; sourceTree = "<group>"; };
 		0BF007281D34000A008877F9 /* StopCellSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopCellSearch.swift; sourceTree = "<group>"; };
-		0BF007291D34000A008877F9 /* StopCellSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopCellSearch.xib; sourceTree = "<group>"; };
 		0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopBookmarkVC.swift; sourceTree = "<group>"; };
 		0BF007311D34002F008877F9 /* StopSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopSearchVC.swift; sourceTree = "<group>"; };
 		0BF007341D340040008877F9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = iOS/Error.swift; sourceTree = "<group>"; };
@@ -261,7 +278,6 @@
 				0B5ED2491F8D3463004276B6 /* TPGSwift.framework in Frameworks */,
 				0B5ED2461F8D33B4004276B6 /* ProcedureKitNetwork.framework in Frameworks */,
 				0B5ED2471F8D33B4004276B6 /* ProcedureKit.framework in Frameworks */,
-				0B5ED2481F8D33B4004276B6 /* PKHUD.framework in Frameworks */,
 				0BF007621D340185008877F9 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,11 +288,14 @@
 		0B037F0D1D3573E700EEF1D5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0B2258CD1F90F0E900E04111 /* GetNextDeparturesProcedure.swift */,
 				0BF007341D340040008877F9 /* Error.swift */,
 				0B037F111D35741800EEF1D5 /* DownloadProcedure.swift */,
 				0BD1A6861E89341C00EA0C1A /* JSONDeserializationProcedure.swift */,
 				0B037F141D3579AA00EEF1D5 /* Keys.swift */,
 				0B3BBDAA1F0FD2C900ECAEF8 /* Color.swift */,
+				0B300DC31F94B727008FEF9E /* TimeUtils.swift */,
+				0BCDBF3B1F94DA06006D1B0D /* GetThermometerProcedure.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -343,8 +362,8 @@
 		0B3F201E1D3C27B00093AC66 /* TPGWatchUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0B25C0551F96A6FF00D2D77B /* SnapshotHelper.swift */,
 				0B3F20321D3C43CA0093AC66 /* InfoPlist.strings */,
-				0B3F20271D3C27EB0093AC66 /* SnapshotHelper.swift */,
 				0B3F201F1D3C27B00093AC66 /* TPGWatchUITests.swift */,
 				0B3F20211D3C27B00093AC66 /* Info.plist */,
 			);
@@ -369,11 +388,21 @@
 			name = 1_2;
 			sourceTree = "<group>";
 		};
+		0B96A33F1F966461001F2F11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B96A3401F966474001F2F11 /* LoadingTableView.xib */,
+				0B25C0511F9699B700D2D77B /* LoadingTableView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		0BA401EC1D590DC500FEF28C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				0BB280191D5927530065C403 /* Bookmark */,
 				0BB2801C1D5927AE0065C403 /* Departures */,
+				0BCDBF3E1F94DAA7006D1B0D /* Thermometer */,
 				0BA401ED1D5917A500FEF28C /* SyncController.swift */,
 			);
 			name = Screens;
@@ -413,18 +442,25 @@
 			isa = PBXGroup;
 			children = (
 				0BA401EF1D59181900FEF28C /* Startup */,
-				0B037F091D35728600EEF1D5 /* GetNextDeparturesProcedure.swift */,
 				0B84C1491D52A6AD00594499 /* SaveProcedure.swift */,
 				0BBDC1881D54D447005C8297 /* ReadProcedure.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
 		};
+		0BCDBF3E1F94DAA7006D1B0D /* Thermometer */ = {
+			isa = PBXGroup;
+			children = (
+				0B97E5601F96220D00ECC029 /* ThermometerInterfaceController.swift */,
+				0B97E5621F96242A00ECC029 /* ThermometerInfo.swift */,
+			);
+			name = Thermometer;
+			sourceTree = "<group>";
+		};
 		0BF007031D33FF6D008877F9 = {
 			isa = PBXGroup;
 			children = (
 				0B3532641F8E6FAA00AB7EE7 /* Images.xcassets */,
-				0B8250081D3841390094946B /* PKHUD.framework */,
 				0B7BF67B1D352A430044E75F /* TPGSwift.framework */,
 				0BF007611D340185008877F9 /* CoreData.framework */,
 				0BF0075D1D340172008877F9 /* TPGSwift.framework */,
@@ -476,9 +512,9 @@
 			isa = PBXGroup;
 			children = (
 				0BF007261D34000A008877F9 /* StopCell.swift */,
-				0BF007271D34000A008877F9 /* StopCell.xib */,
+				0BCC7E1B1F949B3D00FA72D3 /* NextDepartureCell.swift */,
 				0BF007281D34000A008877F9 /* StopCellSearch.swift */,
-				0BF007291D34000A008877F9 /* StopCellSearch.xib */,
+				0B98DEDA1F9611F700B640E2 /* ThermometerCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -486,8 +522,11 @@
 		0BF0072E1D340017008877F9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0B96A33F1F966461001F2F11 /* Views */,
 				0BF007311D34002F008877F9 /* StopSearchVC.swift */,
 				0BF0072F1D34002B008877F9 /* StopBookmarkVC.swift */,
+				0B2258CA1F90EFCC00E04111 /* NextDeparturesVC.swift */,
+				0BCDBF411F94DAD5006D1B0D /* ThermometerVC.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -701,13 +740,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BF0072B1D34000A008877F9 /* StopCell.xib in Resources */,
+				0B96A3411F966474001F2F11 /* LoadingTableView.xib in Resources */,
 				0B3F200C1D3C232E0093AC66 /* InfoPlist.strings in Resources */,
 				0B3532651F8E6FAA00AB7EE7 /* Images.xcassets in Resources */,
 				0B3F1FFD1D3C232D0093AC66 /* Localizable.strings in Resources */,
 				0B3F1FF41D3C1F7A0093AC66 /* Main.storyboard in Resources */,
 				0BF007221D33FFC0008877F9 /* LaunchScreen.storyboard in Resources */,
-				0BF0072D1D34000A008877F9 /* StopCellSearch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +809,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitNetwork.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TPGSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ProcedureKitMobile.framework",
 			);
 			name = Carthage;
@@ -779,7 +816,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ProcedureKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ProcedureKitNetwork.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TPGSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PKHUD.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ProcedureKitMobile.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,23 +831,27 @@
 			files = (
 				0B84C14A1D52A6AD00594499 /* SaveProcedure.swift in Sources */,
 				0B32C3961D34DEA200D97205 /* ExtensionDelegate.swift in Sources */,
-				0B037F0A1D35728600EEF1D5 /* GetNextDeparturesProcedure.swift in Sources */,
 				0BB280141D591F730065C403 /* UpdateDisplayProcedure.swift in Sources */,
 				0BB280181D5922590065C403 /* PresentFirstScreenProcedure.swift in Sources */,
 				0BD1A6881E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */,
 				0BB280121D591C310065C403 /* InitProcedure.swift in Sources */,
 				0B32C3941D34DEA200D97205 /* BookmarkStopInterfaceController.swift in Sources */,
 				0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */,
+				0B300DC51F94B727008FEF9E /* TimeUtils.swift in Sources */,
 				0B7BF67F1D352C120044E75F /* DeparturesInterfaceController.swift in Sources */,
 				0BA401EE1D5917A500FEF28C /* SyncController.swift in Sources */,
+				0B2258CF1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */,
 				0B28DDE61D58CEA4003ACC0F /* Palette.swift in Sources */,
+				0BCDBF3D1F94DA06006D1B0D /* GetThermometerProcedure.swift in Sources */,
 				0BB280161D591FA90065C403 /* CheckFilesProcedure.swift in Sources */,
 				0B3BBDAC1F0FD2C900ECAEF8 /* Color.swift in Sources */,
 				0B4DB0EB1D547E930005F6E3 /* Store.swift in Sources */,
+				0B97E5611F96220D00ECC029 /* ThermometerInterfaceController.swift in Sources */,
 				0BB2801F1D59D4160065C403 /* Error.swift in Sources */,
 				0B84C1461D529FE100594499 /* WatchProxy.swift in Sources */,
 				0B037F161D3579AA00EEF1D5 /* Keys.swift in Sources */,
 				0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */,
+				0B97E5631F96242A00ECC029 /* ThermometerInfo.swift in Sources */,
 				0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */,
 				0B037F121D35741800EEF1D5 /* DownloadProcedure.swift in Sources */,
 				0BA401F11D59183A00FEF28C /* CleanUpV2Procedure.swift in Sources */,
@@ -822,8 +862,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3F20281D3C27EB0093AC66 /* SnapshotHelper.swift in Sources */,
 				0B3F202B1D3C2A360093AC66 /* TPGWatchUITests.swift in Sources */,
+				0B25C0561F96A6FF00D2D77B /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,11 +871,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2258CB1F90EFCC00E04111 /* NextDeparturesVC.swift in Sources */,
 				0BF007301D34002B008877F9 /* StopBookmarkVC.swift in Sources */,
 				0BD1A6871E89341C00EA0C1A /* JSONDeserializationProcedure.swift in Sources */,
+				0B300DC41F94B727008FEF9E /* TimeUtils.swift in Sources */,
 				0BF007241D33FFF4008877F9 /* AppDelegate.swift in Sources */,
 				0B32C3A71D34DEF600D97205 /* WatchProxy.swift in Sources */,
 				0BF007411D340061008877F9 /* ImportLinesColorsProcedure.swift in Sources */,
+				0BCDBF3C1F94DA06006D1B0D /* GetThermometerProcedure.swift in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,
 				0BF007451D34006F008877F9 /* LineRenderer.swift in Sources */,
 				0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */,
@@ -849,15 +892,20 @@
 				0BF007351D340040008877F9 /* Error.swift in Sources */,
 				0BF007561D3400A7008877F9 /* Line+CoreDataProperties.swift in Sources */,
 				0BF007581D3400A7008877F9 /* Line.swift in Sources */,
+				0B2258CE1F90F0E900E04111 /* GetNextDeparturesProcedure.swift in Sources */,
+				0B25C0521F9699B700D2D77B /* LoadingTableView.swift in Sources */,
 				0BF007541D3400A7008877F9 /* Connection+CoreDataProperties.swift in Sources */,
 				0BF007441D34006F008877F9 /* LinesRendererContext.swift in Sources */,
+				0BCDBF421F94DAD5006D1B0D /* ThermometerVC.swift in Sources */,
 				0BF0072C1D34000A008877F9 /* StopCellSearch.swift in Sources */,
 				0B2095161F8E15F700C2D67F /* TPGWatch.xcdatamodeld in Sources */,
 				0B3BBDAB1F0FD2C900ECAEF8 /* Color.swift in Sources */,
+				0B98DEDB1F9611F700B640E2 /* ThermometerCell.swift in Sources */,
 				0B4DB0E91D5476B90005F6E3 /* LineColorToLineStringTransformationPolicy.swift in Sources */,
 				0BF0074A1D340082008877F9 /* Palette.swift in Sources */,
 				0BE73EF51F0FBB6800635FD5 /* Store.swift in Sources */,
 				0BF007401D340061008877F9 /* GetStopsProcedure.swift in Sources */,
+				0BCC7E1C1F949B3D00FA72D3 /* NextDepartureCell.swift in Sources */,
 				0BF0073F1D340061008877F9 /* ImportStopProcedure.swift in Sources */,
 				0B037F151D3579AA00EEF1D5 /* Keys.swift in Sources */,
 			);

@@ -12,13 +12,19 @@ import TPGSwift
 import CoreData
 
 final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDelegate, LinesRendererContextDelegate {
-    let queue = ProcedureQueue()
+    // Concurrency
+    private let queue: ProcedureQueue = {
+        let queue = ProcedureQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+
     var renderingContext: LinesRendererContext = {
         let rendering = LinesRendererContext(context: Store.shared.viewContext)
         return rendering
     }()
 
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var fetchedResultsController: NSFetchedResultsController<Stop>?
     var backgroundLabel: UILabel!
 
     // MARK: Lifecycle
@@ -57,22 +63,26 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StopCell", for: indexPath) as! StopCell
 
-        if let stop = self.fetchedResultsController?.object(at: indexPath) as? Stop {
+        if let stop = self.fetchedResultsController?.object(at: indexPath) {
 
             cell.resetStacks()
             cell.stopLabel?.text = stop.name
-            renderingContext.renderLines(stop, cell: cell, indexPath: indexPath)
+            for image in renderingContext.renderLines(stop.code, indexPath: indexPath) {
+                cell.addImageLine(image)
+            }
+
         }
         return cell
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 
-        if let stop = fetchedResultsController?.object(at: indexPath) as? Stop {
+        if let stop = fetchedResultsController?.object(at: indexPath) {
             stop.bookmarked = false
         }
     }
 
+    // MARK: - Editing
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
 
@@ -82,6 +92,10 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
             updateCentralLabel()
         }
     }
+
+    // MARK: - Actions
+
+    @IBAction func unwindToBookmark(_ segue: UIStoryboardSegue) { }
 
     // MARK: NSFetchedResultsControllerDelegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -96,11 +110,13 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
             break
         }
         self.tableView.endUpdates()
+
+        updateCentralLabel()
     }
 
     // MARK: Helpers
-    internal func setupFetchController() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Stop.EntityName)
+    func setupFetchController() {
+        let request = NSFetchRequest<Stop>(entityName: Stop.EntityName)
         request.predicate = NSPredicate(format: "bookmarked == true")
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
@@ -110,7 +126,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         fetchedResultsController = controller
     }
 
-    internal func setupTableView() {
+    func setupTableView() {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
 
         let label = UILabel(frame: CGRect.zero)
@@ -118,12 +134,9 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         label.center = tableView.center
 
         backgroundLabel = label
-
-        let nib = UINib(nibName: "StopCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "StopCell")
     }
 
-    fileprivate func updateUI() {
+    private func updateUI() {
         do {
             try fetchedResultsController?.performFetch()
             updateCentralLabel()
@@ -134,7 +147,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         tableView.reloadData()
     }
 
-    fileprivate func updateCentralLabel() {
+    private func updateCentralLabel() {
         //swiftlint:disable empty_count
         if let count = fetchedResultsController?.fetchedObjects?.count, count == 0 {
             setBackgroundText(NSLocalizedString("Empty list", comment: "On the first screen, when no bookmarks are in the list"))
@@ -157,6 +170,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     fileprivate func addImageToStopCell(_ image: UIImage, indexPath: IndexPath) {
         if let cell = self.tableView.cellForRow(at: indexPath) as? StopCell {
             cell.addImageLine(image)
+            tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
     // MARK: - LinesRendererContextDelegate
@@ -175,4 +189,10 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         guard let addButton = buttonItems.first as? UIControl else { return CGRect.zero }
         return addButton.convert(addButton.frame, to: nil)
     }
-   }
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? NextDeparturesVC, let index = tableView.indexPathForSelectedRow {
+            dest.stop = self.fetchedResultsController?.object(at: index)
+        }
+    }
+}

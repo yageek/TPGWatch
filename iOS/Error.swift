@@ -14,6 +14,7 @@ enum GeneralError: Int, Error {
     case serviceUnavailable
     case unexpectedError
     case apiError
+    case noMoreDepartures
 }
 
 extension GeneralError: LocalizedError {
@@ -29,6 +30,8 @@ extension GeneralError: LocalizedError {
             return NSLocalizedString("The server returned an unexpected answer", comment: "")
         case .apiError:
             return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .noMoreDepartures:
+            return NSLocalizedString("No more departures for this destination", comment: "")
         }
     }
     public var failureReason: String? {
@@ -43,6 +46,8 @@ extension GeneralError: LocalizedError {
             return NSLocalizedString("The server returned an unexpected answer", comment: "")
         case .apiError:
             return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .noMoreDepartures:
+            return NSLocalizedString("No more departures for this destination", comment: "")
         }
     }
     public var recoverySuggestion: String? {
@@ -57,6 +62,8 @@ extension GeneralError: LocalizedError {
             return NSLocalizedString("The server returned an unexpected answer", comment: "")
         case .apiError:
             return NSLocalizedString("The server returned an unexpected answer", comment: "")
+        case .noMoreDepartures:
+            return NSLocalizedString("No more departures for this destination", comment: "")
         }
     }
 }
@@ -89,6 +96,10 @@ extension GeneralError: CustomNSError {
                 NSLocalizedDescriptionKey: errorDescription!
             ]
         case .apiError:
+            return [
+                NSLocalizedDescriptionKey: errorDescription!
+            ]
+        case .noMoreDepartures:
             return [
                 NSLocalizedDescriptionKey: errorDescription!
             ]

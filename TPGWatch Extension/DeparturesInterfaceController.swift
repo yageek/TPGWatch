@@ -69,13 +69,21 @@ final class DeparturesInterfaceController: WKInterfaceController {
         let op = GetNextDeparturesProcedure(code: stopCode) { resultJSON, error in
 
             if let error = error {
-                print("Error: \(error)")
-                DispatchQueue.main.async {
-                    self.errorLabel.setHidden(false)
-                    self.loadingGroup.setHidden(true)
-                    self.reloadButton.setHidden(false)
+                if case DecodingError.keyNotFound = error {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.noDeparturesFoundLabel.setHidden(false)
+                        self.errorLabel.setHidden(true)
+                        self.loadingGroup.setHidden(true)
+                        self.reloadButton.setHidden(false)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.noDeparturesFoundLabel.setHidden(true)
+                        self.errorLabel.setHidden(false)
+                        self.loadingGroup.setHidden(true)
+                        self.reloadButton.setHidden(false)
+                    }
                 }
-
             } else if let result = resultJSON {
                 self.nextDepartures = result.departures.filter { $0.waitingTime != "no more"}
                 DispatchQueue.main.async {

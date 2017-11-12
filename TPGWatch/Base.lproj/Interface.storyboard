@@ -146,7 +146,7 @@
                                     </items>
                                 </group>
                                 <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" id="AVW-4a-cTK"/>
-                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departures found" id="cLv-bs-2PE"/>
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departure found" id="cLv-bs-2PE"/>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="Reload" id="nRk-OM-pHr">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -250,7 +250,7 @@
                                 <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" textAlignment="center" id="qsh-Zs-b0b">
                                     <color key="textColor" red="1" green="0.3462042447" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departures found" id="ao8-kT-Z0B">
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departure found" id="ao8-kT-Z0B">
                                     <fontDescription key="font" type="system" pointSize="12"/>
                                 </label>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="Reload" id="9qu-Wg-qa4">

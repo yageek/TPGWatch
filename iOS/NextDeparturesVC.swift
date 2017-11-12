@@ -158,7 +158,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
     }
 
     private func setNoResults() {
-        loadingBackgroundView.setText(NSLocalizedString("No departures found", comment: ""), loading: false)
+        loadingBackgroundView.setText(NSLocalizedString("No departure found", comment: ""), loading: false)
         self.tableView.backgroundView = loadingBackgroundView
     }
 

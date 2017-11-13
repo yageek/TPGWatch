@@ -1,5 +1,9 @@
 ## Changelog
 
+### 1.8
+* Selection on Thermometer page
+* Avoid displaying an error in case of no departure
+
 ### 1.7
 * Consult next departures from the phone
 

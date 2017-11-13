@@ -24,7 +24,6 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         return queue
     }()
 
-
     var renderingContext: LinesRendererContext = {
         let rendering = LinesRendererContext(context: Store.shared.viewContext)
         return rendering
@@ -116,9 +115,16 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         let getDepartures = GetNextDeparturesProcedure(code: stopCode) { [unowned self] (record, error) in
 
             if let error = error {
-                let title = NSLocalizedString("Error while downloading", comment: "")
-                let message = error.localizedDescription
-                self.presentAlert(title: title, message: message)
+
+                if case DecodingError.keyNotFound = error {
+                    DispatchQueue.main.async { [unowned self] in
+                        self.setNoResults()
+                    }
+                } else {
+                    let title = NSLocalizedString("Error while downloading", comment: "")
+                    let message = error.localizedDescription
+                    self.presentAlert(title: title, message: message)
+                }
 
             } else if let record = record {
                 DispatchQueue.main.async { [unowned self] in
@@ -152,7 +158,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
     }
 
     private func setNoResults() {
-        loadingBackgroundView.setText(NSLocalizedString("No departures found!", comment: ""), loading: false)
+        loadingBackgroundView.setText(NSLocalizedString("No departure found", comment: ""), loading: false)
         self.tableView.backgroundView = loadingBackgroundView
     }
 

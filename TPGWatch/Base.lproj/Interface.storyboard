@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RPj-t7-7SU">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RPj-t7-7SU">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
     </dependencies>
     <scenes>
         <!--Favorites-->
@@ -146,7 +146,7 @@
                                     </items>
                                 </group>
                                 <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" id="AVW-4a-cTK"/>
-                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departures found" id="cLv-bs-2PE"/>
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departure found" id="cLv-bs-2PE"/>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="Reload" id="nRk-OM-pHr">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="backgroundColor" red="1" green="0.4941176471" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -250,7 +250,7 @@
                                 <label alignment="center" verticalAlignment="center" hidden="YES" text="Error :(" textAlignment="center" id="qsh-Zs-b0b">
                                     <color key="textColor" red="1" green="0.3462042447" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departures found" id="ao8-kT-Z0B">
+                                <label alignment="center" verticalAlignment="center" hidden="YES" text="No departure found" id="ao8-kT-Z0B">
                                     <fontDescription key="font" type="system" pointSize="12"/>
                                 </label>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="Reload" id="9qu-Wg-qa4">

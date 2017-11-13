@@ -14,10 +14,13 @@
 "Loading ..." = "Laden ...";
 
 /* No comment provided by engineer. */
-"No departures found!" = "Kein Abfahrt gefunden";
+"No departure found" = "Keine Abfahrt";
 
 /* No comment provided by engineer. */
 "No internet connection is available" = "Keine Internetverbindung verfügbar";
+
+/* No comment provided by engineer. */
+"No more departures for this destination" = "Keine Abfahrt";
 
 /* No comment provided by engineer. */
 "The TPG server is unavailable." = "Die Operation später wiederholen";

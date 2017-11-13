@@ -25,7 +25,7 @@
 /* Class = "WKInterfaceLabel"; text = "64"; ObjectID = "Za8-WZ-UH1"; */
 "Za8-WZ-UH1.text" = "64";
 
-/* Class = "WKInterfaceLabel"; text = "No departures found"; ObjectID = "ao8-kT-Z0B"; */
+/* Class = "WKInterfaceLabel"; text = "No departure found"; ObjectID = "ao8-kT-Z0B"; */
 "ao8-kT-Z0B.text" = "Kein Abfahrt gefunden";
 
 /* Class = "WKInterfaceLabel"; text = "Loading ..."; ObjectID = "b4t-iY-HRj"; */
@@ -34,7 +34,7 @@
 /* Class = "WKInterfaceController"; title = "Departures"; ObjectID = "cCm-JV-dAr"; */
 "cCm-JV-dAr.title" = "Abfachten";
 
-/* Class = "WKInterfaceLabel"; text = "No departures found"; ObjectID = "cLv-bs-2PE"; */
+/* Class = "WKInterfaceLabel"; text = "No departure found"; ObjectID = "cLv-bs-2PE"; */
 "cLv-bs-2PE.text" = "Kein Abfahrt gefunden";
 
 /* Class = "WKInterfaceLabel"; text = "No favorite"; ObjectID = "f82-1G-JAn"; */

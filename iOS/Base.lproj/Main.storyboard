@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="513" y="308"/>
         </scene>
-        <!--Next Departures-->
+        <!--Next DeparturesVC-->
         <scene sceneID="D4I-S3-E1V">
             <objects>
-                <tableViewController id="q1j-jb-Lee" customClass="NextDeparturesVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NextDeparturesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q1j-jb-Lee" customClass="NextDeparturesVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" estimatedRowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZvR-Uu-CR6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +197,7 @@
                             <outlet property="delegate" destination="q1j-jb-Lee" id="D09-i5-oF7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Next Departures" id="MB9-o4-eU6">
+                    <navigationItem key="navigationItem" prompt="Next Departures" id="MB9-o4-eU6">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Jwi-w7-aqM">
                             <connections>
                                 <action selector="refreshTriggered:" destination="q1j-jb-Lee" id="gk2-RB-G0z"/>
@@ -217,7 +217,7 @@
         <!--Some Title-->
         <scene sceneID="W3J-yS-ck3">
             <objects>
-                <tableViewController storyboardIdentifier="ThermometerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7p8-VU-mOZ" customClass="ThermometerVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ThermometerVC" id="7p8-VU-mOZ" customClass="ThermometerVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="95" estimatedRowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="2pb-C9-RxQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,6 +318,7 @@
                                         <constraint firstItem="rmB-J7-cmh" firstAttribute="centerY" secondItem="YP8-M1-T9A" secondAttribute="centerY" id="9hj-jZ-nXF"/>
                                         <constraint firstItem="ObJ-DR-KUW" firstAttribute="top" secondItem="E5f-4L-cCT" secondAttribute="bottom" constant="8" id="JNv-PR-hrJ"/>
                                         <constraint firstItem="E5f-4L-cCT" firstAttribute="top" secondItem="ieq-Pb-XT9" secondAttribute="bottom" constant="8" id="dey-qp-6IR"/>
+                                        <constraint firstItem="rmB-J7-cmh" firstAttribute="leading" secondItem="ieq-Pb-XT9" secondAttribute="trailing" constant="203" id="g19-V1-ckS"/>
                                         <constraint firstItem="ieq-Pb-XT9" firstAttribute="leading" secondItem="YP8-M1-T9A" secondAttribute="leading" constant="20" id="g2M-7m-Jbp"/>
                                         <constraint firstItem="ObJ-DR-KUW" firstAttribute="leading" secondItem="ieq-Pb-XT9" secondAttribute="leading" id="hQe-Bg-mPN"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="rmB-J7-cmh" secondAttribute="trailing" constant="5" id="m6o-lo-lXm"/>
@@ -337,7 +338,7 @@
                             <outlet property="delegate" destination="7p8-VU-mOZ" id="ncU-3f-loT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Some Title" id="HFf-Ls-0ep">
+                    <navigationItem key="navigationItem" title="Some Title" prompt="Thermometer" id="HFf-Ls-0ep">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="xMq-hg-9eV">
                             <connections>
                                 <action selector="reloadTriggered:" destination="7p8-VU-mOZ" id="y0J-2m-t9l"/>

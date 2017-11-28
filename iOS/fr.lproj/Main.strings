@@ -1,5 +1,8 @@
-/* Class = "UINavigationItem"; title = "Next Departures"; ObjectID = "MB9-o4-eU6"; */
-"MB9-o4-eU6.title" = "Départs";
+/* Class = "UINavigationItem"; prompt = "Thermometer"; ObjectID = "HFf-Ls-0ep"; */
+"HFf-Ls-0ep.prompt" = "Thermomètre";
+
+/* Class = "UINavigationItem"; prompt = "Next Departures"; ObjectID = "MB9-o4-eU6"; */
+"MB9-o4-eU6.prompt" = "Départs";
 
 /* Class = "UINavigationItem"; title = "Bookmarks"; ObjectID = "OdT-uO-qXP"; */
 "OdT-uO-qXP.title" = "Favoris";

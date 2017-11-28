@@ -60,7 +60,7 @@ final class DeparturesInterfaceController: WKInterfaceController {
 
         let context: [String: Any] = ["departure": departure, "stop": stop]
         pushController(withName: "ThermometerInterfaceController", context: context)
-    }   
+    }
 
     // MARK: - Helpers
     func fetchDepartures(_ stopCode: String) {

@@ -30,6 +30,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
     }()
 
     var stop: Stop?
+    var stopURI: URL?
 
     lazy var loadingBackgroundView: LoadingTableView = {
         let nib = UINib(nibName: "LoadingTableView", bundle: nil)
@@ -37,11 +38,15 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
     }()
 
     // MARK: - View lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.tableFooterView = UIView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = stop?.name
+
         downloadData()
         renderingContext.delegate = self
     }
@@ -83,7 +88,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
     @IBAction func unwindToNextDepartures(_ segue: UIStoryboardSegue) { }
 
     @IBAction func refreshTriggered(_ sender: Any) {
-        downloadData()
+        downloadData(forceDownload: true)
     }
 
     // MARK: - Helpers
@@ -98,14 +103,17 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         }
     }
 
-    private func downloadData() {
+    private func downloadData(forceDownload: Bool = false) {
         guard let stop = stop else {
             return
         }
-        downloadNextDepartures(stopCode: stop.code)
+
+        if forceDownload || nextDepartures.isEmpty {
+            downloadNextDepartures(stopCode: stop.code, displayPopup: self.stopURI == nil)
+        }
     }
 
-    private func downloadNextDepartures(stopCode: String) {
+    private func downloadNextDepartures(stopCode: String, displayPopup: Bool = true) {
 
         self.nextDepartures = []
         self.tableView.reloadData()
@@ -120,10 +128,12 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
                     DispatchQueue.main.async { [unowned self] in
                         self.setNoResults()
                     }
-                } else {
+                } else if displayPopup {
                     let title = NSLocalizedString("Error while downloading", comment: "")
                     let message = error.localizedDescription
                     self.presentAlert(title: title, message: message)
+                } else {
+                    self.goBack(animated: false)
                 }
 
             } else if let record = record {
@@ -131,6 +141,8 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
                     self.updateUI(record: record)
                 }
             }
+
+            self.stopURI = nil
         }
 
         getDepartures.addWillExecuteBlockObserver { [unowned self] (_, _) in
@@ -168,7 +180,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         alert.message = message
 
         let blockOperation = BlockOperation { [unowned self] in
-            self.performSegue(withIdentifier: "unwindToBookmark", sender: self)
+            self.goBack(animated: true)
         }
         blockOperation.add(dependency: alert)
 
@@ -177,6 +189,14 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     }
 
+    private func goBack(animated: Bool) {
+        if animated {
+         self.performSegue(withIdentifier: "unwindToBookmark", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "unwindToBookmarkNoAnimation", sender: self)
+        }
+
+    }
     // MARK: - LinesRendererContextDelegate
     func context(_ context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: IndexPath) {
         if let cell = self.tableView.cellForRow(at: indexPath) as? NextDepartureCell {
@@ -190,6 +210,31 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         if let destination = segue.destination as? ThermometerVC, let index = tableView.indexPathForSelectedRow {
             destination.departure = nextDepartures[index.row]
             destination.stop = stop
+        }
+    }
+
+    // MARK: - Restoration
+    static let stopURIRestorationKey = "stopURI"
+    override func decodeRestorableState(with coder: NSCoder) {
+        let url = coder.decodeObject(forKey: NextDeparturesVC.stopURIRestorationKey) as! NSURL
+        stopURI = url as URL
+
+        super.decodeRestorableState(with: coder)
+    }
+
+    override func encodeRestorableState(with coder: NSCoder) {
+        if let stop = stop {
+            coder.encode(stop.objectID.uriRepresentation() as NSURL, forKey: NextDeparturesVC.stopURIRestorationKey)
+        }
+        super.encodeRestorableState(with: coder)
+    }
+
+    override func applicationFinishedRestoringState() {
+        guard let stopURI = stopURI else { return }
+        if let objectID = Store.shared.persistentStoreCoordinator.managedObjectID(forURIRepresentation: stopURI) {
+
+            let stop = Store.shared.viewContext.object(with: objectID) as! Stop
+            self.stop = stop
         }
     }
 }

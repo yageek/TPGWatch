@@ -207,6 +207,7 @@
                     <connections>
                         <outlet property="refreshItem" destination="Jwi-w7-aqM" id="Tr7-s8-lCq"/>
                         <segue destination="Suc-BE-Mn5" kind="unwind" identifier="unwindToBookmark" unwindAction="unwindToBookmark:" id="fwz-85-t9p"/>
+                        <segue destination="Suc-BE-Mn5" kind="unwind" identifier="unwindToBookmarkNoAnimation" animates="NO" unwindAction="unwindToBookmarkNoAnimation:" id="vRY-TC-bRs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjY-Dz-TO0" userLabel="First Responder" sceneMemberID="firstResponder"/>

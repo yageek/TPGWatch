@@ -96,6 +96,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
     // MARK: - Actions
 
     @IBAction func unwindToBookmark(_ segue: UIStoryboardSegue) { }
+    @IBAction func unwindToBookmarkNoAnimation(_ segue: UIStoryboardSegue) { }
 
     // MARK: NSFetchedResultsControllerDelegate
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {

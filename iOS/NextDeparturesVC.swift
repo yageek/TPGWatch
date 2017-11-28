@@ -109,11 +109,11 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         }
 
         if forceDownload || nextDepartures.isEmpty {
-            downloadNextDepartures(stopCode: stop.code)
+            downloadNextDepartures(stopCode: stop.code, displayPopup: self.stopURI == nil)
         }
     }
 
-    private func downloadNextDepartures(stopCode: String) {
+    private func downloadNextDepartures(stopCode: String, displayPopup: Bool = true) {
 
         self.nextDepartures = []
         self.tableView.reloadData()
@@ -128,10 +128,12 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
                     DispatchQueue.main.async { [unowned self] in
                         self.setNoResults()
                     }
-                } else {
+                } else if displayPopup {
                     let title = NSLocalizedString("Error while downloading", comment: "")
                     let message = error.localizedDescription
                     self.presentAlert(title: title, message: message)
+                } else {
+                    self.goBack(animated: false)
                 }
 
             } else if let record = record {
@@ -139,6 +141,8 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
                     self.updateUI(record: record)
                 }
             }
+
+            self.stopURI = nil
         }
 
         getDepartures.addWillExecuteBlockObserver { [unowned self] (_, _) in
@@ -176,7 +180,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         alert.message = message
 
         let blockOperation = BlockOperation { [unowned self] in
-            self.performSegue(withIdentifier: "unwindToBookmark", sender: self)
+            self.goBack(animated: true)
         }
         blockOperation.add(dependency: alert)
 
@@ -185,6 +189,14 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
 
     }
 
+    private func goBack(animated: Bool) {
+        if animated {
+         self.performSegue(withIdentifier: "unwindToBookmark", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "unwindToBookmarkNoAnimation", sender: self)
+        }
+
+    }
     // MARK: - LinesRendererContextDelegate
     func context(_ context: LinesRendererContext, finishRenderingImage image: UIImage, forIndexPath indexPath: IndexPath) {
         if let cell = self.tableView.cellForRow(at: indexPath) as? NextDepartureCell {
@@ -220,6 +232,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
     override func applicationFinishedRestoringState() {
         guard let stopURI = stopURI else { return }
         if let objectID = Store.shared.persistentStoreCoordinator.managedObjectID(forURIRepresentation: stopURI) {
+
             let stop = Store.shared.viewContext.object(with: objectID) as! Stop
             self.stop = stop
         }

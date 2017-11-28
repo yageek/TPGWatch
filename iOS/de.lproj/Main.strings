@@ -1,5 +1,5 @@
-/* Class = "UINavigationItem"; title = "Next Departures"; ObjectID = "MB9-o4-eU6"; */
-"MB9-o4-eU6.title" = "Nächste Abfahrt";
+/* Class = "UINavigationItem"; prompt = "Next Departures"; ObjectID = "MB9-o4-eU6"; */
+"MB9-o4-eU6.prompt" = "Abfachten";
 
 /* Class = "UINavigationItem"; title = "Bookmarks"; ObjectID = "OdT-uO-qXP"; */
 "OdT-uO-qXP.title" = "Favoriten";

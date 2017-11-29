@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,22 +16,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqk-8E-Mkj">
-                    <rect key="frame" x="157" y="15" width="61" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqk-8E-Mkj">
+                    <rect key="frame" x="157.5" y="20" width="61" height="11.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-D0-KSD">
-                    <rect key="frame" x="129" y="16" width="20" height="20"/>
+                    <rect key="frame" x="129.5" y="20.5" width="20" height="11"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Wqk-8E-Mkj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="1z7-Wh-RZJ"/>
                 <constraint firstItem="Wqk-8E-Mkj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="f4i-Ie-mSd"/>
                 <constraint firstItem="Wqk-8E-Mkj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jkg-59-ENB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Wqk-8E-Mkj" secondAttribute="bottom" constant="20" id="mCr-G7-gzq"/>
                 <constraint firstItem="Wqk-8E-Mkj" firstAttribute="leading" secondItem="HRE-D0-KSD" secondAttribute="trailing" constant="8" id="q5H-dm-bTa"/>
                 <constraint firstItem="HRE-D0-KSD" firstAttribute="centerY" secondItem="Wqk-8E-Mkj" secondAttribute="centerY" id="qtz-hi-sTQ"/>
+                <constraint firstItem="HRE-D0-KSD" firstAttribute="height" secondItem="Wqk-8E-Mkj" secondAttribute="height" id="tmB-M3-zpz"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

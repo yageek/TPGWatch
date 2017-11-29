@@ -94,9 +94,9 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="jcQ-en-CnX" secondAttribute="trailing" constant="5" id="7In-hR-QEH"/>
                                         <constraint firstItem="jcQ-en-CnX" firstAttribute="leading" secondItem="A7K-0u-EjF" secondAttribute="trailing" constant="10" id="APa-na-Iut"/>
                                         <constraint firstItem="jcQ-en-CnX" firstAttribute="centerY" secondItem="7Xt-bA-gum" secondAttribute="centerY" id="DuF-uR-SHT"/>
-                                        <constraint firstItem="A7K-0u-EjF" firstAttribute="top" secondItem="7Xt-bA-gum" secondAttribute="top" constant="36.5" id="ON2-iX-Xsw"/>
+                                        <constraint firstItem="A7K-0u-EjF" firstAttribute="top" secondItem="7Xt-bA-gum" secondAttribute="top" constant="37" id="ON2-iX-Xsw"/>
                                         <constraint firstItem="A7K-0u-EjF" firstAttribute="leading" secondItem="7Xt-bA-gum" secondAttribute="leadingMargin" id="Rsn-Pg-nto"/>
-                                        <constraint firstAttribute="bottom" secondItem="A7K-0u-EjF" secondAttribute="bottom" constant="37.5" id="U6v-WP-2Jg"/>
+                                        <constraint firstAttribute="bottom" secondItem="A7K-0u-EjF" secondAttribute="bottom" constant="37" id="U6v-WP-2Jg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -360,7 +360,7 @@
         <scene sceneID="4M8-4R-okw">
             <objects>
                 <tableViewController storyboardIdentifier="StopSearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b7Y-zS-Yom" customClass="StopSearchVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQn-4U-6fm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="28" sectionFooterHeight="28" id="UQn-4U-6fm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -372,19 +372,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocx-p3-3cD">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocx-p3-3cD">
                                             <rect key="frame" x="61" y="36.5" width="133" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="740" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ffD-ek-njG">
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ffD-ek-njG">
                                             <rect key="frame" x="204" y="10" width="150" height="75"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vMS-00-PF7">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vMS-00-PF7">
                                                     <rect key="frame" x="100" y="0.0" width="50" height="36"/>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="i4I-It-xIF">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="i4I-It-xIF">
                                                     <rect key="frame" x="100" y="39" width="50" height="36"/>
                                                 </stackView>
                                             </subviews>
@@ -417,18 +417,19 @@
                                                 </mask>
                                             </variation>
                                         </stackView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark-off" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-Hl-9Ap">
-                                            <rect key="frame" x="21" y="35" width="24" height="24"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="bookmark-off" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-Hl-9Ap">
+                                            <rect key="frame" x="21" y="35.5" width="24" height="24"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ffD-ek-njG" firstAttribute="leading" secondItem="Ocx-p3-3cD" secondAttribute="trailing" constant="10" id="10X-4V-88a"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ocx-p3-3cD" secondAttribute="bottom" constant="37" id="2TQ-Pz-4dz"/>
                                         <constraint firstItem="Qwx-Hl-9Ap" firstAttribute="centerY" secondItem="z4C-RF-dt3" secondAttribute="centerY" id="3ow-Do-F9M"/>
-                                        <constraint firstItem="Ocx-p3-3cD" firstAttribute="centerY" secondItem="z4C-RF-dt3" secondAttribute="centerY" id="QQv-fW-Kr7"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ffD-ek-njG" secondAttribute="trailing" constant="5" id="Rsc-2O-i9H"/>
                                         <constraint firstItem="ffD-ek-njG" firstAttribute="centerY" secondItem="z4C-RF-dt3" secondAttribute="centerY" id="TUd-g1-PsK"/>
                                         <constraint firstItem="Ocx-p3-3cD" firstAttribute="leading" secondItem="Qwx-Hl-9Ap" secondAttribute="trailing" constant="16" id="jHF-wG-YQL"/>
                                         <constraint firstItem="Qwx-Hl-9Ap" firstAttribute="leading" secondItem="z4C-RF-dt3" secondAttribute="leadingMargin" constant="5" id="kJL-Lc-G44"/>
+                                        <constraint firstItem="Ocx-p3-3cD" firstAttribute="top" secondItem="z4C-RF-dt3" secondAttribute="top" constant="37" id="pIY-Z7-Uoq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

@@ -20,45 +20,22 @@ class StopCell: UITableViewCell {
     }()
 
     @IBOutlet weak var stopLabel: UILabel!
-    @IBOutlet weak var topStack: UIStackView!
-    @IBOutlet weak var bottomStack: UIStackView!
+    @IBOutlet weak var stopStackView: UIStackView!
 
-    fileprivate weak var currentFillingStack: UIStackView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-         self.currentFillingStack = topStack
+    func addLineStop() {
+        let stopView = TPGStopView(frame: .zero)
+        stopStackView.addArrangedSubview(stopView)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
     func addImageLine(_ image: UIImage) {
-
-        let finalImage: UIImage
-        let count = currentFillingStack.arrangedSubviews.count
-
-        if currentFillingStack === bottomStack && count == 2 {
-            finalImage = StopCell.moreHolderImage
-        } else {
-            finalImage = image
-        }
-
-        let view = UIImageView(image: finalImage)
+        let view = UIImageView(image: image)
         view.contentMode = .scaleAspectFit
-
-        if count <= 2 {
-            currentFillingStack.addArrangedSubview(view)
-        }
-
-        if currentFillingStack === topStack {
-            currentFillingStack = bottomStack
-        } else {
-            currentFillingStack = topStack
+        stopStackView.addArrangedSubview(view)
+        
+        if let last = stopStackView.arrangedSubviews.last {
+            let constraint = NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: last, attribute: .width, multiplier: 1.0, constant: 0.0)
+            view.addConstraint(constraint)
         }
     }
 
@@ -69,8 +46,8 @@ class StopCell: UITableViewCell {
     }
 
     func resetStacks() {
-        resetStacks(topStack)
-        resetStacks(bottomStack)
-        currentFillingStack = topStack
+        for view in stopStackView.subviews {
+            stopStackView.removeArrangedSubview(view)
+        }
     }
 }

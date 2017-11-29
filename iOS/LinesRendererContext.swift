@@ -15,7 +15,6 @@ protocol LinesRendererContextDelegate: class {
 }
 
 final class LinesRendererContext {
-    static let renderSize = CGSize(width: 40.0, height: 32.0)
     var queue = ProcedureQueue()
 
     let lock = NSLock()
@@ -29,7 +28,7 @@ final class LinesRendererContext {
         self.context = context
         NotificationCenter.default.addObserver(self, selector: #selector(dynamicSizeChanged(_:)), name: .UIContentSizeCategoryDidChange, object: nil)
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -38,7 +37,7 @@ final class LinesRendererContext {
         let renderer = self.renderers[lineCode]
 
         if let rend = renderer, rend.hasRendered {
-            return rend.render(LinesRendererContext.renderSize)
+            return rend.render()
         }
 
         if renderer == nil {
@@ -47,7 +46,7 @@ final class LinesRendererContext {
             self.renderers[lineCode] = rend
 
             let blockOp = BlockOperation {
-                let image = rend.render(LinesRendererContext.renderSize)
+                let image = rend.render()
 
                 OperationQueue.main.addOperation({
                     self.delegate?.context(self, finishRenderingImage: image, forIndexPath: indexPath)

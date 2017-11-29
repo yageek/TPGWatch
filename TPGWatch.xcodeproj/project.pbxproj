@@ -65,6 +65,7 @@
 		0BB2801B1D5927680065C403 /* BookmarkedStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801A1D5927680065C403 /* BookmarkedStop.swift */; };
 		0BB2801E1D5927C20065C403 /* DepartureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2801D1D5927C20065C403 /* DepartureInfo.swift */; };
 		0BB2801F1D59D4160065C403 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF007341D340040008877F9 /* Error.swift */; };
+		0BB3C9E51FCEF98400C67F19 /* TPGStopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3C9E41FCEF98400C67F19 /* TPGStopView.m */; };
 		0BBDC1891D54D447005C8297 /* ReadProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBDC1881D54D447005C8297 /* ReadProcedure.swift */; };
 		0BCC7E1C1F949B3D00FA72D3 /* NextDepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC7E1B1F949B3D00FA72D3 /* NextDepartureCell.swift */; };
 		0BCDBF3C1F94DA06006D1B0D /* GetThermometerProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDBF3B1F94DA06006D1B0D /* GetThermometerProcedure.swift */; };
@@ -217,6 +218,9 @@
 		0BB280171D5922590065C403 /* PresentFirstScreenProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFirstScreenProcedure.swift; sourceTree = "<group>"; };
 		0BB2801A1D5927680065C403 /* BookmarkedStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkedStop.swift; sourceTree = "<group>"; };
 		0BB2801D1D5927C20065C403 /* DepartureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureInfo.swift; sourceTree = "<group>"; };
+		0BB3C9E21FCEF98400C67F19 /* iOS App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS App-Bridging-Header.h"; sourceTree = "<group>"; };
+		0BB3C9E31FCEF98400C67F19 /* TPGStopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPGStopView.h; sourceTree = "<group>"; };
+		0BB3C9E41FCEF98400C67F19 /* TPGStopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPGStopView.m; sourceTree = "<group>"; };
 		0BBDC1881D54D447005C8297 /* ReadProcedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadProcedure.swift; sourceTree = "<group>"; };
 		0BCC7E1B1F949B3D00FA72D3 /* NextDepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDepartureCell.swift; sourceTree = "<group>"; };
 		0BCDBF3B1F94DA06006D1B0D /* GetThermometerProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetThermometerProcedure.swift; sourceTree = "<group>"; };
@@ -394,6 +398,9 @@
 			children = (
 				0B96A3401F966474001F2F11 /* LoadingTableView.xib */,
 				0B25C0511F9699B700D2D77B /* LoadingTableView.swift */,
+				0BB3C9E31FCEF98400C67F19 /* TPGStopView.h */,
+				0BB3C9E41FCEF98400C67F19 /* TPGStopView.m */,
+				0BB3C9E21FCEF98400C67F19 /* iOS App-Bridging-Header.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -684,7 +691,7 @@
 					0BF0070B1D33FF6D008877F9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5QGK56P5P5;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0910;
 					};
 				};
 			};
@@ -883,6 +890,7 @@
 				0BCDBF3C1F94DA06006D1B0D /* GetThermometerProcedure.swift in Sources */,
 				0BF007551D3400A7008877F9 /* Stop+CoreDataProperties.swift in Sources */,
 				0BF007451D34006F008877F9 /* LineRenderer.swift in Sources */,
+				0BB3C9E51FCEF98400C67F19 /* TPGStopView.m in Sources */,
 				0B4697F81D53E1EA006C73BF /* 1_to_2_model.xcmappingmodel in Sources */,
 				0B84C1441D529EA700594499 /* SendRegisteryProcedure.swift in Sources */,
 				0BF007321D34002F008877F9 /* StopSearchVC.swift in Sources */,
@@ -1239,6 +1247,7 @@
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = TPGWatch;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS/iOS App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -1262,6 +1271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yageek.TPGWatch;
 				PRODUCT_NAME = TPGWatch;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOS/iOS App-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

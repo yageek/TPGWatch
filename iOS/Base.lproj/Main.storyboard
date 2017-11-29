@@ -46,31 +46,42 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-0u-EjF">
-                                            <rect key="frame" x="16" y="10" width="81" height="18.5"/>
+                                            <rect key="frame" x="16" y="10" width="81" height="38"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="center" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hci-wu-Jzs">
-                                            <rect key="frame" x="16" y="38.5" width="320" height="46"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="46" id="MRE-E3-enG"/>
-                                            </constraints>
-                                        </stackView>
+                                        <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-LA-wW2" customClass="TPGStopView">
+                                            <rect key="frame" x="16" y="56.5" width="29.5" height="21.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="rubanColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" red="0.33796009900000001" green="1" blue="0.32128323850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                                                    <color key="value" red="0.99999994039999995" green="0.0" blue="0.038176831770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="1"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A7K-0u-EjF" secondAttribute="trailing" constant="5" id="DZ0-z4-5oO"/>
                                         <constraint firstItem="A7K-0u-EjF" firstAttribute="top" secondItem="7Xt-bA-gum" secondAttribute="top" constant="10" id="ON2-iX-Xsw"/>
                                         <constraint firstItem="A7K-0u-EjF" firstAttribute="leading" secondItem="7Xt-bA-gum" secondAttribute="leadingMargin" id="Rsn-Pg-nto"/>
-                                        <constraint firstAttribute="bottom" secondItem="Hci-wu-Jzs" secondAttribute="bottom" constant="10" id="Tf4-ZJ-oXG"/>
-                                        <constraint firstItem="Hci-wu-Jzs" firstAttribute="leading" secondItem="A7K-0u-EjF" secondAttribute="leading" id="WRF-fs-8ee"/>
-                                        <constraint firstItem="Hci-wu-Jzs" firstAttribute="top" secondItem="A7K-0u-EjF" secondAttribute="bottom" constant="10" id="qa1-XO-cDS"/>
-                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Hci-wu-Jzs" secondAttribute="trailing" id="szf-Ua-fGq"/>
+                                        <constraint firstAttribute="bottom" secondItem="bBQ-LA-wW2" secondAttribute="bottom" constant="16.5" id="Z5W-Sc-KVM"/>
+                                        <constraint firstItem="bBQ-LA-wW2" firstAttribute="top" secondItem="A7K-0u-EjF" secondAttribute="bottom" constant="8.5" id="c2Y-2f-CEC"/>
+                                        <constraint firstItem="bBQ-LA-wW2" firstAttribute="leading" secondItem="A7K-0u-EjF" secondAttribute="leading" id="dmo-l8-whA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="stopLabel" destination="A7K-0u-EjF" id="ba4-1f-aWX"/>
-                                    <outlet property="stopStackView" destination="Hci-wu-Jzs" id="c00-LY-wsb"/>
                                     <segue destination="q1j-jb-Lee" kind="show" id="BoJ-Lk-iFt"/>
                                 </connections>
                             </tableViewCell>

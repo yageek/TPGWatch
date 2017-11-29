@@ -20,23 +20,23 @@ class StopCell: UITableViewCell {
     }()
 
     @IBOutlet weak var stopLabel: UILabel!
-    @IBOutlet weak var stopStackView: UIStackView!
+    
 
 
     func addLineStop() {
-        let stopView = TPGStopView(frame: .zero)
-        stopStackView.addArrangedSubview(stopView)
+//        let stopView = TPGStopView(frame: .zero)
+//        stopStackView.addArrangedSubview(stopView)
     }
     
     func addImageLine(_ image: UIImage) {
-        let view = UIImageView(image: image)
-        view.contentMode = .scaleAspectFit
-        stopStackView.addArrangedSubview(view)
-        
-        if let last = stopStackView.arrangedSubviews.last {
-            let constraint = NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: last, attribute: .width, multiplier: 1.0, constant: 0.0)
-            view.addConstraint(constraint)
-        }
+//        let view = UIImageView(image: image)
+//        view.contentMode = .scaleAspectFit
+//        stopStackView.addArrangedSubview(view)
+//
+//        if let last = stopStackView.arrangedSubviews.last {
+//            let constraint = NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: last, attribute: .width, multiplier: 1.0, constant: 0.0)
+//            view.addConstraint(constraint)
+//        }
     }
 
     fileprivate func resetStacks(_ stack: UIStackView) {
@@ -46,8 +46,8 @@ class StopCell: UITableViewCell {
     }
 
     func resetStacks() {
-        for view in stopStackView.subviews {
-            stopStackView.removeArrangedSubview(view)
-        }
+//        for view in stopStackView.subviews {
+//            stopStackView.removeArrangedSubview(view)
+//        }
     }
 }

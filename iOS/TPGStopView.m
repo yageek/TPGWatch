@@ -43,7 +43,7 @@
     
     [self setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     [self setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
-    
+
     [self setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     [self setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
     
@@ -57,9 +57,14 @@
     label.adjustsFontSizeToFitWidth = YES;
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"1";
-    [label sizeToFit];
     
     [self addSubview:label];
+    
+//    [[self.leadingAnchor constraintEqualToAnchor:label.leadingAnchor] setActive:YES];
+//    [[self.trailingAnchor constraintEqualToAnchor:label.trailingAnchor] setActive:YES];
+//    [[self.topAnchor constraintEqualToAnchor:label.topAnchor] setActive:YES];
+//    [[self.bottomAnchor constraintEqualToAnchor:label.bottomAnchor] setActive:YES];
+//    label.translatesAutoresizingMaskIntoConstraints = NO;
     self.textLabel = label;
 }
 
@@ -76,18 +81,36 @@
 }
 
 - (CGSize) intrinsicContentSize {
-    return self.textLabel.intrinsicContentSize;
+    
+    CGSize textSize = self.textLabel.frame.size;
+    CGFloat lineInset = self.lineWidth/2.0;
+    CGFloat vMargin = ceilf(textSize.height/1.5);
+    CGFloat hMargin = ceil(textSize.height/8.0);
+    CGSize totalSize = CGSizeMake(2*vMargin + ceilf(textSize.width) + lineInset, 2*hMargin + ceilf(textSize.height) + lineInset);
+    return totalSize;
+}
+- (CGSize) sizeThatFits:(CGSize)size {
+    return [self intrinsicContentSize];
 }
 
 - (void) layoutSubviews {
     [super layoutSubviews];
     
-    // Text
-    self.textLabel.frame = self.frame;
+    // Compute elements
+    CGSize textSize = self.textLabel.frame.size;
+    CGFloat lineInset = self.lineWidth/2.0;
+    CGFloat vMargin = ceilf(textSize.height/1.5);
+    CGFloat hMargin = ceil(textSize.height/8.0);
+    // Total Size
+    CGSize totalSize = CGSizeMake(2*vMargin + textSize.width + lineInset, 2*hMargin + textSize.height + lineInset);
+    
+    // Center textRect
+    CGRect textRect = CGRectMake((CGRectGetWidth(self.frame) - textSize.width)/2.0, (CGRectGetHeight(self.frame) - textSize.height)/2.0, textSize.width, textSize.height);
+    self.textLabel.frame = textRect;
     
     // Adjust CA Layer
-    CGFloat inset = self.lineWidth / 2.0;
-    CGRect rounded = CGRectInset(self.bounds, inset, inset);
+    // TODO: See inset
+    CGRect rounded = CGRectMake((CGRectGetWidth(self.frame) - totalSize.width)/2.0, (CGRectGetHeight(self.frame) - totalSize.height)/2.0, totalSize.width, totalSize.height);
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:rounded cornerRadius:CGRectGetWidth(rounded)/2.0];
     self.roundedBackground.frame = self.layer.bounds;
     self.roundedBackground.path = bezierPath.CGPath;
@@ -96,6 +119,7 @@
 #pragma mark - Setters customization
 - (void) setText:(NSString *)text {
     self.textLabel.text = text;
+    [self.textLabel sizeToFit];
 }
 
 - (void) setTextColor:(UIColor *)textColor {

@@ -46,28 +46,5 @@
             </connections>
             <point key="canvasLocation" x="33.5" y="71.5"/>
         </view>
-        <view hidden="YES" contentMode="scaleToFill" id="Kxc-aZ-og9" customClass="TPGStopView">
-            <rect key="frame" x="0.0" y="0.0" width="225" height="155"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="CWs-v4-FS7"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="text" value="4"/>
-                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                    <color key="value" red="0.15809559819999999" green="0.16767153139999999" blue="0.2099131048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
-                    <color key="value" red="0.99999994039999995" green="0.0" blue="0.038176831770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="color" keyPath="rubanColor">
-                    <color key="value" red="0.3379600989532684" green="1" blue="0.32128323848292728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                    <real key="value" value="6"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
-            <point key="canvasLocation" x="394.5" y="-439.5"/>
-        </view>
     </objects>
 </document>

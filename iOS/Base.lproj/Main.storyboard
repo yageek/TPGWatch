@@ -33,36 +33,35 @@
         <scene sceneID="LM0-3n-khr">
             <objects>
                 <tableViewController storyboardIdentifier="StopBookmarkVC" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7cM-o2-BF7" customClass="StopBookmarkVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" estimatedRowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="697-FN-gGj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="95" sectionHeaderHeight="1" sectionFooterHeight="1" id="697-FN-gGj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StopCell" rowHeight="95" id="AI4-qd-2fC" customClass="StopCell" customModule="TPGWatch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AI4-qd-2fC" id="7Xt-bA-gum">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="94.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-0u-EjF">
-                                            <rect key="frame" x="16" y="36.5" width="152" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-0u-EjF">
+                                            <rect key="frame" x="16" y="36.5" width="81" height="20.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="740" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jcQ-en-CnX">
-                                            <rect key="frame" x="178" y="10" width="150" height="75"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jcQ-en-CnX">
+                                            <rect key="frame" x="107" y="10" width="221" height="75"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-MB-dZ3">
-                                                    <rect key="frame" x="100" y="0.0" width="50" height="36"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-MB-dZ3">
+                                                    <rect key="frame" x="171" y="0.0" width="50" height="36"/>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uji-Iu-45y">
-                                                    <rect key="frame" x="100" y="39" width="50" height="36"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uji-Iu-45y">
+                                                    <rect key="frame" x="171" y="39" width="50" height="36"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="3ny-FP-T0R"/>
                                                 <constraint firstAttribute="height" constant="75" id="HQx-hl-BmJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Uji-Iu-45y" secondAttribute="trailing" id="JNc-u2-E4c"/>
                                                 <constraint firstItem="5qx-MB-dZ3" firstAttribute="top" secondItem="jcQ-en-CnX" secondAttribute="top" id="Sbo-Tk-eB0"/>
@@ -94,9 +93,10 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="jcQ-en-CnX" secondAttribute="trailing" constant="5" id="7In-hR-QEH"/>
                                         <constraint firstItem="jcQ-en-CnX" firstAttribute="leading" secondItem="A7K-0u-EjF" secondAttribute="trailing" constant="10" id="APa-na-Iut"/>
+                                        <constraint firstItem="jcQ-en-CnX" firstAttribute="centerY" secondItem="7Xt-bA-gum" secondAttribute="centerY" id="DuF-uR-SHT"/>
+                                        <constraint firstItem="A7K-0u-EjF" firstAttribute="top" secondItem="7Xt-bA-gum" secondAttribute="top" constant="36.5" id="ON2-iX-Xsw"/>
                                         <constraint firstItem="A7K-0u-EjF" firstAttribute="leading" secondItem="7Xt-bA-gum" secondAttribute="leadingMargin" id="Rsn-Pg-nto"/>
-                                        <constraint firstItem="jcQ-en-CnX" firstAttribute="centerY" secondItem="7Xt-bA-gum" secondAttribute="centerY" id="ffQ-RI-xks"/>
-                                        <constraint firstItem="A7K-0u-EjF" firstAttribute="centerY" secondItem="7Xt-bA-gum" secondAttribute="centerY" id="xg2-xw-Onn"/>
+                                        <constraint firstAttribute="bottom" secondItem="A7K-0u-EjF" secondAttribute="bottom" constant="37.5" id="U6v-WP-2Jg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

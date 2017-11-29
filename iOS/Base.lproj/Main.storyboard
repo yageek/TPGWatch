@@ -133,13 +133,13 @@
         <scene sceneID="D4I-S3-E1V">
             <objects>
                 <tableViewController storyboardIdentifier="NextDeparturesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q1j-jb-Lee" customClass="NextDeparturesVC" customModule="TPGWatch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" estimatedRowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZvR-Uu-CR6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="1" sectionFooterHeight="1" id="ZvR-Uu-CR6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NextDepartureCell" rowHeight="95" id="rR7-mC-XFb" customClass="NextDepartureCell" customModule="TPGWatch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="95"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rR7-mC-XFb" id="ybt-kI-hJV">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="94.5"/>
@@ -152,15 +152,15 @@
                                                 <constraint firstAttribute="width" constant="40" id="o8P-FP-uNe"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCU-tl-Zbn">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCU-tl-Zbn">
                                             <rect key="frame" x="64" y="37" width="81" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUd-QB-Pxf">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUd-QB-Pxf">
                                             <rect key="frame" x="258.5" y="39" width="37.5" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -177,6 +177,8 @@
                                         <constraint firstItem="SPK-Hm-fws" firstAttribute="leading" secondItem="ybt-kI-hJV" secondAttribute="leadingMargin" id="NwQ-Tw-Rhl"/>
                                         <constraint firstItem="x7A-SP-9Ob" firstAttribute="leading" secondItem="oUd-QB-Pxf" secondAttribute="trailing" constant="10" id="Vuf-KQ-CHd"/>
                                         <constraint firstItem="SPK-Hm-fws" firstAttribute="centerY" secondItem="ybt-kI-hJV" secondAttribute="centerY" id="XD6-gQ-L51"/>
+                                        <constraint firstAttribute="bottom" secondItem="YCU-tl-Zbn" secondAttribute="bottom" constant="37" id="ZgG-GJ-WMC"/>
+                                        <constraint firstItem="YCU-tl-Zbn" firstAttribute="top" secondItem="ybt-kI-hJV" secondAttribute="top" constant="37" id="b3x-EP-J9i"/>
                                         <constraint firstItem="SPK-Hm-fws" firstAttribute="centerY" secondItem="YCU-tl-Zbn" secondAttribute="centerY" id="dmM-Hd-uTf"/>
                                         <constraint firstItem="YCU-tl-Zbn" firstAttribute="leading" secondItem="SPK-Hm-fws" secondAttribute="trailing" constant="8" id="gkE-5Z-s1T"/>
                                         <constraint firstItem="x7A-SP-9Ob" firstAttribute="centerY" secondItem="ybt-kI-hJV" secondAttribute="centerY" id="glh-yf-HSQ"/>

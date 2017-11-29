@@ -68,6 +68,10 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
             cell.resetStacks()
             cell.stopLabel?.text = stop.name
             cell.addLineStop()
+            cell.addLineStop()
+            cell.addLineStop()
+            cell.addLineStop()
+            cell.addLineStop()
 //            for image in renderingContext.renderLines(stop.code, indexPath: indexPath) {
 //                cell.addImageLine(image)
 //            }

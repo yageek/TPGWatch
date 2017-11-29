@@ -19,15 +19,25 @@ class StopCell: UITableViewCell {
         return render.render(CGSize(width: 40.0, height: 32.0))
     }()
 
-    @IBOutlet weak var stopLabel: UILabel!
-    
+    @IBOutlet weak var stopLabel: UILabel!    
+    @IBOutlet weak var stopStackView: UIStackView!
 
-
+//    func addLineStop(backgroundColor: UIColor, rubanColor: UIColor, textColor: UIColor, text: String) {
     func addLineStop() {
-//        let stopView = TPGStopView(frame: .zero)
-//        stopStackView.addArrangedSubview(stopView)
+        let stopView = TPGStopView(frame: .zero)
+        stopView.backColor = .red
+        stopView.textColor = .white
+        stopView.rubanColor = .red
+        stopView.text = "1"
+        stopView.translatesAutoresizingMaskIntoConstraints = false
+        
+//        stopView.backColor = backgroundColor
+//        stopView.rubanColor = rubanColor
+//        stopView.textColor = textColor
+//        stopView.text = text
+        stopStackView.insertArrangedSubview(stopView, at: 0)
     }
-    
+
     func addImageLine(_ image: UIImage) {
 //        let view = UIImageView(image: image)
 //        view.contentMode = .scaleAspectFit
@@ -46,8 +56,6 @@ class StopCell: UITableViewCell {
     }
 
     func resetStacks() {
-//        for view in stopStackView.subviews {
-//            stopStackView.removeArrangedSubview(view)
-//        }
+      resetStacks(stopStackView)
     }
 }

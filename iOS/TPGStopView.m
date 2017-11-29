@@ -13,10 +13,9 @@
 @end
 
 @implementation TPGStopView
-@dynamic textColor, text, backColor, rubanColor;
-
 - (instancetype) initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        [self setupDefault];
         [self setupSubviews];
     }
     return self;
@@ -24,6 +23,7 @@
 
 -(instancetype) initWithCoder:(NSCoder *)aDecoder {
     if(self = [super initWithCoder:aDecoder]) {
+        [self setupDefault];
         [self setupSubviews];
     }
     return self;
@@ -32,9 +32,9 @@
 #pragma mark - Subviews
 
 - (void) setupDefault {
-    self.textColor = [UIColor whiteColor];
-    self.backColor = [UIColor redColor];
-    self.rubanColor = [UIColor blueColor];
+    _textColor = [UIColor whiteColor];
+    _backColor = [UIColor redColor];
+    _rubanColor = [UIColor blueColor];
 }
 
 - (void) setupSubviews {
@@ -120,17 +120,22 @@
 - (void) setText:(NSString *)text {
     self.textLabel.text = text;
     [self.textLabel sizeToFit];
+    _text = text;
 }
 
 - (void) setTextColor:(UIColor *)textColor {
     self.textLabel.textColor = textColor;
+    _textColor = textColor;
 }
 
 - (void) setBackColor:(UIColor *)backColor {
     self.roundedBackground.fillColor = backColor.CGColor;
+    _backColor = backColor;
 }
+
 - (void) setRubanColor:(UIColor *)rubanColor {
     self.roundedBackground.strokeColor = rubanColor.CGColor;
+    _rubanColor = rubanColor;
 }
 
 -(void) setLineWidth:(CGFloat)lineWidth {

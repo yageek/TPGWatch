@@ -46,42 +46,37 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-0u-EjF">
-                                            <rect key="frame" x="16" y="10" width="81" height="38"/>
+                                            <rect key="frame" x="16" y="10" width="81" height="20.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-LA-wW2" customClass="TPGStopView">
-                                            <rect key="frame" x="16" y="56.5" width="29.5" height="21.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="rubanColor">
-                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                    <color key="value" red="0.33796009900000001" green="1" blue="0.32128323850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
-                                                    <color key="value" red="0.99999994039999995" green="0.0" blue="0.038176831770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="1"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                    <real key="value" value="3"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yti-XE-ui3">
+                                            <rect key="frame" x="0.0" y="35.5" width="333" height="54"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTo-bu-x4n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="54"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="H39-3m-T8q"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Yti-XE-ui3" secondAttribute="trailing" id="2gD-ha-9ba"/>
+                                        <constraint firstItem="Yti-XE-ui3" firstAttribute="top" secondItem="A7K-0u-EjF" secondAttribute="bottom" constant="5" id="4f4-0n-Q8X"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A7K-0u-EjF" secondAttribute="trailing" constant="5" id="DZ0-z4-5oO"/>
                                         <constraint firstItem="A7K-0u-EjF" firstAttribute="top" secondItem="7Xt-bA-gum" secondAttribute="top" constant="10" id="ON2-iX-Xsw"/>
                                         <constraint firstItem="A7K-0u-EjF" firstAttribute="leading" secondItem="7Xt-bA-gum" secondAttribute="leadingMargin" id="Rsn-Pg-nto"/>
-                                        <constraint firstAttribute="bottom" secondItem="bBQ-LA-wW2" secondAttribute="bottom" constant="16.5" id="Z5W-Sc-KVM"/>
-                                        <constraint firstItem="bBQ-LA-wW2" firstAttribute="top" secondItem="A7K-0u-EjF" secondAttribute="bottom" constant="8.5" id="c2Y-2f-CEC"/>
-                                        <constraint firstItem="bBQ-LA-wW2" firstAttribute="leading" secondItem="A7K-0u-EjF" secondAttribute="leading" id="dmo-l8-whA"/>
+                                        <constraint firstAttribute="bottom" secondItem="Yti-XE-ui3" secondAttribute="bottom" constant="5" id="tLf-JG-ZJK"/>
+                                        <constraint firstItem="Yti-XE-ui3" firstAttribute="leadingMargin" secondItem="7Xt-bA-gum" secondAttribute="leading" id="zd1-Op-Os4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="stopLabel" destination="A7K-0u-EjF" id="ba4-1f-aWX"/>
+                                    <outlet property="stopStackView" destination="Yti-XE-ui3" id="hvi-Ae-Jo0"/>
                                     <segue destination="q1j-jb-Lee" kind="show" id="BoJ-Lk-iFt"/>
                                 </connections>
                             </tableViewCell>
@@ -254,64 +249,21 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="740" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="rmB-J7-cmh" userLabel="Line Stack">
-                                            <rect key="frame" x="304" y="10" width="50" height="75"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VeU-oS-36Y">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="36"/>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nlc-cd-v6a">
-                                                    <rect key="frame" x="0.0" y="39" width="50" height="36"/>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="VeU-oS-36Y" firstAttribute="leading" secondItem="rmB-J7-cmh" secondAttribute="leading" id="3RD-P0-DBh"/>
-                                                <constraint firstAttribute="bottom" secondItem="nlc-cd-v6a" secondAttribute="bottom" id="6Sy-UY-g1d"/>
-                                                <constraint firstItem="nlc-cd-v6a" firstAttribute="leading" secondItem="rmB-J7-cmh" secondAttribute="leading" id="Dld-wy-r4Z"/>
-                                                <constraint firstAttribute="trailing" secondItem="VeU-oS-36Y" secondAttribute="trailing" id="IBK-Ej-ycZ"/>
-                                                <constraint firstItem="VeU-oS-36Y" firstAttribute="top" secondItem="rmB-J7-cmh" secondAttribute="top" id="Ptt-Hc-HbG"/>
-                                                <constraint firstItem="nlc-cd-v6a" firstAttribute="top" secondItem="VeU-oS-36Y" secondAttribute="bottom" id="Q6H-aj-cDg"/>
-                                                <constraint firstAttribute="trailing" secondItem="nlc-cd-v6a" secondAttribute="trailing" id="X6J-gJ-7Lh"/>
-                                                <constraint firstItem="nlc-cd-v6a" firstAttribute="height" secondItem="VeU-oS-36Y" secondAttribute="height" id="hUV-LF-OiW"/>
-                                                <constraint firstAttribute="height" constant="75" id="kYJ-eT-KQJ"/>
-                                                <constraint firstItem="nlc-cd-v6a" firstAttribute="top" secondItem="VeU-oS-36Y" secondAttribute="bottom" id="udk-6d-XTm"/>
-                                                <constraint firstItem="VeU-oS-36Y" firstAttribute="height" secondItem="nlc-cd-v6a" secondAttribute="height" id="zzH-fD-2y5"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="3RD-P0-DBh"/>
-                                                    <exclude reference="IBK-Ej-ycZ"/>
-                                                    <exclude reference="Ptt-Hc-HbG"/>
-                                                    <exclude reference="zzH-fD-2y5"/>
-                                                    <exclude reference="6Sy-UY-g1d"/>
-                                                    <exclude reference="Dld-wy-r4Z"/>
-                                                    <exclude reference="Q6H-aj-cDg"/>
-                                                    <exclude reference="X6J-gJ-7Lh"/>
-                                                    <exclude reference="hUV-LF-OiW"/>
-                                                    <exclude reference="udk-6d-XTm"/>
-                                                </mask>
-                                            </variation>
-                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ieq-Pb-XT9" firstAttribute="top" secondItem="YP8-M1-T9A" secondAttribute="topMargin" constant="5" id="5tD-WH-i7v"/>
                                         <constraint firstItem="ieq-Pb-XT9" firstAttribute="leading" secondItem="E5f-4L-cCT" secondAttribute="leading" id="8Vk-FO-aBC"/>
-                                        <constraint firstItem="rmB-J7-cmh" firstAttribute="centerY" secondItem="YP8-M1-T9A" secondAttribute="centerY" id="9hj-jZ-nXF"/>
                                         <constraint firstItem="ObJ-DR-KUW" firstAttribute="top" secondItem="E5f-4L-cCT" secondAttribute="bottom" constant="8" id="JNv-PR-hrJ"/>
                                         <constraint firstItem="E5f-4L-cCT" firstAttribute="top" secondItem="ieq-Pb-XT9" secondAttribute="bottom" constant="8" id="dey-qp-6IR"/>
-                                        <constraint firstItem="rmB-J7-cmh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ieq-Pb-XT9" secondAttribute="trailing" constant="5" id="g19-V1-ckS"/>
                                         <constraint firstItem="ieq-Pb-XT9" firstAttribute="leading" secondItem="YP8-M1-T9A" secondAttribute="leading" constant="20" id="g2M-7m-Jbp"/>
                                         <constraint firstItem="ObJ-DR-KUW" firstAttribute="leading" secondItem="ieq-Pb-XT9" secondAttribute="leading" id="hQe-Bg-mPN"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="rmB-J7-cmh" secondAttribute="trailing" constant="5" id="m6o-lo-lXm"/>
                                         <constraint firstAttribute="bottom" secondItem="ObJ-DR-KUW" secondAttribute="bottom" constant="5" id="nnD-GF-fXu"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bottomStack" destination="nlc-cd-v6a" id="PDE-oC-Ps6"/>
                                     <outlet property="hourLabel" destination="3Z1-tW-JEh" id="qrj-hf-5H6"/>
                                     <outlet property="stopLabel" destination="ieq-Pb-XT9" id="MRn-DC-3eh"/>
                                     <outlet property="timeLabel" destination="aG0-2W-jC6" id="9wb-1R-S2P"/>
-                                    <outlet property="topStack" destination="VeU-oS-36Y" id="7ol-fU-4KH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -354,60 +306,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="StopName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocx-p3-3cD">
-                                            <rect key="frame" x="61" y="36.5" width="133" height="20.5"/>
+                                            <rect key="frame" x="61" y="36.5" width="81" height="20.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ffD-ek-njG">
-                                            <rect key="frame" x="204" y="10" width="150" height="75"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vMS-00-PF7">
-                                                    <rect key="frame" x="100" y="0.0" width="50" height="36"/>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="i4I-It-xIF">
-                                                    <rect key="frame" x="100" y="39" width="50" height="36"/>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="2PG-8P-iUh"/>
-                                                <constraint firstAttribute="trailing" secondItem="vMS-00-PF7" secondAttribute="trailing" id="NRV-sw-FbN"/>
-                                                <constraint firstItem="i4I-It-xIF" firstAttribute="height" secondItem="vMS-00-PF7" secondAttribute="height" id="UrD-SK-7F3"/>
-                                                <constraint firstItem="i4I-It-xIF" firstAttribute="top" secondItem="vMS-00-PF7" secondAttribute="bottom" id="Vxg-LR-ADe"/>
-                                                <constraint firstItem="i4I-It-xIF" firstAttribute="top" secondItem="vMS-00-PF7" secondAttribute="bottom" id="WIS-4g-rFg"/>
-                                                <constraint firstItem="vMS-00-PF7" firstAttribute="leading" secondItem="ffD-ek-njG" secondAttribute="leading" id="Yv4-WQ-7hi"/>
-                                                <constraint firstAttribute="bottom" secondItem="i4I-It-xIF" secondAttribute="bottom" id="ZAj-Yg-447"/>
-                                                <constraint firstItem="vMS-00-PF7" firstAttribute="height" secondItem="i4I-It-xIF" secondAttribute="height" id="fMN-oA-gnO"/>
-                                                <constraint firstAttribute="height" constant="75" id="kFs-pJ-ixN"/>
-                                                <constraint firstItem="vMS-00-PF7" firstAttribute="top" secondItem="ffD-ek-njG" secondAttribute="top" id="o8N-cp-vOJ"/>
-                                                <constraint firstItem="i4I-It-xIF" firstAttribute="leading" secondItem="ffD-ek-njG" secondAttribute="leading" id="t5y-fW-sWb"/>
-                                                <constraint firstAttribute="trailing" secondItem="i4I-It-xIF" secondAttribute="trailing" id="zCF-Ek-UkM"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="NRV-sw-FbN"/>
-                                                    <exclude reference="Yv4-WQ-7hi"/>
-                                                    <exclude reference="fMN-oA-gnO"/>
-                                                    <exclude reference="o8N-cp-vOJ"/>
-                                                    <exclude reference="UrD-SK-7F3"/>
-                                                    <exclude reference="Vxg-LR-ADe"/>
-                                                    <exclude reference="WIS-4g-rFg"/>
-                                                    <exclude reference="ZAj-Yg-447"/>
-                                                    <exclude reference="t5y-fW-sWb"/>
-                                                    <exclude reference="zCF-Ek-UkM"/>
-                                                </mask>
-                                            </variation>
-                                        </stackView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="bookmark-off" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-Hl-9Ap">
                                             <rect key="frame" x="21" y="35.5" width="24" height="24"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ffD-ek-njG" firstAttribute="leading" secondItem="Ocx-p3-3cD" secondAttribute="trailing" constant="10" id="10X-4V-88a"/>
                                         <constraint firstAttribute="bottom" secondItem="Ocx-p3-3cD" secondAttribute="bottom" constant="37" id="2TQ-Pz-4dz"/>
                                         <constraint firstItem="Qwx-Hl-9Ap" firstAttribute="centerY" secondItem="z4C-RF-dt3" secondAttribute="centerY" id="3ow-Do-F9M"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ffD-ek-njG" secondAttribute="trailing" constant="5" id="Rsc-2O-i9H"/>
-                                        <constraint firstItem="ffD-ek-njG" firstAttribute="centerY" secondItem="z4C-RF-dt3" secondAttribute="centerY" id="TUd-g1-PsK"/>
                                         <constraint firstItem="Ocx-p3-3cD" firstAttribute="leading" secondItem="Qwx-Hl-9Ap" secondAttribute="trailing" constant="16" id="jHF-wG-YQL"/>
                                         <constraint firstItem="Qwx-Hl-9Ap" firstAttribute="leading" secondItem="z4C-RF-dt3" secondAttribute="leadingMargin" constant="5" id="kJL-Lc-G44"/>
                                         <constraint firstItem="Ocx-p3-3cD" firstAttribute="top" secondItem="z4C-RF-dt3" secondAttribute="top" constant="37" id="pIY-Z7-Uoq"/>
@@ -415,9 +325,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bookmarkImageView" destination="Qwx-Hl-9Ap" id="SnH-fk-CPq"/>
-                                    <outlet property="bottomStack" destination="i4I-It-xIF" id="fXR-Nn-E83"/>
                                     <outlet property="stopLabel" destination="Ocx-p3-3cD" id="tBc-Hj-zBP"/>
-                                    <outlet property="topStack" destination="vMS-00-PF7" id="K3i-nR-X2G"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

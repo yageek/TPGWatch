@@ -27,6 +27,11 @@ final class LinesRendererContext {
 
     init(context: NSManagedObjectContext) {
         self.context = context
+        NotificationCenter.default.addObserver(self, selector: #selector(dynamicSizeChanged(_:)), name: .UIContentSizeCategoryDidChange, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     func renderLine(lineCode: String, options: LineRenderer.LineRenderingOptions, indexPath: IndexPath) -> UIImage? {
@@ -112,6 +117,25 @@ final class LinesRendererContext {
         }
 
         return []
+    }
+
+    private func clear() {
+        self.lock.lock()
+
+        defer {
+            self.lock.unlock()
+        }
+
+        for (_, operation) in self.renderersOperation {
+            operation.cancel()
+        }
+        self.renderersOperation.removeAll()
+        self.renderers.removeAll()
+    }
+    // MARK: - Accessibility
+
+    @objc func dynamicSizeChanged(_ notif: Notification) {
+        clear()
     }
 
 }

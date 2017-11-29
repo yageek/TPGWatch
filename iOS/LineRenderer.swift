@@ -12,7 +12,7 @@ final class LineRenderer {
 
     struct LineRenderingOptions {
         let lineWidth: CGFloat = 5.0
-        let textFont: UIFont = UIFont.systemFont(ofSize: 11.0)
+        let textFont: UIFont = UIFont.preferredFont(forTextStyle: .footnote)
         let backgroundColor: UIColor
         let textColor: UIColor
         let ribonColor: UIColor

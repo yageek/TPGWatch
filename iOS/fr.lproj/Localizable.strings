@@ -23,6 +23,9 @@
 "No more departures for this destination" = "Aucun départ";
 
 /* No comment provided by engineer. */
+"Search" = "Rechercher";
+
+/* No comment provided by engineer. */
 "The TPG server is unavailable." = "Le serveur des TPG est injoignable";
 
 /* No comment provided by engineer. */

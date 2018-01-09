@@ -65,6 +65,14 @@ extension AppDelegate {
             navBar.barStyle = .black
             navBar.tintColor = UIColor.white
             navBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white]
+            
+            // UISearchController -> https://stackoverflow.com/questions/45663169/uisearchcontroller-ios-11-customization
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.black]
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
+            
+            let localizedSearch = NSLocalizedString("Search", comment: "")
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: localizedSearch, attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+            
         } else {
             navBar.barTintColor = UIColor.appOrange()
             navBar.barStyle = .black

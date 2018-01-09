@@ -157,8 +157,11 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             self.navigationItem.searchController = searchController
             self.navigationItem.hidesSearchBarWhenScrolling = false
             let bar = searchController?.searchBar
-            bar?.setSearchFieldBackgroundImage(UIImage(named: "textfield_background"), for: .normal)
             bar?.tintColor = .white
+            bar?.setSearchFieldBackgroundImage(UIImage(named: "textfield_background"), for: .normal)
+            bar?.setImage(#imageLiteral(resourceName: "glass"), for: UISearchBarIcon.search, state: .normal)
+            bar?.setImage(#imageLiteral(resourceName: "clear"), for: UISearchBarIcon.clear, state: .normal)
+
         } else {
             self.tableView.tableHeaderView = searchController?.searchBar
         }

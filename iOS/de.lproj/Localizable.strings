@@ -23,8 +23,14 @@
 "No more departures for this destination" = "Keine Abfahrt";
 
 /* No comment provided by engineer. */
+"Search" = "Suchen";
+
+/* No comment provided by engineer. */
 "The TPG server is unavailable." = "Die Operation später wiederholen";
 
 /* No comment provided by engineer. */
 "The server returned an unexpected answer" = "Der Server lieferte eine unerwartete Antwort";
+
+/* Shortcut for hour */
+"h" = "St";
 

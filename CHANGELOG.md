@@ -1,5 +1,9 @@
 ## Changelog
 
+
+### 1.9
+* Fix the search bar color issue on iOS11 (#1)
+
 ### 1.8
 * Selection on Thermometer page
 * Avoid displaying an error in case of no departure

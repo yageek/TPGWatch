@@ -50,8 +50,8 @@ class Store {
         guard let data = json else { return }
 
         let saveOp = SaveProcedure(data: data, saveURL: URL)
-        saveOp.addDidFinishBlockObserver { (_, errors) in
-            if let error = errors.first {
+        saveOp.addDidFinishBlockObserver { (_, error) in
+            if let error = error {
                 print("Impossible to save data at \(URL): \(error)")
             } else {
                 print("Sucessfully save data at \(URL)")
@@ -69,10 +69,9 @@ class Store {
             completion(bookmarkCache, nil)
         } else {
             let readOp = ReadArrayProcedure(url: Store.StopsFileURL)
-            readOp.addDidFinishBlockObserver { (op, errors) in
+            readOp.addDidFinishBlockObserver { (op, error) in
 
                 ProcedureQueue.main.addOperation {
-                    let error = errors.first
                     let result = op.output.success
                     self.bookmarkCache = result
                     completion(result, error)
@@ -88,10 +87,9 @@ class Store {
             completion(registeryCache, nil)
         } else {
             let readOp = ReadDictionaryOperation(url: Store.RegisteryFileURL)
-            readOp.addDidFinishBlockObserver { (op, errors) in
+            readOp.addDidFinishBlockObserver { (op, error) in
 
                 ProcedureQueue.main.addOperation {
-                    let error = errors.first
                     let result = op.output.success
                     self.registeryCache = result
                     completion(result, error)
@@ -110,10 +108,8 @@ class Store {
         readBookOp.addDependency(readRegisteryOp)
         let groupOp = GroupProcedure(operations: readBookOp, readRegisteryOp)
 
-        groupOp.addDidFinishBlockObserver { (_, errors) in
+        groupOp.addDidFinishBlockObserver { (_, error) in
             ProcedureQueue.main.addOperation {
-                let error = errors.first
-
                 self.registeryCache = readRegisteryOp.output.success
                 self.bookmarkCache = readBookOp.output.success
                 completion(readBookOp.output.success, readRegisteryOp.output.success, error)

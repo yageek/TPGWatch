@@ -31,7 +31,7 @@ final class ImportLinesColorsProcedure: Procedure, InputProcedure {
     override func execute() {
 
         guard let lineColorRecord = self.input.value else {
-            self.finish(withError: GeneralError.unexpectedData)
+            self.finish(with: GeneralError.unexpectedData)
             return
         }
 
@@ -50,7 +50,7 @@ final class ImportLinesColorsProcedure: Procedure, InputProcedure {
                 self.finish()
             } catch let error as NSError {
                 print("Error during saving:\(error)")
-                self.finish(withError: error)
+                self.finish(with: error)
             }
         }
     }

@@ -1,7 +1,7 @@
 //
 //  ProcedureKit
 //
-//  Copyright © 2016 ProcedureKit. All rights reserved.
+//  Copyright © 2015-2018 ProcedureKit. All rights reserved.
 //
 
 import XCTest
@@ -87,7 +87,7 @@ class CKQueryOperationTests: CKProcedureTestCase {
 
     func test__success_without_completion_block() {
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
     }
 
     func test__success_with_completion_block() {
@@ -96,14 +96,14 @@ class CKQueryOperationTests: CKProcedureTestCase {
             didExecuteBlock = true
         }
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
         XCTAssertTrue(didExecuteBlock)
     }
 
     func test__error_without_completion_block() {
         target.error = TestError()
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
     }
 
     func test__error_with_completion_block() {
@@ -111,9 +111,10 @@ class CKQueryOperationTests: CKProcedureTestCase {
         operation.setQueryCompletionBlock { cursor in
             didExecuteBlock = true
         }
-        target.error = TestError()
+        let error = TestError()
+        target.error = error
         wait(for: operation)
-        XCTAssertProcedureFinishedWithErrors(operation, count: 1)
+        PKAssertProcedureFinished(operation, withErrors: true)
         XCTAssertFalse(didExecuteBlock)
     }
 }
@@ -180,12 +181,12 @@ class CloudKitProcedureQueryOperationTests: CKProcedureTestCase {
     func test__cancellation() {
         cloudkit.cancel()
         wait(for: cloudkit)
-        XCTAssertProcedureCancelledWithoutErrors(cloudkit)
+        PKAssertProcedureCancelled(cloudkit)
     }
 
     func test__success_without_completion_block_set() {
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
     }
 
     func test__success_with_completion_block_set() {
@@ -194,7 +195,7 @@ class CloudKitProcedureQueryOperationTests: CKProcedureTestCase {
             didExecuteBlock = true
         }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
         XCTAssertTrue(didExecuteBlock)
     }
 
@@ -205,13 +206,14 @@ class CloudKitProcedureQueryOperationTests: CKProcedureTestCase {
             return operation
         }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
     }
 
     func test__error_with_completion_block_set() {
+        let error = NSError(domain: CKErrorDomain, code: CKError.internalError.rawValue, userInfo: nil)
         cloudkit = CloudKitProcedure(strategy: .immediate) {
             let operation = TestCKQueryOperation()
-            operation.error = NSError(domain: CKErrorDomain, code: CKError.internalError.rawValue, userInfo: nil)
+            operation.error = error
             return operation
         }
 
@@ -221,7 +223,7 @@ class CloudKitProcedureQueryOperationTests: CKProcedureTestCase {
         }
 
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithErrors(cloudkit, count: 1)
+        PKAssertProcedureFinished(cloudkit, withErrors: true)
         XCTAssertFalse(didExecuteBlock)
     }
 
@@ -239,7 +241,7 @@ class CloudKitProcedureQueryOperationTests: CKProcedureTestCase {
         var didExecuteBlock = false
         cloudkit.setQueryCompletionBlock { _ in didExecuteBlock = true }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
         XCTAssertTrue(didExecuteBlock)
     }
 
@@ -262,7 +264,7 @@ class CloudKitProcedureQueryOperationTests: CKProcedureTestCase {
         var didExecuteBlock = false
         cloudkit.setQueryCompletionBlock { _ in didExecuteBlock = true }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
         XCTAssertTrue(didExecuteBlock)
         XCTAssertTrue(didRunCustomHandler)
     }

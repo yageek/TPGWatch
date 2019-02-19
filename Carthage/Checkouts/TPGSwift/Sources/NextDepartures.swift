@@ -53,7 +53,7 @@ public struct NextDepartureRecord: Decodable {
         /// The disruptions
         public let disruptions: [Disruption]?
 
-        public enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {
             case code = "departureCode"
             case waitingTime
             case waitingTimeMillis

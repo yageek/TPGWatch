@@ -26,7 +26,7 @@ final class PresentFirstScreenProcedure: Procedure {
     override func execute() {
 
         guard let req = requirement else {
-            finish(withError: NSError(domain: "", code: 0, userInfo: nil))
+            finish(with: NSError(domain: "", code: 0, userInfo: nil))
             return
         }
 

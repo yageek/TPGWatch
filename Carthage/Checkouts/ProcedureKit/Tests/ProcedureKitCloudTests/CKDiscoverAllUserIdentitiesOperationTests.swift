@@ -1,7 +1,7 @@
 //
 //  ProcedureKit
 //
-//  Copyright © 2016 ProcedureKit. All rights reserved.
+//  Copyright © 2015-2018 ProcedureKit. All rights reserved.
 //
 
 #if !os(tvOS)
@@ -59,29 +59,30 @@ class CKDiscoverAllUserIdentitiesOperationTests: CKProcedureTestCase {
 
     func test__success_without_completion_block() {
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
     }
 
     func test__success_with_completion_block() {
         var didExecuteBlock = false
         operation.setDiscoverAllUserIdentitiesCompletionBlock { didExecuteBlock = true }
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
         XCTAssertTrue(didExecuteBlock)
     }
 
     func test__error_without_completion_block() {
         target.error = TestError()
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
     }
 
     func test__error_with_completion_block() {
         var didExecuteBlock = false
         operation.setDiscoverAllUserIdentitiesCompletionBlock { didExecuteBlock = true }
-        target.error = TestError()
+        let error = TestError()
+        target.error = error
         wait(for: operation)
-        XCTAssertProcedureFinishedWithErrors(operation, count: 1)
+        PKAssertProcedureFinished(operation, withErrors: true)
         XCTAssertFalse(didExecuteBlock)
     }
 }
@@ -126,12 +127,12 @@ class CloudKitProcedureDiscoverAllUserIdentitiesOperationTests: CKProcedureTestC
     func test__cancellation() {
         cloudkit.cancel()
         wait(for: cloudkit)
-        XCTAssertProcedureCancelledWithoutErrors(cloudkit)
+        PKAssertProcedureCancelled(cloudkit)
     }
 
     func test__success_without_completion_block_set() {
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
     }
 
     func test__success_with_completion_block_set() {
@@ -140,7 +141,7 @@ class CloudKitProcedureDiscoverAllUserIdentitiesOperationTests: CKProcedureTestC
             didExecuteBlock = true
         }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
         XCTAssertTrue(didExecuteBlock)
     }
 
@@ -151,7 +152,7 @@ class CloudKitProcedureDiscoverAllUserIdentitiesOperationTests: CKProcedureTestC
             return operation
         }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
     }
 
     func test__error_with_completion_block_set() {
@@ -167,7 +168,7 @@ class CloudKitProcedureDiscoverAllUserIdentitiesOperationTests: CKProcedureTestC
         }
 
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithErrors(cloudkit, count: 1)
+        PKAssertProcedureFinished(cloudkit, withErrors: true)
         XCTAssertFalse(didExecuteBlock)
     }
 
@@ -185,7 +186,7 @@ class CloudKitProcedureDiscoverAllUserIdentitiesOperationTests: CKProcedureTestC
         var didExecuteBlock = false
         cloudkit.setDiscoverAllUserIdentitiesCompletionBlock { didExecuteBlock = true }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
         XCTAssertTrue(didExecuteBlock)
     }
 
@@ -208,7 +209,7 @@ class CloudKitProcedureDiscoverAllUserIdentitiesOperationTests: CKProcedureTestC
         var didExecuteBlock = false
         cloudkit.setDiscoverAllUserIdentitiesCompletionBlock { didExecuteBlock = true }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
         XCTAssertTrue(didExecuteBlock)
         XCTAssertTrue(didRunCustomHandler)
     }

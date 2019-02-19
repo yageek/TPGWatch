@@ -1,7 +1,7 @@
 //
 //  ProcedureKit
 //
-//  Copyright © 2016 ProcedureKit. All rights reserved.
+//  Copyright © 2015-2018 ProcedureKit. All rights reserved.
 //
 
 import Foundation
@@ -203,8 +203,10 @@ internal extension EventQueue {
             originalQueue.queue.resume()
         }
     }
+}
 
-    func makeTimerSource(flags: DispatchSource.TimerFlags = []) -> DispatchSourceTimer {
+public extension EventQueue {
+    public func makeTimerSource(flags: DispatchSource.TimerFlags = []) -> DispatchSourceTimer {
         return DispatchSource.makeTimerSource(flags: flags, queue: queue)
     }
 }

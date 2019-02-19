@@ -15,7 +15,7 @@ final class GetThermometerProcedure: GroupProcedure {
         let getThermometerCall = API.getThermometer(departureCode: "\(departureCode)")
         let downloadDepartures = DownloadProcedure(call: getThermometerCall)
         let parseDepartures = JSONDeserializationProcedure<Thermometer>().injectPayload(fromNetwork: downloadDepartures)
-        parseDepartures.addDidFinishBlockObserver { (procedure, errors) in
+        parseDepartures.addDidFinishBlockObserver { (procedure, error) in
 
             if let value = procedure.output.success {
                 ProcedureQueue.main.addOperation {
@@ -23,7 +23,7 @@ final class GetThermometerProcedure: GroupProcedure {
                     completion(value, nil)
                 }
             } else {
-                print("Some errors occured: \(errors)")
+                print("Some errors occured: \(String(describing: error))")
                 ProcedureQueue.main.addOperation {
                     completion(nil, NSError(domain: "", code: 0, userInfo: nil))
                 }

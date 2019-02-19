@@ -66,7 +66,7 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
 
         #if DEBUG
             print("Stop Name: \(step.stop.name)")
-            print("Arrival Time: \(step.arrivalTime)")
+        print("Arrival Time: \(String(describing: step.arrivalTime))")
             print("Date: \(step.timestamp)")
         #endif
 
@@ -153,7 +153,7 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
                  self.loadItem.isEnabled = true
             }
         }
-        queue.add(operation: thermometer)
+        queue.addOperation(thermometer)
     }
 
     private func presentAlert(title: String, message: String) {
@@ -166,7 +166,7 @@ final class ThermometerVC: UITableViewController, LinesRendererContextDelegate {
         }
 
         block.addDependency(alert)
-        self.queue.add(operation: alert)
+        self.queue.addOperation(alert)
         OperationQueue.main.addOperation(block)
     }
 

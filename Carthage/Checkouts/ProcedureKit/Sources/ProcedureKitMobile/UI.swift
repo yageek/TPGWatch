@@ -1,7 +1,7 @@
 //
 //  ProcedureKit
 //
-//  Copyright © 2016 ProcedureKit. All rights reserved.
+//  Copyright © 2015-2018 ProcedureKit. All rights reserved.
 //
 
 import Foundation
@@ -26,6 +26,7 @@ public enum PresentationStyle {
     case show, showDetail, present
 }
 
+@available(*, deprecated: 5.0.0, message: "UIProcedure is now deprecated and will be removed")
 open class UIProcedure: Procedure {
 
     public let presented: UIViewController

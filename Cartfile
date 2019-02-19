@@ -1,2 +1,2 @@
-github "yageek/TPGSwift" ~> 3.0.1
-github "ProcedureKit/ProcedureKit" ~> 4.4.0
+github "yageek/TPGSwift" ~> 4.0.0
+github "ProcedureKit/ProcedureKit" ~> 5.0.0

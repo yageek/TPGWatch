@@ -29,7 +29,7 @@ final class ImportStopProcedure: Procedure, InputProcedure {
 
     override func execute() {
         guard let stopRecord = self.input.value else {
-            self.finish(withError: GeneralError.apiError)
+            self.finish(with: GeneralError.apiError)
             return
         }
 
@@ -62,7 +62,7 @@ final class ImportStopProcedure: Procedure, InputProcedure {
                 self.finish()
             } catch let error as NSError {
                 print("Error during saving:\(error)")
-                self.finish(withError: error)
+                self.finish(with: error)
             }
         }
 

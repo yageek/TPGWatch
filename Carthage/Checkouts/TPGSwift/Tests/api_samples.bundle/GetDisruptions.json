@@ -1,0 +1,40 @@
+{
+    "timestamp": "2017-11-02T13:09:17+0100",
+    "disruptions": [
+        {
+            "timestamp": "2017-11-02T03:55:00+0100",
+            "place": "Direction Petit-Bel-Air",
+            "nature": "Travaux - Passage Montbrillant",
+            "consequence": "Dès le 30 octobre, pour une durée de 6 semaines la ligne est détournée via le passage de la rue de la Servette entre Lyon et Chantepoulet. L' arrêt Gare Cornavin n'est pas desservi.",
+            "lineCode": "9"
+        },
+        {
+            "timestamp": "2017-11-02T03:54:00+0100",
+            "place": "Dans les deux sens",
+            "nature": "Travaux Rte de Malagny",
+            "consequence": "Les lignes sont détournées entre les arrêts Genthod-Village et Malagny,l'arrêt La Pralay n'est pas desservi.",
+            "lineCode": "82"
+        },
+        {
+            "timestamp": "2017-11-02T03:56:00+0100",
+            "place": "Direction Bel-Air",
+            "nature": "Travaux rue de Genève",
+            "consequence": "Ligne détournée en direction de Bel-Air entre St Julien-Gare et Hutins. Arrêt St-Julien-Centre non desservi.",
+            "lineCode": "D"
+        },
+        {
+            "timestamp": "2017-11-02T03:54:00+0100",
+            "place": "Dans les deux sens",
+            "nature": "Travaux Rte de Malagny",
+            "consequence": "Les lignes sont détournées entre les arrêts Genthod-Village et Malagny,l'arrêt La Pralay n'est pas desservi.",
+            "lineCode": "V"
+        },
+        {
+            "timestamp": "2017-11-02T03:54:00+0100",
+            "place": "Dans les deux sens",
+            "nature": "Travaux Rte de Malagny",
+            "consequence": "Les lignes sont détournées entre les arrêts Genthod-Village et Malagny,l'arrêt La Pralay n'est pas desservi.",
+            "lineCode": "V+"
+        }
+    ]
+}

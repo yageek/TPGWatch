@@ -10,7 +10,7 @@ import Foundation
 
 /// An API object represents an object
 /// that can be put in a `Record` object.
-public protocol APIObject {
+public protocol APIObject: Decodable {
 
     /// The JSON name of the array of elements
     static var recordName: String { get }
@@ -26,7 +26,7 @@ public struct Record<Object: APIObject>: Decodable {
     /// The elements of the record
     public let elements: [Object]
 
-    public enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case timestamp
         case elements
 

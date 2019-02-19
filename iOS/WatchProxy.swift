@@ -63,7 +63,7 @@ final class WatchProxy: NSObject, WCSessionDelegate {
         let sendRegisteryOp = SendRegisteryProcedure(context: moc, proxy: self)
         let sendBookmarkOp = SendBookmarkProcedure(context: moc, proxy: self)
 
-        queue.add(operations: sendRegisteryOp, sendBookmarkOp)
+        queue.addOperations(sendRegisteryOp, sendBookmarkOp)
 
     }
 

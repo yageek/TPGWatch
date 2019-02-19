@@ -145,7 +145,7 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
             }
         }
 
-        queue.add(operation: getDepartures)
+        queue.addOperation(getDepartures)
     }
 
     private func setLoading() {
@@ -170,9 +170,9 @@ final class NextDeparturesVC: UITableViewController, LinesRendererContextDelegat
         let blockOperation = BlockOperation { [unowned self] in
             self.performSegue(withIdentifier: "unwindToBookmark", sender: self)
         }
-        blockOperation.add(dependency: alert)
+        blockOperation.addDependency(alert)
 
-        self.queue.add(operation: alert)
+        self.queue.addOperation(alert)
         OperationQueue.main.addOperation(blockOperation)
 
     }

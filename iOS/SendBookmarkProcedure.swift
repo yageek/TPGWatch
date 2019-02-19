@@ -50,7 +50,7 @@ final class SendBookmarkProcedure: Procedure {
             self.finish()
         } catch let error {
             print("Can not send error:\(error)")
-            self.finish(withError: error)
+            self.finish(with: error)
         }
     }
 

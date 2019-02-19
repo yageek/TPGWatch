@@ -20,7 +20,7 @@ public struct Deviation: Decodable {
     /// The ending stop of the deviation.
     public let endStop: Stop?
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case code = "deviationCode"
         case startStop
         case endStop

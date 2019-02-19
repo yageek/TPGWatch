@@ -21,7 +21,7 @@ public struct PhysicalStopInfos: Decodable, APIObject {
     /// The physical stops if refers
     public let stops: [PhysicalStop]
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name = "stopName"
         case code = "stopCode"
         case stops = "physicalStops"
@@ -42,7 +42,7 @@ public struct PhysicalStopInfos: Decodable, APIObject {
         /// The coordinates of the stop
         public let coordinates: Coordinates
 
-        public enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {
             case name = "stopName"
             case code = "physicalStopCode"
 

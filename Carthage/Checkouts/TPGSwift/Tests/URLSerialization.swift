@@ -54,7 +54,7 @@ class URLSerialization: XCTestCase {
             items.append(contentsOf: components)
         }
 
-        components.queryItems = items
+        components.queryItems = items.sorted(by: { $0.name > $1.name })
         let computedURLString = components.url!.absoluteString
         XCTAssertEqual(api().URL.absoluteString, computedURLString, file: file, line: line)
     }

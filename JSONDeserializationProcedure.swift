@@ -26,7 +26,7 @@ public final class JSONDeserializationProcedure<T: Decodable>: Procedure, InputP
 
     public override func execute() {
         guard let url = input.value else {
-            finish(withError: ProcedureKitError.requirementNotSatisfied())
+            finish(with: ProcedureKitError.requirementNotSatisfied())
             return
         }
 
@@ -38,7 +38,7 @@ public final class JSONDeserializationProcedure<T: Decodable>: Procedure, InputP
 
         } catch let error {
             print("Finish with error: \(error)")
-            self.finish(withError: error)
+            self.finish(with: error)
         }
     }
 }

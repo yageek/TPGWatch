@@ -90,7 +90,7 @@ final class ThermometerInterfaceController: WKInterfaceController {
             }
         }
 
-        queue.add(operation: thermometer)
+        queue.addOperation(thermometer)
     }
 
     private func updateUI(thermometer: Thermometer) {

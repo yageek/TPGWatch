@@ -34,7 +34,7 @@ class SaveProcedure: Procedure {
         }
 
         if !result {
-            self.finish(withErrors: [GeneralError.unexpectedError])
+            self.finish(with: GeneralError.unexpectedError)
         } else {
             self.finish()
         }

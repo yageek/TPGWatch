@@ -1,7 +1,7 @@
 //
 //  ProcedureKit
 //
-//  Copyright © 2016 ProcedureKit. All rights reserved.
+//  Copyright © 2015-2018 ProcedureKit. All rights reserved.
 //
 
 import XCTest
@@ -11,14 +11,18 @@ import TestingProcedureKit
 @testable import ProcedureKitCloud
 
 class TestCKFetchRecordZoneChangesOperation: TestCKDatabaseOperation, CKFetchRecordZoneChangesOperationProtocol, AssociatedErrorProtocol {
+
     typealias AssociatedError = PKCKError
     typealias FetchRecordZoneChangesOptions = String
+    typealias FetchRecordZoneChangesConfiguration = String
     typealias ResponseSimulationBlock = ((TestCKFetchRecordZoneChangesOperation) -> Error?)
+    typealias RecordZoneIDsPropertyType = Array<RecordZoneID>
 
     var responseSimulationBlock: ResponseSimulationBlock? = nil
     var fetchAllChanges: Bool = true
     var recordZoneIDs: [RecordZoneID] = ["zone-id"]
-    var optionsByRecordZoneID: [RecordZoneID : FetchRecordZoneChangesOptions]? = nil
+    var optionsByRecordZoneID: [RecordZoneID: String]? = nil
+    var configurationsByRecordZoneID: [String : String]?
     var recordChangedBlock: ((Record) -> Void)? = nil
     var recordWithIDWasDeletedBlock: ((RecordID, String) -> Void)? = nil
     var recordZoneChangeTokensUpdatedBlock: ((RecordZoneID, ServerChangeToken?, Data?) -> Void)? = nil
@@ -44,6 +48,8 @@ class TestCKFetchRecordZoneChangesOperation: TestCKDatabaseOperation, CKFetchRec
 
 class CKFetchRecordZoneChangesOperationTests: CKProcedureTestCase {
 
+    typealias RecordZoneID = TestCKFetchRecordZoneChangesOperation.RecordZoneID
+
     var target: TestCKFetchRecordZoneChangesOperation!
     var operation: CKProcedure<TestCKFetchRecordZoneChangesOperation>!
 
@@ -60,12 +66,16 @@ class CKFetchRecordZoneChangesOperationTests: CKProcedureTestCase {
     }
 
     func test__set_get__recordZoneIDs() {
-        let recordZoneIDs: [String] = ["I'm a record zone ID"]
+        let recordZoneIDs: [RecordZoneID] = ["I'm a record zone ID"]
         operation.recordZoneIDs = recordZoneIDs
         XCTAssertEqual(operation.recordZoneIDs, recordZoneIDs)
         XCTAssertEqual(target.recordZoneIDs, recordZoneIDs)
     }
 
+    @available(iOS, introduced: 10.0, deprecated: 12.0)
+    @available(OSX, introduced: 10.12, deprecated: 10.14)
+    @available(tvOS, introduced: 10.0, deprecated: 12.0)
+    @available(watchOS, introduced: 3.0, deprecated: 5.0)
     func test__set_get__optionsByRecordZoneID() {
         let optionsByRecordZoneID = ["zone-id": "testoption"]
         operation.optionsByRecordZoneID = optionsByRecordZoneID
@@ -121,21 +131,21 @@ class CKFetchRecordZoneChangesOperationTests: CKProcedureTestCase {
 
     func test__success_without_completion_block() {
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
     }
 
     func test__success_with_completion_block() {
         var didExecuteBlock = false
         operation.setFetchRecordZoneChangesCompletionBlock { didExecuteBlock = true }
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
         XCTAssertTrue(didExecuteBlock)
     }
 
     func test__error_without_completion_block() {
         target.setSimulationOutputError(error: TestError())
         wait(for: operation)
-        XCTAssertProcedureFinishedWithoutErrors(operation)
+        PKAssertProcedureFinished(operation)
     }
 
     func test__error_with_completion_block() {
@@ -143,7 +153,7 @@ class CKFetchRecordZoneChangesOperationTests: CKProcedureTestCase {
         operation.setFetchRecordZoneChangesCompletionBlock { didExecuteBlock = true }
         target.setSimulationOutputError(error: TestError())
         wait(for: operation)
-        XCTAssertProcedureFinishedWithErrors(operation, count: 1)
+        PKAssertProcedureFinished(operation, withErrors: true)
         XCTAssertFalse(didExecuteBlock)
     }
 }
@@ -164,7 +174,12 @@ class CloudKitProcedureFetchRecordZoneChangesOperationTests: CKProcedureTestCase
         cloudkit.previousServerChangeToken = token
         cloudkit.resultsLimit = 10
         cloudkit.recordZoneIDs = [ "record zone 1 id", "record zone 2 id" ]
-        cloudkit.optionsByRecordZoneID = [ "record zone 1 id": "option 1", "record zone 2 id": "option 2" ]
+        if #available(iOS 12.0, OSX 10.14, tvOS 12.0, watchOS 5.0, *) {
+            cloudkit.configurationsByRecordZoneID = [ "record zone 1 id": "configuration 1", "record zone 2 id": "configuration 2" ]
+        }
+        else if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
+            cloudkit.optionsByRecordZoneID = [ "record zone 1 id": "option 1", "record zone 2 id": "option 2" ]
+        }
         cloudkit.fetchAllChanges = false
         cloudkit.recordChangedBlock = { [unowned self] record in
             self.setByRecordChangedBlock = record
@@ -220,9 +235,19 @@ class CloudKitProcedureFetchRecordZoneChangesOperationTests: CKProcedureTestCase
         XCTAssertEqual(cloudkit.recordZoneIDs, [ "record zone 1 id", "record zone 2 id" ])
     }
 
+    @available(iOS, introduced: 10.0, deprecated: 12.0)
+    @available(OSX, introduced: 10.12, deprecated: 10.14)
+    @available(tvOS, introduced: 10.0, deprecated: 12.0)
+    @available(watchOS, introduced: 3.0, deprecated: 5.0)
     func test__set_get_optionsByRecordZoneID() {
         cloudkit.optionsByRecordZoneID = [ "record zone 1 id": "option 1", "record zone 2 id": "option 2" ]
         XCTAssertEqual(cloudkit.optionsByRecordZoneID ?? [:], [ "record zone 1 id": "option 1", "record zone 2 id": "option 2" ])
+    }
+
+    @available(iOS 12.0, OSX 10.14, tvOS 12.0, watchOS 5.0, *)
+    func test__set_get_configurationsByRecordZoneID() {
+        cloudkit.configurationsByRecordZoneID = [ "record zone 1 id": "configuration 1", "record zone 2 id": "configuration 2" ]
+        XCTAssertEqual(cloudkit.configurationsByRecordZoneID ?? [:], [ "record zone 1 id": "configuration 1", "record zone 2 id": "configuration 2" ])
     }
 
     func test__set_get_recordChangedBlock() {
@@ -260,12 +285,12 @@ class CloudKitProcedureFetchRecordZoneChangesOperationTests: CKProcedureTestCase
     func test__cancellation() {
         cloudkit.cancel()
         wait(for: cloudkit)
-        XCTAssertProcedureCancelledWithoutErrors(cloudkit)
+        PKAssertProcedureCancelled(cloudkit)
     }
 
     func test__success_without_completion_block_set() {
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
     }
 
     func test__success_with_completion_block_set() {
@@ -274,7 +299,7 @@ class CloudKitProcedureFetchRecordZoneChangesOperationTests: CKProcedureTestCase
             didExecuteBlock = true
         }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
         XCTAssertTrue(didExecuteBlock)
     }
 
@@ -285,7 +310,7 @@ class CloudKitProcedureFetchRecordZoneChangesOperationTests: CKProcedureTestCase
             }
         }
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithoutErrors(cloudkit)
+        PKAssertProcedureFinished(cloudkit)
     }
 
     func test__error_with_completion_block_set() {
@@ -301,7 +326,7 @@ class CloudKitProcedureFetchRecordZoneChangesOperationTests: CKProcedureTestCase
         }
 
         wait(for: cloudkit)
-        XCTAssertProcedureFinishedWithErrors(cloudkit, count: 1)
+        PKAssertProcedureFinished(cloudkit, withErrors: true)
         XCTAssertFalse(didExecuteBlock)
     }
 }

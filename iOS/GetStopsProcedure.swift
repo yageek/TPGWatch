@@ -32,25 +32,25 @@ final class GetStopsProcedure: GroupProcedure {
 
         // Synchronisation
         importStopsOp.addDependency(importLinesOp)
-        importStopsOp.add(condition: NoFailedDependenciesCondition())
+        importStopsOp.addCondition(NoFailedDependenciesCondition())
 
         var operations = [downloadLinesOp, parseLinesOp, importLinesOp, downloadStopsOp, parseStopsOp, importStopsOp]
         if WatchProxy.isWatchSupported {
             let sendRegisteryOp = SendRegisteryProcedure(context: context, proxy: proxy)
-            sendRegisteryOp.add(dependency: importStopsOp)
-            sendRegisteryOp.add(condition: NoFailedDependenciesCondition())
+            sendRegisteryOp.addDependency(importStopsOp)
+            sendRegisteryOp.addCondition(NoFailedDependenciesCondition())
             operations.append(sendRegisteryOp)
         }
 
         super.init(operations: operations)
-        add(condition: MutuallyExclusive<GetStopsProcedure>())
+        addCondition(MutuallyExclusive<GetStopsProcedure>())
         name = "Get Stops operations"
 
         addDidFinishBlockObserver { (_, errors) in
-            print("Errors: \(errors)")
+            print("Errors: \(String(describing: errors))")
 
             self.completion {
-                if let error = errors.first {
+                if let error = errors {
                     throw error
                 }
             }

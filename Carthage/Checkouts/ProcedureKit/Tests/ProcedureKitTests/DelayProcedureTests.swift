@@ -1,7 +1,7 @@
 //
 //  ProcedureKit
 //
-//  Copyright © 2016 ProcedureKit. All rights reserved.
+//  Copyright © 2015-2018 ProcedureKit. All rights reserved.
 //
 
 import XCTest
@@ -75,6 +75,38 @@ class DelayProcedureTests: ProcedureKitTestCase {
         }
         wait(for: delay)
         XCTAssertTrue(delay.isCancelled)
+    }
+
+    func test__inject_delay_from_procedure_outputing_delay() {
+        let interval: TimeInterval = 0.5
+        let result = ResultProcedure { Delay.by(interval) }
+        let delay = DelayProcedure().injectResult(from: result)
+        let started = Date()
+        delay.addDidFinishBlockObserver { _, _ in
+            let ended = Date()
+            let timeTaken = ended.timeIntervalSince(started)
+            XCTAssertGreaterThanOrEqual(timeTaken, interval)
+            XCTAssertLessThanOrEqual(timeTaken - interval, 1.0)
+        }
+        wait(for: result, delay)
+        XCTAssertTrue(delay.isFinished)
+
+    }
+
+    func test__inject_delay_from_procedure_outputing_interval() {
+        let interval: TimeInterval = 0.5
+        let result = ResultProcedure { Delay.by(interval) }
+        let delay = DelayProcedure().injectDelay(from: result) { $0.interval }
+        let started = Date()
+        delay.addDidFinishBlockObserver { _, _ in
+            let ended = Date()
+            let timeTaken = ended.timeIntervalSince(started)
+            XCTAssertGreaterThanOrEqual(timeTaken, interval)
+            XCTAssertLessThanOrEqual(timeTaken - interval, 1.0)
+        }
+        wait(for: result, delay)
+        XCTAssertTrue(delay.isFinished)
+
     }
 }
 

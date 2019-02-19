@@ -78,7 +78,7 @@ public struct LineColor: Decodable, APIObject {
     /// The color of the text
     public let text: Color
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case hexa
         case code = "lineCode"
         case background

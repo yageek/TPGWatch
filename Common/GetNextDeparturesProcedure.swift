@@ -15,7 +15,7 @@ final class GetNextDeparturesProcedure: GroupProcedure {
         let getDeparturesCall = API.getNextDepartures(stopCode: code, departureCode: nil, linesCode: nil, destinationsCode: nil)
         let downloadDepartures = DownloadProcedure(call: getDeparturesCall)
         let parseDepartures = JSONDeserializationProcedure<NextDepartureRecord>().injectPayload(fromNetwork: downloadDepartures)
-        parseDepartures.addDidFinishBlockObserver { (procedure, errors) in
+        parseDepartures.addDidFinishBlockObserver { (procedure, error) in
 
             if let value = procedure.output.success {
                 ProcedureQueue.main.addOperation {
@@ -24,7 +24,7 @@ final class GetNextDeparturesProcedure: GroupProcedure {
                 }
             } else {
                 ProcedureQueue.main.addOperation {
-                    completion(nil, errors.first)
+                    completion(nil, error)
                 }
             }
         }

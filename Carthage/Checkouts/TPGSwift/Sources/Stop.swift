@@ -13,7 +13,7 @@ public struct Stop: Decodable, APIObject {
 
     public static var recordName = "stops"
 
-    public enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name = "stopName"
         case code = "stopCode"
         case connections

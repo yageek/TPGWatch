@@ -50,7 +50,7 @@ final class DeleteFileProcedure: Procedure {
             try fileManager.removeItem(at: url)
         } catch let error {
             print("Can not delete file at path: \(error)")
-            self.finish(withError: error)
+            self.finish(with: error)
         }
         self.finish()
     }

@@ -25,7 +25,7 @@ final class ReadArrayProcedure: Procedure, OutputProcedure {
         if let data = NSArray(contentsOf: url) as? [[String: Any]] {
             self.finish(withResult: .success(data))
         } else {
-            self.finish(withError: NSError(domain: "", code: 0, userInfo: nil))
+            self.finish(with: NSError(domain: "", code: 0, userInfo: nil))
         }
     }
 }
@@ -47,7 +47,7 @@ final class ReadDictionaryOperation: Procedure, OutputProcedure {
         if let data = NSDictionary(contentsOf: url) as? [String: Any] {
             self.finish(withResult: .success(data))
         } else {
-            self.finish(withError: NSError(domain: "", code: 0, userInfo: nil))
+            self.finish(with: NSError(domain: "", code: 0, userInfo: nil))
         }
     }
 }

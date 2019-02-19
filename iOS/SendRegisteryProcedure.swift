@@ -39,14 +39,14 @@ final class SendRegisteryProcedure: Procedure {
                 lines = try self.context.fetch(request) as! [Line]
             } catch let error {
                 print("Impossible to fetch stops: \(error)")
-                self.finish(withError: error)
+                self.finish(with: error)
             }
 
             do {
                 try self.sendLines(lines)
             } catch let error {
                 print("WARN - App watch is not connected: \(error)")
-                self.finish(withError: error)
+                self.finish(with: error)
             }
         }
     }

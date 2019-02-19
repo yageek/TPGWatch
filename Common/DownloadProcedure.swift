@@ -20,7 +20,7 @@ final class ValidAPICodeProcedure<T: Equatable>: Procedure, InputProcedure, Outp
 
     override func execute() {
         guard let input = input.value else {
-            self.finish(withError: ProcedureKitError.requirementNotSatisfied())
+            self.finish(with: ProcedureKitError.requirementNotSatisfied())
             return
         }
 
@@ -33,7 +33,7 @@ final class ValidAPICodeProcedure<T: Equatable>: Procedure, InputProcedure, Outp
             print("ERROR - Status: \(input.response.statusCode)")
             print("ERROR - Content: \(String(describing: input.payload))")
             self.output = .ready(.failure(GeneralError.apiError))
-            finish(withError: GeneralError.apiError)
+            finish(with: GeneralError.apiError)
         }
     }
 }
@@ -58,7 +58,7 @@ final class DownloadProcedure: GroupProcedure, OutputProcedure {
         }
 
         #if os(iOS)
-            decode.add(observer: NetworkObserver(controller: NetworkActivityController()))
+        decode.addObserver(NetworkObserver(controller: NetworkActivityController()))
         #endif
     }
 

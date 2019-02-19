@@ -229,7 +229,7 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
 
     private func updateIndexList() {
         guard let objects = fetchedResultsController?.fetchedObjects else { return }
-        let firstLetters = objects.flatMap { (stop) -> String? in
+        let firstLetters = objects.compactMap { (stop) -> String? in
             guard let firstLetter = stop.name.first else { return nil}
             return String(firstLetter)
             }.reduce([]) { (index, letter) -> [String] in

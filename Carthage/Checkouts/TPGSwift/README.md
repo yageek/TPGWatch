@@ -1,5 +1,4 @@
-TPGSwift
-==========
+# TPGSwift
 
 Swift libary for the TPG Open Data.
 
@@ -12,7 +11,7 @@ For more explanation: [TPG Open Data](http://www.tpg.ch/fr/web/open-data/mode-d-
  [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TPGSwift.svg)](https://img.shields.io/cocoapods/v/TPGSwift.svg)
  [![Platform](https://img.shields.io/cocoapods/p/TPGSwift.svg?style=flat)](http://cocoadocs.org/docsets/TPGSwift)
 
-# Usage
+## Usage
 
 ```swift
 import TPGSwift
@@ -45,12 +44,12 @@ do {
 
 ```
 
-# Paw
+## Paw
 
 You can find a basic Paw file which will help you to play with the API.
 Open `TPGSwift.paw` and change the `KEY` variable in the `Production` group
 with the one received from the TPG.
 
-# License
+## License
 
 TPGSwift is released under the MIT license. See LICENSE for details.

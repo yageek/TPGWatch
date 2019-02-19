@@ -14,9 +14,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         #if DEBUG
-            LogManager.severity = .verbose
+             Log.severity = .verbose
         #else
-            LogManager.severity = .fatal
+            Log.severity = .fatal
         #endif
         API.Key = TPGKey
     }

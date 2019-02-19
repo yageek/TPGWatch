@@ -39,33 +39,43 @@ class DecodableTests: XCTestCase {
         }
     }
 
-    func testJSON() {
-        XCTAssertEqual(1, 1)
-        // Stops
+    func testStops() {
         assertDecode(Record<Stop>.self, fileName: "GetStops")
         assertDecode(Record<Stop>.self, fileName: "GetStops2")
+    }
 
-        // Physiscal Stops
+    func testPhysicalStops() {
         assertDecode(Record<PhysicalStopInfos>.self, fileName: "GetPhysicalStops")
+    }
 
-        // Next Departures
+    func testNextDepartures() {
         assertDecode(NextDepartureRecord.self, fileName: "GetNextDepartures")
         assertDecode(NextDepartureRecord.self, fileName: "GetNextDepartures2")
-        
-        // All Next Departures
-        assertDecode(NextDepartureRecord.self, fileName: "GetAllNextDepartures")
+    }
 
-        // Thermometers
+    func testAllNextDepartures() {
+        assertDecode(NextDepartureRecord.self, fileName: "GetAllNextDepartures")
+    }
+
+    func testThermometers() {
         assertDecode(Thermometer.self, fileName: "GetThermometer")
         assertDecode(Thermometer.self, fileName: "GetThermometer2")
-
-        // All Phyisical Thermometers
-        assertDecode(Thermometer.self, fileName: "GetThermometerPhysicalStops")
-
-        // Line Colors
-        assertDecode(Record<LineColor>.self, fileName: "GetLineColors")
-
-        // Error code
-        assertDecode(ErrorCode.self, fileName: "ErrorCode")
     }
+
+    func testPhysicalThermometers() {
+        assertDecode(Thermometer.self, fileName: "GetThermometerPhysicalStops")
+    }
+
+    func testLineColors() {
+        assertDecode(Record<LineColor>.self, fileName: "GetLineColors")
+    }
+
+    func testErrorCodes() {
+         assertDecode(ErrorCode.self, fileName: "ErrorCode")
+    }
+
+    func testDisruptions() {
+        assertDecode(Record<Disruption>.self, fileName: "GetDisruptions")
+    }
+
 }

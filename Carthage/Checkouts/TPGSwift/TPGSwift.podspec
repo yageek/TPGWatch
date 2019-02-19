@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TPGSwift"
-  s.version      = "3.0.0"
+  s.version      = "4.0.0"
   s.summary      = "A library to access the TPG opendata."
   s.homepage     = "https://github.com/yageek/TPGSwift"
   s.license      = "MIT"

@@ -71,7 +71,7 @@ final class LineRenderer {
         bezierPath.stroke()
         bezierPath.fill()
 
-        let properties: [NSAttributedStringKey: Any] = [
+        let properties: [NSAttributedString.Key: Any] = [
             .font: options.textFont,
             .foregroundColor: options.textColor
         ]

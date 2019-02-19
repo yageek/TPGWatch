@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var proxy: WatchProxy?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         applyAppearance()
 
@@ -64,20 +64,20 @@ extension AppDelegate {
             navBar.barTintColor = UIColor.appOrange()
             navBar.barStyle = .black
             navBar.tintColor = UIColor.white
-            navBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white]
+            navBar.titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
 
             // UISearchController -> https://stackoverflow.com/questions/45663169/uisearchcontroller-ios-11-customization
-            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.black]
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [.foregroundColor: UIColor.black]
             UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
 
             let localizedSearch = NSLocalizedString("Search", comment: "")
-            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: localizedSearch, attributes: [NSAttributedStringKey.foregroundColor: UIColor.lightGray])
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: localizedSearch, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 
         } else {
             navBar.barTintColor = UIColor.appOrange()
             navBar.barStyle = .black
             navBar.tintColor = UIColor.white
-            navBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.white]
+            navBar.titleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
         }
     }
 

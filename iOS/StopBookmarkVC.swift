@@ -75,7 +75,7 @@ final class StopBookmarkVC: UITableViewController, NSFetchedResultsControllerDel
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         if let stop = fetchedResultsController?.object(at: indexPath) {
             stop.bookmarked = false

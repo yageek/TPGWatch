@@ -159,8 +159,8 @@ final class StopSearchVC: UITableViewController, NSFetchedResultsControllerDeleg
             let bar = searchController?.searchBar
             bar?.tintColor = .white
             bar?.setSearchFieldBackgroundImage(UIImage(named: "textfield_background"), for: .normal)
-            bar?.setImage(#imageLiteral(resourceName: "glass"), for: UISearchBarIcon.search, state: .normal)
-            bar?.setImage(#imageLiteral(resourceName: "clear"), for: UISearchBarIcon.clear, state: .normal)
+            bar?.setImage(#imageLiteral(resourceName: "glass"), for: UISearchBar.Icon.search, state: .normal)
+            bar?.setImage(#imageLiteral(resourceName: "clear"), for: UISearchBar.Icon.clear, state: .normal)
 
         } else {
             self.tableView.tableHeaderView = searchController?.searchBar
